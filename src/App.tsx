@@ -1,11 +1,24 @@
-import React from "react";
+import React, { FC, useState } from "react";
+import { authentication } from "./firebase/index";
+import { Home } from "./components/home";
+import { LoginForm } from "./components/loginForm";
+import { User } from "./interfaces";
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello World!</h1>
-    </div>
-  );
-}
+const App: FC = () => {
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
+  authentication().onAuthStateChanged((user) => {
+    setCurrentUser(user);
+  });
+
+  if (currentUser) {
+    return (
+      <>
+        <Home />
+      </>
+    );
+  }
+
+  return <LoginForm />;
+};
 
 export default App;
