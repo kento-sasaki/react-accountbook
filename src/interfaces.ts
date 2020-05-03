@@ -10,3 +10,9 @@ export type Provider =
   | firebase.auth.FacebookAuthProvider
   | firebase.auth.GoogleAuthProvider
   | firebase.auth.TwitterAuthProvider;
+
+export interface Store {
+  counter: {
+    count: number;
+  };
+}
