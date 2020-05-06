@@ -50,6 +50,7 @@ export const LoginForm: FC = () => {
         <Form size="large">
           <Segment basic>
             <Form.Field required>
+              <div data-testid="email-result">{email}</div>
               <Form.Input
                 fluid
                 onChange={handleChangeEmail}
