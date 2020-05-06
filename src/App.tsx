@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import { authentication } from "./firebase/index";
-import { Home } from "./components/home";
+import { Counter } from "./components/counter";
 import { LoginForm } from "./components/loginForm";
 import { User } from "./interfaces";
 
@@ -13,7 +13,7 @@ const App: FC = () => {
   if (currentUser) {
     return (
       <>
-        <Home />
+        <Counter />
       </>
     );
   }

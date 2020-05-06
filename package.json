@@ -5,8 +5,8 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.3.5",
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
+    "@testing-library/react": "^10.0.4",
+    "@testing-library/user-event": "^10.1.0",
     "@types/jest": "^25.2.1",
     "@types/node": "^13.13.2",
     "@types/react": "^16.9.34",
@@ -63,6 +63,8 @@
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "^7.19.0",
     "husky": "^4.2.5",
+    "jest": "24.9.0",
+    "jest-dom": "^4.0.0",
     "lint-staged": "^10.1.7",
     "prettier": "^2.0.5"
   }
