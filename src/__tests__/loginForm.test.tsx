@@ -4,6 +4,7 @@ import { render, cleanup, fireEvent } from "../utils/test-utils";
 import { LoginForm } from "../components/loginForm";
 import "@testing-library/jest-dom";
 
+// setup
 afterEach(cleanup);
 
 describe("LoginForm", () => {
