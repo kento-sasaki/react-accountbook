@@ -1,30 +1,23 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import { Header, Button, Grid } from "semantic-ui-react";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../firebase/auth";
-import { increment, decrement, reset } from "../stores/conter";
+import { increment, decrement } from "../stores/conter";
 import { Store } from "../interfaces";
 
-export const Counter: FC = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(reset());
-  }, [dispatch]);
-
-  const count = useSelector((state: Store) => state.counter.count);
-
+export const Home: FC = () => {
   const handleClick = () => {
     logout();
   };
 
+  const count = useSelector((state: Store) => state.counter.count);
+
+  const dispatch = useDispatch();
   const clickIncrement = () => {
     dispatch(increment());
   };
   const clickDecrement = () => {
     dispatch(decrement());
-  };
-  const clickReset = () => {
-    dispatch(reset());
   };
 
   return (
@@ -33,14 +26,13 @@ export const Counter: FC = () => {
         <Grid.Column>
           <Header as="h1" textAlign="center" content="Counter" />
           <Header as="h3" textAlign="center">
-            <div data-testid="result">Count: {count}</div>
+            Count: {count}
           </Header>
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>
         <Button color="blue" content=" + " onClick={clickIncrement} />
         <Button color="grey" content=" - " onClick={clickDecrement} />
-        <Button color="red" content="reset" onClick={clickReset} />
       </Grid.Row>
       <Grid.Row>
         <Grid.Column>
