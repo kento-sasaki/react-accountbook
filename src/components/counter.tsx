@@ -2,7 +2,7 @@ import React, { FC, useEffect } from "react";
 import { Header, Button, Grid } from "semantic-ui-react";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../firebase/auth";
-import { increment, decrement, reset } from "../stores/conter";
+import { increment, decrement, reset } from "../stores/counter";
 import { Store } from "../interfaces";
 
 export const Counter: FC = () => {

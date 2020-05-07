@@ -1,0 +1,245 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Counter Counter 1`] = `
+<div
+  className="ui center aligned middle aligned grid"
+  style={
+    Object {
+      "height": "40vh",
+    }
+  }
+>
+  <div
+    className="row"
+  >
+    <div
+      className="column"
+    >
+      <h1
+        className="ui center aligned header"
+      >
+        Counter
+      </h1>
+      <h3
+        className="ui center aligned header"
+      >
+        <div
+          data-testid="result"
+        >
+          Count: 
+          0
+        </div>
+      </h3>
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <button
+      className="ui blue button"
+      onClick={[Function]}
+    >
+       + 
+    </button>
+    <button
+      className="ui grey button"
+      onClick={[Function]}
+    >
+       - 
+    </button>
+    <button
+      className="ui red button"
+      onClick={[Function]}
+    >
+      reset
+    </button>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="column"
+    >
+      <button
+        className="ui black button"
+        onClick={[Function]}
+      >
+        Log out
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Link First 1`] = `
+<button
+  onClick={[Function]}
+  type="button"
+>
+  Go to "second"
+</button>
+`;
+
+exports[`Storyshots Link Second 1`] = `
+<button
+  onClick={[Function]}
+  type="button"
+>
+  Go to "first"
+</button>
+`;
+
+exports[`Storyshots LoginForm Login Form 1`] = `
+<div
+  className="ui center aligned middle aligned grid"
+  style={
+    Object {
+      "height": "90vh",
+    }
+  }
+>
+  <div
+    className="column"
+    style={
+      Object {
+        "maxWidth": 500,
+      }
+    }
+  >
+    <h1
+      className="ui blue center aligned header"
+    >
+      Log in
+    </h1>
+    <form
+      className="ui large form"
+      onSubmit={[Function]}
+    >
+      <div
+        className="ui basic segment"
+      >
+        <div
+          className="required field"
+        >
+          <div
+            className="field"
+          >
+            <div
+              className="ui fluid left icon input"
+            >
+              <input
+                aria-describedby={null}
+                onChange={[Function]}
+                placeholder="E-mail address"
+                type="text"
+              />
+              <i
+                aria-hidden="true"
+                className="at icon"
+                onClick={[Function]}
+              />
+            </div>
+          </div>
+          <div
+            className="field"
+          >
+            <div
+              className="ui fluid left icon input"
+            >
+              <input
+                aria-describedby={null}
+                onChange={[Function]}
+                placeholder="Password"
+                type="password"
+              />
+              <i
+                aria-hidden="true"
+                className="lock icon"
+                onClick={[Function]}
+              />
+            </div>
+          </div>
+          <div
+            className="field"
+          >
+            <button
+              aria-describedby={null}
+              className="ui blue large fluid button"
+              onClick={[Function]}
+            >
+              Log in
+            </button>
+          </div>
+        </div>
+      </div>
+      <h3
+        className="ui header"
+      >
+        Log in with social accounts
+      </h3>
+      <button
+        className="ui google plus button"
+        onClick={[Function]}
+      >
+        <i
+          aria-hidden="true"
+          className="google icon"
+          onClick={[Function]}
+        />
+        Google
+      </button>
+      <button
+        className="ui facebook button"
+        onClick={[Function]}
+      >
+        <i
+          aria-hidden="true"
+          className="facebook icon"
+          onClick={[Function]}
+        />
+        Facebook
+      </button>
+      <button
+        className="ui twitter button"
+        onClick={[Function]}
+      >
+        <i
+          aria-hidden="true"
+          className="twitter icon"
+          onClick={[Function]}
+        />
+        Twitter
+      </button>
+    </form>
+    <div
+      className="ui message"
+    >
+      New to us? Sign Up
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Storybook Knobs As Dynamic Variables 1`] = `
+<div>
+  I am James and I'm 35 years old.
+</div>
+`;
+
+exports[`Storyshots Storybook Knobs With A Button 1`] = `
+<button
+  disabled={false}
+  type="button"
+>
+  Hello Storybook
+</button>
+`;
+
+exports[`Storyshots actionButton Button 1`] = `
+<button
+  className="ui button"
+  onClick={[Function]}
+>
+  Click Here
+</button>
+`;
