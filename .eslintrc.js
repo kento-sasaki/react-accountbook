@@ -110,6 +110,19 @@ module.exports = {
       },
     ],
     "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        devDependencies: [
+          ".storybook/**",
+          "stories/**",
+          "**/*/*.story.*",
+          "**/*/*.stories.*",
+          "**/__tests__/**",
+          "**/*/*.test.*",
+        ],
+      },
+    ],
   },
   settings: {
     "import/parsers": {
