@@ -1,5 +1,5 @@
 import React, { FC, useState, FormEvent } from "react";
-import { Button, Form, Grid, Header, Message, Segment, Icon } from "semantic-ui-react";
+import { Button, Form, Grid, Header, Message, Segment, Icon, Divider } from "semantic-ui-react";
 import { authentication } from "../firebase/index";
 import { login, signUp, createUser, loginWithSocialAccount } from "../firebase/auth";
 import { InputData } from "../interfaces";
@@ -68,6 +68,7 @@ export const LoginForm: FC = () => {
               <Form.Button color="blue" fluid size="large" onClick={handleClick} content="Log in" />
             </Form.Field>
           </Segment>
+          <Divider horizontal content="or" />
           <Header as="h3">Log in with social accounts</Header>
           <Button color="google plus" onClick={loginWithGoogle}>
             <Icon name="google" />

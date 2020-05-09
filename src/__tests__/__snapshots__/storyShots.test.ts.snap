@@ -172,6 +172,11 @@ exports[`Storyshots LoginForm Login Form 1`] = `
           </div>
         </div>
       </div>
+      <div
+        className="ui horizontal divider"
+      >
+        or
+      </div>
       <h3
         className="ui header"
       >
