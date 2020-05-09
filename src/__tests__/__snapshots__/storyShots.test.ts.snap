@@ -22,13 +22,10 @@ exports[`Storyshots Counter Counter 1`] = `
       </h1>
       <h3
         className="ui center aligned header"
+        data-testid="result"
       >
-        <div
-          data-testid="result"
-        >
-          Count: 
-          0
-        </div>
+        Count: 
+        0
       </h3>
     </div>
   </div>
@@ -37,18 +34,21 @@ exports[`Storyshots Counter Counter 1`] = `
   >
     <button
       className="ui blue button"
+      data-testid="increment"
       onClick={[Function]}
     >
        + 
     </button>
     <button
       className="ui grey button"
+      data-testid="decrement"
       onClick={[Function]}
     >
        - 
     </button>
     <button
       className="ui red button"
+      data-testid="reset"
       onClick={[Function]}
     >
       reset

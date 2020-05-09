@@ -18,7 +18,12 @@ const App: FC = () => {
     );
   }
 
-  return <LoginForm />;
+  return (
+    <>
+      <LoginForm />
+      <Counter />
+    </>
+  );
 };
 
 export default App;

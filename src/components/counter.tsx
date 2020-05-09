@@ -32,15 +32,15 @@ export const Counter: FC = () => {
       <Grid.Row>
         <Grid.Column>
           <Header as="h1" textAlign="center" content="Counter" />
-          <Header as="h3" textAlign="center">
-            <div data-testid="result">Count: {count}</div>
+          <Header as="h3" textAlign="center" data-testid="result">
+            Count: {count}
           </Header>
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>
-        <Button color="blue" content=" + " onClick={clickIncrement} />
-        <Button color="grey" content=" - " onClick={clickDecrement} />
-        <Button color="red" content="reset" onClick={clickReset} />
+        <Button color="blue" content=" + " onClick={clickIncrement} data-testid="increment" />
+        <Button color="grey" content=" - " onClick={clickDecrement} data-testid="decrement" />
+        <Button color="red" content="reset" onClick={clickReset} data-testid="reset" />
       </Grid.Row>
       <Grid.Row>
         <Grid.Column>

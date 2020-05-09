@@ -25,6 +25,8 @@ module.exports = {
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly",
+    cy: "readonly",
+    Cypress: "readonly",
     __DEV__: true,
   },
   parser: "@typescript-eslint/parser",
@@ -32,7 +34,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    project: "./tsconfig.json",
+    project: ["./tsconfig.json", "./cypress/tsconfig.json"],
     sourceType: "module",
   },
   plugins: [
@@ -60,6 +62,9 @@ module.exports = {
         markers: ["/"],
       },
     ],
+
+    // for Cypress
+    "jest/expect-expect": ["off"],
 
     // @typescript-eslint
     "@typescript-eslint/explicit-function-return-type": "off",
