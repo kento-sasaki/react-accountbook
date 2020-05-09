@@ -2,7 +2,7 @@ describe("counter", () => {
   const baseUrl = Cypress.env("baseUrl");
 
   it("counter", () => {
-    cy.visit(baseUrl);
+    cy.visit(`${baseUrl}/counter`);
 
     // 初期状態は0であることのテスト
     cy.get("[data-testid=result]").should("have.text", "Count: 0");

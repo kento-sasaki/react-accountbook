@@ -11,7 +11,7 @@ export const Counter: FC = () => {
     dispatch(reset());
   }, [dispatch]);
 
-  const count = useSelector((state: Store) => state.counter.count);
+  const count = useSelector((store: Store) => store.counter.count);
 
   const handleClick = () => {
     logout();
