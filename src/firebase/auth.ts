@@ -94,3 +94,7 @@ export const loginWithSocialAccount = async (provider: Provider) => {
       }
     });
 };
+
+export const loginAnonymously = () => {
+  authentication().signInAnonymously();
+};
