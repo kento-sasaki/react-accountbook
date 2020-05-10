@@ -91,31 +91,31 @@ exports[`Storyshots Link Second 1`] = `
 
 exports[`Storyshots LoginForm Login Form 1`] = `
 <div
-  className="ui center aligned middle aligned grid"
+  className="ui basic segment css-1qi8e09-LoginForm"
 >
   <div
-    className="row"
+    className="ui center aligned middle aligned grid"
   >
     <div
-      className="column"
-      style={
-        Object {
-          "maxWidth": 500,
-        }
-      }
+      className="row"
     >
-      <h1
-        className="ui blue center aligned header"
-        style={Object {}}
+      <div
+        className="column"
+        style={
+          Object {
+            "maxWidth": 500,
+          }
+        }
       >
-        Log in
-      </h1>
-      <form
-        className="ui large form"
-        onSubmit={[Function]}
-      >
-        <div
-          className="ui basic segment"
+        <h1
+          className="ui blue center aligned header"
+          style={Object {}}
+        >
+          Log in
+        </h1>
+        <form
+          className="ui large form"
+          onSubmit={[Function]}
         >
           <div
             className="required field"
@@ -170,93 +170,93 @@ exports[`Storyshots LoginForm Login Form 1`] = `
               </button>
             </div>
           </div>
-        </div>
-        <div
-          className="ui horizontal divider"
-        >
-          or
-        </div>
-        <h3
-          className="ui header"
-        >
-          Log in with ...
-        </h3>
-      </form>
+          <div
+            className="ui horizontal divider"
+          >
+            or
+          </div>
+          <h3
+            className="ui header"
+          >
+            Log in with ...
+          </h3>
+        </form>
+      </div>
     </div>
-  </div>
-  <div
-    className="row"
-  >
     <div
-      className="column"
-      style={
-        Object {
-          "maxWidth": 800,
-        }
-      }
-    >
-      <button
-        className="ui google plus button"
-        onClick={[Function]}
-      >
-        <i
-          aria-hidden="true"
-          className="google icon"
-          onClick={[Function]}
-        />
-        Google
-      </button>
-      <button
-        className="ui facebook button"
-        onClick={[Function]}
-      >
-        <i
-          aria-hidden="true"
-          className="facebook icon"
-          onClick={[Function]}
-        />
-        Facebook
-      </button>
-      <button
-        className="ui twitter button"
-        onClick={[Function]}
-      >
-        <i
-          aria-hidden="true"
-          className="twitter icon"
-          onClick={[Function]}
-        />
-        Twitter
-      </button>
-      <button
-        className="ui grey button"
-        data-testid="loginAnonymously"
-        onClick={[Function]}
-      >
-        <i
-          aria-hidden="true"
-          className="user icon"
-          onClick={[Function]}
-        />
-        Anonymously
-      </button>
-    </div>
-  </div>
-  <div
-    className="row"
-  >
-    <div
-      className="column"
-      style={
-        Object {
-          "maxWidth": 400,
-        }
-      }
+      className="row"
     >
       <div
-        className="ui message"
+        className="column"
+        style={
+          Object {
+            "maxWidth": 800,
+          }
+        }
       >
-        New to us? Sign Up
+        <button
+          className="ui google plus button"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="google icon"
+            onClick={[Function]}
+          />
+          Google
+        </button>
+        <button
+          className="ui facebook button"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="facebook icon"
+            onClick={[Function]}
+          />
+          Facebook
+        </button>
+        <button
+          className="ui twitter button"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="twitter icon"
+            onClick={[Function]}
+          />
+          Twitter
+        </button>
+        <button
+          className="ui grey button"
+          data-testid="loginAnonymously"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="user icon"
+            onClick={[Function]}
+          />
+          Anonymously
+        </button>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="column"
+        style={
+          Object {
+            "maxWidth": 400,
+          }
+        }
+      >
+        <div
+          className="ui message"
+        >
+          New to us? Sign Up
+        </div>
       </div>
     </div>
   </div>
