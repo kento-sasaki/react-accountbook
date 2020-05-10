@@ -1,6 +1,6 @@
 import React from "react";
 import userEvent from "@testing-library/user-event";
-import { render, cleanup, fireEvent } from "../utils/test-utils";
+import { render, cleanup } from "../utils/test-utils";
 import { LoginForm } from "../components/loginForm";
 import "@testing-library/jest-dom";
 
@@ -12,7 +12,7 @@ describe("LoginForm", () => {
   it.todo("パスワードは必須");
   it.todo("");
   it("ログインしたらcurrentUserが更新される", async () => {
-    const { getByPlaceholderText, getByTestId } = render(<LoginForm />);
+    const { getByPlaceholderText } = render(<LoginForm />);
     await userEvent.type(getByPlaceholderText("E-mail address"), "username@example.com");
   });
 });

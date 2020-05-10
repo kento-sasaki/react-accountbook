@@ -43,6 +43,7 @@ module.exports = {
     "jest",
     "jsx-a11y",
     "prefer-arrow",
+    "emotion",
     "prettier",
     "react",
     "react-hooks",
@@ -65,6 +66,18 @@ module.exports = {
 
     // for Cypress
     "jest/expect-expect": ["off"],
+
+    // for Emotion
+    "emotion/jsx-import": "error",
+    "emotion/no-vanilla": "error",
+    "emotion/import-from-emotion": "error",
+    "emotion/styled-import": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        varsIgnorePattern: "[Rr]eact",
+      },
+    ],
 
     // @typescript-eslint
     "@typescript-eslint/explicit-function-return-type": "off",
