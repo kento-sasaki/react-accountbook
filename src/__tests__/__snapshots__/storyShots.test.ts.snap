@@ -91,7 +91,7 @@ exports[`Storyshots Link Second 1`] = `
 
 exports[`Storyshots LoginForm Login Form 1`] = `
 <div
-  className="ui basic segment css-1qi8e09-LoginForm"
+  className="ui basic segment css-159cdie-LoginFormComponent"
 >
   <div
     className="ui center aligned middle aligned grid"
@@ -109,7 +109,6 @@ exports[`Storyshots LoginForm Login Form 1`] = `
       >
         <h1
           className="ui blue center aligned header"
-          style={Object {}}
         >
           Log in
         </h1>
