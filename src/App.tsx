@@ -2,7 +2,7 @@ import React, { FC, useState } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { authentication } from "./firebase/index";
 import { Counter } from "./components/counter";
-import { LoginForm } from "./components/loginForm";
+import { LoginForm } from "./containers/loginForm";
 import { User } from "./interfaces";
 import { pages } from "./pages";
 

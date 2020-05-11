@@ -1,67 +1,41 @@
 /** @jsx jsx */
-import React, { FC, useState, FormEvent } from "react";
+import React, { FC, FormEvent } from "react";
 import { jsx, css } from "@emotion/core";
 import { Button, Form, Grid, Header, Message, Segment, Icon, Divider } from "semantic-ui-react";
-import { authentication } from "../firebase/index";
-import {
-  login,
-  signUp,
-  createUser,
-  loginWithSocialAccount,
-  loginAnonymously,
-} from "../firebase/auth";
-import { InputData } from "../interfaces";
-
-if (authentication().isSignInWithEmailLink(window.location.href)) {
-  createUser();
-}
 
 const wrapper = css`
   margin: 3em 0em !important;
 `;
 
-export const LoginForm: FC = () => {
-  const [email, setEmail] = useState<string | null>(null);
-  const [password, setPassword] = useState<string | null>(null);
+export interface InputData {
+  value: string | null;
+}
 
-  const handleClick = async () => {
-    if (email && password) {
-      const methods = await authentication().fetchSignInMethodsForEmail(email);
-      if (methods[0]) {
-        login(email, password);
-      } else {
-        signUp(email, password);
-      }
-    }
-  };
+export interface LoginFormProps {
+  handleClick?: () => Promise<void>;
+  handleChangeEmail?: (event: FormEvent, { value }: InputData) => void;
+  handleChangePassword?: (event: FormEvent, { value }: InputData) => void;
+  handleGoogleClick?: () => void;
+  handleFacebookClick?: () => void;
+  handleTwitterClick?: () => void;
+  loginAnonymously?: () => void;
+}
 
-  const handleChangeEmail = (event: FormEvent, { value }: InputData) => {
-    setEmail(value);
-  };
-
-  const handleChangePassword = (event: FormEvent, { value }: InputData) => {
-    setPassword(value);
-  };
-
-  const loginWithGoogle = () => {
-    loginWithSocialAccount(new authentication.GoogleAuthProvider());
-  };
-
-  const loginWithFacebook = () => {
-    loginWithSocialAccount(new authentication.FacebookAuthProvider());
-  };
-
-  const loginWithTwitter = () => {
-    loginWithSocialAccount(new authentication.TwitterAuthProvider());
-  };
-
+export const LoginFormComponent: FC<LoginFormProps> = ({
+  handleClick = () => {},
+  handleChangeEmail = () => {},
+  handleChangePassword = () => {},
+  handleGoogleClick = () => {},
+  handleFacebookClick = () => {},
+  handleTwitterClick = () => {},
+  loginAnonymously = () => {},
+}) => {
   return (
     <Segment basic css={wrapper}>
-      {/* <div css={wrapper}>hello</div> */}
       <Grid textAlign="center" verticalAlign="middle">
         <Grid.Row>
           <Grid.Column style={{ maxWidth: 500 }}>
-            <Header as="h1" color="blue" textAlign="center" content="Log in" style={{}} />
+            <Header as="h1" color="blue" textAlign="center" content="Log in" />
             <Form size="large">
               <Form.Field required>
                 <Form.Input
@@ -94,15 +68,15 @@ export const LoginForm: FC = () => {
         </Grid.Row>
         <Grid.Row>
           <Grid.Column style={{ maxWidth: 800 }}>
-            <Button color="google plus" onClick={loginWithGoogle}>
+            <Button color="google plus" onClick={handleGoogleClick}>
               <Icon name="google" />
               Google
             </Button>
-            <Button color="facebook" onClick={loginWithFacebook}>
+            <Button color="facebook" onClick={handleFacebookClick}>
               <Icon name="facebook" />
               Facebook
             </Button>
-            <Button color="twitter" onClick={loginWithTwitter}>
+            <Button color="twitter" onClick={handleTwitterClick}>
               <Icon name="twitter" />
               Twitter
             </Button>
