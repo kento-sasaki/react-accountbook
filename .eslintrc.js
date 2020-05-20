@@ -73,7 +73,7 @@ module.exports = {
     "emotion/import-from-emotion": "error",
     "emotion/styled-import": "error",
     "@typescript-eslint/no-unused-vars": [
-      "warning",
+      "off",
       {
         varsIgnorePattern: "[Rr]eact",
       },
