@@ -1,10 +1,15 @@
 import React, { FC } from "react";
 import { render, RenderOptions } from "@testing-library/react";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 import { store } from "../stores/index";
 
 const Wrappar: FC = ({ children }) => {
-  return <Provider store={store}>{children}</Provider>;
+  return (
+    <Provider store={store}>
+      <BrowserRouter>{children}</BrowserRouter>
+    </Provider>
+  );
 };
 
 const customRender = (ui: React.ReactElement, options?: Omit<RenderOptions, "queries">) => {

@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import React, { FC, useState, FormEvent } from "react";
+import { useHistory } from "react-router-dom";
 import { jsx } from "@emotion/core";
 import { authentication } from "../firebase/index";
 import {
@@ -19,13 +20,17 @@ export const LoginForm: FC = () => {
   const [email, setEmail] = useState<string | null>(null);
   const [password, setPassword] = useState<string | null>(null);
 
+  const history = useHistory();
+
   const handleClick = async () => {
     if (email && password) {
       const methods = await authentication().fetchSignInMethodsForEmail(email);
       if (methods[0]) {
-        login(email, password);
+        await login(email, password);
+        history.push("/");
       } else {
-        signUp(email, password);
+        await signUp(email, password);
+        history.push("/");
       }
     }
   };
@@ -38,16 +43,24 @@ export const LoginForm: FC = () => {
     setPassword(value);
   };
 
-  const handleGoogleClick = () => {
-    loginWithSocialAccount(new authentication.GoogleAuthProvider());
+  const handleGoogleClick = async () => {
+    await loginWithSocialAccount(new authentication.GoogleAuthProvider());
+    history.push("/");
   };
 
-  const handleFacebookClick = () => {
-    loginWithSocialAccount(new authentication.FacebookAuthProvider());
+  const handleFacebookClick = async () => {
+    await loginWithSocialAccount(new authentication.FacebookAuthProvider());
+    history.push("/");
   };
 
-  const handleTwitterClick = () => {
-    loginWithSocialAccount(new authentication.TwitterAuthProvider());
+  const handleTwitterClick = async () => {
+    await loginWithSocialAccount(new authentication.TwitterAuthProvider());
+    history.push("/");
+  };
+
+  const handleAnonymouslyClick = async () => {
+    await loginAnonymously();
+    history.push("/");
   };
 
   return (
@@ -58,7 +71,7 @@ export const LoginForm: FC = () => {
       handleGoogleClick={handleGoogleClick}
       handleFacebookClick={handleFacebookClick}
       handleTwitterClick={handleTwitterClick}
-      loginAnonymously={loginAnonymously}
+      handleAnonymouslyClick={handleAnonymouslyClick}
     />
   );
 };
