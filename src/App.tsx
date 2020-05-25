@@ -1,5 +1,6 @@
 import React, { FC, useState } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { authentication } from "./firebase/index";
 import { Home } from "./components/home";
 import { About } from "./components/about";
@@ -20,11 +21,46 @@ const App: FC = () => {
   return (
     <Layout currentUser={currentUser}>
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path={pages.counter.path} component={Counter} />
-        <Route path={pages.login.path} component={LoginForm} />
-        <Route path={pages.about.path} component={About} />
-        <Route path={pages.contact.path} component={Contact} />
+        <Route path="/" exact>
+          <div>
+            <Helmet>
+              <title>{pages.home.title}</title>
+            </Helmet>
+            <Home />
+          </div>
+        </Route>
+        <Route path={pages.counter.path}>
+          <div>
+            <Helmet>
+              <title>{pages.counter.title}</title>
+            </Helmet>
+            <Counter />
+          </div>
+        </Route>
+        <Route path={pages.login.path}>
+          <div>
+            <Helmet>
+              <title>{pages.login.title}</title>
+            </Helmet>
+            <LoginForm />
+          </div>
+        </Route>
+        <Route path={pages.about.path}>
+          <div>
+            <Helmet>
+              <title>{pages.about.title}</title>
+            </Helmet>
+            <About />
+          </div>
+        </Route>
+        <Route path={pages.contact.path}>
+          <div>
+            <Helmet>
+              <title>{pages.contact.title}</title>
+            </Helmet>
+            <Contact />
+          </div>
+        </Route>
         <Redirect to="/" />
       </Switch>
     </Layout>
