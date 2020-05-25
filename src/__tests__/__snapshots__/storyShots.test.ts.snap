@@ -2,71 +2,119 @@
 
 exports[`Storyshots Counter Counter 1`] = `
 <div
-  className="ui center aligned middle aligned grid"
-  style={
-    Object {
-      "height": "40vh",
-    }
-  }
+  className="css-qjijjo-Counter"
 >
   <div
-    className="row"
+    className="ui center aligned middle aligned grid"
   >
     <div
-      className="column"
+      className="row"
     >
-      <h1
-        className="ui center aligned header"
+      <div
+        className="column"
       >
-        Counter
-      </h1>
-      <h3
-        className="ui center aligned header"
-        data-testid="result"
-      >
-        Count: 
-        0
-      </h3>
+        <h1
+          className="ui center aligned header"
+        >
+          Counter
+        </h1>
+        <h3
+          className="ui center aligned header"
+          data-testid="result"
+        >
+          Count: 
+          0
+        </h3>
+      </div>
     </div>
-  </div>
-  <div
-    className="row"
-  >
-    <button
-      className="ui blue button"
-      data-testid="increment"
-      onClick={[Function]}
-    >
-       + 
-    </button>
-    <button
-      className="ui grey button"
-      data-testid="decrement"
-      onClick={[Function]}
-    >
-       - 
-    </button>
-    <button
-      className="ui red button"
-      data-testid="reset"
-      onClick={[Function]}
-    >
-      reset
-    </button>
-  </div>
-  <div
-    className="row"
-  >
     <div
-      className="column"
+      className="row"
     >
       <button
-        className="ui black button"
+        className="ui blue button"
+        data-testid="increment"
         onClick={[Function]}
       >
-        Log out
+         + 
+      </button>
+      <button
+        className="ui grey button"
+        data-testid="decrement"
+        onClick={[Function]}
+      >
+         - 
+      </button>
+      <button
+        className="ui red button"
+        data-testid="reset"
+        onClick={[Function]}
+      >
+        reset
       </button>
     </div>
+    <div
+      className="row"
+    >
+      <div
+        className="column"
+      >
+        <button
+          className="ui black button"
+          onClick={[Function]}
+        >
+          Log out
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Layout Layout 1`] = `
+<div
+  className="css-n4xx9i-Layout"
+>
+  <div
+    className="ui huge pointing secondary top fixed css-1jb67kq-AppBar menu"
+  >
+    <div
+      className="ui container"
+    >
+      <a
+        className="active item"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+      <a
+        className="item"
+        onClick={[Function]}
+      >
+        About
+      </a>
+      <a
+        className="item"
+        onClick={[Function]}
+      >
+        Contact
+      </a>
+      <a
+        className="right item"
+        onClick={[Function]}
+      >
+        Log in
+      </a>
+    </div>
+  </div>
+  <div
+    className="css-1w6ck5m-Footer"
+  >
+    <div
+      className="ui divider"
+    />
+    <h4>
+      Copyright © 2020 kozukata1993 All Rights Reserved.
+    </h4>
   </div>
 </div>
 `;
@@ -91,7 +139,7 @@ exports[`Storyshots Link Second 1`] = `
 
 exports[`Storyshots LoginForm Login Form 1`] = `
 <div
-  className="ui basic segment css-159cdie-LoginFormComponent"
+  className="ui basic segment css-xuuvgp-LoginFormComponent"
 >
   <div
     className="ui center aligned middle aligned grid"

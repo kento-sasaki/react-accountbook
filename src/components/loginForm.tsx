@@ -4,7 +4,7 @@ import { jsx, css } from "@emotion/core";
 import { Button, Form, Grid, Header, Message, Segment, Icon, Divider } from "semantic-ui-react";
 
 const wrapper = css`
-  margin: 3em 0em !important;
+  margin: 5rem 0em !important;
 `;
 
 export interface InputData {
@@ -18,7 +18,7 @@ export interface LoginFormProps {
   handleGoogleClick?: () => void;
   handleFacebookClick?: () => void;
   handleTwitterClick?: () => void;
-  loginAnonymously?: () => void;
+  handleAnonymouslyClick?: () => void;
 }
 
 export const LoginFormComponent: FC<LoginFormProps> = ({
@@ -28,7 +28,7 @@ export const LoginFormComponent: FC<LoginFormProps> = ({
   handleGoogleClick = () => {},
   handleFacebookClick = () => {},
   handleTwitterClick = () => {},
-  loginAnonymously = () => {},
+  handleAnonymouslyClick = () => {},
 }) => {
   return (
     <Segment basic css={wrapper}>
@@ -80,7 +80,7 @@ export const LoginFormComponent: FC<LoginFormProps> = ({
               <Icon name="twitter" />
               Twitter
             </Button>
-            <Button color="grey" onClick={loginAnonymously} data-testid="loginAnonymously">
+            <Button color="grey" onClick={handleAnonymouslyClick} data-testid="loginAnonymously">
               <Icon name="user" />
               Anonymously
             </Button>

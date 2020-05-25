@@ -2,9 +2,8 @@ describe("counter", () => {
   const baseUrl = Cypress.env("baseUrl");
 
   it("counter", () => {
-    cy.visit(baseUrl);
+    cy.visit(`${baseUrl}/counter`);
 
-    cy.get("[data-testid=loginAnonymously]").click();
     cy.get("[data-testid=result]").should("have.text", "Count: 0");
 
     cy.get("[data-testid=increment]").click();

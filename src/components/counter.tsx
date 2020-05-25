@@ -1,4 +1,6 @@
+/** @jsx jsx */
 import React, { FC, useEffect } from "react";
+import { jsx, css } from "@emotion/core";
 import { Header, Button, Grid } from "semantic-ui-react";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../firebase/auth";
@@ -27,26 +29,32 @@ export const Counter: FC = () => {
     dispatch(reset());
   };
 
+  const wrapper = css`
+    margin-top: 5rem;
+  `;
+
   return (
-    <Grid textAlign="center" verticalAlign="middle" style={{ height: "40vh" }}>
-      <Grid.Row>
-        <Grid.Column>
-          <Header as="h1" textAlign="center" content="Counter" />
-          <Header as="h3" textAlign="center" data-testid="result">
-            Count: {count}
-          </Header>
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row>
-        <Button color="blue" content=" + " onClick={clickIncrement} data-testid="increment" />
-        <Button color="grey" content=" - " onClick={clickDecrement} data-testid="decrement" />
-        <Button color="red" content="reset" onClick={clickReset} data-testid="reset" />
-      </Grid.Row>
-      <Grid.Row>
-        <Grid.Column>
-          <Button color="black" content="Log out" onClick={handleClick} />
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
+    <div css={wrapper}>
+      <Grid textAlign="center" verticalAlign="middle">
+        <Grid.Row>
+          <Grid.Column>
+            <Header as="h1" textAlign="center" content="Counter" />
+            <Header as="h3" textAlign="center" data-testid="result">
+              Count: {count}
+            </Header>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Button color="blue" content=" + " onClick={clickIncrement} data-testid="increment" />
+          <Button color="grey" content=" - " onClick={clickDecrement} data-testid="decrement" />
+          <Button color="red" content="reset" onClick={clickReset} data-testid="reset" />
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column>
+            <Button color="black" content="Log out" onClick={handleClick} />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </div>
   );
 };
