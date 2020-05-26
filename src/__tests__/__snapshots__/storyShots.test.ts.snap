@@ -1,71 +1,221 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Counter Counter 1`] = `
+exports[`Storyshots AddExpenseForm Add Expense 1`] = `
 <div
-  className="css-qjijjo-Counter"
+  className="css-qeuucq-AddExpenseFormComponent"
 >
   <div
-    className="ui center aligned middle aligned grid"
+    className="ui action left icon input"
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Expense"
+      type="text"
+      value=""
+    />
+    <i
+      aria-hidden="true"
+      className="yen icon"
+      onClick={[Function]}
+    />
+    <div>
+      <div
+        aria-expanded={false}
+        className="ui compact selection dropdown css-15xmqmr-AddExpenseFormComponent"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        role="listbox"
+        tabIndex={0}
+      >
+        <div
+          aria-atomic={true}
+          aria-live="polite"
+          className="default text"
+          role="alert"
+        >
+          Date
+        </div>
+        <i
+          aria-hidden="true"
+          className="dropdown icon"
+          onClick={[Function]}
+        />
+        <div
+          className="menu transition"
+        >
+          <div
+            aria-checked={false}
+            aria-selected={true}
+            className="selected item"
+            onClick={[Function]}
+            role="option"
+            style={
+              Object {
+                "pointerEvents": "all",
+              }
+            }
+          >
+            <span
+              className="text"
+            >
+              Date
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="ui negative right attached disabled button"
+        onClick={[Function]}
+        role="button"
+        tabIndex={-1}
+      >
+        Submit
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots AddIncomeForm Add Income 1`] = `
+<div
+  className="css-o2h5i5-AddIncomeFormComponent"
+>
+  <div
+    className="ui action left icon input"
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Income"
+      type="text"
+      value=""
+    />
+    <i
+      aria-hidden="true"
+      className="yen icon"
+      onClick={[Function]}
+    />
+    <div>
+      <div
+        aria-expanded={false}
+        className="ui compact selection dropdown css-1aj0r2-AddIncomeFormComponent"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        role="listbox"
+        tabIndex={0}
+      >
+        <div
+          aria-atomic={true}
+          aria-live="polite"
+          className="default text"
+          role="alert"
+        >
+          Date
+        </div>
+        <i
+          aria-hidden="true"
+          className="dropdown icon"
+          onClick={[Function]}
+        />
+        <div
+          className="menu transition"
+        >
+          <div
+            aria-checked={false}
+            aria-selected={true}
+            className="selected item"
+            onClick={[Function]}
+            role="option"
+            style={
+              Object {
+                "pointerEvents": "all",
+              }
+            }
+          >
+            <span
+              className="text"
+            >
+              Date
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="ui positive right attached disabled button"
+        onClick={[Function]}
+        role="button"
+        tabIndex={-1}
+      >
+        Submit
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Counter Counter 1`] = `
+<div
+  className="ui center aligned middle aligned grid"
+>
+  <div
+    className="row"
   >
     <div
-      className="row"
+      className="column"
     >
-      <div
-        className="column"
+      <h1
+        className="ui center aligned header"
       >
-        <h1
-          className="ui center aligned header"
-        >
-          Counter
-        </h1>
-        <h3
-          className="ui center aligned header"
-          data-testid="result"
-        >
-          Count: 
-          0
-        </h3>
-      </div>
+        Counter
+      </h1>
+      <h3
+        className="ui center aligned header"
+        data-testid="result"
+      >
+        Count: 
+        0
+      </h3>
     </div>
-    <div
-      className="row"
+  </div>
+  <div
+    className="row"
+  >
+    <button
+      className="ui blue button"
+      data-testid="increment"
+      onClick={[Function]}
     >
-      <button
-        className="ui blue button"
-        data-testid="increment"
-        onClick={[Function]}
-      >
-         + 
-      </button>
-      <button
-        className="ui grey button"
-        data-testid="decrement"
-        onClick={[Function]}
-      >
-         - 
-      </button>
-      <button
-        className="ui red button"
-        data-testid="reset"
-        onClick={[Function]}
-      >
-        reset
-      </button>
-    </div>
-    <div
-      className="row"
+       + 
+    </button>
+    <button
+      className="ui grey button"
+      data-testid="decrement"
+      onClick={[Function]}
     >
-      <div
-        className="column"
-      >
-        <button
-          className="ui black button"
-          onClick={[Function]}
-        >
-          Log out
-        </button>
-      </div>
-    </div>
+       - 
+    </button>
+    <button
+      className="ui red button"
+      data-testid="reset"
+      onClick={[Function]}
+    >
+      reset
+    </button>
+  </div>
+  <div
+    className="row"
+  >
+    <button
+      className="ui teal button"
+      onClick={[Function]}
+    >
+      getExpense
+    </button>
   </div>
 </div>
 `;
@@ -107,6 +257,9 @@ exports[`Storyshots Layout Layout 1`] = `
     </div>
   </div>
   <div
+    className="css-1qk384q-Layout"
+  />
+  <div
     className="css-1w6ck5m-Footer"
   >
     <div
@@ -139,7 +292,7 @@ exports[`Storyshots Link Second 1`] = `
 
 exports[`Storyshots LoginForm Login Form 1`] = `
 <div
-  className="ui basic segment css-xuuvgp-LoginFormComponent"
+  className="ui basic segment"
 >
   <div
     className="ui center aligned middle aligned grid"

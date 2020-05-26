@@ -1,11 +1,7 @@
 /** @jsx jsx */
 import React, { FC, FormEvent } from "react";
-import { jsx, css } from "@emotion/core";
+import { jsx } from "@emotion/core";
 import { Button, Form, Grid, Header, Message, Segment, Icon, Divider } from "semantic-ui-react";
-
-const wrapper = css`
-  margin: 5rem 0em !important;
-`;
 
 export interface InputData {
   value: string | null;
@@ -31,7 +27,7 @@ export const LoginFormComponent: FC<LoginFormProps> = ({
   handleAnonymouslyClick = () => {},
 }) => {
   return (
-    <Segment basic css={wrapper}>
+    <Segment basic>
       <Grid textAlign="center" verticalAlign="middle">
         <Grid.Row>
           <Grid.Column style={{ maxWidth: 500 }}>
