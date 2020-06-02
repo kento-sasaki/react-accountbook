@@ -1,4 +1,4 @@
-import { firestore, auth } from "./index";
+import { firestore, auth } from './index';
 
 interface Expense {
   createdAt: Date;
@@ -8,9 +8,9 @@ interface Expense {
 export const addIncome = async (amount: number, createdAt: Date) => {
   const { currentUser } = auth();
   await firestore()
-    .collection("users")
+    .collection('users')
     .doc(`${currentUser?.uid}`)
-    .collection("income")
+    .collection('income')
     .add({
       createdAt: firestore.Timestamp.fromDate(createdAt),
       amount,
@@ -20,9 +20,9 @@ export const addIncome = async (amount: number, createdAt: Date) => {
 export const addExpense = async (amount: number, createdAt: Date) => {
   const { currentUser } = auth();
   await firestore()
-    .collection("users")
+    .collection('users')
     .doc(`${currentUser?.uid}`)
-    .collection("expense")
+    .collection('expense')
     .add({
       createdAt: firestore.Timestamp.fromDate(createdAt),
       amount,
@@ -34,9 +34,9 @@ export const getExpense = async () => {
   const expenses: Expense[] = [];
 
   const querySnapshot = await firestore()
-    .collection("users")
+    .collection('users')
     .doc(`${currentUser?.uid}`)
-    .collection("expense")
+    .collection('expense')
     .get();
 
   querySnapshot.forEach((doc) => {
