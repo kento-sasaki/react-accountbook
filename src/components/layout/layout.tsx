@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import React, { FC } from "react";
-import { jsx, css } from "@emotion/core";
-import { AppBar } from "./appBar";
-import { Footer } from "./footer";
-import { User } from "../../interfaces";
+import React, { FC } from 'react';
+import { jsx, css } from '@emotion/core';
+import { AppBar } from './appBar';
+import { Footer } from './footer';
+import { User } from '../../interfaces';
 
 const wrapper = css`
   margin-top: 5rem;

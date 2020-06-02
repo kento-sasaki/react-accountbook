@@ -1,24 +1,20 @@
 export const pages = {
   home: {
-    path: "/",
-    title: "Home",
-  },
-  counter: {
-    path: "/counter",
-    title: "Counter",
+    path: '/',
+    title: 'Home',
   },
   login: {
-    path: "/login",
-    title: "Login",
+    path: '/login',
+    title: 'Login',
   },
   about: {
-    path: "/about",
-    title: "About",
+    path: '/about',
+    title: 'About',
   },
   contact: {
-    path: "/contact",
-    title: "Contact",
+    path: '/contact',
+    title: 'Contact',
   },
 };
 
-export type Page = "home" | "counter" | "login" | "about";
+export type Page = 'home' | 'login' | 'about';

@@ -10,7 +10,7 @@ export const getConfigs = () => {
 
   return {
     actionCodeSettings: {
-      url: "http://localhost:3000/",
+      url: 'http://localhost:3000/',
       handleCodeInApp: true,
     },
   };
