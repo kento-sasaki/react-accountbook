@@ -1,18 +1,18 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import { Provider } from 'react-redux';
-import { LoginFormComponent } from './loginForm';
+import { AddIncomeFormComponent } from './addIncomeForm';
 import { store } from '../stores/index';
 
 export default {
-  component: LoginFormComponent,
-  title: 'LoginForm',
+  component: AddIncomeFormComponent,
+  title: 'AddIncomeForm',
 };
 
-export const loginForm = () => {
+export const addIncome = () => {
   return (
     <Provider store={store}>
-      <LoginFormComponent />
+      <AddIncomeFormComponent />
     </Provider>
   );
 };

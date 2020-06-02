@@ -1,4 +1,4 @@
-import { authentication } from "./index";
+import { auth } from "./index";
 import { Provider } from "../interfaces";
 import { getProviderForProviderId } from "../utils/utils";
 import { getConfigs } from "../configs";
@@ -7,10 +7,11 @@ const promptUserForPassword = () => "password";
 const { actionCodeSettings } = getConfigs();
 
 export const signUp = async (email: string, password: string) => {
-  await authentication()
+  await auth()
     .sendSignInLinkToEmail(email, actionCodeSettings)
     .catch((error) => {
       // Some error occurred, you can inspect the code: error.code
+      console.log(error);
     });
   window.localStorage.setItem("emailForSignIn", email);
   window.localStorage.setItem("passwordForSignIn", password);
@@ -21,7 +22,7 @@ export const createUser = async () => {
   const password = window.localStorage.getItem("passwordForSignIn");
 
   if (email && password) {
-    authentication()
+    auth()
       .createUserWithEmailAndPassword(email, password)
       .then(({ user }) => {
         window.localStorage.removeItem("emailForSignIn");
@@ -34,40 +35,42 @@ export const createUser = async () => {
       })
       .catch((error) => {
         // Handle errors here.
+        console.log(error);
       });
   }
 };
 
 export const login = async (email: string, password: string) => {
-  await authentication()
+  await auth()
     .signInWithEmailAndPassword(email, password)
     .catch(({ code: errorCode, message: errorMessage }) => {
       // Handle Errors here.
       // ...
+      console.log(errorCode, errorMessage);
     });
 };
 
 export const logout = async () => {
-  await authentication().signOut();
+  await auth().signOut();
 };
 
 export const loginWithSocialAccount = async (provider: Provider) => {
   // provider.addScope("email");
 
-  await authentication()
+  await auth()
     .signInWithPopup(provider)
     .catch((error) => {
       if (error.code === "auth/account-exists-with-different-credential") {
         const pendingCred = error.credential;
         const { email } = error;
 
-        authentication()
+        auth()
           .fetchSignInMethodsForEmail(email)
           .then((methods) => {
             if (methods[0] === "password") {
               // TODO: implement promptUserForPassword.
               const password = promptUserForPassword();
-              authentication()
+              auth()
                 .signInWithEmailAndPassword(email, password)
                 .then(({ user }) => {
                   if (user) {
@@ -82,7 +85,7 @@ export const loginWithSocialAccount = async (provider: Provider) => {
             }
             const anotherProvider = getProviderForProviderId(methods[0]);
             if (anotherProvider) {
-              authentication()
+              auth()
                 .signInWithPopup(anotherProvider)
                 .then(({ user }) => {
                   if (user) {
@@ -96,5 +99,5 @@ export const loginWithSocialAccount = async (provider: Provider) => {
 };
 
 export const loginAnonymously = () => {
-  authentication().signInAnonymously();
+  auth().signInAnonymously();
 };

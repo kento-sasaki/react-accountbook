@@ -1,0 +1,11 @@
+users:
+  documentId: userId,
+  income:
+    documentId: auto
+    createdAt: Date
+    amount: number
+
+  expense:
+    documentId: auto
+    cretaedAt: Date
+    amount: number

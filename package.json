@@ -17,6 +17,7 @@
     "@types/react-router-dom": "^5.1.5",
     "@types/storybook__addon-links": "^5.2.1",
     "@types/storybook__react": "^5.2.1",
+    "dayjs": "^1.8.28",
     "firebase": "^7.14.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

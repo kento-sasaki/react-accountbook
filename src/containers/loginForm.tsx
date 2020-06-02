@@ -1,18 +1,18 @@
 /** @jsx jsx */
-import React, { FC, useState, FormEvent } from "react";
-import { useHistory } from "react-router-dom";
-import { jsx } from "@emotion/core";
-import { authentication } from "../firebase/index";
+import React, { FC, useState, FormEvent } from 'react';
+import { useHistory } from 'react-router-dom';
+import { jsx } from '@emotion/core';
+import { auth } from '../firebase/index';
 import {
   login,
   signUp,
   createUser,
   loginWithSocialAccount,
   loginAnonymously,
-} from "../firebase/auth";
-import { LoginFormComponent, InputData } from "../components/loginForm";
+} from '../firebase/auth';
+import { LoginFormComponent, InputData } from '../components/loginForm';
 
-if (authentication().isSignInWithEmailLink(window.location.href)) {
+if (auth().isSignInWithEmailLink(window.location.href)) {
   createUser();
 }
 
@@ -24,13 +24,13 @@ export const LoginForm: FC = () => {
 
   const handleClick = async () => {
     if (email && password) {
-      const methods = await authentication().fetchSignInMethodsForEmail(email);
+      const methods = await auth().fetchSignInMethodsForEmail(email);
       if (methods[0]) {
         await login(email, password);
-        history.push("/");
+        history.push('/');
       } else {
         await signUp(email, password);
-        history.push("/");
+        history.push('/');
       }
     }
   };
@@ -44,23 +44,23 @@ export const LoginForm: FC = () => {
   };
 
   const handleGoogleClick = async () => {
-    await loginWithSocialAccount(new authentication.GoogleAuthProvider());
-    history.push("/");
+    await loginWithSocialAccount(new auth.GoogleAuthProvider());
+    history.push('/');
   };
 
   const handleFacebookClick = async () => {
-    await loginWithSocialAccount(new authentication.FacebookAuthProvider());
-    history.push("/");
+    await loginWithSocialAccount(new auth.FacebookAuthProvider());
+    history.push('/');
   };
 
   const handleTwitterClick = async () => {
-    await loginWithSocialAccount(new authentication.TwitterAuthProvider());
-    history.push("/");
+    await loginWithSocialAccount(new auth.TwitterAuthProvider());
+    history.push('/');
   };
 
   const handleAnonymouslyClick = async () => {
     await loginAnonymously();
-    history.push("/");
+    history.push('/');
   };
 
   return (

@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { authentication } from "./firebase/index";
+import { auth } from "./firebase/index";
 import { Home } from "./components/home";
 import { About } from "./components/about";
 import { Contact } from "./components/contact";
@@ -14,7 +14,7 @@ import { Layout } from "./components/layout/layout";
 const App: FC = () => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
 
-  authentication().onAuthStateChanged((user) => {
+  auth().onAuthStateChanged((user) => {
     setCurrentUser(user);
   });
 
