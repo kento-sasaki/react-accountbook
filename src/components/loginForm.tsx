@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import React, { FC, FormEvent } from "react";
-import { jsx } from "@emotion/core";
-import { Button, Form, Grid, Header, Message, Segment, Icon, Divider } from "semantic-ui-react";
+import React, { FC, FormEvent } from 'react';
+import { jsx } from '@emotion/core';
+import { Button, Form, Grid, Header, Message, Segment, Icon, Divider } from 'semantic-ui-react';
 
 export interface InputData {
   value: string | null;

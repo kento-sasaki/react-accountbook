@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import React, { FC } from "react";
-import { jsx } from "@emotion/core";
-import { Container, Button, Grid } from "semantic-ui-react";
-import { AddIncomeForm } from "../containers/addIncomeForm";
-import { AddExpenseForm } from "../containers/addExpenseForm";
-import { getExpense } from "../firebase/firestore";
+import React, { FC } from 'react';
+import { jsx } from '@emotion/core';
+import { Container, Button, Grid } from 'semantic-ui-react';
+import { AddIncomeForm } from '../containers/addIncomeForm';
+import { AddExpenseForm } from '../containers/addExpenseForm';
+import { getExpense } from '../firebase/firestore';
 
 export const Home: FC = () => {
   const handleClick = async () => {

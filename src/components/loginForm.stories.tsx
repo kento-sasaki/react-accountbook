@@ -1,12 +1,12 @@
-import React from "react";
-import "semantic-ui-css/semantic.min.css";
-import { Provider } from "react-redux";
-import { LoginFormComponent } from "./loginForm";
-import { store } from "../stores/index";
+import React from 'react';
+import 'semantic-ui-css/semantic.min.css';
+import { Provider } from 'react-redux';
+import { LoginFormComponent } from './loginForm';
+import { store } from '../stores/index';
 
 export default {
   component: LoginFormComponent,
-  title: "LoginForm",
+  title: 'LoginForm',
 };
 
 export const loginForm = () => {

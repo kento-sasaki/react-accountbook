@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import React, { FC, FormEvent } from "react";
-import { jsx, css } from "@emotion/core";
-import { Input, Button, Dropdown, DropdownProps, InputOnChangeData } from "semantic-ui-react";
+import React, { FC, FormEvent } from 'react';
+import { jsx, css } from '@emotion/core';
+import { Input, Button, Dropdown, DropdownProps, InputOnChangeData } from 'semantic-ui-react';
 
 const margin = css`
   margin: 0.5rem;
@@ -19,8 +19,8 @@ export const AddExpenseFormComponent: FC<AddExpenseFormProps> = ({
   handleClick = () => {},
   handleChangeAmount = () => {},
   handleChangeDate = () => {},
-  amount = "",
-  dateOptions = [{ text: "Date", value: 0 }],
+  amount = '',
+  dateOptions = [{ text: 'Date', value: 0 }],
 }) => {
   return (
     <div css={margin}>

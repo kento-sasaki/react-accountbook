@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import React, { FC, useEffect } from "react";
-import { jsx } from "@emotion/core";
-import { Header, Button, Grid } from "semantic-ui-react";
-import { useSelector, useDispatch } from "react-redux";
-import { getExpense } from "../firebase/firestore";
-import { increment, decrement, reset } from "../stores/counter";
-import { Store } from "../interfaces";
+import React, { FC, useEffect } from 'react';
+import { jsx } from '@emotion/core';
+import { Header, Button, Grid } from 'semantic-ui-react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getExpense } from '../firebase/firestore';
+import { increment, decrement, reset } from '../stores/counter';
+import { Store } from '../interfaces';
 
 export const Counter: FC = () => {
   const dispatch = useDispatch();
