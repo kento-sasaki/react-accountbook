@@ -8,7 +8,7 @@ import { addIncome } from '../firebase/firestore';
 
 export const AddIncomeForm: FC = () => {
   const [amount, setAmount] = useState<string>('');
-  const [createdAt, setCreatedAt] = useState<Date>(new Date());
+  const [date, setDate] = useState<Date>(new Date());
 
   const handleChangeAmount = (e: FormEvent, { value }: InputOnChangeData) => {
     setAmount(value);
@@ -16,16 +16,16 @@ export const AddIncomeForm: FC = () => {
 
   const handleChangeDate = (e: FormEvent, { value }: DropdownProps) => {
     if (typeof value === 'number') {
-      setCreatedAt(dayjs().subtract(value, 'day').toDate());
+      setDate(dayjs().subtract(value, 'day').toDate());
     }
   };
 
   const handleClick = () => {
-    addIncome(Number(amount), createdAt);
+    addIncome(Number(amount), date);
     setAmount('');
   };
 
-  const dateOptions = [0, 1, 2, 3, 4, 5, 6, 7].map((n) => {
+  const dateOptions = [...Array(30).keys()].map((n) => {
     return {
       text: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,
       value: n,

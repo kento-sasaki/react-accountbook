@@ -1,4 +1,4 @@
-import * as firebase from "firebase/app";
+import * as firebase from 'firebase/app';
 
 export type User = firebase.User;
 
@@ -10,5 +10,8 @@ export type Provider =
 export interface Store {
   counter: {
     count: number;
+  };
+  expense: {
+    expense: { date: Date; formatedDate: string; amount: number }[];
   };
 }

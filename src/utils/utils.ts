@@ -1,14 +1,14 @@
-import { auth } from "../firebase/index";
+import { auth } from '../firebase/index';
 
 export const getProviderForProviderId = (method: string) => {
   switch (method) {
-    case "google.com":
+    case 'google.com':
       return new auth.GoogleAuthProvider();
 
-    case "facebook.com":
+    case 'facebook.com':
       return new auth.FacebookAuthProvider();
 
-    case "twitter.com":
+    case 'twitter.com':
       return new auth.TwitterAuthProvider();
 
     default:

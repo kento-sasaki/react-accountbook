@@ -158,68 +158,6 @@ exports[`Storyshots AddIncomeForm Add Income 1`] = `
 </div>
 `;
 
-exports[`Storyshots Counter Counter 1`] = `
-<div
-  className="ui center aligned middle aligned grid"
->
-  <div
-    className="row"
-  >
-    <div
-      className="column"
-    >
-      <h1
-        className="ui center aligned header"
-      >
-        Counter
-      </h1>
-      <h3
-        className="ui center aligned header"
-        data-testid="result"
-      >
-        Count: 
-        0
-      </h3>
-    </div>
-  </div>
-  <div
-    className="row"
-  >
-    <button
-      className="ui blue button"
-      data-testid="increment"
-      onClick={[Function]}
-    >
-       + 
-    </button>
-    <button
-      className="ui grey button"
-      data-testid="decrement"
-      onClick={[Function]}
-    >
-       - 
-    </button>
-    <button
-      className="ui red button"
-      data-testid="reset"
-      onClick={[Function]}
-    >
-      reset
-    </button>
-  </div>
-  <div
-    className="row"
-  >
-    <button
-      className="ui teal button"
-      onClick={[Function]}
-    >
-      getExpense
-    </button>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Layout Layout 1`] = `
 <div
   className="css-n4xx9i-Layout"
