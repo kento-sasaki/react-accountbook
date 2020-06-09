@@ -36,6 +36,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "emu:firestore": "firebase emulators:start --only firestore",
     "eject": "react-scripts eject",
     "lint": "yarn eslint --fix ./src/**/*.tsx",
     "storybook": "start-storybook -p 9009 -s public",
@@ -67,6 +68,7 @@
     ]
   },
   "devDependencies": {
+    "@firebase/testing": "^0.20.0",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-console": "^1.2.1",
     "@storybook/addon-info": "^5.3.18",
@@ -81,6 +83,7 @@
     "@types/storybook__addon-actions": "^5.2.1",
     "@types/storybook__addon-info": "^5.2.1",
     "@types/storybook__addon-knobs": "^5.2.1",
+    "@types/uuid": "^8.0.0",
     "@typescript-eslint/eslint-plugin": "^2.29.0",
     "@typescript-eslint/parser": "^2.29.0",
     "cypress": "^4.5.0",
@@ -92,12 +95,14 @@
     "eslint-plugin-prefer-arrow": "^1.2.0",
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "^7.19.0",
+    "fs": "^0.0.1-security",
     "husky": "^4.2.5",
     "jest": "24.9.0",
     "jest-dom": "^4.0.0",
     "lint-staged": "^10.1.7",
     "prettier": "^2.0.5",
     "react-docgen-typescript-loader": "^3.7.2",
-    "react-test-renderer": "^16.13.1"
+    "react-test-renderer": "^16.13.1",
+    "uuid": "^8.1.0"
   }
 }

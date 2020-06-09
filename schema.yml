@@ -3,9 +3,11 @@ users:
   income:
     documentId: auto
     createdAt: Date
+    date: Date
     amount: number
 
   expense:
     documentId: auto
     cretaedAt: Date
+    date: Date
     amount: number
