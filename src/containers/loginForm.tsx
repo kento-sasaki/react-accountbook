@@ -10,7 +10,7 @@ import {
   loginWithSocialAccount,
   loginAnonymously,
 } from '../firebase/auth';
-import { LoginFormComponent, InputData } from '../components/loginForm';
+import { LoginFormComponent, InputData } from '../components/loginForm/loginForm';
 
 if (auth().isSignInWithEmailLink(window.location.href)) {
   createUser();

@@ -3,7 +3,7 @@ import React, { FC, useState, FormEvent } from 'react';
 import { jsx } from '@emotion/core';
 import dayjs from 'dayjs';
 import { InputOnChangeData, DropdownProps } from 'semantic-ui-react';
-import { AddIncomeFormComponent } from '../components/addIncomeForm';
+import { AddIncomeFormComponent } from '../components/incomeAndExpense/addIncomeForm';
 import { addIncome } from '../firebase/firestore';
 
 export const AddIncomeForm: FC = () => {
