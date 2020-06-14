@@ -28,4 +28,10 @@
 #### Firestore のルールを定義する
 
 - [x] firestore.rules を設定
-- [ ] firestore.rules をテスト
+- [x] firestore.rules をテスト
+
+#### 収支の一覧を表示
+
+- [x] テーブルを作る
+- [x] テーブルを並べる
+- [x] テーブルに収支を入れる

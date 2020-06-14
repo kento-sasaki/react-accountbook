@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { jsx } from '@emotion/core';
 import dayjs from 'dayjs';
 import { InputOnChangeData, DropdownProps } from 'semantic-ui-react';
-import { AddExpenseFormComponent } from '../components/addExpenseForm';
+import { AddExpenseFormComponent } from '../components/incomeAndExpense/addExpenseForm';
 import { addExpense } from '../firebase/firestore';
 import { fetchExpense } from '../stores/expense';
 

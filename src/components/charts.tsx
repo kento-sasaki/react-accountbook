@@ -18,8 +18,8 @@ export const ExpenseChart: FC<ExpenseChartProps> = ({ expense }) => {
 
   return (
     <LineChart
-      width={900}
-      height={400}
+      width={1100}
+      height={300}
       data={data}
       margin={{ top: 20, right: 20, bottom: 5, left: 0 }}
     >
