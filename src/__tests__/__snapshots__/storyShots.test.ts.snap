@@ -15,7 +15,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
   className="emotion-1"
 >
   <div
-    className="ui action left icon input"
+    className="ui action input"
   >
     <input
       onChange={[Function]}
@@ -23,67 +23,60 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
       type="text"
       value=""
     />
-    <i
-      aria-hidden="true"
-      className="yen icon"
+    <div
+      aria-expanded={false}
+      className="ui compact selection dropdown emotion-0"
+      onBlur={[Function]}
+      onChange={[Function]}
       onClick={[Function]}
-    />
-    <div>
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+      role="listbox"
+      tabIndex={0}
+    >
       <div
-        aria-expanded={false}
-        className="ui compact selection dropdown emotion-0"
-        onBlur={[Function]}
-        onChange={[Function]}
+        aria-atomic={true}
+        aria-live="polite"
+        className="default text"
+        role="alert"
+      >
+        Date
+      </div>
+      <i
+        aria-hidden="true"
+        className="dropdown icon"
         onClick={[Function]}
-        onFocus={[Function]}
-        onMouseDown={[Function]}
-        role="listbox"
-        tabIndex={0}
+      />
+      <div
+        className="menu transition"
       >
         <div
-          aria-atomic={true}
-          aria-live="polite"
-          className="default text"
-          role="alert"
-        >
-          Date
-        </div>
-        <i
-          aria-hidden="true"
-          className="dropdown icon"
+          aria-checked={false}
+          aria-selected={true}
+          className="selected item"
           onClick={[Function]}
-        />
-        <div
-          className="menu transition"
-        >
-          <div
-            aria-checked={false}
-            aria-selected={true}
-            className="selected item"
-            onClick={[Function]}
-            role="option"
-            style={
-              Object {
-                "pointerEvents": "all",
-              }
+          role="option"
+          style={
+            Object {
+              "pointerEvents": "all",
             }
+          }
+        >
+          <span
+            className="text"
           >
-            <span
-              className="text"
-            >
-              Date
-            </span>
-          </div>
+            Date
+          </span>
         </div>
       </div>
-      <div
-        className="ui negative right attached disabled button"
-        onClick={[Function]}
-        role="button"
-        tabIndex={-1}
-      >
-        Submit
-      </div>
+    </div>
+    <div
+      className="ui negative right attached disabled button"
+      onClick={[Function]}
+      role="button"
+      tabIndex={-1}
+    >
+      Submit
     </div>
   </div>
 </div>
@@ -104,7 +97,7 @@ exports[`Storyshots AddIncomeForm Add Income 1`] = `
   className="emotion-1"
 >
   <div
-    className="ui action left icon input"
+    className="ui action input"
   >
     <input
       onChange={[Function]}
@@ -112,96 +105,91 @@ exports[`Storyshots AddIncomeForm Add Income 1`] = `
       type="text"
       value=""
     />
-    <i
-      aria-hidden="true"
-      className="yen icon"
+    <div
+      aria-expanded={false}
+      className="ui compact selection dropdown emotion-0"
+      onBlur={[Function]}
+      onChange={[Function]}
       onClick={[Function]}
-    />
-    <div>
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+      role="listbox"
+      tabIndex={0}
+    >
       <div
-        aria-expanded={false}
-        className="ui compact selection dropdown emotion-0"
-        onBlur={[Function]}
-        onChange={[Function]}
+        aria-atomic={true}
+        aria-live="polite"
+        className="default text"
+        role="alert"
+      >
+        Date
+      </div>
+      <i
+        aria-hidden="true"
+        className="dropdown icon"
         onClick={[Function]}
-        onFocus={[Function]}
-        onMouseDown={[Function]}
-        role="listbox"
-        tabIndex={0}
+      />
+      <div
+        className="menu transition"
       >
         <div
-          aria-atomic={true}
-          aria-live="polite"
-          className="default text"
-          role="alert"
-        >
-          Date
-        </div>
-        <i
-          aria-hidden="true"
-          className="dropdown icon"
+          aria-checked={false}
+          aria-selected={true}
+          className="selected item"
           onClick={[Function]}
-        />
-        <div
-          className="menu transition"
-        >
-          <div
-            aria-checked={false}
-            aria-selected={true}
-            className="selected item"
-            onClick={[Function]}
-            role="option"
-            style={
-              Object {
-                "pointerEvents": "all",
-              }
+          role="option"
+          style={
+            Object {
+              "pointerEvents": "all",
             }
+          }
+        >
+          <span
+            className="text"
           >
-            <span
-              className="text"
-            >
-              Date
-            </span>
-          </div>
+            Date
+          </span>
         </div>
       </div>
-      <div
-        className="ui positive right attached disabled button"
-        onClick={[Function]}
-        role="button"
-        tabIndex={-1}
-      >
-        Submit
-      </div>
+    </div>
+    <div
+      className="ui positive right attached disabled button"
+      onClick={[Function]}
+      role="button"
+      tabIndex={-1}
+    >
+      Submit
     </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots ExpenseCharts Expense Chart 1`] = `
-<div
-  className="recharts-responsive-container"
-  style={
-    Object {
-      "height": 400,
-      "maxHeight": undefined,
-      "minHeight": undefined,
-      "minWidth": undefined,
-      "width": "100%",
-    }
-  }
->
+<div>
   <div
+    className="recharts-responsive-container"
     style={
       Object {
-        "display": "none",
-        "height": 0,
-        "position": "absolute",
-        "visibility": "hidden",
-        "width": 0,
+        "height": 400,
+        "maxHeight": undefined,
+        "minHeight": undefined,
+        "minWidth": undefined,
+        "width": "100%",
       }
     }
-  />
+  >
+    <div
+      style={
+        Object {
+          "display": "none",
+          "height": 0,
+          "position": "absolute",
+          "visibility": "hidden",
+          "width": 0,
+        }
+      }
+    />
+  </div>
 </div>
 `;
 
