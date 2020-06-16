@@ -1,8 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots AddExpenseForm Add Expense 1`] = `
+.emotion-1 {
+  margin: 0.5rem;
+}
+
+.emotion-0 {
+  border-radius: 0 !important;
+  border-right-color: transparent !important;
+  min-width: 9rem !important;
+}
+
 <div
-  className="css-qeuucq-AddExpenseFormComponent"
+  className="emotion-1"
 >
   <div
     className="ui action left icon input"
@@ -21,7 +31,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
     <div>
       <div
         aria-expanded={false}
-        className="ui compact selection dropdown css-15xmqmr-AddExpenseFormComponent"
+        className="ui compact selection dropdown emotion-0"
         onBlur={[Function]}
         onChange={[Function]}
         onClick={[Function]}
@@ -80,8 +90,18 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
 `;
 
 exports[`Storyshots AddIncomeForm Add Income 1`] = `
+.emotion-1 {
+  margin: 0.5rem;
+}
+
+.emotion-0 {
+  border-radius: 0 !important;
+  border-right-color: transparent !important;
+  min-width: 9rem !important;
+}
+
 <div
-  className="css-o2h5i5-AddIncomeFormComponent"
+  className="emotion-1"
 >
   <div
     className="ui action left icon input"
@@ -100,7 +120,7 @@ exports[`Storyshots AddIncomeForm Add Income 1`] = `
     <div>
       <div
         aria-expanded={false}
-        className="ui compact selection dropdown css-1aj0r2-AddIncomeFormComponent"
+        className="ui compact selection dropdown emotion-0"
         onBlur={[Function]}
         onChange={[Function]}
         onClick={[Function]}
@@ -158,12 +178,66 @@ exports[`Storyshots AddIncomeForm Add Income 1`] = `
 </div>
 `;
 
-exports[`Storyshots Layout Layout 1`] = `
+exports[`Storyshots ExpenseCharts Expense Chart 1`] = `
 <div
-  className="css-n4xx9i-Layout"
+  className="recharts-responsive-container"
+  style={
+    Object {
+      "height": 400,
+      "maxHeight": undefined,
+      "minHeight": undefined,
+      "minWidth": undefined,
+      "width": "100%",
+    }
+  }
 >
   <div
-    className="ui huge pointing secondary top fixed css-1jb67kq-AppBar menu"
+    style={
+      Object {
+        "display": "none",
+        "height": 0,
+        "position": "absolute",
+        "visibility": "hidden",
+        "width": 0,
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Layout Layout 1`] = `
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.emotion-0 {
+  background: #fff !important;
+  margin-bottom: 1rem !important;
+}
+
+.emotion-1 {
+  margin-top: 5rem;
+}
+
+.emotion-2 {
+  margin-top: auto;
+  padding: 1.5rem 0;
+  text-align: center;
+  background: #fff !important;
+}
+
+<div
+  className="emotion-3"
+>
+  <div
+    className="ui huge pointing secondary top fixed emotion-0 menu"
   >
     <div
       className="ui container"
@@ -195,10 +269,10 @@ exports[`Storyshots Layout Layout 1`] = `
     </div>
   </div>
   <div
-    className="css-1qk384q-Layout"
+    className="emotion-1"
   />
   <div
-    className="css-1w6ck5m-Footer"
+    className="emotion-2"
   >
     <div
       className="ui divider"
@@ -399,6 +473,91 @@ exports[`Storyshots LoginForm Login Form 1`] = `
     </div>
   </div>
 </div>
+`;
+
+exports[`Storyshots MyTableUnit My Table Unit 1`] = `
+<table
+  className="ui table"
+>
+  <tbody
+    className=""
+  >
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
+        2020/1/1
+      </td>
+      <td
+        className=""
+      >
+        Expense
+      </td>
+      <td
+        className=""
+      >
+        10000
+      </td>
+      <td
+        className=""
+      >
+        <div
+          aria-expanded={false}
+          className="ui dropdown"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseDown={[Function]}
+          role="listbox"
+          tabIndex={0}
+        >
+          <div
+            aria-atomic={true}
+            aria-live="polite"
+            className="text"
+            role="alert"
+          >
+            Action
+          </div>
+          <i
+            aria-hidden="true"
+            className="dropdown icon"
+            onClick={[Function]}
+          />
+          <div
+            className="menu transition"
+          >
+            <div
+              className="item"
+              onClick={[Function]}
+              role="option"
+            >
+              <span
+                className="text"
+              >
+                Edit
+              </span>
+            </div>
+            <div
+              className="item"
+              onClick={[Function]}
+              role="option"
+            >
+              <span
+                className="text"
+              >
+                Delete
+              </span>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
 `;
 
 exports[`Storyshots Storybook Knobs As Dynamic Variables 1`] = `

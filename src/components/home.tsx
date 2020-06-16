@@ -2,13 +2,12 @@
 import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { jsx } from '@emotion/core';
-import { Segment, Table, Grid, Container } from 'semantic-ui-react';
-import { ExpenseChart } from './charts';
+import { Segment, Table, Grid } from 'semantic-ui-react';
+import { ExpenseChart } from './charts/charts';
 import { AddIncomeForm } from '../containers/addIncomeForm';
 import { AddExpenseForm } from '../containers/addExpenseForm';
 import { MyTableUnit } from './tableUnit/tableUnit';
-import { Expense } from '../firebase/firestore';
-import { Store } from '../interfaces';
+import { Store, Expense } from '../interfaces';
 
 export const Home: FC = () => {
   const expense = useSelector((store: Store) => store.expense.expense);
@@ -29,17 +28,19 @@ export const Home: FC = () => {
 
   return (
     <Grid centered>
-      <Segment>
-        <ExpenseChart expense={expense} />
-      </Segment>
+      <Grid.Column mobile={16} tablet={15} computer={14} largeScreen={13} widescreen={10}>
+        <Segment>
+          <ExpenseChart expense={expense} />
+        </Segment>
+      </Grid.Column>
       <Grid.Row>
         <AddIncomeForm />
         <AddExpenseForm />
       </Grid.Row>
       <Grid.Row>
-        <Container>
+        <Grid.Column mobile={16} tablet={14} computer={12} largeScreen={10} widescreen={8}>
           <Segment>
-            <Table basic="very" size="small">
+            <Table basic="very" size="large">
               <Table.Header>
                 <Table.Row>
                   <Table.HeaderCell content="Date" />
@@ -56,7 +57,7 @@ export const Home: FC = () => {
               </Table.Body>
             </Table>
           </Segment>
-        </Container>
+        </Grid.Column>
       </Grid.Row>
       {/* <Button content="get expense" onClick={handleClick} color="teal" /> */}
     </Grid>

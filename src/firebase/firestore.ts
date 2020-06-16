@@ -1,11 +1,6 @@
 import dayjs from 'dayjs';
 import { firestore, auth } from './index';
-
-export interface Expense {
-  date: Date;
-  formatedDate: string;
-  amount: number;
-}
+import { Expense } from '../interfaces';
 
 export const addIncome = async (amount: number, date: Date) => {
   const { currentUser } = auth();
