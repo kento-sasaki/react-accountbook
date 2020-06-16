@@ -25,35 +25,34 @@ export const AddExpenseFormComponent: FC<AddExpenseFormProps> = ({
   return (
     <div css={margin}>
       <Input
-        icon="yen"
-        iconPosition="left"
-        action={
-          <div>
-            <Dropdown
-              css={css`
-                border-radius: 0 !important;
-                border-right-color: transparent !important;
-                min-width: 9rem !important;
-              `}
-              compact
-              placeholder="Date"
-              selection
-              options={dateOptions}
-              onChange={handleChangeDate}
-            />
-            <Button
-              negative
-              onClick={handleClick}
-              content="Submit"
-              disabled={!(/\d+/giu.test(amount) && !/[a-z]+/giu.test(amount))}
-              attached="right"
-            />
-          </div>
-        }
+        // icon="yen"
+        // iconPosition="left"
+        action
         onChange={handleChangeAmount}
         placeholder="Expense"
         value={amount}
-      />
+      >
+        <input />
+        <Dropdown
+          css={css`
+            border-radius: 0 !important;
+            border-right-color: transparent !important;
+            min-width: 9rem !important;
+          `}
+          compact
+          placeholder="Date"
+          selection
+          options={dateOptions}
+          onChange={handleChangeDate}
+        />
+        <Button
+          negative
+          onClick={handleClick}
+          content="Submit"
+          disabled={!(/\d+/giu.test(amount) && !/[a-z]+/giu.test(amount))}
+          attached="right"
+        />
+      </Input>
     </div>
   );
 };
