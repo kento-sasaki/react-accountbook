@@ -2,7 +2,7 @@
 import React, { FC } from 'react';
 import { jsx } from '@emotion/core';
 import { Table, Dropdown } from 'semantic-ui-react';
-import { Expense } from '../../firebase/firestore';
+import { Expense } from '../../interfaces';
 
 interface MyTableUnitProps {
   expense: Expense;

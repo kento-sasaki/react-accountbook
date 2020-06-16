@@ -158,6 +158,33 @@ exports[`Storyshots AddIncomeForm Add Income 1`] = `
 </div>
 `;
 
+exports[`Storyshots ExpenseCharts Expense Chart 1`] = `
+<div
+  className="recharts-responsive-container"
+  style={
+    Object {
+      "height": 400,
+      "maxHeight": undefined,
+      "minHeight": undefined,
+      "minWidth": undefined,
+      "width": "100%",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "none",
+        "height": 0,
+        "position": "absolute",
+        "visibility": "hidden",
+        "width": 0,
+      }
+    }
+  />
+</div>
+`;
+
 exports[`Storyshots Layout Layout 1`] = `
 <div
   className="css-n4xx9i-Layout"
@@ -399,6 +426,91 @@ exports[`Storyshots LoginForm Login Form 1`] = `
     </div>
   </div>
 </div>
+`;
+
+exports[`Storyshots MyTableUnit My Table Unit 1`] = `
+<table
+  className="ui table"
+>
+  <tbody
+    className=""
+  >
+    <tr
+      className=""
+    >
+      <td
+        className=""
+      >
+        2020/1/1
+      </td>
+      <td
+        className=""
+      >
+        Expense
+      </td>
+      <td
+        className=""
+      >
+        10000
+      </td>
+      <td
+        className=""
+      >
+        <div
+          aria-expanded={false}
+          className="ui dropdown"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseDown={[Function]}
+          role="listbox"
+          tabIndex={0}
+        >
+          <div
+            aria-atomic={true}
+            aria-live="polite"
+            className="text"
+            role="alert"
+          >
+            Action
+          </div>
+          <i
+            aria-hidden="true"
+            className="dropdown icon"
+            onClick={[Function]}
+          />
+          <div
+            className="menu transition"
+          >
+            <div
+              className="item"
+              onClick={[Function]}
+              role="option"
+            >
+              <span
+                className="text"
+              >
+                Edit
+              </span>
+            </div>
+            <div
+              className="item"
+              onClick={[Function]}
+              role="option"
+            >
+              <span
+                className="text"
+              >
+                Delete
+              </span>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
 `;
 
 exports[`Storyshots Storybook Knobs As Dynamic Variables 1`] = `

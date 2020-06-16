@@ -15,3 +15,9 @@ export interface Store {
     expense: { date: Date; formatedDate: string; amount: number }[];
   };
 }
+
+export interface Expense {
+  date: Date;
+  formatedDate: string;
+  amount: number;
+}
