@@ -16,7 +16,7 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
       <Table.Cell content="Expense" />
       <Table.Cell content={expense.amount} />
       <Table.Cell>
-        <ActionButton />
+        <ActionButton expense={expense} />
       </Table.Cell>
     </Table.Row>
   );
