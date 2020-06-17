@@ -1,3 +1,3 @@
 export const colors = {
-  appBar: "#fff !important",
+  appBar: '#fff !important',
 };

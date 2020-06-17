@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import React, { FC } from 'react';
 import { jsx } from '@emotion/core';
-import { Table, Dropdown } from 'semantic-ui-react';
+import { Table } from 'semantic-ui-react';
 import { Expense } from '../../interfaces';
+import { ActionButton } from './actionButton';
 
 interface MyTableUnitProps {
   expense: Expense;
@@ -15,12 +16,7 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
       <Table.Cell content="Expense" />
       <Table.Cell content={expense.amount} />
       <Table.Cell>
-        <Dropdown text="Action">
-          <Dropdown.Menu>
-            <Dropdown.Item text="Edit" />
-            <Dropdown.Item text="Delete" />
-          </Dropdown.Menu>
-        </Dropdown>
+        <ActionButton />
       </Table.Cell>
     </Table.Row>
   );
