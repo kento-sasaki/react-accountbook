@@ -194,7 +194,7 @@ exports[`Storyshots ExpenseCharts Expense Chart 1`] = `
 `;
 
 exports[`Storyshots Layout Layout 1`] = `
-.emotion-3 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -214,15 +214,14 @@ exports[`Storyshots Layout Layout 1`] = `
   margin-top: 5rem;
 }
 
-.emotion-2 {
+.emotion-3 {
   margin-top: auto;
-  padding: 1.5rem 0;
   text-align: center;
-  background: #fff !important;
+  padding: 1.5rem 0;
 }
 
 <div
-  className="emotion-3"
+  className="emotion-4"
 >
   <div
     className="ui huge pointing secondary top fixed emotion-0 menu"
@@ -260,14 +259,18 @@ exports[`Storyshots Layout Layout 1`] = `
     className="emotion-1"
   />
   <div
-    className="emotion-2"
+    className="emotion-3"
   >
     <div
-      className="ui divider"
-    />
-    <h4>
-      Copyright © 2020 kozukata1993 All Rights Reserved.
-    </h4>
+      className="emotion-2"
+    >
+      <div
+        className="ui divider"
+      />
+      <h4>
+        Copyright © 2020 kozukata1993 All Rights Reserved.
+      </h4>
+    </div>
   </div>
 </div>
 `;
@@ -491,56 +494,29 @@ exports[`Storyshots MyTableUnit My Table Unit 1`] = `
       <td
         className=""
       >
-        <div
-          aria-expanded={false}
-          className="ui dropdown"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseDown={[Function]}
-          role="listbox"
-          tabIndex={0}
-        >
-          <div
-            aria-atomic={true}
-            aria-live="polite"
-            className="text"
-            role="alert"
-          >
-            Action
-          </div>
-          <i
-            aria-hidden="true"
-            className="dropdown icon"
+        <div>
+          <button
+            className="ui teal basic button"
             onClick={[Function]}
-          />
-          <div
-            className="menu transition"
           >
-            <div
-              className="item"
+            <i
+              aria-hidden="true"
+              className="edit icon"
               onClick={[Function]}
-              role="option"
-            >
-              <span
-                className="text"
-              >
-                Edit
-              </span>
-            </div>
-            <div
-              className="item"
+            />
+            Edit
+          </button>
+          <button
+            className="ui red basic button"
+            onClick={[Function]}
+          >
+            <i
+              aria-hidden="true"
+              className="trash icon"
               onClick={[Function]}
-              role="option"
-            >
-              <span
-                className="text"
-              >
-                Delete
-              </span>
-            </div>
-          </div>
+            />
+            Delete
+          </button>
         </div>
       </td>
     </tr>
