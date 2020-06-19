@@ -35,8 +35,6 @@ export const AddIncomeFormComponent: FC<AddIncomeFormProps> = ({
         <input />
         <Dropdown
           css={css`
-            border-radius: 0 !important;
-            border-right-color: transparent !important;
             min-width: 9rem !important;
           `}
           compact

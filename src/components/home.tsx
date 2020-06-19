@@ -44,7 +44,6 @@ export const Home: FC = () => {
               <Table.Header>
                 <Table.Row>
                   <Table.HeaderCell content="Date" />
-                  <Table.HeaderCell content="Income or Expense" />
                   <Table.HeaderCell content="Amount" />
                   <Table.HeaderCell content="Action" />
                 </Table.Row>

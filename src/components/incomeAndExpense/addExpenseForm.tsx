@@ -35,8 +35,6 @@ export const AddExpenseFormComponent: FC<AddExpenseFormProps> = ({
         <input />
         <Dropdown
           css={css`
-            border-radius: 0 !important;
-            border-right-color: transparent !important;
             min-width: 9rem !important;
           `}
           compact
@@ -53,6 +51,7 @@ export const AddExpenseFormComponent: FC<AddExpenseFormProps> = ({
           attached="right"
         />
       </Input>
+      <Dropdown options={dateOptions} defaltValue={dateOptions[0].value} />
     </div>
   );
 };
