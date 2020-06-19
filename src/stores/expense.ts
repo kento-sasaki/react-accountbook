@@ -5,7 +5,7 @@ import { getExpense } from '../firebase/firestore';
 const expenseSlice = createSlice({
   name: 'expense',
   initialState: {
-    expense: [{ date: new Date(), formatedDate: dayjs().format('YYYY/M/D'), amount: 0 }],
+    expense: [{ id: '0', date: new Date(), formatedDate: dayjs().format('YYYY/M/D'), amount: 0 }],
   },
   reducers: {
     setExpense: (prevState, action) => {
@@ -13,7 +13,9 @@ const expenseSlice = createSlice({
     },
     resetExpense: () => {
       return {
-        expense: [{ date: new Date(), formatedDate: dayjs().format('YYYY/M/D'), amount: 0 }],
+        expense: [
+          { id: '0', date: new Date(), formatedDate: dayjs().format('YYYY/M/D'), amount: 0 },
+        ],
       };
     },
   },

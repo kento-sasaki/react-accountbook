@@ -10,7 +10,7 @@ export default {
   title: 'MyTableUnit',
 };
 
-const expense = { date: new Date(2020, 0, 1), formatedDate: '2020/1/1', amount: 10000 };
+const expense = { id: '0', date: new Date(2020, 0, 1), formatedDate: '2020/1/1', amount: 10000 };
 
 export const myTableUnit = () => {
   return (

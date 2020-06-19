@@ -51,7 +51,6 @@ export const AddExpenseFormComponent: FC<AddExpenseFormProps> = ({
           attached="right"
         />
       </Input>
-      <Dropdown options={dateOptions} defaltValue={dateOptions[0].value} />
     </div>
   );
 };

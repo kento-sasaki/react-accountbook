@@ -12,11 +12,12 @@ export interface Store {
     count: number;
   };
   expense: {
-    expense: { date: Date; formatedDate: string; amount: number }[];
+    expense: { id: string; date: Date; formatedDate: string; amount: number }[];
   };
 }
 
 export interface Expense {
+  id: string;
   date: Date;
   formatedDate: string;
   amount: number;

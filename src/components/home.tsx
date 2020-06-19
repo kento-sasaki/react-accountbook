@@ -40,7 +40,7 @@ export const Home: FC = () => {
       <Grid.Row>
         <Grid.Column mobile={16} tablet={14} computer={12} largeScreen={10} widescreen={8}>
           <Segment>
-            <Table basic="very" size="large">
+            <Table basic="very" fixed>
               <Table.Header>
                 <Table.Row>
                   <Table.HeaderCell content="Date" />
