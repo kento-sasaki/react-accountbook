@@ -2,12 +2,12 @@
 import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { jsx } from '@emotion/core';
-import { Segment, Table, Grid } from 'semantic-ui-react';
+import { Segment, Grid } from 'semantic-ui-react';
 import { ExpenseChart } from './charts/charts';
 import { AddIncomeForm } from '../containers/addIncomeForm';
 import { AddExpenseForm } from '../containers/addExpenseForm';
-import { MyTableUnit } from './tableUnit/tableUnit';
-import { Store, Expense } from '../interfaces';
+import { MyTable } from './table/myTable';
+import { Store } from '../interfaces';
 
 export const Home: FC = () => {
   const expense = useSelector((store: Store) => store.expense.expense);
@@ -15,16 +15,6 @@ export const Home: FC = () => {
   // const handleClick = async () => {
   //   await getExpense();
   // };
-
-  const createReversedArray = (array: Expense[]) => {
-    const tempArr: Expense[] = [];
-
-    array.forEach((element) => {
-      tempArr.unshift(element);
-    });
-
-    return tempArr;
-  };
 
   return (
     <Grid centered>
@@ -37,27 +27,11 @@ export const Home: FC = () => {
         <AddIncomeForm />
         <AddExpenseForm />
       </Grid.Row>
-      <Grid.Row>
-        <Grid.Column mobile={16} tablet={14} computer={12} largeScreen={10} widescreen={8}>
-          <Segment>
-            <Table basic="very" fixed>
-              <Table.Header>
-                <Table.Row>
-                  <Table.HeaderCell content="Date" />
-                  <Table.HeaderCell content="Amount" />
-                  <Table.HeaderCell content="Action" />
-                </Table.Row>
-              </Table.Header>
-
-              <Table.Body>
-                {createReversedArray(expense).map((exp) => (
-                  <MyTableUnit expense={exp} key={exp.id} />
-                ))}
-              </Table.Body>
-            </Table>
-          </Segment>
-        </Grid.Column>
-      </Grid.Row>
+      <Grid.Column mobile={16} tablet={14} computer={12} largeScreen={10} widescreen={8}>
+        <Segment>
+          <MyTable expense={expense} />
+        </Segment>
+      </Grid.Column>
       {/* <Button content="get expense" onClick={handleClick} color="teal" /> */}
     </Grid>
   );
