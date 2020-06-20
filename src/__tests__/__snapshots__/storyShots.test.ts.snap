@@ -6,8 +6,6 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
 }
 
 .emotion-0 {
-  border-radius: 0 !important;
-  border-right-color: transparent !important;
   min-width: 9rem !important;
 }
 
@@ -25,7 +23,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
     />
     <div
       aria-expanded={false}
-      className="ui compact selection dropdown emotion-0"
+      className="ui selection dropdown emotion-0"
       onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
@@ -88,8 +86,6 @@ exports[`Storyshots AddIncomeForm Add Income 1`] = `
 }
 
 .emotion-0 {
-  border-radius: 0 !important;
-  border-right-color: transparent !important;
   min-width: 9rem !important;
 }
 
@@ -107,7 +103,7 @@ exports[`Storyshots AddIncomeForm Add Income 1`] = `
     />
     <div
       aria-expanded={false}
-      className="ui compact selection dropdown emotion-0"
+      className="ui selection dropdown emotion-0"
       onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
@@ -484,40 +480,33 @@ exports[`Storyshots MyTableUnit My Table Unit 1`] = `
       <td
         className=""
       >
-        Expense
-      </td>
-      <td
-        className=""
-      >
         10000
       </td>
       <td
         className=""
       >
-        <div>
-          <button
-            className="ui teal basic button"
+        <button
+          className="ui teal basic button"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="edit icon"
             onClick={[Function]}
-          >
-            <i
-              aria-hidden="true"
-              className="edit icon"
-              onClick={[Function]}
-            />
-            Edit
-          </button>
-          <button
-            className="ui red basic button"
+          />
+          Edit
+        </button>
+        <button
+          className="ui red basic button"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="trash icon"
             onClick={[Function]}
-          >
-            <i
-              aria-hidden="true"
-              className="trash icon"
-              onClick={[Function]}
-            />
-            Delete
-          </button>
-        </div>
+          />
+          Delete
+        </button>
       </td>
     </tr>
   </tbody>

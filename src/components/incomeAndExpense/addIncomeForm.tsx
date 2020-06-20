@@ -37,7 +37,6 @@ export const AddIncomeFormComponent: FC<AddIncomeFormProps> = ({
           css={css`
             min-width: 9rem !important;
           `}
-          compact
           placeholder="Date"
           selection
           options={dateOptions}

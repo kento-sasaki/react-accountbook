@@ -57,16 +57,15 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
     };
   });
 
-  return (
-    <Table.Row>
-      <Table.Cell
-        content={
-          isEditable ? (
+  if (isEditable) {
+    return (
+      <Table.Row>
+        <Table.Cell
+          content={
             <Dropdown
               css={css`
                 min-width: 9rem !important;
               `}
-              compact
               placeholder="Date"
               selection
               options={dateOptions}
@@ -75,27 +74,25 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
               }
               onChange={handleChangeDate}
             />
-          ) : (
-            expense.formatedDate
-          )
-        }
-      />
-      <Table.Cell
-        content={
-          isEditable ? <Input value={amount} onChange={handleChangeAmount} /> : expense.amount
-        }
-      />
-      {isEditable ? (
+          }
+        />
+        <Table.Cell content={<Input value={amount} onChange={handleChangeAmount} />} />
         <Table.Cell>
           <Button content="Save" icon="save" color="teal" onClick={handleSaveClick} />
           <Button basic content="Cancel" icon="cancel" color="grey" onClick={handleCancelClick} />
         </Table.Cell>
-      ) : (
-        <Table.Cell>
-          <Button basic content="Edit" icon="edit" color="teal" onClick={handleEditClick} />
-          <Button basic content="Delete" icon="trash" color="red" />
-        </Table.Cell>
-      )}
+      </Table.Row>
+    );
+  }
+
+  return (
+    <Table.Row>
+      <Table.Cell content={expense.formatedDate} />
+      <Table.Cell content={expense.amount} />
+      <Table.Cell>
+        <Button basic content="Edit" icon="edit" color="teal" onClick={handleEditClick} />
+        <Button basic content="Delete" icon="trash" color="red" />
+      </Table.Cell>
     </Table.Row>
   );
 };

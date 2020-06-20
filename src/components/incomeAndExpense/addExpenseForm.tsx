@@ -37,7 +37,6 @@ export const AddExpenseFormComponent: FC<AddExpenseFormProps> = ({
           css={css`
             min-width: 9rem !important;
           `}
-          compact
           placeholder="Date"
           selection
           options={dateOptions}
