@@ -43,5 +43,6 @@
 - [x] Editボタンを押したら該当の行を編集できるようにする
 - [x] firestoreのコレクションを書き換える関数を作る
 - [x] ボタンクリックで着火するようにする
-- [ ] Dropdownを修正
+- [x] Dropdownを修正
 - [ ] containerとcomponentに分ける
+- [ ] storyを作る

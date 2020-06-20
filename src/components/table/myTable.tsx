@@ -21,12 +21,12 @@ export const MyTable: FC<MyTableProps> = ({ expense }) => {
   };
 
   return (
-    <Table basic="very" fixed>
+    <Table basic="very">
       <Table.Header>
         <Table.Row>
-          <Table.HeaderCell content="Date" />
-          <Table.HeaderCell content="Amount" />
-          <Table.HeaderCell content="Action" />
+          <Table.HeaderCell width={5} content="Date" />
+          <Table.HeaderCell width={5} content="Amount" />
+          <Table.HeaderCell width={6} content="Action" />
         </Table.Row>
       </Table.Header>
 
