@@ -50,9 +50,9 @@ export const Home: FC = () => {
               </Table.Header>
 
               <Table.Body>
-                {createReversedArray(expense).map((exp) => {
-                  return <MyTableUnit expense={exp} />;
-                })}
+                {createReversedArray(expense).map((exp) => (
+                  <MyTableUnit expense={exp} key={exp.id} />
+                ))}
               </Table.Body>
             </Table>
           </Segment>

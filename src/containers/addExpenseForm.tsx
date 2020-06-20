@@ -18,21 +18,22 @@ export const AddExpenseForm: FC = () => {
   };
 
   const handleChangeDate = (e: FormEvent, { value }: DropdownProps) => {
-    if (typeof value === 'number') {
-      setDate(dayjs().subtract(value, 'day').toDate());
+    if (typeof value === 'string') {
+      setDate(dayjs(value).toDate());
     }
   };
 
-  const handleClick = () => {
-    addExpense(Number(amount), date);
+  const handleClick = async () => {
+    await addExpense(Number(amount), date);
     setAmount('');
-    dispatch(fetchExpense());
+    await dispatch(fetchExpense());
   };
 
   const dateOptions = [...Array(30).keys()].map((n) => {
     return {
+      key: n,
       text: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,
-      value: n,
+      value: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,
     };
   });
 

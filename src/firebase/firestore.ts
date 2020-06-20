@@ -44,6 +44,9 @@ export const getExpense = async () => {
     });
   });
 
+  console.log('getExpense!!');
+  console.log(expense);
+
   return expense;
 };
 
@@ -63,4 +66,19 @@ export const createDatilyExpense = (allExpense: Expense[]) => {
   });
 
   return dailyExpense;
+};
+
+export const updateExpense = async (id: string, amount: number, date: Date) => {
+  const { currentUser } = auth();
+  console.log(10);
+  await firestore()
+    .collection('users')
+    .doc(`${currentUser?.uid}`)
+    .collection('expense')
+    .doc(id)
+    .update({
+      date: firestore.Timestamp.fromDate(date),
+      amount,
+    });
+  console.log(20);
 };
