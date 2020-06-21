@@ -462,53 +462,244 @@ exports[`Storyshots LoginForm Login Form 1`] = `
 </div>
 `;
 
-exports[`Storyshots MyTableUnit My Table Unit 1`] = `
+exports[`Storyshots MyTable My Table 1`] = `
 <table
   className="ui table"
 >
   <tbody
     className=""
   >
-    <tr
-      className=""
+    <table
+      className="ui very basic table"
     >
-      <td
+      <thead
         className=""
       >
-        2020/1/1
-      </td>
-      <td
-        className=""
-      >
-        10000
-      </td>
-      <td
-        className=""
-      >
-        <button
-          className="ui teal basic button"
-          onClick={[Function]}
+        <tr
+          className=""
         >
-          <i
-            aria-hidden="true"
-            className="edit icon"
-            onClick={[Function]}
-          />
-          Edit
-        </button>
-        <button
-          className="ui red basic button"
-          onClick={[Function]}
+          <th
+            className="five wide"
+          >
+            Date
+          </th>
+          <th
+            className="five wide"
+          >
+            Amount
+          </th>
+          <th
+            className="six wide"
+          >
+            Action
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        className=""
+      >
+        <tr
+          className=""
         >
-          <i
-            aria-hidden="true"
-            className="trash icon"
-            onClick={[Function]}
-          />
-          Delete
-        </button>
-      </td>
-    </tr>
+          <td
+            className=""
+          >
+            2020/1/5
+          </td>
+          <td
+            className=""
+          >
+            5000
+          </td>
+          <td
+            className=""
+          >
+            <button
+              className="ui teal basic button"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="edit icon"
+                onClick={[Function]}
+              />
+              Edit
+            </button>
+            <button
+              className="ui red basic button"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="trash icon"
+                onClick={[Function]}
+              />
+              Delete
+            </button>
+          </td>
+        </tr>
+        <tr
+          className=""
+        >
+          <td
+            className=""
+          >
+            2020/1/4
+          </td>
+          <td
+            className=""
+          >
+            4000
+          </td>
+          <td
+            className=""
+          >
+            <button
+              className="ui teal basic button"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="edit icon"
+                onClick={[Function]}
+              />
+              Edit
+            </button>
+            <button
+              className="ui red basic button"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="trash icon"
+                onClick={[Function]}
+              />
+              Delete
+            </button>
+          </td>
+        </tr>
+        <tr
+          className=""
+        >
+          <td
+            className=""
+          >
+            2020/1/3
+          </td>
+          <td
+            className=""
+          >
+            3000
+          </td>
+          <td
+            className=""
+          >
+            <button
+              className="ui teal basic button"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="edit icon"
+                onClick={[Function]}
+              />
+              Edit
+            </button>
+            <button
+              className="ui red basic button"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="trash icon"
+                onClick={[Function]}
+              />
+              Delete
+            </button>
+          </td>
+        </tr>
+        <tr
+          className=""
+        >
+          <td
+            className=""
+          >
+            2020/1/2
+          </td>
+          <td
+            className=""
+          >
+            2000
+          </td>
+          <td
+            className=""
+          >
+            <button
+              className="ui teal basic button"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="edit icon"
+                onClick={[Function]}
+              />
+              Edit
+            </button>
+            <button
+              className="ui red basic button"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="trash icon"
+                onClick={[Function]}
+              />
+              Delete
+            </button>
+          </td>
+        </tr>
+        <tr
+          className=""
+        >
+          <td
+            className=""
+          >
+            2020/1/1
+          </td>
+          <td
+            className=""
+          >
+            1000
+          </td>
+          <td
+            className=""
+          >
+            <button
+              className="ui teal basic button"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="edit icon"
+                onClick={[Function]}
+              />
+              Edit
+            </button>
+            <button
+              className="ui red basic button"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="trash icon"
+                onClick={[Function]}
+              />
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </tbody>
 </table>
 `;

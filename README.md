@@ -39,10 +39,10 @@
 
 #### 収支を編集できるようにする
 
-- [x] Editボタンを作る
-- [x] Editボタンを押したら該当の行を編集できるようにする
-- [x] firestoreのコレクションを書き換える関数を作る
+- [x] Edit ボタンを作る
+- [x] Edit ボタンを押したら該当の行を編集できるようにする
+- [x] firestore のコレクションを書き換える関数を作る
 - [x] ボタンクリックで着火するようにする
-- [x] Dropdownを修正
-- [ ] containerとcomponentに分ける
-- [ ] storyを作る
+- [x] Dropdown を修正
+- [x] container と component に分ける
+- [x] story を作る

@@ -10,14 +10,19 @@ interface MyTableProps {
 }
 
 export const MyTable: FC<MyTableProps> = ({ expense }) => {
-  const createReversedArray = (array: Expense[]) => {
-    const tempArr: Expense[] = [];
+  const createSortedArray = (array: Expense[]) => {
+    const result = [...array].sort((a, b) => {
+      if (a.date < b.date) {
+        return 1;
+      }
+      if (a.date > b.date) {
+        return -1;
+      }
 
-    array.forEach((element) => {
-      tempArr.unshift(element);
+      return 0;
     });
 
-    return tempArr;
+    return result;
   };
 
   return (
@@ -31,7 +36,7 @@ export const MyTable: FC<MyTableProps> = ({ expense }) => {
       </Table.Header>
 
       <Table.Body>
-        {createReversedArray(expense).map((exp) => (
+        {createSortedArray(expense).map((exp) => (
           <MyTableUnit expense={exp} key={exp.id} />
         ))}
       </Table.Body>
