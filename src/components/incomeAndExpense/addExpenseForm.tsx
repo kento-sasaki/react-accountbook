@@ -8,11 +8,11 @@ const margin = css`
 `;
 
 interface AddExpenseFormProps {
-  handleChangeAmount?: (e: FormEvent, { value }: InputOnChangeData) => void;
-  handleChangeDate?: (e: FormEvent, { value }: DropdownProps) => void;
+  handleChangeAmount?: (e: FormEvent, { key }: InputOnChangeData) => void;
+  handleChangeDate?: (e: FormEvent, { key }: DropdownProps) => void;
   handleClick?: () => void;
   amount?: string;
-  dateOptions?: { text: string; value: number }[];
+  dateOptions?: { key: number; text: string; value: string }[];
 }
 
 export const AddExpenseFormComponent: FC<AddExpenseFormProps> = ({
@@ -20,7 +20,7 @@ export const AddExpenseFormComponent: FC<AddExpenseFormProps> = ({
   handleChangeAmount = () => {},
   handleChangeDate = () => {},
   amount = '',
-  dateOptions = [{ text: 'Date', value: 0 }],
+  dateOptions = [{ key: 0, text: 'Date', value: 'Date' }],
 }) => {
   return (
     <div css={margin}>
@@ -35,11 +35,8 @@ export const AddExpenseFormComponent: FC<AddExpenseFormProps> = ({
         <input />
         <Dropdown
           css={css`
-            border-radius: 0 !important;
-            border-right-color: transparent !important;
             min-width: 9rem !important;
           `}
-          compact
           placeholder="Date"
           selection
           options={dateOptions}

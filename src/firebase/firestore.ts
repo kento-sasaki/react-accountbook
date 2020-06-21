@@ -37,6 +37,7 @@ export const getExpense = async () => {
 
   querySnapshot.forEach((doc) => {
     expense.push({
+      id: doc.id,
       date: doc.data().date.toDate(),
       formatedDate: dayjs(doc.data().date.toDate()).format('YYYY/M/D'),
       amount: doc.data().amount,
@@ -62,4 +63,17 @@ export const createDatilyExpense = (allExpense: Expense[]) => {
   });
 
   return dailyExpense;
+};
+
+export const updateExpense = async (id: string, amount: number, date: Date) => {
+  const { currentUser } = auth();
+  await firestore()
+    .collection('users')
+    .doc(`${currentUser?.uid}`)
+    .collection('expense')
+    .doc(id)
+    .update({
+      date: firestore.Timestamp.fromDate(date),
+      amount,
+    });
 };

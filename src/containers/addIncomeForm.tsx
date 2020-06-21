@@ -20,15 +20,16 @@ export const AddIncomeForm: FC = () => {
     }
   };
 
-  const handleClick = () => {
-    addIncome(Number(amount), date);
+  const handleClick = async () => {
+    await addIncome(Number(amount), date);
     setAmount('');
   };
 
   const dateOptions = [...Array(30).keys()].map((n) => {
     return {
+      key: n,
       text: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,
-      value: n,
+      value: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,
     };
   });
 
