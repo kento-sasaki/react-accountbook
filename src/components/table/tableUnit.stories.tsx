@@ -3,7 +3,7 @@ import 'semantic-ui-css/semantic.min.css';
 import { Provider } from 'react-redux';
 import { Table } from 'semantic-ui-react';
 import { store } from '../../stores/index';
-import { MyTableUnit } from './myTableUnit';
+import { MyTableUnit } from '../../containers/myTableUnit';
 
 export default {
   component: MyTableUnit,

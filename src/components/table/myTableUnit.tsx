@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import React, { FC, useState, FormEvent } from 'react';
+import React, { FC, FormEvent } from 'react';
 import { jsx, css } from '@emotion/core';
-import { useDispatch } from 'react-redux';
 import {
   Table,
   Button,
@@ -12,51 +11,35 @@ import {
 } from 'semantic-ui-react';
 import dayjs from 'dayjs';
 import { Expense } from '../../interfaces';
-import { updateExpense } from '../../firebase/firestore';
-import { fetchExpense } from '../../stores/expense';
 
 interface MyTableUnitProps {
-  expense: Expense;
+  expense?: Expense;
+  isEditable?: boolean;
+  handleChangeAmount?: (e: FormEvent, { key }: InputOnChangeData) => void;
+  handleChangeDate?: (e: FormEvent, { key }: DropdownProps) => void;
+  handleEditClick?: () => void;
+  handleCancelClick?: () => void;
+  handleSaveClick?: () => void;
+  amount?: string;
+  dateOptions?: { key: number; text: string; value: string }[];
 }
 
-export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
-  const [isEditable, setIsEditable] = useState<boolean>(false);
-  const [amount, setAmount] = useState<string>(`${expense.amount}`);
-  const [date, setDate] = useState<Date>(expense.date);
-  const dispatch = useDispatch();
-
-  const handleChangeAmount = (e: FormEvent, { value }: InputOnChangeData) => {
-    setAmount(value);
-  };
-
-  const handleChangeDate = (e: FormEvent, { value }: DropdownProps) => {
-    if (typeof value === 'string') {
-      setDate(dayjs(value).toDate());
-    }
-  };
-
-  const handleEditClick = () => {
-    setIsEditable(true);
-  };
-
-  const handleCancelClick = () => {
-    setIsEditable(false);
-  };
-
-  const handleSaveClick = async () => {
-    await updateExpense(expense.id, Number(amount), date);
-    setIsEditable(false);
-    await dispatch(fetchExpense());
-  };
-
-  const dateOptions = [...Array(30).keys()].map((n) => {
-    return {
-      key: n,
-      text: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,
-      value: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,
-    };
-  });
-
+export const MyTableUnitComponent: FC<MyTableUnitProps> = ({
+  expense = {
+    id: '0',
+    date: new Date(),
+    formatedDate: dayjs(new Date()).format('YYYY/M/D'),
+    amount: '',
+  },
+  isEditable = false,
+  handleChangeAmount = () => {},
+  handleChangeDate = () => {},
+  handleEditClick = () => {},
+  handleCancelClick = () => {},
+  handleSaveClick = () => {},
+  amount = '',
+  dateOptions = [{ key: 0, text: 'Date', value: 'Date' }],
+}) => {
   if (isEditable) {
     return (
       <Table.Row>
