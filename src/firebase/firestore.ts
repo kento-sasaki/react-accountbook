@@ -77,3 +77,13 @@ export const updateExpense = async (id: string, amount: number, date: Date) => {
       amount,
     });
 };
+
+export const deleteExpense = async (id: string) => {
+  const { currentUser } = auth();
+  await firestore()
+    .collection('users')
+    .doc(`${currentUser?.uid}`)
+    .collection('expense')
+    .doc(id)
+    .delete();
+};
