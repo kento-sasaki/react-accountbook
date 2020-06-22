@@ -53,11 +53,9 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
   };
 
   const handleDeleteClick = async () => {
-    console.log(1);
     await deleteExpense(expense.id);
     setIsOpen(false);
     await dispatch(fetchExpense());
-    console.log(2);
   };
 
   const dateOptions = [...Array(30).keys()].map((n) => {

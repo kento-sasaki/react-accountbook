@@ -33,15 +33,16 @@ describe('/users/{userId}/expense', () => {
   describe('read', () => {
     it('自分のデータなら読み取れる', async () => {
       const userId = randomId();
-      const db = authenticatedFirestore({ uid: userId });
+      const db = authenticatedFirestore({ uid: userId, admin: false });
       const docRef = db.collection('users').doc(userId).collection('expense').doc();
       await firebase.assertSucceeds(docRef.get());
     });
 
     it('他人のデータは読み取れない', async () => {
       const userId = randomId();
-      const db = authenticatedFirestore({ uid: userId });
-      const docRef = db.collection('users').doc('bob').collection('expense').doc();
+      const anotherUserId = randomId();
+      const db = authenticatedFirestore({ uid: userId, admin: false });
+      const docRef = db.collection('users').doc(anotherUserId).collection('expense').doc();
       await firebase.assertFails(docRef.get());
     });
   });
@@ -49,7 +50,7 @@ describe('/users/{userId}/expense', () => {
   describe('create', () => {
     it('正しいデータを登録できる', async () => {
       const userId = randomId();
-      const db = authenticatedFirestore({ uid: userId });
+      const db = authenticatedFirestore({ uid: userId, admin: false });
       await firebase.assertSucceeds(
         db
           .collection('users')
@@ -76,7 +77,7 @@ describe('/users/{userId}/expense', () => {
 
     it('amountがないと登録できない', async () => {
       const userId = randomId();
-      const db = authenticatedFirestore({ uid: userId });
+      const db = authenticatedFirestore({ uid: userId, admin: false });
       await firebase.assertFails(
         db
           .collection('users')
@@ -92,7 +93,7 @@ describe('/users/{userId}/expense', () => {
 
     it('dateがないと登録できない', async () => {
       const userId = randomId();
-      const db = authenticatedFirestore({ uid: userId });
+      const db = authenticatedFirestore({ uid: userId, admin: false });
       await firebase.assertFails(
         db.collection('users').doc(userId).collection('expense').add({
           createdAt: serverTimestamp(),
@@ -104,7 +105,7 @@ describe('/users/{userId}/expense', () => {
 
     it('amountはnumberでないと登録できない', async () => {
       const userId = randomId();
-      const db = authenticatedFirestore({ uid: userId });
+      const db = authenticatedFirestore({ uid: userId, admin: false });
       await firebase.assertFails(
         db
           .collection('users')
@@ -120,7 +121,7 @@ describe('/users/{userId}/expense', () => {
 
     it('createdAt = request.timeでないと登録できない', async () => {
       const userId = randomId();
-      const db = authenticatedFirestore({ uid: userId });
+      const db = authenticatedFirestore({ uid: userId, admin: false });
       await firebase.assertFails(
         db
           .collection('users')
@@ -134,21 +135,76 @@ describe('/users/{userId}/expense', () => {
       );
     });
   });
+
+  describe('update', () => {
+    it('自分のデータなら更新できる', async () => {
+      const userId = randomId();
+      const db = authenticatedFirestore({ uid: userId, admin: false });
+      const docRef = await db
+        .collection('users')
+        .doc(userId)
+        .collection('expense')
+        .add({
+          createdAt: serverTimestamp(),
+          date: timestampFromDate(2020, 1, 1),
+          amount: 1000,
+        });
+      await firebase.assertSucceeds(
+        db
+          .collection('users')
+          .doc(userId)
+          .collection('expense')
+          .doc(docRef.id)
+          .update({
+            date: timestampFromDate(2020, 1, 2),
+            amount: 2000,
+          }),
+      );
+    });
+
+    it('他人のデータは更新できない', async () => {
+      const userId = randomId();
+      const anotherUserId = randomId();
+      const db = authenticatedFirestore({ uid: userId, admin: false });
+      const anotherDb = authenticatedFirestore({ uid: anotherUserId, admin: false });
+      const docRef = await db
+        .collection('users')
+        .doc(userId)
+        .collection('expense')
+        .add({
+          createdAt: serverTimestamp(),
+          date: timestampFromDate(2020, 1, 1),
+          amount: 1000,
+        });
+      await firebase.assertFails(
+        anotherDb
+          .collection('users')
+          .doc(userId)
+          .collection('expense')
+          .doc(docRef.id)
+          .update({
+            date: timestampFromDate(2020, 1, 2),
+            amount: 2000,
+          }),
+      );
+    });
+  });
 });
 
 describe('/users/{userId}/income', () => {
   describe('read', () => {
     it('自分のデータなら読み取れる', async () => {
       const userId = randomId();
-      const db = authenticatedFirestore({ uid: userId });
+      const db = authenticatedFirestore({ uid: userId, admin: false });
       const docRef = db.collection('users').doc(userId).collection('income').doc();
       await firebase.assertSucceeds(docRef.get());
     });
 
     it('他人のデータは読み取れない', async () => {
       const userId = randomId();
-      const db = authenticatedFirestore({ uid: userId });
-      const docRef = db.collection('users').doc('bob').collection('income').doc();
+      const anotherUserId = randomId();
+      const db = authenticatedFirestore({ uid: userId, admin: false });
+      const docRef = db.collection('users').doc(anotherUserId).collection('income').doc();
       await firebase.assertFails(docRef.get());
     });
   });
@@ -156,7 +212,7 @@ describe('/users/{userId}/income', () => {
   describe('create', () => {
     it('正しいデータを登録できる', async () => {
       const userId = randomId();
-      const db = authenticatedFirestore({ uid: userId });
+      const db = authenticatedFirestore({ uid: userId, admin: false });
       await firebase.assertSucceeds(
         db
           .collection('users')
@@ -183,7 +239,7 @@ describe('/users/{userId}/income', () => {
 
     it('amountがないと登録できない', async () => {
       const userId = randomId();
-      const db = authenticatedFirestore({ uid: userId });
+      const db = authenticatedFirestore({ uid: userId, admin: false });
       await firebase.assertFails(
         db
           .collection('users')
@@ -199,7 +255,7 @@ describe('/users/{userId}/income', () => {
 
     it('dateがないと登録できない', async () => {
       const userId = randomId();
-      const db = authenticatedFirestore({ uid: userId });
+      const db = authenticatedFirestore({ uid: userId, admin: false });
       await firebase.assertFails(
         db.collection('users').doc(userId).collection('income').add({
           createdAt: serverTimestamp(),
@@ -211,7 +267,7 @@ describe('/users/{userId}/income', () => {
 
     it('amountはnumberでないと登録できない', async () => {
       const userId = randomId();
-      const db = authenticatedFirestore({ uid: userId });
+      const db = authenticatedFirestore({ uid: userId, admin: false });
       await firebase.assertFails(
         db
           .collection('users')
@@ -227,7 +283,7 @@ describe('/users/{userId}/income', () => {
 
     it('createdAt = request.timeでないと登録できない', async () => {
       const userId = randomId();
-      const db = authenticatedFirestore({ uid: userId });
+      const db = authenticatedFirestore({ uid: userId, admin: false });
       await firebase.assertFails(
         db
           .collection('users')
