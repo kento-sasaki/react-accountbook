@@ -49,6 +49,8 @@
 
 #### Expense ドキュメントを削除できるうようにする
 
-- [ ] Delete ボタンで Modal を表示
-- [ ] Expense ドキュメントを削除する関数を作成
-- [ ] Modal の削除ボタンで着火するようにする
+- [x] Delete ボタンで Modal を表示
+- [x] Expense ドキュメントを削除する関数を作成
+- [x] Modal の削除ボタンで着火するようにする
+- [x] firestore.rulesにupdateのルールを追加
+- [x] firestore.relesのupdateのテストを書く
