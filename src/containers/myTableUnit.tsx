@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { InputOnChangeData, DropdownProps } from 'semantic-ui-react';
 import dayjs from 'dayjs';
 import { Expense } from '../interfaces';
-import { updateExpense } from '../firebase/firestore';
+import { updateExpense, deleteExpense } from '../firebase/firestore';
 import { fetchExpense } from '../stores/expense';
 import { MyTableUnitComponent } from '../components/table/myTableUnit';
 
@@ -15,6 +15,7 @@ interface MyTableUnitProps {
 
 export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
   const [isEditable, setIsEditable] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [amount, setAmount] = useState<string>(`${expense.amount}`);
   const [date, setDate] = useState<Date>(expense.date);
   const dispatch = useDispatch();
@@ -33,13 +34,27 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
     setIsEditable(true);
   };
 
-  const handleCancelClick = () => {
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const handleEditCancelClick = () => {
     setIsEditable(false);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
   };
 
   const handleSaveClick = async () => {
     await updateExpense(expense.id, Number(amount), date);
     setIsEditable(false);
+    await dispatch(fetchExpense());
+  };
+
+  const handleDeleteClick = async () => {
+    await deleteExpense(expense.id);
+    setIsOpen(false);
     await dispatch(fetchExpense());
   };
 
@@ -55,11 +70,15 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
     <MyTableUnitComponent
       expense={expense}
       isEditable={isEditable}
+      isOpen={isOpen}
       handleChangeAmount={handleChangeAmount}
       handleChangeDate={handleChangeDate}
       handleEditClick={handleEditClick}
-      handleCancelClick={handleCancelClick}
+      handleEditCancelClick={handleEditCancelClick}
+      openModal={openModal}
+      closeModal={closeModal}
       handleSaveClick={handleSaveClick}
+      handleDeleteClick={handleDeleteClick}
       amount={amount}
       dateOptions={dateOptions}
     />

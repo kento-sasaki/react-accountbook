@@ -25,6 +25,8 @@ service cloud.firestore {
         && 'amount' in request.resource.data
         && 'date' in request.resource.data
         && request.resource.data.amount is number
+
+      allow delete: if isUserAuthenticated(userID)
     }
 
     match /users/{userID}/income/{incomeID} {
@@ -41,6 +43,8 @@ service cloud.firestore {
         && 'amount' in request.resource.data
         && 'date' in request.resource.data
         && request.resource.data.amount is number
+
+      allow delete: if isUserAuthenticated(userID)
     }
   }
 }

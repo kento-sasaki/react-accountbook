@@ -37,7 +37,7 @@
 - [x] テーブルに収支を入れる
 - [x] グラフと表をレスポンシブに
 
-#### 収支を編集できるようにする
+#### Expense ドキュメントを編集できるようにする
 
 - [x] Edit ボタンを作る
 - [x] Edit ボタンを押したら該当の行を編集できるようにする
@@ -46,3 +46,11 @@
 - [x] Dropdown を修正
 - [x] container と component に分ける
 - [x] story を作る
+
+#### Expense ドキュメントを削除できるうようにする
+
+- [x] Delete ボタンで Modal を表示
+- [x] Expense ドキュメントを削除する関数を作成
+- [x] Modal の削除ボタンで着火するようにする
+- [x] firestore.rulesにupdateのルールを追加
+- [x] firestore.relesのupdateのテストを書く
