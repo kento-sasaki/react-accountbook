@@ -1,6 +1,6 @@
-import * as firebase from "firebase/app";
-import "firebase/firestore";
-import "firebase/auth";
+import * as firebase from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth';
 // import "firebase/firebase-storage";
 
 const config = {
@@ -16,3 +16,4 @@ const config = {
 firebase.initializeApp(config);
 export const { auth } = firebase;
 export const { firestore } = firebase;
+export const { functions } = firebase;

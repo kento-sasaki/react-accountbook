@@ -52,5 +52,14 @@
 - [x] Delete ボタンで Modal を表示
 - [x] Expense ドキュメントを削除する関数を作成
 - [x] Modal の削除ボタンで着火するようにする
-- [x] firestore.rulesにupdateのルールを追加
-- [x] firestore.relesのupdateのテストを書く
+- [x] firestore.rules に update のルールを追加
+- [x] firestore.reles の update のテストを書く
+
+#### Cloud Functions 導入
+
+- [x] チュートリアルに沿って最初の関数をデプロイ
+- [x] ローカル実行環境を整える
+- [x] HTTPS 関数を試作
+- [x] Cloud Firestore 関数を試作
+- [x] Authentication 関数を試作
+  - [x] ログインしたら users コレクションに自分のドキュメントを登録
