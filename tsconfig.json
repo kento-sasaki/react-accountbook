@@ -12,10 +12,11 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmitOnError": true,
     "jsx": "react",
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "noEmit": true
   },
   "include": ["src"],
-  "exclude": ["node_modules", "build", "dist", "scripts"]
+  "exclude": ["node_modules", "build", "dist", "scripts", "functions"]
 }
