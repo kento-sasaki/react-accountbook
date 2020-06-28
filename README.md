@@ -63,3 +63,4 @@
 - [x] Cloud Firestore 関数を試作
 - [x] Authentication 関数を試作
   - [x] ログインしたら users コレクションに自分のドキュメントを登録
+- [ ] GitHub Actions を修正
