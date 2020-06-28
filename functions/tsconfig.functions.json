@@ -15,7 +15,7 @@
     "target": "es2017",
     "types": ["jest", "node"],
     "typeRoots": ["node_modules/@types", "../node_modules/@types"],
-    "skipLibCheck": false
+    "skipLibCheck": true
   },
   "compileOnSave": true,
   "include": ["src"],
