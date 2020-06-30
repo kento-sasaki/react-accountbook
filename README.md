@@ -63,4 +63,7 @@
 - [x] Cloud Firestore 関数を試作
 - [x] Authentication 関数を試作
   - [x] ログインしたら users コレクションに自分のドキュメントを登録
-- [ ] GitHub Actions を修正
+- [x] GitHub Actions を修正
+
+#### Google Cloud Vision APIを使ってみる
+- [x] [Google Cloud Vision API: Node.js Client](https://github.com/googleapis/nodejs-vision#quickstart)のクイックスタートをCloud Functionsで実行

@@ -28,3 +28,6 @@ yarn-error.log*
 .env.development
 .env.production
 /.firebase
+
+/**/firebase.service-account.json
+/**/vision.service-account.json
