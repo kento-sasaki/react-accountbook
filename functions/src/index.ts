@@ -1,12 +1,9 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
 import * as vision from '@google-cloud/vision';
-const serviceAccount = require('../firebase.service-account.json');
+// const serviceAccount = require('../firebase.service-account.json');
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: 'https://react-accountbook.firebaseio.com',
-});
+admin.initializeApp();
 
 export const visionSample = functions
   .region('asia-northeast1')
@@ -22,8 +19,8 @@ export const visionSample = functions
     if (labels) {
       console.log('Labels:');
       labels.forEach((label) => console.log(label.description));
+      response.send(`${labels.map((label) => label.description)}`);
     }
-    response.send(`${labels}`);
   });
 
 export const helloWorld = functions
