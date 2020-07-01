@@ -30,8 +30,6 @@ export const visionSample = functions
 export const helloWorld = functions
   .region('asia-northeast1')
   .https.onRequest((request, response) => {
-    const str = '-----BEGIN PRIVATE KEY-----\\nMIIEvAIBADANBgkq';
-
     response.send(
       `Hello ${request.query.text ? request.query.text : 'from Cloud Functions'}. GitHub Actions.`,
     );
