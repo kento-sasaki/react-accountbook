@@ -31,3 +31,4 @@ yarn-error.log*
 
 /**/firebase.service-account.json
 /**/vision.service-account.json
+/**/.runtimeconfig.json
