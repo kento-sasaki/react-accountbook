@@ -1,0 +1,15 @@
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isAnyAuthenticated(userID) {
+      return request.auth != null && userID == request.auth.uid;
+    }
+
+    match /{userID}/images/{image} {
+      allow read: if isAnyAuthenticated(userID);
+      allow write: if isAnyAuthenticated(userID)
+      && request.resource.size < 5 * 1024 * 1024
+      && request.resource.contentType.matches('image/.*');
+    }
+  }
+}

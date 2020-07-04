@@ -2,7 +2,7 @@
 
 ### 収支をグラフで描画
 
-#### Firestoe の設計
+#### Firestoeの設計
 
 - [x] 必要な document を決める
 - [x] DB 作成
@@ -25,10 +25,10 @@
   - [x] ログアウトしたらグラフをリセット
 - [x] 同じ日の収支額は合計
 
-#### Firestore のルールを定義する
+#### Firestoreのルールを定義する
 
-- [x] firestore.rules を設定
-- [x] firestore.rules をテスト
+- [x] firestore.rulesを設定
+- [x] firestore.rulesをテスト
 
 #### 収支の一覧を表示
 
@@ -55,7 +55,7 @@
 - [x] firestore.rules に update のルールを追加
 - [x] firestore.reles の update のテストを書く
 
-#### Cloud Functions 導入
+#### Cloud Functions導入
 
 - [x] チュートリアルに沿って最初の関数をデプロイ
 - [x] ローカル実行環境を整える
@@ -67,3 +67,15 @@
 
 #### Google Cloud Vision APIを使ってみる
 - [x] [Google Cloud Vision API: Node.js Client](https://github.com/googleapis/nodejs-vision#quickstart)のクイックスタートをCloud Functionsで実行
+
+#### Cloud Storage導入
+- [x] 画像を保存できるようにする
+- [x] storage のルールを作成
+
+
+#### Cloud StorageトリガーでFunctions
+- [ ] storageに画像を保存したら着火する関数を作成
+- [ ] 画像をvisionで解析
+- [ ] レシートの文字を抽出
+- [ ] レシートから支出を抽出
+- [ ] firebase storage init ?
