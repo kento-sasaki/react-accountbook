@@ -1,12 +1,10 @@
 /** @jsx jsx */
 import React, { FC, useState, FormEvent } from 'react';
 import { jsx } from '@emotion/core';
-import { useDispatch } from 'react-redux';
 import { InputOnChangeData, DropdownProps } from 'semantic-ui-react';
 import dayjs from 'dayjs';
 import { Expense } from '../interfaces';
 import { updateExpense, deleteExpense } from '../firebase/firestore';
-import { fetchExpense } from '../stores/expense';
 import { MyTableUnitComponent } from '../components/table/myTableUnit';
 
 interface MyTableUnitProps {
@@ -18,7 +16,6 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [amount, setAmount] = useState<string>(`${expense.amount}`);
   const [date, setDate] = useState<Date>(expense.date);
-  const dispatch = useDispatch();
 
   const handleChangeAmount = (e: FormEvent, { value }: InputOnChangeData) => {
     setAmount(value);
@@ -49,13 +46,11 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
   const handleSaveClick = async () => {
     await updateExpense(expense.id, Number(amount), date);
     setIsEditable(false);
-    await dispatch(fetchExpense());
   };
 
   const handleDeleteClick = async () => {
     await deleteExpense(expense.id);
     setIsOpen(false);
-    await dispatch(fetchExpense());
   };
 
   const dateOptions = [...Array(30).keys()].map((n) => {

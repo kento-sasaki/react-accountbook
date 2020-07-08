@@ -9,6 +9,8 @@ const expenseSlice = createSlice({
   },
   reducers: {
     setExpense: (prevState, action) => {
+      console.log('action: setExpense');
+
       return { expense: action.payload };
     },
     resetExpense: () => {
