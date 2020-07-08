@@ -74,8 +74,7 @@
 
 
 #### Cloud StorageトリガーでFunctions
-- [ ] storageに画像を保存したら着火する関数を作成
-- [ ] 画像をvisionで解析
-- [ ] レシートの文字を抽出
+- [x] storageに画像を保存したら着火する関数を作成
+- [x] 画像をvisionで解析
+- [x] レシートの文字を抽出
 - [ ] レシートから支出を抽出
-- [ ] firebase storage init ?
