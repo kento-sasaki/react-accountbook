@@ -2,7 +2,7 @@ import React, { FC, useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { auth } from './firebase/index';
+import { auth, firestore } from './firebase/index';
 import { Home } from './components/home';
 import { About } from './components/about';
 import { Contact } from './components/contact';
@@ -21,8 +21,16 @@ const App: FC = () => {
   });
 
   useEffect(() => {
+    console.log('USE EFFECT');
     if (currentUser) {
-      dispatch(fetchExpense());
+      firestore()
+        .collection('users')
+        .doc(currentUser.uid)
+        .collection('expense')
+        .onSnapshot(() => {
+          dispatch(fetchExpense());
+          console.log('Firestore was updated');
+        });
     } else {
       dispatch(resetExpense());
     }
