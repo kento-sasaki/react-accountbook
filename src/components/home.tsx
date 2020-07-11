@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import { jsx } from '@emotion/core';
 import { Segment, Grid } from 'semantic-ui-react';
 import { ExpenseChart } from './charts/charts';
-import { AddIncomeForm } from '../containers/addIncomeForm';
 import { AddExpenseForm } from '../containers/addExpenseForm';
 import { MyTable } from './table/myTable';
 import { InputFile } from '../containers/inputFile';
@@ -21,7 +20,6 @@ export const Home: FC = () => {
         </Segment>
       </Grid.Column>
       <Grid.Row>
-        <AddIncomeForm />
         <AddExpenseForm />
         <InputFile />
       </Grid.Row>

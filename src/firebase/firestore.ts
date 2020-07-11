@@ -2,15 +2,6 @@ import dayjs from 'dayjs';
 import { firestore, auth } from './index';
 import { Expense } from '../interfaces';
 
-export const addIncome = async (amount: number, date: Date) => {
-  const { currentUser } = auth();
-  await firestore().collection('users').doc(`${currentUser?.uid}`).collection('income').add({
-    createdAt: firestore.FieldValue.serverTimestamp(),
-    date,
-    amount,
-  });
-};
-
 export const addExpense = async (amount: number, date: Date) => {
   const { currentUser } = auth();
   await firestore()
