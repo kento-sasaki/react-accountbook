@@ -7,14 +7,11 @@ import { ExpenseChart } from './charts/charts';
 import { AddIncomeForm } from '../containers/addIncomeForm';
 import { AddExpenseForm } from '../containers/addExpenseForm';
 import { MyTable } from './table/myTable';
+import { InputFile } from '../containers/inputFile';
 import { Store } from '../interfaces';
 
 export const Home: FC = () => {
   const expense = useSelector((store: Store) => store.expense.expense);
-
-  // const handleClick = async () => {
-  //   await getExpense();
-  // };
 
   return (
     <Grid centered>
@@ -26,13 +23,13 @@ export const Home: FC = () => {
       <Grid.Row>
         <AddIncomeForm />
         <AddExpenseForm />
+        <InputFile />
       </Grid.Row>
       <Grid.Column mobile={16} tablet={14} computer={12} largeScreen={10} widescreen={8}>
         <Segment>
           <MyTable expense={expense} />
         </Segment>
       </Grid.Column>
-      {/* <Button content="get expense" onClick={handleClick} color="teal" /> */}
     </Grid>
   );
 };
