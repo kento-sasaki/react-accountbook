@@ -25,6 +25,7 @@
 #### Firestoreのルールを定義する
 - [x] firestore.rulesを設定
 - [x] firestore.rulesをテスト
+  - [x] read, create, update, deleteそれぞれのテスト
 
 #### 収支の一覧を表示
 - [x] テーブルを作る
