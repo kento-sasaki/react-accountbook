@@ -33,4 +33,4 @@ yarn-error.log*
 /**/vision.service-account.json
 /**/.runtimeconfig.json
 
-/**/*.jpg
+/**/receipt-*.jpg
