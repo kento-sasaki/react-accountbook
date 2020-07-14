@@ -3,6 +3,10 @@
 exports[`Storyshots AddExpenseForm Add Expense 1`] = `
 .emotion-1 {
   margin: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .emotion-0 {
@@ -69,7 +73,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
       </div>
     </div>
     <div
-      className="ui negative right attached disabled button"
+      className="ui teal right attached disabled button"
       onClick={[Function]}
       role="button"
       tabIndex={-1}

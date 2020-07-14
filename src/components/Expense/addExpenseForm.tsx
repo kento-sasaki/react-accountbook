@@ -5,6 +5,7 @@ import { Input, Button, Dropdown, DropdownProps, InputOnChangeData } from 'seman
 
 const margin = css`
   margin: 0.5rem;
+  display: flex;
 `;
 
 interface AddExpenseFormProps {
@@ -43,7 +44,7 @@ export const AddExpenseFormComponent: FC<AddExpenseFormProps> = ({
           onChange={handleChangeDate}
         />
         <Button
-          negative
+          color="teal"
           onClick={handleClick}
           content="Submit"
           disabled={!(/\d+/giu.test(amount) && !/[a-z]+/giu.test(amount))}

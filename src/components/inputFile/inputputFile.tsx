@@ -1,29 +1,86 @@
 /** @jsx jsx */
 import React, { FC } from 'react';
-import { jsx } from '@emotion/core';
-import { Button } from 'semantic-ui-react';
-import { useDispatch } from 'react-redux';
-import { fetchExpense } from '../../stores/expense';
+import { jsx, css } from '@emotion/core';
+import { Button, Label } from 'semantic-ui-react';
+
+const margin = css`
+  margin: 0.5rem;
+  display: flex;
+`;
 
 interface InputFileProps {
+  selectFile?: (e: any) => void;
+  handleUploadClick?: () => void;
   id?: string;
-  handleFile?: (e: any) => void;
+  file?: {
+    data: File | undefined;
+    displayName: string;
+  };
 }
 
 export const InputFileComponent: FC<InputFileProps> = ({
-  id = 'inputFile',
-  handleFile = () => {},
+  selectFile = () => {},
+  handleUploadClick = () => {},
+  id = 'selectFile',
+  file = undefined,
 }) => {
-  const dispatch = useDispatch();
-
-  const handleClick = async () => {
-    await dispatch(fetchExpense());
-  };
+  const Input = () => (
+    <label
+      css={css`
+        display: flex;
+        padding: 0.9rem 1rem;
+        :hover {
+          cursor: pointer;
+        }
+      `}
+      htmlFor={id}
+    >
+      Select File
+      <input
+        id={id}
+        type="file"
+        accept="image/*"
+        onChange={selectFile}
+        css={css`
+          display: none;
+        `}
+      />
+    </label>
+  );
 
   return (
-    <div>
-      <Button content="Input file" onClick={handleClick} />
-      <input type="file" onChange={handleFile} id={id} />
+    <div css={margin}>
+      <Button.Group>
+        <Button
+          as="div"
+          labelPosition="left"
+          css={css`
+            :hover {
+              cursor: text;
+            }
+          `}
+        >
+          <Label
+            as="p"
+            basic
+            css={css`
+              min-width: 15rem;
+            `}
+          >
+            {file?.data ? file.displayName : 'File name'}
+          </Label>
+        </Button>
+        <Button
+          css={css`
+            padding: 0 !important;
+          `}
+          basic
+          color="teal"
+        >
+          <Input />
+        </Button>
+        <Button onClick={handleUploadClick} content="Submit" color="teal" />
+      </Button.Group>
     </div>
   );
 };
