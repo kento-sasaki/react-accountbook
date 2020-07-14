@@ -7,6 +7,7 @@ import { InputFileComponent } from '../components/inputFile/inputputFile';
 export const InputFile: FC = () => {
   const [fileData, setFileData] = useState<File | undefined>();
   const [displayName, setDisplayName] = useState<string>('File name');
+  const [isDisabled, setIsDisabled] = useState<boolean>(true);
 
   useEffect(() => {
     if (fileData) {
@@ -15,6 +16,7 @@ export const InputFile: FC = () => {
           ? `${fileData.name.substr(0, 10)}...${fileData.name.substr(-10)}`
           : fileData.name;
       setDisplayName(tempDisplayName);
+      setIsDisabled(false);
     }
   }, [displayName, fileData]);
 
@@ -32,8 +34,9 @@ export const InputFile: FC = () => {
   return (
     <InputFileComponent
       selectFile={selectFile}
-      file={{ data: fileData, displayName }}
       handleUploadClick={handleUploadClick}
+      file={{ data: fileData, displayName }}
+      isDisabled={isDisabled}
     />
   );
 };
