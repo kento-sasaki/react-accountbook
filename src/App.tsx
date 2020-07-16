@@ -44,7 +44,7 @@ const App: FC = () => {
             <Helmet>
               <title>{pages.home.title}</title>
             </Helmet>
-            <Home />
+            <Home currentUser={currentUser} />
           </div>
         </Route>
         <Route path={pages.login.path}>

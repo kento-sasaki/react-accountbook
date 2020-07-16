@@ -2,7 +2,7 @@
 import React, { FC, useState, useEffect } from 'react';
 import { jsx } from '@emotion/core';
 import { uploadFile } from '../firebase/storage';
-import { InputFileComponent } from '../components/inputFile/inputputFile';
+import { InputFileComponent } from '../components/inputFile/inputFile';
 
 export const InputFile: FC = () => {
   const [fileData, setFileData] = useState<File | undefined>();
@@ -22,7 +22,6 @@ export const InputFile: FC = () => {
 
   const selectFile = async (e: any) => {
     setFileData(e.target.files[0]);
-    // await uploadFile(file);
   };
 
   const handleUploadClick = () => {
