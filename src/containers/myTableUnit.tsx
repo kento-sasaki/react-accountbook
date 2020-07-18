@@ -31,7 +31,7 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
     setIsEditable(true);
   };
 
-  const openModal = () => {
+  const openConfirm = () => {
     setIsOpen(true);
   };
 
@@ -39,7 +39,7 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
     setIsEditable(false);
   };
 
-  const closeModal = () => {
+  const closeConfirm = () => {
     setIsOpen(false);
   };
 
@@ -70,8 +70,8 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
       handleChangeDate={handleChangeDate}
       handleEditClick={handleEditClick}
       handleEditCancelClick={handleEditCancelClick}
-      openModal={openModal}
-      closeModal={closeModal}
+      openConfirm={openConfirm}
+      closeConfirm={closeConfirm}
       handleSaveClick={handleSaveClick}
       handleDeleteClick={handleDeleteClick}
       amount={amount}

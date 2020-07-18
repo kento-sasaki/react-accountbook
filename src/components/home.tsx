@@ -17,7 +17,7 @@ interface HomeProps {
 
 export const Home: FC<HomeProps> = ({ currentUser = null, isLoading = false }) => {
   const expense = useSelector((store: Store) => store.expense.expense);
-  console.log(isLoading);
+  console.log('isLoading: ', isLoading);
 
   const LoginedHome: FC = () => {
     return (

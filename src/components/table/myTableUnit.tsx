@@ -8,7 +8,7 @@ import {
   Input,
   InputOnChangeData,
   DropdownProps,
-  Modal,
+  Confirm,
 } from 'semantic-ui-react';
 import dayjs from 'dayjs';
 import { Expense } from '../../interfaces';
@@ -20,8 +20,8 @@ interface MyTableUnitProps {
   handleChangeAmount?: (e: FormEvent, { key }: InputOnChangeData) => void;
   handleChangeDate?: (e: FormEvent, { key }: DropdownProps) => void;
   handleEditClick?: () => void;
-  openModal?: () => void;
-  closeModal?: () => void;
+  openConfirm?: () => void;
+  closeConfirm?: () => void;
   handleEditCancelClick?: () => void;
   handleSaveClick?: () => void;
   handleDeleteClick?: () => void;
@@ -42,8 +42,8 @@ export const MyTableUnitComponent: FC<MyTableUnitProps> = ({
   handleChangeDate = () => {},
   handleEditClick = () => {},
   handleEditCancelClick = () => {},
-  openModal = () => {},
-  closeModal = () => {},
+  openConfirm = () => {},
+  closeConfirm = () => {},
   handleSaveClick = () => {},
   handleDeleteClick = () => {},
   amount = '',
@@ -89,16 +89,16 @@ export const MyTableUnitComponent: FC<MyTableUnitProps> = ({
       <Table.Cell content={expense.amount} />
       <Table.Cell>
         <Button basic content="Edit" icon="edit" color="teal" onClick={handleEditClick} />
-        <Button basic content="Delete" icon="trash" color="red" onClick={openModal} />
-        <Modal open={isOpen} onClose={closeModal} size="mini" closeIcon>
-          <Modal.Content>
-            <p>本当に削除してよろしいですか？</p>
-          </Modal.Content>
-          <Modal.Actions>
-            <Button basic content="Cancel" icon="cancel" color="grey" onClick={closeModal} />
-            <Button content="Delete" icon="trash" color="red" onClick={handleDeleteClick} />
-          </Modal.Actions>
-        </Modal>
+        <Button basic content="Delete" icon="trash" color="red" onClick={openConfirm} />
+        <Confirm
+          open={isOpen}
+          onCancel={closeConfirm}
+          onConfirm={handleDeleteClick}
+          content="削除してよろしいですか？"
+          cancelButton="Cancel"
+          confirmButton="OK"
+          size="mini"
+        />
       </Table.Cell>
     </Table.Row>
   );

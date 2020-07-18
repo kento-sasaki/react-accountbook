@@ -16,11 +16,12 @@ const App: FC = () => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const dispatch = useDispatch();
 
-  auth().onAuthStateChanged((user) => {
-    setCurrentUser(user);
-  });
-
   useEffect(() => {
+    auth().onAuthStateChanged((user) => {
+      console.log('auth().onAuthStateChanged start!');
+      console.log(currentUser);
+      setCurrentUser(user);
+    });
     console.log('USE EFFECT');
     if (currentUser) {
       firestore()
