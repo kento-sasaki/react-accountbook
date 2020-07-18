@@ -51,7 +51,6 @@ export const LoginFormComponent: FC<LoginFormProps> = ({
               <Form.Button color="teal" fluid onClick={handleClick} content="Log in" />
             </Form.Field>
             <Divider horizontal content="or" />
-            <Header as="h4">Log in with ...</Header>
           </Form>
         </Grid.Column>
       </Grid.Row>
