@@ -51,7 +51,7 @@ export const LoginFormComponent: FC<LoginFormProps> = ({
             <Button circular color="teal" fluid onClick={handleClick} content="Log in" />
           </Form.Field>
         </Form>
-        <Divider horizontal content="or" />
+        <Divider horizontal content="or" section />
         <Button circular css={marginBottom} color="google plus" fluid onClick={handleGoogleClick}>
           <Icon name="google" />
           Google でログイン
