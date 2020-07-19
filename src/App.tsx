@@ -3,7 +3,8 @@ import { useDispatch } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { auth, firestore } from './firebase/index';
-import { Home } from './components/home';
+import { LoginedHome } from './components/home/loginedHome';
+import { LogoutedHome } from './components/home/logoutedHome';
 import { About } from './components/about';
 import { Contact } from './components/contact';
 import { LoginForm } from './containers/loginForm';
@@ -45,7 +46,7 @@ const App: FC = () => {
             <Helmet>
               <title>{pages.home.title}</title>
             </Helmet>
-            <Home currentUser={currentUser} />
+            {currentUser ? <LoginedHome /> : <LogoutedHome />}
           </div>
         </Route>
         <Route path={pages.login.path}>

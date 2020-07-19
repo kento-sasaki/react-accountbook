@@ -53,11 +53,6 @@ export const LoginForm: FC = () => {
     history.push('/');
   };
 
-  const handleTwitterClick = async () => {
-    await loginWithSocialAccount(new auth.TwitterAuthProvider());
-    history.push('/');
-  };
-
   const handleAnonymouslyClick = async () => {
     await loginAnonymously();
     history.push('/');
@@ -70,7 +65,6 @@ export const LoginForm: FC = () => {
       handleChangePassword={handleChangePassword}
       handleGoogleClick={handleGoogleClick}
       handleFacebookClick={handleFacebookClick}
-      handleTwitterClick={handleTwitterClick}
       handleAnonymouslyClick={handleAnonymouslyClick}
     />
   );
