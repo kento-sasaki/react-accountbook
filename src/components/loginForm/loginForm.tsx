@@ -16,7 +16,7 @@ export interface LoginFormProps {
   handleChangePassword?: (event: FormEvent, { value }: InputData) => void;
   handleGoogleClick?: () => void;
   handleFacebookClick?: () => void;
-  handleAnonymouslyClick?: () => void;
+  handleTwitterClick?: () => void;
 }
 
 export const LoginFormComponent: FC<LoginFormProps> = ({
@@ -25,7 +25,7 @@ export const LoginFormComponent: FC<LoginFormProps> = ({
   handleChangePassword = () => {},
   handleGoogleClick = () => {},
   handleFacebookClick = () => {},
-  handleAnonymouslyClick = () => {},
+  handleTwitterClick = () => {},
 }) => {
   return (
     <Grid textAlign="center" verticalAlign="middle">
@@ -60,16 +60,9 @@ export const LoginFormComponent: FC<LoginFormProps> = ({
           <Icon name="facebook" />
           Facebook でログイン
         </Button>
-        <Button
-          circular
-          css={marginBottom}
-          color="grey"
-          fluid
-          onClick={handleAnonymouslyClick}
-          data-testid="loginAnonymously"
-        >
-          <Icon name="user" />
-          Guest でログイン
+        <Button circular css={marginBottom} color="twitter" fluid onClick={handleTwitterClick}>
+          <Icon name="twitter" />
+          Twitter でログイン
         </Button>
       </Grid.Column>
     </Grid>

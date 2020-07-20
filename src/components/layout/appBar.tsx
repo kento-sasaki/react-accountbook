@@ -85,7 +85,15 @@ export const AppBar: FC<AppBarProps> = ({ currentUser }) => {
         }}
         open={isOpen}
       >
-        <Segment compact style={{ right: '0%', position: 'fixed', top: '5%', zIndex: 1000 }}>
+        <Segment
+          compact
+          css={css`
+            position: absolute !important;
+            right: 0%;
+            top: 5%;
+            z-index: 1000;
+          `}
+        >
           <LoginForm />
         </Segment>
       </TransitionablePortal>
