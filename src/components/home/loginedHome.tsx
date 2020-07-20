@@ -3,13 +3,13 @@ import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { jsx } from '@emotion/core';
 import { Segment, Grid } from 'semantic-ui-react';
-import { ExpenseChart } from './charts/charts';
-import { AddExpenseForm } from '../containers/addExpenseForm';
-import { MyTable } from './table/myTable';
-import { InputFile } from '../containers/inputFile';
-import { Store } from '../interfaces';
+import { ExpenseChart } from '../charts/charts';
+import { AddExpenseForm } from '../../containers/addExpenseForm';
+import { MyTable } from '../table/myTable';
+import { InputFile } from '../../containers/inputFile';
+import { Store } from '../../interfaces';
 
-export const Home: FC = () => {
+export const LoginedHome: FC = () => {
   const expense = useSelector((store: Store) => store.expense.expense);
 
   return (

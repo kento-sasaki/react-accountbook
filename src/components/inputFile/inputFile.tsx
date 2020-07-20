@@ -16,6 +16,7 @@ interface InputFileProps {
     data: File | undefined;
     displayName: string;
   };
+  isDisabled?: boolean;
 }
 
 export const InputFileComponent: FC<InputFileProps> = ({
@@ -23,6 +24,7 @@ export const InputFileComponent: FC<InputFileProps> = ({
   handleUploadClick = () => {},
   id = 'selectFile',
   file = undefined,
+  isDisabled = true,
 }) => {
   const Input = () => (
     <label
@@ -79,7 +81,7 @@ export const InputFileComponent: FC<InputFileProps> = ({
         >
           <Input />
         </Button>
-        <Button onClick={handleUploadClick} content="Submit" color="teal" />
+        <Button onClick={handleUploadClick} content="Submit" color="teal" disabled={isDisabled} />
       </Button.Group>
     </div>
   );

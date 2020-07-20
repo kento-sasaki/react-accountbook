@@ -3,13 +3,7 @@ import React, { FC, useState, FormEvent } from 'react';
 import { useHistory } from 'react-router-dom';
 import { jsx } from '@emotion/core';
 import { auth } from '../firebase/index';
-import {
-  login,
-  signUp,
-  createUser,
-  loginWithSocialAccount,
-  loginAnonymously,
-} from '../firebase/auth';
+import { login, signUp, createUser, loginWithSocialAccount } from '../firebase/auth';
 import { LoginFormComponent, InputData } from '../components/loginForm/loginForm';
 
 if (auth().isSignInWithEmailLink(window.location.href)) {
@@ -58,11 +52,6 @@ export const LoginForm: FC = () => {
     history.push('/');
   };
 
-  const handleAnonymouslyClick = async () => {
-    await loginAnonymously();
-    history.push('/');
-  };
-
   return (
     <LoginFormComponent
       handleClick={handleClick}
@@ -71,7 +60,6 @@ export const LoginForm: FC = () => {
       handleGoogleClick={handleGoogleClick}
       handleFacebookClick={handleFacebookClick}
       handleTwitterClick={handleTwitterClick}
-      handleAnonymouslyClick={handleAnonymouslyClick}
     />
   );
 };

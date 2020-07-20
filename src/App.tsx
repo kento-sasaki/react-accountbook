@@ -3,7 +3,8 @@ import { useDispatch } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { auth, firestore } from './firebase/index';
-import { Home } from './components/home';
+import { LoginedHome } from './components/home/loginedHome';
+import { LogoutedHome } from './components/home/logoutedHome';
 import { About } from './components/about';
 import { Contact } from './components/contact';
 import { LoginForm } from './containers/loginForm';
@@ -16,11 +17,12 @@ const App: FC = () => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const dispatch = useDispatch();
 
-  auth().onAuthStateChanged((user) => {
-    setCurrentUser(user);
-  });
-
   useEffect(() => {
+    auth().onAuthStateChanged((user) => {
+      console.log('auth().onAuthStateChanged start!');
+      console.log(currentUser);
+      setCurrentUser(user);
+    });
     console.log('USE EFFECT');
     if (currentUser) {
       firestore()
@@ -44,7 +46,7 @@ const App: FC = () => {
             <Helmet>
               <title>{pages.home.title}</title>
             </Helmet>
-            <Home />
+            {currentUser ? <LoginedHome /> : <LogoutedHome />}
           </div>
         </Route>
         <Route path={pages.login.path}>

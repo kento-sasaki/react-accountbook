@@ -1,17 +1,12 @@
 /** @jsx jsx */
-import React, { FC, useState, SyntheticEvent } from 'react';
+import React, { FC, useState, useEffect, SyntheticEvent } from 'react';
 import { jsx, css } from '@emotion/core';
-import { Menu, Container, MenuItemProps } from 'semantic-ui-react';
+import { Menu, TransitionablePortal, Segment, MenuItemProps } from 'semantic-ui-react';
 import { useHistory } from 'react-router-dom';
+import { LoginForm } from '../../containers/loginForm';
 import { logout } from '../../firebase/auth';
-import { colors } from '../../styles/colors';
 import { pages, Page } from '../../pages';
 import { User } from '../../interfaces';
-
-const wrapper = css`
-  background: ${colors.appBar};
-  margin-bottom: 1rem !important;
-`;
 
 interface AppBarProps {
   currentUser?: User | null;
@@ -19,7 +14,12 @@ interface AppBarProps {
 
 export const AppBar: FC<AppBarProps> = ({ currentUser }) => {
   const [activeItem, setActiveItem] = useState('home');
+  const [isOpen, setIsOpen] = useState(false);
   const history = useHistory();
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [currentUser]);
 
   const handleItemClick = (e: SyntheticEvent, { name }: MenuItemProps) => {
     if (name) {
@@ -34,9 +34,33 @@ export const AppBar: FC<AppBarProps> = ({ currentUser }) => {
     history.push('/');
   };
 
+  const handleLoginClick = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <Menu secondary fixed="top" size="huge" css={wrapper} pointing>
-      <Container>
+    <div>
+      <Menu inverted fixed="top" color="teal" secondary>
+        <Menu.Item
+          onClick={handleItemClick}
+          name="home"
+          css={css`
+            padding: 0.1rem !important;
+          `}
+        >
+          <Segment
+            basic
+            css={css`
+              font-family: 'Lexend Peta', sans-serif;
+              font-size: 2rem !important;
+              color: #fff;
+              padding: 0 !important;
+              margin: 0.5rem 1.5rem !important;
+            `}
+          >
+            VisiBO
+          </Segment>
+        </Menu.Item>
         <Menu.Item onClick={handleItemClick} name="home" active={activeItem === 'home'}>
           Home
         </Menu.Item>
@@ -47,14 +71,32 @@ export const AppBar: FC<AppBarProps> = ({ currentUser }) => {
           Contact
         </Menu.Item>
         <Menu.Item
-          onClick={currentUser ? handleLogoutClick : handleItemClick}
+          onClick={currentUser ? handleLogoutClick : handleLoginClick}
           name={currentUser ? 'logout' : 'login'}
           active={activeItem === 'login' || activeItem === 'logout'}
           position="right"
         >
           {currentUser ? 'Log out' : 'Log in'}
         </Menu.Item>
-      </Container>
-    </Menu>
+      </Menu>
+      <TransitionablePortal
+        onClose={() => {
+          setIsOpen(false);
+        }}
+        open={isOpen}
+      >
+        <Segment
+          compact
+          css={css`
+            position: absolute !important;
+            right: 0%;
+            top: 5%;
+            z-index: 1000;
+          `}
+        >
+          <LoginForm />
+        </Segment>
+      </TransitionablePortal>
+    </div>
   );
 };
