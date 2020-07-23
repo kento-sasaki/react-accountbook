@@ -21,6 +21,7 @@ export const AddExpenseForm: FC = () => {
   };
 
   const handleClick = async () => {
+    console.log('start');
     await addExpense(Number(amount), date);
     setAmount('');
   };

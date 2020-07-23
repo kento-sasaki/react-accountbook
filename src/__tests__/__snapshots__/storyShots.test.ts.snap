@@ -72,14 +72,14 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
         </div>
       </div>
     </div>
-    <div
-      className="ui teal right attached disabled button"
+    <button
+      className="ui teal disabled button"
+      disabled={true}
       onClick={[Function]}
-      role="button"
       tabIndex={-1}
     >
       Submit
-    </div>
+    </button>
   </div>
 </div>
 `;
@@ -114,24 +114,32 @@ exports[`Storyshots ExpenseCharts Expense Chart 1`] = `
 `;
 
 exports[`Storyshots Layout Layout 1`] = `
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 100vh;
+.emotion-1 {
+  padding: 0.1rem !important;
 }
 
 .emotion-0 {
-  background: #fff !important;
-  margin-bottom: 1rem !important;
+  font-family: 'Lexend Peta',sans-serif;
+  font-size: 2rem !important;
+  color: #fff;
+  padding: 0 !important;
+  margin: 0.5rem 1.5rem !important;
 }
 
-.emotion-1 {
-  margin-top: 5rem;
+.emotion-5 {
+  margin-top: 3rem !important;
+}
+
+.emotion-4 {
+  padding-top: 1.5rem;
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-flex-direction: column !important;
+  -ms-flex-direction: column !important;
+  flex-direction: column !important;
+  min-height: 100vh !important;
 }
 
 .emotion-3 {
@@ -140,26 +148,28 @@ exports[`Storyshots Layout Layout 1`] = `
   padding: 1.5rem 0;
 }
 
-<div
-  className="emotion-4"
->
+<div>
   <div
-    className="ui huge pointing secondary top fixed emotion-0 menu"
+    className="ui container"
   >
     <div
-      className="ui container"
+      className="ui teal inverted secondary top fixed menu"
     >
+      <a
+        className="item emotion-1"
+        onClick={[Function]}
+      >
+        <div
+          className="ui basic segment emotion-0"
+        >
+          VisiBO
+        </div>
+      </a>
       <a
         className="active item"
         onClick={[Function]}
       >
         Home
-      </a>
-      <a
-        className="item"
-        onClick={[Function]}
-      >
-        About
       </a>
       <a
         className="item"
@@ -176,20 +186,62 @@ exports[`Storyshots Layout Layout 1`] = `
     </div>
   </div>
   <div
-    className="emotion-1"
-  />
-  <div
-    className="emotion-3"
+    className="ui basic segment pushable emotion-5"
   >
     <div
-      className="emotion-2"
+      className="ui vertical ui overlay right thin sidebar menu"
+    >
+      <a
+        className="active item"
+        onClick={[Function]}
+      >
+        Home
+        <i
+          aria-hidden="true"
+          className="home icon"
+          onClick={[Function]}
+        />
+      </a>
+      <a
+        className="item"
+        onClick={[Function]}
+      >
+        Contact
+        <i
+          aria-hidden="true"
+          className="gamepad icon"
+          onClick={[Function]}
+        />
+      </a>
+      <a
+        className="right item"
+        onClick={[Function]}
+      >
+        Log in
+        <i
+          aria-hidden="true"
+          className="user icon"
+          onClick={[Function]}
+        />
+      </a>
+    </div>
+    <div
+      className="pusher emotion-4"
     >
       <div
-        className="ui divider"
-      />
-      <h4>
-        Copyright © 2020 kozukata1993 All Rights Reserved.
-      </h4>
+        className="emotion-3"
+      >
+        <div
+          className="emotion-2"
+        >
+          <div
+            className="ui divider"
+          />
+          <h4>
+            Copyright © 2020 kozukata1993 All Rights Reserved.
+          </h4>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -214,174 +266,117 @@ exports[`Storyshots Link Second 1`] = `
 `;
 
 exports[`Storyshots LoginForm Login Form 1`] = `
+.emotion-0 {
+  margin-bottom: 1rem !important;
+}
+
 <div
-  className="ui basic segment"
+  className="ui center aligned middle aligned grid"
 >
   <div
-    className="ui center aligned middle aligned grid"
+    className="four wide column"
+    style={
+      Object {
+        "minWidth": 350,
+      }
+    }
   >
-    <div
-      className="row"
+    <h2
+      className="ui teal center aligned header"
+    >
+      Log in
+    </h2>
+    <form
+      className="ui form"
+      onSubmit={[Function]}
     >
       <div
-        className="column"
-        style={
-          Object {
-            "maxWidth": 500,
-          }
-        }
-      >
-        <h1
-          className="ui blue center aligned header"
-        >
-          Log in
-        </h1>
-        <form
-          className="ui large form"
-          onSubmit={[Function]}
-        >
-          <div
-            className="required field"
-          >
-            <div
-              className="field"
-            >
-              <div
-                className="ui fluid left icon input"
-              >
-                <input
-                  aria-describedby={null}
-                  onChange={[Function]}
-                  placeholder="E-mail address"
-                  type="text"
-                />
-                <i
-                  aria-hidden="true"
-                  className="at icon"
-                  onClick={[Function]}
-                />
-              </div>
-            </div>
-            <div
-              className="field"
-            >
-              <div
-                className="ui fluid left icon input"
-              >
-                <input
-                  aria-describedby={null}
-                  onChange={[Function]}
-                  placeholder="Password"
-                  type="password"
-                />
-                <i
-                  aria-hidden="true"
-                  className="lock icon"
-                  onClick={[Function]}
-                />
-              </div>
-            </div>
-            <div
-              className="field"
-            >
-              <button
-                aria-describedby={null}
-                className="ui blue large fluid button"
-                onClick={[Function]}
-              >
-                Log in
-              </button>
-            </div>
-          </div>
-          <div
-            className="ui horizontal divider"
-          >
-            or
-          </div>
-          <h3
-            className="ui header"
-          >
-            Log in with ...
-          </h3>
-        </form>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="column"
-        style={
-          Object {
-            "maxWidth": 800,
-          }
-        }
-      >
-        <button
-          className="ui google plus button"
-          onClick={[Function]}
-        >
-          <i
-            aria-hidden="true"
-            className="google icon"
-            onClick={[Function]}
-          />
-          Google
-        </button>
-        <button
-          className="ui facebook button"
-          onClick={[Function]}
-        >
-          <i
-            aria-hidden="true"
-            className="facebook icon"
-            onClick={[Function]}
-          />
-          Facebook
-        </button>
-        <button
-          className="ui twitter button"
-          onClick={[Function]}
-        >
-          <i
-            aria-hidden="true"
-            className="twitter icon"
-            onClick={[Function]}
-          />
-          Twitter
-        </button>
-        <button
-          className="ui grey button"
-          data-testid="loginAnonymously"
-          onClick={[Function]}
-        >
-          <i
-            aria-hidden="true"
-            className="user icon"
-            onClick={[Function]}
-          />
-          Anonymously
-        </button>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="column"
-        style={
-          Object {
-            "maxWidth": 400,
-          }
-        }
+        className="required field"
       >
         <div
-          className="ui message"
+          className="field"
         >
-          New to us? Sign Up
+          <div
+            className="ui fluid left icon input"
+          >
+            <input
+              aria-describedby={null}
+              onChange={[Function]}
+              placeholder="E-mail address"
+              type="text"
+            />
+            <i
+              aria-hidden="true"
+              className="at icon"
+              onClick={[Function]}
+            />
+          </div>
         </div>
+        <div
+          className="field"
+        >
+          <div
+            className="ui fluid left icon input"
+          >
+            <input
+              aria-describedby={null}
+              onChange={[Function]}
+              placeholder="Password"
+              type="password"
+            />
+            <i
+              aria-hidden="true"
+              className="lock icon"
+              onClick={[Function]}
+            />
+          </div>
+        </div>
+        <button
+          className="ui teal circular fluid button"
+          onClick={[Function]}
+        >
+          Log in
+        </button>
       </div>
+    </form>
+    <div
+      className="ui horizontal section divider"
+    >
+      or
     </div>
+    <button
+      className="ui google plus circular fluid button emotion-0"
+      onClick={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="google icon"
+        onClick={[Function]}
+      />
+      Google でログイン
+    </button>
+    <button
+      className="ui facebook circular fluid button emotion-0"
+      onClick={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="facebook icon"
+        onClick={[Function]}
+      />
+      Facebook でログイン
+    </button>
+    <button
+      className="ui twitter circular fluid button emotion-0"
+      onClick={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="twitter icon"
+        onClick={[Function]}
+      />
+      Twitter でログイン
+    </button>
   </div>
 </div>
 `;

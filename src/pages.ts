@@ -7,9 +7,9 @@ export const pages = {
     path: '/login',
     title: 'Login',
   },
-  about: {
-    path: '/about',
-    title: 'About',
+  logout: {
+    path: 'logout',
+    title: 'Logout',
   },
   contact: {
     path: '/contact',
@@ -17,4 +17,4 @@ export const pages = {
   },
 };
 
-export type Page = 'home' | 'login' | 'about';
+export type Page = 'home' | 'login' | 'contact' | 'logout';
