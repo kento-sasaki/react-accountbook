@@ -5,7 +5,6 @@ import { Helmet } from 'react-helmet';
 import { auth, firestore } from './firebase/index';
 import { LoginedHome } from './components/home/loginedHome';
 import { LogoutedHome } from './components/home/logoutedHome';
-import { About } from './components/about';
 import { Contact } from './components/contact';
 import { LoginForm } from './containers/loginForm';
 import { User } from './interfaces';
@@ -20,7 +19,6 @@ const App: FC = () => {
   useEffect(() => {
     auth().onAuthStateChanged((user) => {
       console.log('auth().onAuthStateChanged start!');
-      console.log(currentUser);
       setCurrentUser(user);
     });
     console.log('USE EFFECT');
@@ -55,14 +53,6 @@ const App: FC = () => {
               <title>{pages.login.title}</title>
             </Helmet>
             <LoginForm />
-          </div>
-        </Route>
-        <Route path={pages.about.path}>
-          <div>
-            <Helmet>
-              <title>{pages.about.title}</title>
-            </Helmet>
-            <About />
           </div>
         </Route>
         <Route path={pages.contact.path}>
