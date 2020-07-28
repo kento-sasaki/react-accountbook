@@ -85,11 +85,39 @@
 - [x] ロゴ、画像を使って整える
 - [x] モバイル閲覧用のサイドバーを作成
 
+#### READMEをちゃんと書く
+- [x] 概要
+  - [x] どんな用途のサービスなの簡潔に記述
+- [x] 機能一覧
+  - [x]支出の登録、編集、削除
+  - [x] レシートの画像から支出を登録
+  - [x] 支出の一覧表示
+  - [x] 支出をグラフで描画
+  - [x] ユーザー認証
+  - [x] 匿名認証 
+- [ ] 技術一覧
+  - [x] React
+  - [x] TypeScript
+  - [x] Firebase
+  - [x] Redux Toolkit
+  - [x] React Router
+  - [x] ESLint
+  - [x] Prettier
+  - [x] Cloud Vision API
+  - [x] GitHub Actions
+  - [x] Emotion
+  - [x] Semantic UI React
+  - [x] Jest
+  - [x] React Testing Library
+  - [x] Storybook
+  - [x] Cypress
+
+
+### タグ機能を実装
+- [ ] Firestoreの設計を再考
+
 #### ダッシュボードを作る
 - [ ] 左にメニューを表示
 - [ ] 円グラフを作成
 - [ ] 折れ線グラフを作成
 - [ ] 現在の支出合計を表示
-
-### タグ機能を実装
-- [ ] Firestoreの設計を再考
