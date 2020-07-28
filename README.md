@@ -3,11 +3,12 @@
   <h3 align="center">VisiBOは支出を登録して見やすく整理する家計簿アプリです</h3>
 <div align="center">
 
-  <a href="https://ja.reactjs.org/"><img alt="react logo" src="https://user-images.githubusercontent.com/51138160/88663361-74f63680-d116-11ea-8451-291ff089eafe.png" width="80px;" /></a>
-  <a href="https://www.typescriptlang.org/"><img alt="typescript logo" src="https://user-images.githubusercontent.com/51138160/88664111-84c24a80-d117-11ea-98fc-f5b0b41b18be.png" width="80px;"></a>
-  <a href="https://firebase.google.com/"><img alt="firebase logo" src="https://user-images.githubusercontent.com/51138160/88664206-b0453500-d117-11ea-8c07-106a05b5726b.png" width="80px;"></a>
+  <a href="https://ja.reactjs.org/"><img alt="react logo" src="https://user-images.githubusercontent.com/51138160/88663361-74f63680-d116-11ea-8451-291ff089eafe.png" width="65px;" /></a>
+  <a href="https://www.typescriptlang.org/"><img alt="typescript logo" src="https://user-images.githubusercontent.com/51138160/88664111-84c24a80-d117-11ea-98fc-f5b0b41b18be.png" width="65px;"></a>
+  <a href="https://firebase.google.com/"><img alt="firebase logo" src="https://user-images.githubusercontent.com/51138160/88664206-b0453500-d117-11ea-8c07-106a05b5726b.png" width="65px;"></a>
   <br>
   <a href="https://redux-toolkit.js.org/"><img alt="redux logo" src="https://user-images.githubusercontent.com/51138160/88664546-2d70aa00-d118-11ea-9a33-9abf85e316d6.png" height="45px;" /></a>
+  <a href="https://reactrouter.com/"><img alt="react router logo" src="https://user-images.githubusercontent.com/51138160/88672056-f901eb80-d121-11ea-8582-371910a557ac.png" height="45px;" /></a>
   <a href="https://eslint.org/"><img alt="eslint logo" src="https://user-images.githubusercontent.com/51138160/88664693-690b7400-d118-11ea-9b9a-84c5f884ee74.png" height="45px;" /></a>
   <a href="https://prettier.io/"><img alt="prettier logo" src="https://user-images.githubusercontent.com/51138160/88665052-fa7ae600-d118-11ea-8c5b-0946dd342173.png" height="45px"></a>
   <a href="https://cloud.google.com/vision?hl=ja"><img alt="vision api logo" src="https://user-images.githubusercontent.com/51138160/88664760-84767f00-d118-11ea-9338-96cc54bec5cf.png" height="45px;" /></a>
@@ -25,18 +26,18 @@
 - 匿名認証
 
 ## 使用技術(言語、ライブラリ、フレームワーク等)
-- React
-- TypeScript
-- Firebase
-- Redux Toolkit
-- React Router
-- ESLint
-- Prettier
-- Vision API
-- GitHub Actions
-- Emotion
-- Semantic UI React
-- Jest
-- React Testing Library
-- Storybook
-- Cypress
+- [React](https://ja.reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Firebase](https://firebase.google.com/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [React Router](https://reactrouter.com/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Vision API](https://cloud.google.com/vision?hl=ja)
+- [GitHub Actions](https://github.co.jp/features/actions)
+- [Emotion](https://emotion.sh/docs/introduction)
+- [Semantic UI React](https://react.semantic-ui.com/)
+- [Jest](https://jestjs.io/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+- [Storybook](https://storybook.js.org/)
+- [Cypress](https://www.cypress.io/)
