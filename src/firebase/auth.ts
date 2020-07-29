@@ -58,42 +58,30 @@ export const loginWithSocialAccount = async (provider: Provider) => {
   // provider.addScope("email");
 
   await auth()
-    .signInWithPopup(provider)
-    .catch((error) => {
+    .signInWithRedirect(provider)
+    .catch(async (error) => {
       if (error.code === 'auth/account-exists-with-different-credential') {
         const pendingCred = error.credential;
         const { email } = error;
 
-        auth()
-          .fetchSignInMethodsForEmail(email)
-          .then((methods) => {
-            if (methods[0] === 'password') {
-              // TODO: implement promptUserForPassword.
-              const password = promptUserForPassword();
-              auth()
-                .signInWithEmailAndPassword(email, password)
-                .then(({ user }) => {
-                  if (user) {
-                    user.linkWithCredential(pendingCred);
-                  }
-                })
-                .then(() => {
-                  // Google account successfully linked to the existing Firebase user.
-                });
+        const methods = await auth().fetchSignInMethodsForEmail(email);
+        if (methods[0] === 'password') {
+          // TODO: implement promptUserForPassword.
+          const password = promptUserForPassword();
+          const { user } = await auth().signInWithEmailAndPassword(email, password);
+          if (user) {
+            user.linkWithCredential(pendingCred);
+          }
 
-              return;
-            }
-            const anotherProvider = getProviderForProviderId(methods[0]);
-            if (anotherProvider) {
-              auth()
-                .signInWithPopup(anotherProvider)
-                .then(({ user }) => {
-                  if (user) {
-                    user.linkAndRetrieveDataWithCredential(pendingCred);
-                  }
-                });
-            }
-          });
+          return;
+        }
+        const anotherProvider = getProviderForProviderId(methods[0]);
+        if (anotherProvider) {
+          const { user } = await auth().signInWithPopup(anotherProvider);
+          if (user) {
+            user.linkAndRetrieveDataWithCredential(pendingCred);
+          }
+        }
       }
     });
 };
