@@ -1,9 +1,7 @@
 import { auth } from './index';
 import { Provider } from '../interfaces';
-import { getProviderForProviderId } from '../utils/utils';
 import { getConfigs } from '../configs';
 
-const promptUserForPassword = () => 'password';
 const { actionCodeSettings } = getConfigs();
 
 export const signUp = async (email: string, password: string) => {
@@ -56,45 +54,12 @@ export const logout = async () => {
 
 export const loginWithSocialAccount = async (provider: Provider) => {
   // provider.addScope("email");
-
   await auth()
-    .signInWithPopup(provider)
-    .catch((error) => {
-      if (error.code === 'auth/account-exists-with-different-credential') {
-        const pendingCred = error.credential;
-        const { email } = error;
-
-        auth()
-          .fetchSignInMethodsForEmail(email)
-          .then((methods) => {
-            if (methods[0] === 'password') {
-              // TODO: implement promptUserForPassword.
-              const password = promptUserForPassword();
-              auth()
-                .signInWithEmailAndPassword(email, password)
-                .then(({ user }) => {
-                  if (user) {
-                    user.linkWithCredential(pendingCred);
-                  }
-                })
-                .then(() => {
-                  // Google account successfully linked to the existing Firebase user.
-                });
-
-              return;
-            }
-            const anotherProvider = getProviderForProviderId(methods[0]);
-            if (anotherProvider) {
-              auth()
-                .signInWithPopup(anotherProvider)
-                .then(({ user }) => {
-                  if (user) {
-                    user.linkAndRetrieveDataWithCredential(pendingCred);
-                  }
-                });
-            }
-          });
-      }
+    .signInWithRedirect(provider)
+    .catch(({ code: errorCode, message: errorMessage }) => {
+      // Handle Errors here.
+      // ...
+      console.log(errorCode, errorMessage);
     });
 };
 

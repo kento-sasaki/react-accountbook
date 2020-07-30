@@ -34,12 +34,14 @@ export const LogoutedHome: FC = () => {
     <div>
       <Grid centered columns="equal" container>
         <Grid.Row css={margin(3, 5)}>
-          <Grid.Column width={8} verticalAlign="middle">
+          <Grid.Column width={9} verticalAlign="middle">
             <Segment basic textAlign="left" vertical>
               <Header as="h2" css={fontColor}>
                 {visiboLogo}が<p>あなたの支出を見やすくします。</p>
               </Header>
-              <Header>{visiboLogo}で支出を登録すると、支出を見やすく整理します。</Header>
+              <Header css={fontColor}>
+                {visiboLogo}は支出を登録して見やすく整理する家計簿アプリです
+              </Header>
               <Grid.Row columns="equal">
                 <Button
                   circular
@@ -97,17 +99,17 @@ export const LogoutedHome: FC = () => {
         <Grid centered columns="equal">
           <Grid.Column css={margin(1, 1)}>
             <Segment>
-              <Header content="様々なチャートで整理" />
+              <Header css={fontColor} textAlign="center" content="様々なチャートで整理" />
             </Segment>
           </Grid.Column>
           <Grid.Column css={margin(1, 1)}>
             <Segment>
-              <Header content="レシートから支出を登録" />
+              <Header css={fontColor} textAlign="center" content="レシートから支出を登録" />
             </Segment>
           </Grid.Column>
           <Grid.Column css={margin(1, 1)}>
             <Segment>
-              <Header content="" />
+              <Header css={fontColor} textAlign="center" content="" />
             </Segment>
           </Grid.Column>
         </Grid>
