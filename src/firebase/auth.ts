@@ -1,9 +1,7 @@
 import { auth } from './index';
 import { Provider } from '../interfaces';
-import { getProviderForProviderId } from '../utils/utils';
 import { getConfigs } from '../configs';
 
-const promptUserForPassword = () => 'password';
 const { actionCodeSettings } = getConfigs();
 
 export const signUp = async (email: string, password: string) => {
@@ -56,33 +54,12 @@ export const logout = async () => {
 
 export const loginWithSocialAccount = async (provider: Provider) => {
   // provider.addScope("email");
-
   await auth()
     .signInWithRedirect(provider)
-    .catch(async (error) => {
-      if (error.code === 'auth/account-exists-with-different-credential') {
-        const pendingCred = error.credential;
-        const { email } = error;
-
-        const methods = await auth().fetchSignInMethodsForEmail(email);
-        if (methods[0] === 'password') {
-          // TODO: implement promptUserForPassword.
-          const password = promptUserForPassword();
-          const { user } = await auth().signInWithEmailAndPassword(email, password);
-          if (user) {
-            user.linkWithCredential(pendingCred);
-          }
-
-          return;
-        }
-        const anotherProvider = getProviderForProviderId(methods[0]);
-        if (anotherProvider) {
-          const { user } = await auth().signInWithPopup(anotherProvider);
-          if (user) {
-            user.linkAndRetrieveDataWithCredential(pendingCred);
-          }
-        }
-      }
+    .catch(({ code: errorCode, message: errorMessage }) => {
+      // Handle Errors here.
+      // ...
+      console.log(errorCode, errorMessage);
     });
 };
 
