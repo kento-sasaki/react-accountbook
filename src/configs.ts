@@ -10,7 +10,8 @@ export const getConfigs = () => {
 
   return {
     actionCodeSettings: {
-      url: 'http://localhost:3000/',
+      url:
+        process.env.NODE_ENV === 'production' ? 'https://visibo.tech/' : 'http://localhost:3000/',
       handleCodeInApp: true,
     },
   };

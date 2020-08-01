@@ -10,21 +10,6 @@ interface MyTableProps {
 }
 
 export const MyTable: FC<MyTableProps> = ({ expense }) => {
-  const createSortedArray = (array: Expense[]) => {
-    const result = [...array].sort((a, b) => {
-      if (a.date < b.date) {
-        return 1;
-      }
-      if (a.date > b.date) {
-        return -1;
-      }
-
-      return 0;
-    });
-
-    return result;
-  };
-
   return (
     <Table basic="very">
       <Table.Header>
@@ -36,7 +21,7 @@ export const MyTable: FC<MyTableProps> = ({ expense }) => {
       </Table.Header>
 
       <Table.Body>
-        {createSortedArray(expense).map((exp) => (
+        {expense.map((exp) => (
           <MyTableUnit expense={exp} key={exp.id} />
         ))}
       </Table.Body>

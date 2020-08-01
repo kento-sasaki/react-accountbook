@@ -48,7 +48,14 @@ export const LoginFormComponent: FC<LoginFormProps> = ({
               placeholder="Password"
               type="password"
             />
-            <Button circular color="teal" fluid onClick={handleClick} content="Log in" />
+            <Button
+              circular
+              color="teal"
+              fluid
+              onClick={handleClick}
+              content="Log in"
+              disabled={process.env.NODE_ENV === 'production'}
+            />
           </Form.Field>
         </Form>
         <Divider horizontal content="or" section />

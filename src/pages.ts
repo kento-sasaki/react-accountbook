@@ -8,7 +8,7 @@ export const pages = {
     title: 'Login',
   },
   logout: {
-    path: 'logout',
+    path: '/logout',
     title: 'Logout',
   },
   contact: {
