@@ -6,7 +6,6 @@ import { auth, firestore } from './firebase/index';
 import { LoginedHome } from './components/home/loginedHome';
 import { LogoutedHome } from './components/home/logoutedHome';
 import { Contact } from './components/contact';
-import { LoginForm } from './containers/loginForm';
 import { User } from './interfaces';
 import { pages } from './pages';
 import { Layout } from './components/layout/layout';
@@ -42,23 +41,15 @@ const App: FC = () => {
         <Route path="/" exact>
           <div>
             <Helmet>
-              <title>{pages.home.title}</title>
+              <title>{pages.home.title} | VisiBO</title>
             </Helmet>
             {currentUser ? <LoginedHome /> : <LogoutedHome />}
-          </div>
-        </Route>
-        <Route path={pages.login.path}>
-          <div>
-            <Helmet>
-              <title>{pages.login.title}</title>
-            </Helmet>
-            <LoginForm />
           </div>
         </Route>
         <Route path={pages.contact.path}>
           <div>
             <Helmet>
-              <title>{pages.contact.title}</title>
+              <title>{pages.contact.title} | VisiBO</title>
             </Helmet>
             <Contact />
           </div>
