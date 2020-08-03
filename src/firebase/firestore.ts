@@ -17,7 +17,6 @@ export const addExpense = async (amount: number, date: Date) => {
 
 export const getExpense = async () => {
   const { currentUser } = auth();
-  const expense: Expense[] = [];
 
   const querySnapshot = await firestore()
     .collection('users')
@@ -26,20 +25,40 @@ export const getExpense = async () => {
     .orderBy('date', 'asc')
     .get();
 
-  querySnapshot.forEach((doc) => {
-    expense.push({
-      id: doc.id,
-      date: doc.data().date.toDate(),
-      formatedDate: dayjs(doc.data().date.toDate()).format('YYYY/M/D'),
-      amount: doc.data().amount,
+  const expense: Expense[] = querySnapshot.docs
+    .sort((a, b) => {
+      const dateA = a.data().date.toDate();
+      const dateB = b.data().date.toDate();
+
+      if (dayjs(dateA).format('YYYY/M/D') === dayjs(dateB).format('YYYY/M/D')) {
+        if (a.data().createdAt > b.data().createdAt) {
+          return -1;
+        }
+
+        return 1;
+      }
+
+      if (dateA > dateB) {
+        return -1;
+      }
+
+      return 1;
+    })
+    .map((doc) => {
+      return {
+        id: doc.id,
+        date: doc.data().date.toDate(),
+        formatedDate: dayjs(doc.data().date.toDate()).format('YYYY/M/D'),
+        amount: doc.data().amount,
+      };
     });
-  });
 
   return expense;
 };
 
 export const createDatilyExpense = (allExpense: Expense[]) => {
-  const formatedDateArray = allExpense
+  const formatedDateArray = [...allExpense]
+    .reverse()
     .map((exp) => exp.formatedDate)
     .filter((formatedDate, i, self) => self.indexOf(formatedDate) === i);
 

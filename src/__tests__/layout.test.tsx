@@ -11,8 +11,5 @@ describe('Layout', () => {
 
     fireEvent.click(getByText('Home'));
     expect(getByText('Home')).toHaveClass('active item');
-
-    fireEvent.click(getByText('Contact'));
-    expect(getByText('Contact')).toHaveClass('active item');
   });
 });
