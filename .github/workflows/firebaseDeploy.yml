@@ -23,6 +23,7 @@ jobs:
           REACT_APP_FIREBASE_APP_ID: ${{ secrets.REACT_APP_FIREBASE_APP_ID }}
           REACT_APP_FIREBASE_CONTINUE_URL: ${{ secrets.REACT_APP_FIREBASE_CONTINUE_URL }}
           REACT_APP_FIREBASE_STORAGE_BUCKET: ${{ secrets.REACT_APP_FIREBASE_STORAGE_BUCKET }}
+          SKIP_PREFLIGHT_CHECK: true
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
