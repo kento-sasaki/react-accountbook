@@ -8,11 +8,11 @@ export type Provider =
   | firebase.auth.TwitterAuthProvider;
 
 export interface Store {
-  counter: {
-    count: number;
-  };
   expense: {
     expense: { id: string; date: Date; formatedDate: string; amount: number }[];
+  };
+  isLoading: {
+    isLoading: boolean;
   };
 }
 

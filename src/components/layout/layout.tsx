@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import React, { FC, useState, useEffect, SyntheticEvent } from 'react';
+import { useSelector } from 'react-redux';
 import { jsx, css } from '@emotion/core';
 import {
   Sidebar,
@@ -12,7 +13,7 @@ import {
 import { useHistory } from 'react-router-dom';
 import { AppBar } from './appBar';
 import { Footer } from './footer';
-import { User } from '../../interfaces';
+import { User, Store } from '../../interfaces';
 import { pages, Page } from '../../pages';
 import { LoginForm } from '../../containers/loginForm';
 import { logout } from '../../firebase/auth';
@@ -25,6 +26,13 @@ const paddingTop = css`
   padding-top: 1.5rem;
 `;
 
+const modalPosition = css`
+  position: absolute !important;
+  right: 0%;
+  top: 5%;
+  z-index: 1000;
+`;
+
 interface LayoutProps {
   currentUser?: User | null;
 }
@@ -34,6 +42,7 @@ export const Layout: FC<LayoutProps> = ({ currentUser, children }) => {
   const [activeItem, setActiveItem] = useState<Page>('home');
   const [isOpen, setIsOpen] = useState(false);
   const history = useHistory();
+  const isLoading = useSelector((store: Store) => store.isLoading.isLoading);
 
   useEffect(() => {
     setIsOpen(false);
@@ -104,15 +113,7 @@ export const Layout: FC<LayoutProps> = ({ currentUser, children }) => {
           }}
           open={isOpen}
         >
-          <Segment
-            compact
-            css={css`
-              position: absolute !important;
-              right: 0%;
-              top: 5%;
-              z-index: 1000;
-            `}
-          >
+          <Segment compact css={modalPosition}>
             <LoginForm />
           </Segment>
         </TransitionablePortal>
@@ -126,7 +127,9 @@ export const Layout: FC<LayoutProps> = ({ currentUser, children }) => {
             min-height: 100vh !important;
           `}
         >
-          {children}
+          <Segment basic vertical loading={isLoading}>
+            {children}
+          </Segment>
           <Footer />
         </Sidebar.Pusher>
       </Sidebar.Pushable>
