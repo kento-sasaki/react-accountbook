@@ -10,15 +10,18 @@ import { User } from './interfaces';
 import { pages } from './pages';
 import { Layout } from './components/layout/layout';
 import { fetchExpense, resetExpense } from './stores/expense';
+import { loading, loaded } from './stores/loading';
 
 const App: FC = () => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(loading());
     auth().onAuthStateChanged((user) => {
       console.log('auth().onAuthStateChanged start!');
       setCurrentUser(user);
+      dispatch(loaded());
     });
     console.log('USE EFFECT');
     if (currentUser) {

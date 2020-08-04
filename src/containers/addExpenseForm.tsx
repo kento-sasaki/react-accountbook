@@ -15,8 +15,8 @@ export const AddExpenseForm: FC = () => {
   };
 
   const handleChangeDate = (e: FormEvent, { value }: DropdownProps) => {
-    if (typeof value === 'string') {
-      setDate(dayjs(value).toDate());
+    if (typeof value === 'number') {
+      setDate(dayjs().subtract(value, 'day').toDate());
     }
   };
 
@@ -30,7 +30,7 @@ export const AddExpenseForm: FC = () => {
     return {
       key: n,
       text: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,
-      value: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,
+      value: n,
     };
   });
 
