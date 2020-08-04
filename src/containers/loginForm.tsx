@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import React, { FC, useState, FormEvent } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { jsx } from '@emotion/core';
 import { auth } from '../firebase/index';
 import {
@@ -11,6 +12,7 @@ import {
   loginAnonymously,
 } from '../firebase/auth';
 import { LoginFormComponent, InputData } from '../components/loginForm/loginForm';
+import { loading } from '../stores/loading';
 
 if (auth().isSignInWithEmailLink(window.location.href)) {
   createUser();
@@ -19,13 +21,14 @@ if (auth().isSignInWithEmailLink(window.location.href)) {
 export const LoginForm: FC = () => {
   const [email, setEmail] = useState<string | null>(null);
   const [password, setPassword] = useState<string | null>(null);
-
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const handleClick = async () => {
     if (email && password) {
       const methods = await auth().fetchSignInMethodsForEmail(email);
       if (methods[0]) {
+        dispatch(loading());
         await login(email, password);
         history.push('/');
       } else {

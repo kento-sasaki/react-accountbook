@@ -13,7 +13,7 @@ interface AddExpenseFormProps {
   handleChangeDate?: (e: FormEvent, { key }: DropdownProps) => void;
   handleClick?: () => void;
   amount?: string;
-  dateOptions?: { key: number; text: string; value: string }[];
+  dateOptions?: { key: number; text: string; value: number }[];
 }
 
 export const AddExpenseFormComponent: FC<AddExpenseFormProps> = ({
