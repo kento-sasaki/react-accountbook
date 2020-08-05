@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 import { auth, firestore } from './firebase/index';
 import { LoginedHome } from './components/home/loginedHome';
 import { LogoutedHome } from './components/home/logoutedHome';
-import { Contact } from './components/contact';
+import { Contact } from './containers/contact';
 import { User } from './interfaces';
 import { pages } from './pages';
 import { Layout } from './components/layout/layout';
