@@ -9,7 +9,7 @@ interface ContactProps {
   openConfirm?: () => void;
   closeConfirm?: () => void;
   handleChangeText?: (e: FormEvent, { value }: TextAreaProps) => void;
-  handleConfirmClick?: () => void;
+  handleConfirmClick?: () => Promise<void>;
 }
 
 export const ContactComponent: FC<ContactProps> = ({
