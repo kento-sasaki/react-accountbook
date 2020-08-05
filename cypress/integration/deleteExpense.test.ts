@@ -11,7 +11,7 @@ describe('delete expnese', () => {
     cy.get('div.ui.top.fixed.menu > a.item').contains('Log out').click();
   });
 
-  it('expense delete', () => {
+  it('delete expense', () => {
     const amount = Math.floor(Math.random() * 1000);
     cy.get('input').get('[placeholder="Expense"]').type(`${amount}`);
     cy.get('i.dropdown.icon').click();
