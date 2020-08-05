@@ -84,6 +84,50 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
 </div>
 `;
 
+exports[`Storyshots Contact Add Expense 1`] = `
+<div
+  className="ui container"
+>
+  <div
+    className="ui basic segment"
+  >
+    <div
+      className="ui header"
+    >
+      ぜひご意見をお寄せください。
+    </div>
+    <form
+      className="ui form"
+      onSubmit={[Function]}
+    >
+      <div
+        className="field"
+      >
+        <textarea
+          aria-describedby={null}
+          onChange={[Function]}
+          onInput={[Function]}
+          placeholder="Please give me your feedback."
+          rows={9}
+          value=""
+        />
+      </div>
+      <div
+        className="field"
+      >
+        <button
+          aria-describedby={null}
+          className="ui teal circular button"
+          onClick={[Function]}
+        >
+          送信
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
 exports[`Storyshots ExpenseCharts Expense Chart 1`] = `
 <div>
   <div
@@ -314,6 +358,9 @@ exports[`Storyshots Layout Layout 1`] = `
     <div
       className="pusher emotion-4"
     >
+      <div
+        className="ui basic loading vertical segment"
+      />
       <div
         className="emotion-3"
       >
