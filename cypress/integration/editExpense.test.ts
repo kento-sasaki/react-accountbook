@@ -18,7 +18,7 @@ describe('edit expense', () => {
     cy.get('table.ui.very.basic.table > tbody > tr:first > td:nth-child(2) > .ui > input')
       .clear()
       .type(`${amount}`);
-    cy.get('table.ui.very.basic.table > tbody > tr:first > td:nth-child(3)')
+    cy.get('table.ui.very.basic.table > tbody > tr:first > td:nth-child(4)')
       .contains('Save')
       .click();
     cy.pause();
