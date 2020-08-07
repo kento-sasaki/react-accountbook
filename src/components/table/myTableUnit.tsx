@@ -7,15 +7,15 @@ import { DateCellComponent } from './dateCell';
 import { AmountCellComponent } from './amountCell';
 import { TagCellComponent } from './tagCell';
 import { ActionsCellComponent } from './actionsCell';
-import { Expense } from '../../interfaces';
+import { StoreExpense } from '../../interfaces';
 
 interface MyTableUnitProps {
-  expense?: Expense;
+  expense?: StoreExpense;
   isEditable?: boolean;
   isOpen?: boolean;
   handleChangeAmount?: (e: FormEvent, { key }: InputOnChangeData) => void;
   handleChangeDate?: (e: FormEvent, { key }: DropdownProps) => void;
-  handleChangeTag?: (e: FormEvent, { key }: InputOnChangeData) => void;
+  handleChangeTag?: (e: FormEvent, { key }: DropdownProps) => void;
   handleEditClick?: () => void;
   openConfirm?: () => void;
   closeConfirm?: () => void;
@@ -24,7 +24,6 @@ interface MyTableUnitProps {
   handleDeleteClick?: () => void;
   amount?: string;
   dateOptions?: { key: number; text: string; value: number }[];
-  tag?: string;
 }
 
 export const MyTableUnitComponent: FC<MyTableUnitProps> = ({
@@ -33,7 +32,8 @@ export const MyTableUnitComponent: FC<MyTableUnitProps> = ({
     date: new Date(),
     formatedDate: dayjs(new Date()).format('YYYY/M/D'),
     amount: 0,
-    tag: '',
+    tagLabel: 'その他',
+    tagIcon: 'tag',
   },
   isEditable = false,
   isOpen = false,
@@ -48,7 +48,6 @@ export const MyTableUnitComponent: FC<MyTableUnitProps> = ({
   handleDeleteClick = () => {},
   amount = '',
   dateOptions = [{ key: 0, text: 'Date', value: 0 }],
-  tag = '',
 }) => {
   return (
     <Table.Row>
@@ -68,7 +67,6 @@ export const MyTableUnitComponent: FC<MyTableUnitProps> = ({
         expense={expense}
         isEditable={isEditable}
         handleChangeTag={handleChangeTag}
-        tag={tag}
       />
       <ActionsCellComponent
         isEditable={isEditable}

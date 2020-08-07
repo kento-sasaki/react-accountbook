@@ -3,10 +3,10 @@ import React, { FC, FormEvent } from 'react';
 import { jsx, css } from '@emotion/core';
 import { Table, Input, InputOnChangeData } from 'semantic-ui-react';
 import dayjs from 'dayjs';
-import { Expense } from '../../interfaces';
+import { StoreExpense } from '../../interfaces';
 
 interface AmountCellProps {
-  expense?: Expense;
+  expense?: StoreExpense;
   isEditable?: boolean;
   handleChangeAmount?: (e: FormEvent, { key }: InputOnChangeData) => void;
   amount?: string;

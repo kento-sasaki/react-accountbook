@@ -3,10 +3,10 @@ import React, { FC } from 'react';
 import { jsx } from '@emotion/core';
 import { BarChart, Bar, CartesianGrid, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 import { createDatilyExpense } from '../../firebase/firestore';
-import { Expense } from '../../interfaces';
+import { StoreExpense } from '../../interfaces';
 
 interface ExpenseChartProps {
-  expense: Expense[];
+  expense: StoreExpense[];
 }
 
 export const ExpenseChart: FC<ExpenseChartProps> = ({ expense }) => {

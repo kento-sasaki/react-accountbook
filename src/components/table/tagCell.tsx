@@ -1,16 +1,20 @@
 /** @jsx jsx */
 import React, { FC, FormEvent } from 'react';
-import { jsx, css } from '@emotion/core';
-import { Table, Input, InputOnChangeData } from 'semantic-ui-react';
+import { jsx } from '@emotion/core';
+import { Table, Label, Dropdown, DropdownProps } from 'semantic-ui-react';
 import dayjs from 'dayjs';
-import { Expense } from '../../interfaces';
+import { StoreExpense } from '../../interfaces';
 
 interface TagCellProps {
-  expense?: Expense;
+  expense?: StoreExpense;
   isEditable?: boolean;
-  handleChangeTag?: (e: FormEvent, { key }: InputOnChangeData) => void;
-  tag?: string;
+  handleChangeTag?: (e: FormEvent, { key }: DropdownProps) => void;
 }
+
+export const tagOptions = [
+  { key: 0, text: '食費', value: '食費', icon: 'food' },
+  { key: 1, text: 'その他', value: 'その他', icon: 'tag' },
+];
 
 export const TagCellComponent: FC<TagCellProps> = ({
   expense = {
@@ -18,27 +22,32 @@ export const TagCellComponent: FC<TagCellProps> = ({
     date: new Date(),
     formatedDate: dayjs(new Date()).format('YYYY/M/D'),
     amount: 0,
-    tag: '',
+    tagLabel: 'その他',
+    tagIcon: 'tag',
   },
   isEditable = false,
   handleChangeTag = () => {},
-  tag = '',
 }) => {
   if (isEditable) {
     return (
       <Table.Cell
         content={
-          <Input
-            css={css`
-              max-width: 7rem !important;
-            `}
-            value={tag}
+          <Dropdown
+            placeholder="Select tag"
+            fluid
+            selection
+            options={tagOptions}
             onChange={handleChangeTag}
+            defaultValue={expense.tagLabel}
           />
         }
       />
     );
   }
 
-  return <Table.Cell content={expense.tag} />;
+  return (
+    <Table.Cell
+      content={<Label icon={expense.tagIcon} content={expense.tagLabel} size="large" basic />}
+    />
+  );
 };

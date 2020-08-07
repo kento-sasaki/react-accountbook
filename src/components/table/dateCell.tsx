@@ -3,10 +3,10 @@ import React, { FC, FormEvent } from 'react';
 import { jsx, css } from '@emotion/core';
 import { Table, Dropdown, DropdownProps } from 'semantic-ui-react';
 import dayjs from 'dayjs';
-import { Expense } from '../../interfaces';
+import { StoreExpense } from '../../interfaces';
 
 interface DateCellProps {
-  expense?: Expense;
+  expense?: StoreExpense;
   isEditable?: boolean;
   handleChangeDate?: (e: FormEvent, { key }: DropdownProps) => void;
   dateOptions?: { key: number; text: string; value: number }[];

@@ -3,12 +3,12 @@ import React, { FC, useState, FormEvent } from 'react';
 import { jsx } from '@emotion/core';
 import { InputOnChangeData, DropdownProps } from 'semantic-ui-react';
 import dayjs from 'dayjs';
-import { Expense } from '../../interfaces';
+import { StoreExpense } from '../../interfaces';
 import { updateExpense, deleteExpense } from '../../firebase/firestore';
 import { MyTableUnitComponent } from '../../components/table/myTableUnit';
 
 interface MyTableUnitProps {
-  expense: Expense;
+  expense: StoreExpense;
 }
 
 export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
@@ -16,7 +16,7 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [date, setDate] = useState<Date>(expense.date);
   const [amount, setAmount] = useState<string>(`${expense.amount}`);
-  const [tag, setTag] = useState<string>('');
+  const [tag, setTag] = useState<string>('その他');
 
   const handleChangeDate = (e: FormEvent, { value }: DropdownProps) => {
     if (typeof value === 'number') {
@@ -28,8 +28,10 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
     setAmount(value);
   };
 
-  const handleChangeTag = (e: FormEvent, { value }: InputOnChangeData) => {
-    setTag(value);
+  const handleChangeTag = (e: FormEvent, { value }: DropdownProps) => {
+    if (typeof value === 'string') {
+      setTag(value);
+    }
   };
 
   const handleEditClick = () => {
@@ -82,7 +84,6 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
       handleDeleteClick={handleDeleteClick}
       amount={amount}
       dateOptions={dateOptions}
-      tag={tag}
     />
   );
 };

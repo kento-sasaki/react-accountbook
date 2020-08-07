@@ -3,10 +3,10 @@ import React, { FC } from 'react';
 import { jsx } from '@emotion/core';
 import { Table } from 'semantic-ui-react';
 import { MyTableUnit } from '../../containers/table/myTableUnit';
-import { Expense } from '../../interfaces';
+import { StoreExpense } from '../../interfaces';
 
 interface MyTableProps {
-  expense: Expense[];
+  expense: StoreExpense[];
 }
 
 export const MyTable: FC<MyTableProps> = ({ expense }) => {

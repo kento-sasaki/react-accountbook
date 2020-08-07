@@ -1,6 +1,7 @@
 import dayjs from 'dayjs';
 import { firestore, auth } from './index';
-import { Expense } from '../interfaces';
+import { StoreExpense } from '../interfaces';
+import { tagOptions } from '../components/table/tagCell';
 
 export const addExpense = async (amount: number, date: Date) => {
   const { currentUser } = auth();
@@ -12,10 +13,11 @@ export const addExpense = async (amount: number, date: Date) => {
       createdAt: firestore.FieldValue.serverTimestamp(),
       date: firestore.Timestamp.fromDate(date),
       amount,
+      tag: 'その他',
     });
 };
 
-export const getExpense = async (): Promise<Expense[]> => {
+export const getExpense = async (): Promise<StoreExpense[]> => {
   const { currentUser } = auth();
 
   const querySnapshot = await firestore()
@@ -50,14 +52,15 @@ export const getExpense = async (): Promise<Expense[]> => {
         date: doc.data().date.toDate(),
         formatedDate: dayjs(doc.data().date.toDate()).format('YYYY/M/D'),
         amount: doc.data().amount,
-        tag: doc.data().tag,
+        tagLabel: doc.data().tag,
+        tagIcon: tagOptions.filter((obj) => obj.text === doc.data().tag)[0].icon,
       };
     });
 
   return expense;
 };
 
-export const createDatilyExpense = (allExpense: Expense[]) => {
+export const createDatilyExpense = (allExpense: StoreExpense[]) => {
   const formatedDateArray = [...allExpense]
     .reverse()
     .map((exp) => exp.formatedDate)
