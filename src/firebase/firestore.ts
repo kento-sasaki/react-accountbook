@@ -15,7 +15,7 @@ export const addExpense = async (amount: number, date: Date) => {
     });
 };
 
-export const getExpense = async () => {
+export const getExpense = async (): Promise<Expense[]> => {
   const { currentUser } = auth();
 
   const querySnapshot = await firestore()
@@ -50,6 +50,7 @@ export const getExpense = async () => {
         date: doc.data().date.toDate(),
         formatedDate: dayjs(doc.data().date.toDate()).format('YYYY/M/D'),
         amount: doc.data().amount,
+        tag: doc.data().tag,
       };
     });
 
@@ -75,7 +76,7 @@ export const createDatilyExpense = (allExpense: Expense[]) => {
   return dailyExpense;
 };
 
-export const updateExpense = async (id: string, amount: number, date: Date) => {
+export const updateExpense = async (id: string, amount: number, date: Date, tag: string) => {
   const { currentUser } = auth();
   await firestore()
     .collection('users')
@@ -85,6 +86,7 @@ export const updateExpense = async (id: string, amount: number, date: Date) => {
     .update({
       date: firestore.Timestamp.fromDate(date),
       amount,
+      tag,
     });
 };
 

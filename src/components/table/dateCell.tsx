@@ -9,7 +9,7 @@ interface DateCellProps {
   expense?: Expense;
   isEditable?: boolean;
   handleChangeDate?: (e: FormEvent, { key }: DropdownProps) => void;
-  dateOptions?: { key: number; text: string; value: string }[];
+  dateOptions?: { key: number; text: string; value: number }[];
 }
 
 export const DateCellComponent: FC<DateCellProps> = ({
@@ -21,7 +21,7 @@ export const DateCellComponent: FC<DateCellProps> = ({
   },
   isEditable = false,
   handleChangeDate = () => {},
-  dateOptions = [{ key: 0, text: 'Date', value: 'Date' }],
+  dateOptions = [{ key: 0, text: 'Date', value: 0 }],
 }) => {
   if (isEditable) {
     return (

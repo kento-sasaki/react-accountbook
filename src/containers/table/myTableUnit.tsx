@@ -19,8 +19,8 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
   const [tag, setTag] = useState<string>('');
 
   const handleChangeDate = (e: FormEvent, { value }: DropdownProps) => {
-    if (typeof value === 'string') {
-      setDate(dayjs(value).toDate());
+    if (typeof value === 'number') {
+      setDate(dayjs().subtract(value, 'day').toDate());
     }
   };
 
@@ -49,7 +49,7 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
   };
 
   const handleSaveClick = async () => {
-    await updateExpense(expense.id, Number(amount), date);
+    await updateExpense(expense.id, Number(amount), date, tag);
     setIsEditable(false);
   };
 
@@ -62,7 +62,7 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
     return {
       key: n,
       text: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,
-      value: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,
+      value: n,
     };
   });
 

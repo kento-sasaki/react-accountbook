@@ -23,7 +23,7 @@ interface MyTableUnitProps {
   handleSaveClick?: () => void;
   handleDeleteClick?: () => void;
   amount?: string;
-  dateOptions?: { key: number; text: string; value: string }[];
+  dateOptions?: { key: number; text: string; value: number }[];
   tag?: string;
 }
 
@@ -47,7 +47,7 @@ export const MyTableUnitComponent: FC<MyTableUnitProps> = ({
   handleSaveClick = () => {},
   handleDeleteClick = () => {},
   amount = '',
-  dateOptions = [{ key: 0, text: 'Date', value: 'Date' }],
+  dateOptions = [{ key: 0, text: 'Date', value: 0 }],
   tag = '',
 }) => {
   return (
