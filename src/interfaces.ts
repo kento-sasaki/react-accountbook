@@ -9,7 +9,7 @@ export type Provider =
 
 export interface Store {
   expense: {
-    expense: { id: string; date: Date; formatedDate: string; amount: number }[];
+    expense: { id: string; date: Date; formatedDate: string; amount: number; tag: string }[];
   };
   isLoading: {
     isLoading: boolean;
@@ -21,4 +21,5 @@ export interface Expense {
   date: Date;
   formatedDate: string;
   amount: number;
+  tag: string;
 }

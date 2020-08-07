@@ -25,7 +25,7 @@ export const getExpense = async () => {
     .orderBy('date', 'asc')
     .get();
 
-  const expense: Expense[] = querySnapshot.docs
+  const expense = querySnapshot.docs
     .sort((a, b) => {
       const dateA = a.data().date.toDate();
       const dateB = b.data().date.toDate();

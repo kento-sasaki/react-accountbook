@@ -1,16 +1,12 @@
 /** @jsx jsx */
 import React, { FC, FormEvent } from 'react';
-import { jsx, css } from '@emotion/core';
-import {
-  Table,
-  Button,
-  Dropdown,
-  Input,
-  InputOnChangeData,
-  DropdownProps,
-  Confirm,
-} from 'semantic-ui-react';
+import { jsx } from '@emotion/core';
+import { Table, InputOnChangeData, DropdownProps } from 'semantic-ui-react';
 import dayjs from 'dayjs';
+import { DateCellComponent } from './dateCell';
+import { AmountCellComponent } from './amountCell';
+import { TagCellComponent } from './tagCell';
+import { ActionsCellComponent } from './actionsCell';
 import { Expense } from '../../interfaces';
 
 interface MyTableUnitProps {
@@ -19,6 +15,7 @@ interface MyTableUnitProps {
   isOpen?: boolean;
   handleChangeAmount?: (e: FormEvent, { key }: InputOnChangeData) => void;
   handleChangeDate?: (e: FormEvent, { key }: DropdownProps) => void;
+  handleChangeTag?: (e: FormEvent, { key }: InputOnChangeData) => void;
   handleEditClick?: () => void;
   openConfirm?: () => void;
   closeConfirm?: () => void;
@@ -27,6 +24,7 @@ interface MyTableUnitProps {
   handleDeleteClick?: () => void;
   amount?: string;
   dateOptions?: { key: number; text: string; value: string }[];
+  tag?: string;
 }
 
 export const MyTableUnitComponent: FC<MyTableUnitProps> = ({
@@ -34,12 +32,14 @@ export const MyTableUnitComponent: FC<MyTableUnitProps> = ({
     id: '0',
     date: new Date(),
     formatedDate: dayjs(new Date()).format('YYYY/M/D'),
-    amount: '',
+    amount: 0,
+    tag: '',
   },
   isEditable = false,
   isOpen = false,
   handleChangeAmount = () => {},
   handleChangeDate = () => {},
+  handleChangeTag = () => {},
   handleEditClick = () => {},
   handleEditCancelClick = () => {},
   openConfirm = () => {},
@@ -48,58 +48,38 @@ export const MyTableUnitComponent: FC<MyTableUnitProps> = ({
   handleDeleteClick = () => {},
   amount = '',
   dateOptions = [{ key: 0, text: 'Date', value: 'Date' }],
+  tag = '',
 }) => {
-  if (isEditable) {
-    return (
-      <Table.Row>
-        <Table.Cell
-          content={
-            <Dropdown
-              css={css`
-                min-width: 9rem !important;
-              `}
-              placeholder="Date"
-              selection
-              options={dateOptions}
-              defaultValue={
-                dateOptions[dateOptions.map((obj) => obj.text).indexOf(expense.formatedDate)].value
-              }
-              onChange={handleChangeDate}
-            />
-          }
-        />
-        <Table.Cell content={<Input value={amount} onChange={handleChangeAmount} />} />
-        <Table.Cell>
-          <Button content="Save" icon="save" color="teal" onClick={handleSaveClick} />
-          <Button
-            basic
-            content="Cancel"
-            icon="cancel"
-            color="grey"
-            onClick={handleEditCancelClick}
-          />
-        </Table.Cell>
-      </Table.Row>
-    );
-  }
-
   return (
     <Table.Row>
-      <Table.Cell content={expense.formatedDate} />
-      <Table.Cell content={expense.amount} />
-      <Table.Cell>
-        <Button basic content="Edit" icon="edit" color="teal" onClick={handleEditClick} />
-        <Button basic content="Delete" icon="trash" color="red" onClick={openConfirm} />
-        <Confirm
-          open={isOpen}
-          onCancel={closeConfirm}
-          onConfirm={handleDeleteClick}
-          content="削除してよろしいですか？"
-          cancelButton="Cancel"
-          confirmButton="OK"
-          size="mini"
-        />
-      </Table.Cell>
+      <DateCellComponent
+        expense={expense}
+        isEditable={isEditable}
+        handleChangeDate={handleChangeDate}
+        dateOptions={dateOptions}
+      />
+      <AmountCellComponent
+        expense={expense}
+        isEditable={isEditable}
+        handleChangeAmount={handleChangeAmount}
+        amount={amount}
+      />
+      <TagCellComponent
+        expense={expense}
+        isEditable={isEditable}
+        handleChangeTag={handleChangeTag}
+        tag={tag}
+      />
+      <ActionsCellComponent
+        isEditable={isEditable}
+        isOpen={isOpen}
+        handleEditClick={handleEditClick}
+        handleEditCancelClick={handleEditCancelClick}
+        openConfirm={openConfirm}
+        closeConfirm={closeConfirm}
+        handleSaveClick={handleSaveClick}
+        handleDeleteClick={handleDeleteClick}
+      />
     </Table.Row>
   );
 };

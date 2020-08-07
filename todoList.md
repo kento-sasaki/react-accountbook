@@ -144,16 +144,19 @@
 
 #### Contact 画面実装
 
-- [ ] presentational と container に分割
-- [ ] テキストフォームを作成
-- [ ] 送信ボタン
-  - [ ] 確認モーダルも表示
-- [ ] Slack に通知
-- [ ] story も作成
+- [x] presentational と container に分割
+- [x] テキストフォームを作成
+- [x] 送信ボタン
+  - [x] 確認モーダルも表示
+- [x] Slack に通知
+- [x] story を作成
+- [x] snapshot を更新
 
 #### タグ機能を実装
 
-- [ ] Firestore の設計を再考
+- [x] Firestore の設計を再考
+- [ ] tag 編集ボタンを実装
+- [ ] Firestore を変更できるように実装
 
 #### ダッシュボードを作る
 

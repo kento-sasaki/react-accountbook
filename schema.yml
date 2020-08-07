@@ -1,13 +1,14 @@
 users:
-  documentId: userId,
-  income:
-    documentId: auto
-    createdAt: Date
-    date: Date
-    amount: number
-
+  documentID: userID
+  email: string
+  uid: userID
   expense:
-    documentId: auto
+    documentID: auto
     cretaedAt: Date
     date: Date
     amount: number
+    tag: string
+  tags:
+    tag1: boolean
+    tag2: boolean
+    # and more
