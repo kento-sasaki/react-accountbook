@@ -27,16 +27,23 @@ export const ActionsCellComponent: FC<ActionsCellProps> = ({
   if (isEditable) {
     return (
       <Table.Cell>
-        <Button content="Save" icon="save" color="teal" onClick={handleSaveClick} />
-        <Button basic content="Cancel" icon="cancel" color="grey" onClick={handleEditCancelClick} />
+        <Button circular content="Save" icon="save" color="teal" onClick={handleSaveClick} />
+        <Button
+          circular
+          basic
+          content="Cancel"
+          icon="cancel"
+          color="grey"
+          onClick={handleEditCancelClick}
+        />
       </Table.Cell>
     );
   }
 
   return (
     <Table.Cell>
-      <Button basic content="Edit" icon="edit" color="teal" onClick={handleEditClick} />
-      <Button basic content="Delete" icon="trash" color="red" onClick={openConfirm} />
+      <Button circular basic content="Edit" icon="edit" color="teal" onClick={handleEditClick} />
+      <Button circular basic content="Delete" icon="trash" color="red" onClick={openConfirm} />
       <Confirm
         open={isOpen}
         onCancel={closeConfirm}

@@ -2,11 +2,11 @@ import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import { Provider } from 'react-redux';
 import { store } from '../../stores/index';
-import { ExpenseChart } from './charts';
+import { ExpenseBarChart } from './expenseBarChart';
 
 export default {
-  component: ExpenseChart,
-  title: 'ExpenseCharts',
+  component: ExpenseBarChart,
+  title: 'ExpenseBarChart',
 };
 
 const expense = [
@@ -52,10 +52,10 @@ const expense = [
   },
 ];
 
-export const expenseChart = () => {
+export const expenseBarChart = () => {
   return (
     <Provider store={store}>
-      <ExpenseChart expense={expense} />
+      <ExpenseBarChart expense={expense} />
     </Provider>
   );
 };

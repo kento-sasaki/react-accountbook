@@ -60,25 +60,6 @@ export const getExpense = async (): Promise<StoreExpense[]> => {
   return expense;
 };
 
-export const createDatilyExpense = (allExpense: StoreExpense[]) => {
-  const formatedDateArray = [...allExpense]
-    .reverse()
-    .map((exp) => exp.formatedDate)
-    .filter((formatedDate, i, self) => self.indexOf(formatedDate) === i);
-
-  const dailyExpense = formatedDateArray.map((formatedDate) => {
-    const amounts = allExpense
-      .filter((exp1) => {
-        return exp1.formatedDate === formatedDate;
-      })
-      .map((exp2) => exp2.amount);
-
-    return { formatedDate, amounts };
-  });
-
-  return dailyExpense;
-};
-
 export const updateExpense = async (id: string, amount: number, date: Date, tag: string) => {
   const { currentUser } = auth();
   await firestore()
