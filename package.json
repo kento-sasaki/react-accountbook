@@ -42,6 +42,7 @@
     "emu:firestore": "firebase emulators:start --only firestore",
     "emu:functions": "firebase emulators:start --only functions",
     "deploy": "npm run build && firebase deploy",
+    "deploy:rules": "firebase deploy --only firestore:rules",
     "eject": "react-scripts eject",
     "lint": "npm run eslint --fix ./src/**/*.tsx",
     "storybook": "start-storybook -p 9009 -s public",

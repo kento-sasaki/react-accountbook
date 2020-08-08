@@ -10,8 +10,7 @@ export const onCreateUser = functions
       .firestore()
       .collection('users')
       .doc(user.uid)
-      .collection('user')
-      .add({ email: user.email, uid: user.uid });
+      .set({ email: user.email, uid: user.uid });
   });
 
 export const onDeleteUser = functions

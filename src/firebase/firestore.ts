@@ -1,6 +1,7 @@
 import dayjs from 'dayjs';
 import { firestore, auth } from './index';
-import { Expense } from '../interfaces';
+import { StoreExpense } from '../interfaces';
+import { tagOptions } from '../components/table/tagCell';
 
 export const addExpense = async (amount: number, date: Date) => {
   const { currentUser } = auth();
@@ -12,10 +13,11 @@ export const addExpense = async (amount: number, date: Date) => {
       createdAt: firestore.FieldValue.serverTimestamp(),
       date: firestore.Timestamp.fromDate(date),
       amount,
+      tag: 'その他',
     });
 };
 
-export const getExpense = async () => {
+export const getExpense = async (): Promise<StoreExpense[]> => {
   const { currentUser } = auth();
 
   const querySnapshot = await firestore()
@@ -25,7 +27,7 @@ export const getExpense = async () => {
     .orderBy('date', 'asc')
     .get();
 
-  const expense: Expense[] = querySnapshot.docs
+  const expense = querySnapshot.docs
     .sort((a, b) => {
       const dateA = a.data().date.toDate();
       const dateB = b.data().date.toDate();
@@ -50,32 +52,15 @@ export const getExpense = async () => {
         date: doc.data().date.toDate(),
         formatedDate: dayjs(doc.data().date.toDate()).format('YYYY/M/D'),
         amount: doc.data().amount,
+        tagLabel: doc.data().tag,
+        tagIcon: tagOptions.filter((obj) => obj.text === doc.data().tag)[0].icon,
       };
     });
 
   return expense;
 };
 
-export const createDatilyExpense = (allExpense: Expense[]) => {
-  const formatedDateArray = [...allExpense]
-    .reverse()
-    .map((exp) => exp.formatedDate)
-    .filter((formatedDate, i, self) => self.indexOf(formatedDate) === i);
-
-  const dailyExpense = formatedDateArray.map((formatedDate) => {
-    const amounts = allExpense
-      .filter((exp1) => {
-        return exp1.formatedDate === formatedDate;
-      })
-      .map((exp2) => exp2.amount);
-
-    return { formatedDate, amounts };
-  });
-
-  return dailyExpense;
-};
-
-export const updateExpense = async (id: string, amount: number, date: Date) => {
+export const updateExpense = async (id: string, amount: number, date: Date, tag: string) => {
   const { currentUser } = auth();
   await firestore()
     .collection('users')
@@ -85,6 +70,7 @@ export const updateExpense = async (id: string, amount: number, date: Date) => {
     .update({
       date: firestore.Timestamp.fromDate(date),
       amount,
+      tag,
     });
 };
 

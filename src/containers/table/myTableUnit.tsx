@@ -3,27 +3,34 @@ import React, { FC, useState, FormEvent } from 'react';
 import { jsx } from '@emotion/core';
 import { InputOnChangeData, DropdownProps } from 'semantic-ui-react';
 import dayjs from 'dayjs';
-import { Expense } from '../interfaces';
-import { updateExpense, deleteExpense } from '../firebase/firestore';
-import { MyTableUnitComponent } from '../components/table/myTableUnit';
+import { StoreExpense } from '../../interfaces';
+import { updateExpense, deleteExpense } from '../../firebase/firestore';
+import { MyTableUnitComponent } from '../../components/table/myTableUnit';
 
 interface MyTableUnitProps {
-  expense: Expense;
+  expense: StoreExpense;
 }
 
 export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
   const [isEditable, setIsEditable] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [amount, setAmount] = useState<string>(`${expense.amount}`);
   const [date, setDate] = useState<Date>(expense.date);
+  const [amount, setAmount] = useState<string>(`${expense.amount}`);
+  const [tag, setTag] = useState<string>('その他');
+
+  const handleChangeDate = (e: FormEvent, { value }: DropdownProps) => {
+    if (typeof value === 'number') {
+      setDate(dayjs().subtract(value, 'day').toDate());
+    }
+  };
 
   const handleChangeAmount = (e: FormEvent, { value }: InputOnChangeData) => {
     setAmount(value);
   };
 
-  const handleChangeDate = (e: FormEvent, { value }: DropdownProps) => {
+  const handleChangeTag = (e: FormEvent, { value }: DropdownProps) => {
     if (typeof value === 'string') {
-      setDate(dayjs(value).toDate());
+      setTag(value);
     }
   };
 
@@ -44,7 +51,7 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
   };
 
   const handleSaveClick = async () => {
-    await updateExpense(expense.id, Number(amount), date);
+    await updateExpense(expense.id, Number(amount), date, tag);
     setIsEditable(false);
   };
 
@@ -57,7 +64,7 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
     return {
       key: n,
       text: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,
-      value: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,
+      value: n,
     };
   });
 
@@ -68,6 +75,7 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
       isOpen={isOpen}
       handleChangeAmount={handleChangeAmount}
       handleChangeDate={handleChangeDate}
+      handleChangeTag={handleChangeTag}
       handleEditClick={handleEditClick}
       handleEditCancelClick={handleEditCancelClick}
       openConfirm={openConfirm}

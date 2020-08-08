@@ -11,6 +11,10 @@ service cloud.firestore {
       return isAnyAuthenticated() && userID == request.auth.uid;
     }
 
+    match /users/{userID} {
+      allow read, write: if isUserAuthenticated(userID)
+    }
+
     match /users/{userID}/expense/{expenseID} {
       allow read: if isUserAuthenticated(userID);
 
@@ -29,22 +33,5 @@ service cloud.firestore {
       allow delete: if isUserAuthenticated(userID)
     }
 
-    match /users/{userID}/income/{incomeID} {
-      allow read: if isUserAuthenticated(userID);
-
-      allow create: if isUserAuthenticated(userID)
-        && 'amount' in request.resource.data
-        && 'date' in request.resource.data
-        && request.resource.data.amount is number
-        && request.resource.data.date is timestamp
-        && request.resource.data.createdAt == request.time
-
-      allow update: if isUserAuthenticated(userID)
-        && 'amount' in request.resource.data
-        && 'date' in request.resource.data
-        && request.resource.data.amount is number
-
-      allow delete: if isUserAuthenticated(userID)
-    }
   }
 }

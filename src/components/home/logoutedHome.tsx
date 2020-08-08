@@ -109,7 +109,7 @@ export const LogoutedHome: FC = () => {
           </Grid.Column>
           <Grid.Column css={margin(1, 1)}>
             <Segment>
-              <Header css={fontColor} textAlign="center" content="" />
+              <Header css={fontColor} textAlign="center" content="タグで支出を分類" />
             </Segment>
           </Grid.Column>
         </Grid>

@@ -1,13 +1,12 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import { Provider } from 'react-redux';
-import { Table } from 'semantic-ui-react';
 import { store } from '../../stores/index';
-import { MyTable } from './myTable';
+import { ExpenseBarChart } from './expenseBarChart';
 
 export default {
-  component: MyTable,
-  title: 'MyTable',
+  component: ExpenseBarChart,
+  title: 'ExpenseBarChart',
 };
 
 const expense = [
@@ -15,7 +14,7 @@ const expense = [
     id: '1',
     date: new Date(2020, 0, 1),
     formatedDate: '2020/1/1',
-    amount: 1000,
+    amount: 400,
     tagLabel: 'tag1',
     tagIcon: 'tag',
   },
@@ -23,7 +22,7 @@ const expense = [
     id: '2',
     date: new Date(2020, 0, 2),
     formatedDate: '2020/1/2',
-    amount: 2000,
+    amount: 1200,
     tagLabel: 'tag2',
     tagIcon: 'tag',
   },
@@ -31,7 +30,7 @@ const expense = [
     id: '3',
     date: new Date(2020, 0, 3),
     formatedDate: '2020/1/3',
-    amount: 3000,
+    amount: 1500,
     tagLabel: 'tag3',
     tagIcon: 'tag',
   },
@@ -39,7 +38,7 @@ const expense = [
     id: '4',
     date: new Date(2020, 0, 4),
     formatedDate: '2020/1/4',
-    amount: 4000,
+    amount: 400,
     tagLabel: 'tag4',
     tagIcon: 'tag',
   },
@@ -47,20 +46,16 @@ const expense = [
     id: '5',
     date: new Date(2020, 0, 5),
     formatedDate: '2020/1/5',
-    amount: 5000,
+    amount: 1500,
     tagLabel: 'tag5',
     tagIcon: 'tag',
   },
 ];
 
-export const myTable = () => {
+export const expenseBarChart = () => {
   return (
     <Provider store={store}>
-      <Table>
-        <Table.Body>
-          <MyTable expense={expense} />
-        </Table.Body>
-      </Table>
+      <ExpenseBarChart expense={expense} />
     </Provider>
   );
 };
