@@ -30,7 +30,7 @@ export const ExpensePieChart: FC<ExpensePieChartProps> = ({ expense }) => {
             nameKey="tagLabel"
             fill="#00b5ad"
             paddingAngle={1}
-            innerRadius={60}
+            innerRadius={50}
             outerRadius={90}
           >
             {data.map((elemnt, i, self) => (
