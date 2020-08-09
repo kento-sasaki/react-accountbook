@@ -17,17 +17,19 @@ export const addExpense = async (amount: number, date: Date) => {
     });
 };
 
-export const getExpense = async (): Promise<StoreExpense[]> => {
+export const getExpenses = async (limit = 30): Promise<StoreExpense[]> => {
   const { currentUser } = auth();
+  const limitDate = firestore.Timestamp.fromDate(dayjs().subtract(limit, 'day').toDate());
 
   const querySnapshot = await firestore()
     .collection('users')
     .doc(`${currentUser?.uid}`)
     .collection('expense')
+    .where('date', '>=', limitDate)
     .orderBy('date', 'asc')
     .get();
 
-  const expense = querySnapshot.docs
+  const expenses = querySnapshot.docs
     .sort((a, b) => {
       const dateA = a.data().date.toDate();
       const dateB = b.data().date.toDate();
@@ -57,7 +59,7 @@ export const getExpense = async (): Promise<StoreExpense[]> => {
       };
     });
 
-  return expense;
+  return expenses;
 };
 
 export const updateExpense = async (id: string, amount: number, date: Date, tag: string) => {

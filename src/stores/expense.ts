@@ -1,6 +1,6 @@
 import { createSlice, Dispatch } from '@reduxjs/toolkit';
 import dayjs from 'dayjs';
-import { getExpense } from '../firebase/firestore';
+import { getExpenses } from '../firebase/firestore';
 
 const expenseSlice = createSlice({
   name: 'expense',
@@ -40,9 +40,9 @@ const expenseSlice = createSlice({
 export const { setExpense, resetExpense } = expenseSlice.actions;
 export const expenseReducer = expenseSlice.reducer;
 
-export const fetchExpense = () => {
+export const fetchExpense = (limit?: number) => {
   return async (dispatch: Dispatch) => {
-    const res = await getExpense();
+    const res = await getExpenses(limit);
     dispatch(setExpense(res));
   };
 };
