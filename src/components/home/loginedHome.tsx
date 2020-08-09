@@ -8,10 +8,20 @@ import { ExpensePieChart } from '../charts/expensePieChart';
 import { AddExpenseForm } from '../../containers/addExpenseForm';
 import { MyTable } from '../table/myTable';
 import { InputFile } from '../../containers/inputFile';
+import { Detail } from '../detail/detail';
+import { createTagExpense } from '../../utils/utils';
 import { Store } from '../../interfaces';
 
 export const LoginedHome: FC = () => {
   const expense = useSelector((store: Store) => store.expense.expense);
+  const tagExpenses = createTagExpense(expense).map((exp) => {
+    return {
+      tagLabel: exp.tagLabel,
+      amount: exp.amounts.reduce((previous, current) => {
+        return previous + current;
+      }),
+    };
+  });
 
   const margin = (top: number, right: number, bottom: number, left: number) =>
     css`
@@ -29,12 +39,13 @@ export const LoginedHome: FC = () => {
       <Grid.Column mobile={7} tablet={6} computer={4} largeScreen={4} widescreen={3}>
         <Segment color="teal">
           <Header content="Breakdown of Expenses" textAlign="center" />
-          <ExpensePieChart expense={expense} />
+          <ExpensePieChart tagExpenses={tagExpenses} />
         </Segment>
       </Grid.Column>
       <Grid.Column mobile={9} tablet={10} computer={8} largeScreen={10} widescreen={5}>
-        <Segment inverted color="teal">
-          <Header>Hello</Header>
+        <Segment color="teal">
+          <Header>More Information</Header>
+          <Detail tagExpenses={tagExpenses} />
         </Segment>
       </Grid.Column>
       <Grid.Column mobile={16} tablet={10} computer={8} largeScreen={6} widescreen={4}>

@@ -19,11 +19,11 @@ import { LoginForm } from '../../containers/loginForm';
 import { logout } from '../../firebase/auth';
 
 const wrapper = css`
-  margin-top: 3rem !important;
+  margin-top: 2rem !important;
 `;
 
 const paddingTop = css`
-  padding-top: 1.5rem;
+  padding-top: 0.5rem;
 `;
 
 const modalPosition = css`
