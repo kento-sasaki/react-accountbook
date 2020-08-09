@@ -9,7 +9,7 @@ export default {
   title: 'Contact',
 };
 
-export const addExpense = () => {
+export const contact = () => {
   return (
     <Provider store={store}>
       <ContactComponent />

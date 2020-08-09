@@ -19,7 +19,6 @@ export const ExpensePieChart: FC<ExpensePieChartProps> = ({ expense }) => {
       }),
     };
   });
-  console.log(data);
 
   return (
     <div>
