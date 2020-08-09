@@ -27,7 +27,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
     />
     <div
       aria-expanded={false}
-      className="ui selection dropdown emotion-0"
+      className="ui fluid selection dropdown emotion-0"
       onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
@@ -84,7 +84,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
 </div>
 `;
 
-exports[`Storyshots Contact Add Expense 1`] = `
+exports[`Storyshots Contact Contact 1`] = `
 <div
   className="ui container"
 >
@@ -128,13 +128,209 @@ exports[`Storyshots Contact Add Expense 1`] = `
 </div>
 `;
 
-exports[`Storyshots ExpenseCharts Expense Chart 1`] = `
+exports[`Storyshots Detail Detail 1`] = `
+<div
+  className="ui grid"
+>
+  <div
+    className="twelve wide column"
+  >
+    <table
+      className="ui very basic table"
+    >
+      <tbody
+        className=""
+      >
+        <tr
+          className=""
+        >
+          <td
+            className=""
+          >
+            <div
+              className="ui grey big label"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="tag icon"
+                onClick={[Function]}
+              />
+              ¥ 1000
+            </div>
+          </td>
+          <td
+            className=""
+          >
+            <div
+              className="ui teal big label"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="food icon"
+                onClick={[Function]}
+              />
+              ¥ 2000
+            </div>
+          </td>
+          <td
+            className=""
+          >
+            <div
+              className="ui violet big label"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="home icon"
+                onClick={[Function]}
+              />
+              ¥ 3000
+            </div>
+          </td>
+          <td
+            className=""
+          >
+            <div
+              className="ui yellow big label"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="power cord icon"
+                onClick={[Function]}
+              />
+              ¥ 1000
+            </div>
+          </td>
+        </tr>
+        <tr
+          className=""
+        >
+          <td
+            className=""
+          >
+            <div
+              className="ui blue big label"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="bath icon"
+                onClick={[Function]}
+              />
+              ¥ 2000
+            </div>
+          </td>
+          <td
+            className=""
+          >
+            <div
+              className="ui red big label"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="fire icon"
+                onClick={[Function]}
+              />
+              ¥ 3000
+            </div>
+          </td>
+          <td
+            className=""
+          >
+            <div
+              className="ui orange big label"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="phone icon"
+                onClick={[Function]}
+              />
+              ¥ 1000
+            </div>
+          </td>
+          <td
+            className=""
+          >
+            <div
+              className="ui green big label"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="subway icon"
+                onClick={[Function]}
+              />
+              ¥ 2000
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div
+    className="middle aligned four wide column"
+  >
+    <div
+      className="ui teal inverted center aligned segment"
+    >
+      <div
+        className="ui header"
+      >
+        Total Expenses
+      </div>
+      <div
+        className="ui huge header"
+      >
+        ¥
+         
+        15000
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ExpenseBarChart Expense Bar Chart 1`] = `
 <div>
   <div
     className="recharts-responsive-container"
     style={
       Object {
-        "height": 400,
+        "height": 300,
+        "maxHeight": undefined,
+        "minHeight": undefined,
+        "minWidth": undefined,
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "none",
+          "height": 0,
+          "position": "absolute",
+          "visibility": "hidden",
+          "width": 0,
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots ExpensePieChart Expense Pie Chart 1`] = `
+<div>
+  <div
+    className="recharts-responsive-container"
+    style={
+      Object {
+        "height": 300,
         "maxHeight": undefined,
         "minHeight": undefined,
         "minWidth": undefined,
@@ -257,11 +453,11 @@ exports[`Storyshots Layout Layout 1`] = `
 }
 
 .emotion-5 {
-  margin-top: 3rem !important;
+  margin-top: 2rem !important;
 }
 
 .emotion-4 {
-  padding-top: 1.5rem;
+  padding-top: 0.5rem;
   display: -webkit-box !important;
   display: -webkit-flex !important;
   display: -ms-flexbox !important;
@@ -531,14 +727,19 @@ exports[`Storyshots MyTable My Table 1`] = `
           className=""
         >
           <th
-            className="five wide"
+            className="three wide"
           >
             Date
           </th>
           <th
-            className="five wide"
+            className="three wide"
           >
             Amount
+          </th>
+          <th
+            className="four wide"
+          >
+            Tag
           </th>
           <th
             className="six wide"
@@ -566,8 +767,23 @@ exports[`Storyshots MyTable My Table 1`] = `
           <td
             className=""
           >
+            <div
+              className="ui teal large basic label"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="food icon"
+                onClick={[Function]}
+              />
+              食費
+            </div>
+          </td>
+          <td
+            className=""
+          >
             <button
-              className="ui teal basic button"
+              className="ui teal basic circular button"
               onClick={[Function]}
             >
               <i
@@ -578,7 +794,7 @@ exports[`Storyshots MyTable My Table 1`] = `
               Edit
             </button>
             <button
-              className="ui red basic button"
+              className="ui red basic circular button"
               onClick={[Function]}
             >
               <i
@@ -606,8 +822,23 @@ exports[`Storyshots MyTable My Table 1`] = `
           <td
             className=""
           >
+            <div
+              className="ui yellow large basic label"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="power cord icon"
+                onClick={[Function]}
+              />
+              電気代
+            </div>
+          </td>
+          <td
+            className=""
+          >
             <button
-              className="ui teal basic button"
+              className="ui teal basic circular button"
               onClick={[Function]}
             >
               <i
@@ -618,7 +849,7 @@ exports[`Storyshots MyTable My Table 1`] = `
               Edit
             </button>
             <button
-              className="ui red basic button"
+              className="ui red basic circular button"
               onClick={[Function]}
             >
               <i
@@ -646,8 +877,23 @@ exports[`Storyshots MyTable My Table 1`] = `
           <td
             className=""
           >
+            <div
+              className="ui red large basic label"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="fire icon"
+                onClick={[Function]}
+              />
+              ガス代
+            </div>
+          </td>
+          <td
+            className=""
+          >
             <button
-              className="ui teal basic button"
+              className="ui teal basic circular button"
               onClick={[Function]}
             >
               <i
@@ -658,7 +904,7 @@ exports[`Storyshots MyTable My Table 1`] = `
               Edit
             </button>
             <button
-              className="ui red basic button"
+              className="ui red basic circular button"
               onClick={[Function]}
             >
               <i
@@ -686,8 +932,23 @@ exports[`Storyshots MyTable My Table 1`] = `
           <td
             className=""
           >
+            <div
+              className="ui blue large basic label"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="bath icon"
+                onClick={[Function]}
+              />
+              水道代
+            </div>
+          </td>
+          <td
+            className=""
+          >
             <button
-              className="ui teal basic button"
+              className="ui teal basic circular button"
               onClick={[Function]}
             >
               <i
@@ -698,7 +959,7 @@ exports[`Storyshots MyTable My Table 1`] = `
               Edit
             </button>
             <button
-              className="ui red basic button"
+              className="ui red basic circular button"
               onClick={[Function]}
             >
               <i
@@ -726,8 +987,23 @@ exports[`Storyshots MyTable My Table 1`] = `
           <td
             className=""
           >
+            <div
+              className="ui violet large basic label"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="home icon"
+                onClick={[Function]}
+              />
+              家賃
+            </div>
+          </td>
+          <td
+            className=""
+          >
             <button
-              className="ui teal basic button"
+              className="ui teal basic circular button"
               onClick={[Function]}
             >
               <i
@@ -738,7 +1014,7 @@ exports[`Storyshots MyTable My Table 1`] = `
               Edit
             </button>
             <button
-              className="ui red basic button"
+              className="ui red basic circular button"
               onClick={[Function]}
             >
               <i

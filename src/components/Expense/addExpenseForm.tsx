@@ -25,14 +25,7 @@ export const AddExpenseFormComponent: FC<AddExpenseFormProps> = ({
 }) => {
   return (
     <div css={margin}>
-      <Input
-        // icon="yen"
-        // iconPosition="left"
-        action
-        onChange={handleChangeAmount}
-        placeholder="Expense"
-        value={amount}
-      >
+      <Input action onChange={handleChangeAmount} placeholder="Expense" value={amount}>
         <input />
         <Dropdown
           css={css`
@@ -42,6 +35,7 @@ export const AddExpenseFormComponent: FC<AddExpenseFormProps> = ({
           selection
           options={dateOptions}
           onChange={handleChangeDate}
+          fluid
         />
         <Button
           color="teal"

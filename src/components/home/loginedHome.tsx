@@ -8,10 +8,20 @@ import { ExpensePieChart } from '../charts/expensePieChart';
 import { AddExpenseForm } from '../../containers/addExpenseForm';
 import { MyTable } from '../table/myTable';
 import { InputFile } from '../../containers/inputFile';
+import { Detail } from '../detail/detail';
+import { createTagExpense } from '../../utils/utils';
 import { Store } from '../../interfaces';
 
 export const LoginedHome: FC = () => {
   const expense = useSelector((store: Store) => store.expense.expense);
+  const tagExpenses = createTagExpense(expense).map((exp) => {
+    return {
+      tagLabel: exp.tagLabel,
+      amount: exp.amounts.reduce((previous, current) => {
+        return previous + current;
+      }),
+    };
+  });
 
   const margin = (top: number, right: number, bottom: number, left: number) =>
     css`
@@ -20,26 +30,36 @@ export const LoginedHome: FC = () => {
 
   return (
     <Grid centered css={margin(0, 0.5, 0, 0.5)}>
-      <Grid.Row>
-        <Grid.Column mobile={10} tablet={11} computer={12} largeScreen={12} widescreen={12}>
-          <Segment>
-            <Header content="Latest Expenses" />
-            <ExpenseBarChart expense={expense} />
+      <Grid.Column mobile={16} tablet={16} computer={12} largeScreen={12} widescreen={15}>
+        <Segment color="teal">
+          <Header content="Latest Expenses" />
+          <ExpenseBarChart expense={expense} />
+        </Segment>
+      </Grid.Column>
+      <Grid.Column mobile={7} tablet={6} computer={4} largeScreen={4} widescreen={3}>
+        <Segment color="teal">
+          <Header content="Breakdown of Expenses" textAlign="center" />
+          <ExpensePieChart tagExpenses={tagExpenses} />
+        </Segment>
+      </Grid.Column>
+      <Grid.Column mobile={9} tablet={10} computer={8} largeScreen={10} widescreen={5}>
+        <Segment color="teal">
+          <Header>More Information</Header>
+          <Detail tagExpenses={tagExpenses} />
+        </Segment>
+      </Grid.Column>
+      <Grid.Column mobile={16} tablet={10} computer={8} largeScreen={6} widescreen={4}>
+        <Segment color="teal">
+          <Header content="Register Your Expenses" />
+          <Segment basic vertical>
+            <AddExpenseForm />
+            <InputFile />
           </Segment>
-        </Grid.Column>
-        <Grid.Column mobile={6} tablet={5} computer={4} largeScreen={4} widescreen={4}>
-          <Segment>
-            <Header content="Breakdown of Expenses" />
-            <ExpensePieChart expense={expense} />
-          </Segment>
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row>
-        <AddExpenseForm />
-        <InputFile />
-      </Grid.Row>
+        </Segment>
+      </Grid.Column>
+
       <Grid.Column mobile={16} tablet={14} computer={13} largeScreen={12} widescreen={12}>
-        <Segment>
+        <Segment color="teal">
           <MyTable expense={expense} />
         </Segment>
       </Grid.Column>
