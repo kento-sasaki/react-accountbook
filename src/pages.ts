@@ -15,6 +15,14 @@ export const pages = {
     path: '/contact',
     title: 'Contact',
   },
+  terms: {
+    path: '/terms',
+    title: 'Terms',
+  },
+  policy: {
+    path: '/policy',
+    title: 'Policy',
+  },
 };
 
-export type Page = 'home' | 'login' | 'contact' | 'logout';
+export type Page = 'home' | 'login' | 'contact' | 'logout' | 'policy';

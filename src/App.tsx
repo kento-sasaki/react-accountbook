@@ -6,6 +6,8 @@ import { auth, firestore } from './firebase/index';
 import { LoginedHome } from './components/home/loginedHome';
 import { LogoutedHome } from './components/home/logoutedHome';
 import { Contact } from './containers/contact';
+import { Terms } from './terms';
+import { Policy } from './policy';
 import { User } from './interfaces';
 import { pages } from './pages';
 import { Layout } from './components/layout/layout';
@@ -55,6 +57,22 @@ const App: FC = () => {
               <title>{pages.contact.title} | VisiBO</title>
             </Helmet>
             <Contact />
+          </div>
+        </Route>
+        <Route path={pages.terms.path}>
+          <div>
+            <Helmet>
+              <title>{pages.terms.title} | VisiBO</title>
+            </Helmet>
+            <Terms />
+          </div>
+        </Route>
+        <Route path={pages.policy.path}>
+          <div>
+            <Helmet>
+              <title>{pages.policy.title} | VisiBO</title>
+            </Helmet>
+            <Policy />
           </div>
         </Route>
         <Redirect to="/" />
