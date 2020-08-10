@@ -37,7 +37,7 @@ export const Detail: FC<DetailProps> = ({ tagExpenses }) => {
 
   return (
     <Grid>
-      <Grid.Column width={12}>
+      <Grid.Column width={11}>
         <Table basic="very">
           <Table.Body>
             {_.chunk(tagExpensesDetails, 4).map((details, i1, self1) => (
@@ -45,7 +45,7 @@ export const Detail: FC<DetailProps> = ({ tagExpenses }) => {
                 {details.map((detail, i2, self2) => (
                   <Table.Cell key={self2.indexOf(detail)}>
                     <Label
-                      size="big"
+                      size="large"
                       color={detail.color}
                       icon={detail.icon}
                       content={`¥ ${detail.amount}`}
@@ -57,7 +57,7 @@ export const Detail: FC<DetailProps> = ({ tagExpenses }) => {
           </Table.Body>
         </Table>
       </Grid.Column>
-      <Grid.Column width={4} verticalAlign="middle">
+      <Grid.Column width={5} verticalAlign="middle">
         <Segment inverted color="teal" textAlign="center">
           <Header content="Total Expenses" />
           <Header size="huge">

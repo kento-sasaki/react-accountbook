@@ -1,6 +1,7 @@
 import { storage, auth } from './index';
 
 export const uploadFile = async (file: File) => {
+  console.log('------------ START ------------');
   const rootRef = storage().ref();
   console.log(auth().currentUser?.uid);
   const imageRef = rootRef.child(`${auth().currentUser?.uid}/images/${file.name}`);
@@ -8,5 +9,5 @@ export const uploadFile = async (file: File) => {
     console.log(error.message);
     console.log(error);
   });
-  console.log('Success!');
+  console.log('------------ FINISH ------------');
 };

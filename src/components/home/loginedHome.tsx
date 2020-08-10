@@ -42,13 +42,13 @@ export const LoginedHome: FC = () => {
           <ExpensePieChart tagExpenses={tagExpenses} />
         </Segment>
       </Grid.Column>
-      <Grid.Column mobile={9} tablet={10} computer={8} largeScreen={10} widescreen={5}>
+      <Grid.Column mobile={9} tablet={10} computer={9} largeScreen={10} widescreen={5}>
         <Segment color="teal">
           <Header>More Information</Header>
           <Detail tagExpenses={tagExpenses} />
         </Segment>
       </Grid.Column>
-      <Grid.Column mobile={16} tablet={10} computer={8} largeScreen={6} widescreen={4}>
+      <Grid.Column mobile={16} tablet={10} computer={7} largeScreen={6} widescreen={4}>
         <Segment color="teal">
           <Header content="Register Your Expenses" />
           <Segment basic vertical>
