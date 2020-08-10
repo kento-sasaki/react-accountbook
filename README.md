@@ -1,7 +1,8 @@
 <h1 align="center"><a href="https://visibo.tech/">VisiBO</a></h1>
 <h3 align="center">VisiBOは支出を登録して見やすく整理する家計簿アプリです</h3>
-
-[https://visibo.tech/](https://visibo.tech/)
+<div align="cnter">
+  <a href="https://visibo.tech/">https://visibo.tech/</a>
+</div>
 
 <div align="center">
 
