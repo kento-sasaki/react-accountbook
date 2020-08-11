@@ -1,7 +1,15 @@
 /** @jsx jsx */
 import React, { FC, SyntheticEvent } from 'react';
 import { jsx, css } from '@emotion/core';
-import { Menu, Segment, MenuItemProps, Container, Responsive, Icon } from 'semantic-ui-react';
+import {
+  Menu,
+  Segment,
+  MenuItemProps,
+  Container,
+  Responsive,
+  Icon,
+  Dropdown,
+} from 'semantic-ui-react';
 import { Page } from '../../pages';
 import { User } from '../../interfaces';
 
@@ -12,8 +20,13 @@ interface AppBarProps {
   handleSidebarClick?: () => void;
   handleLogoutClick?: () => void;
   handleLoginClick?: () => void;
+  deleteUser?: () => void;
 }
 
+const padding = (x: number, y: number) =>
+  css`
+    padding: ${y}rem ${x}rem !important;
+  `;
 export const AppBar: FC<AppBarProps> = ({
   currentUser = null,
   activeItem = 'home',
@@ -21,7 +34,19 @@ export const AppBar: FC<AppBarProps> = ({
   handleSidebarClick = () => {},
   handleLogoutClick = () => {},
   handleLoginClick = () => {},
+  deleteUser = () => {},
 }) => {
+  const UserDropdownMenu: FC = () => {
+    return (
+      <Dropdown item text="User Menu">
+        <Dropdown.Menu>
+          <Dropdown.Item onClick={handleLogoutClick}>Log out</Dropdown.Item>
+          <Dropdown.Item onClick={deleteUser}>Close Account</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+    );
+  };
+
   const topLogo = (
     <Segment
       basic
@@ -70,12 +95,13 @@ export const AppBar: FC<AppBarProps> = ({
         <Responsive
           as={Menu.Item}
           minWidth={Responsive.onlyMobile.maxWidth}
-          onClick={currentUser ? handleLogoutClick : handleLoginClick}
+          onClick={currentUser ? () => {} : handleLoginClick}
           name={currentUser ? 'logout' : 'login'}
           active={activeItem === 'login' || activeItem === 'logout'}
           position="right"
+          css={padding(0, 0)}
         >
-          {currentUser ? 'Log out' : 'Log in'}
+          {currentUser ? <UserDropdownMenu /> : <Segment basic>Log in</Segment>}
         </Responsive>
         <Responsive
           as={Menu.Item}

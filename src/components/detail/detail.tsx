@@ -61,7 +61,7 @@ export const Detail: FC<DetailProps> = ({ tagExpenses }) => {
         <Segment inverted color="teal" textAlign="center">
           <Header content="Total Expenses" />
           <Header size="huge">
-            ¥{' '}
+            ¥
             {tagExpenses.map((exp) => exp.amount).reduce((previous, current) => previous + current)}
           </Header>
         </Segment>

@@ -16,7 +16,7 @@ import { Footer } from './footer';
 import { User, Store } from '../../interfaces';
 import { pages, Page } from '../../pages';
 import { LoginForm } from '../../containers/loginForm';
-import { logout } from '../../firebase/auth';
+import { logout, deleteUser } from '../../firebase/auth';
 
 const wrapper = css`
   margin-top: 2rem !important;
@@ -78,6 +78,7 @@ export const Layout: FC<LayoutProps> = ({ currentUser, children }) => {
         handleSidebarClick={() => setVisible(!visible)}
         handleLogoutClick={handleLogoutClick}
         handleLoginClick={handleLoginClick}
+        deleteUser={deleteUser}
       />
       <Sidebar.Pushable as={Segment} basic css={wrapper}>
         <Sidebar

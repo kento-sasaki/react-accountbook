@@ -66,3 +66,11 @@ export const loginWithSocialAccount = async (provider: Provider) => {
 export const loginAnonymously = () => {
   auth().signInAnonymously();
 };
+
+export const deleteUser = async () => {
+  const { currentUser } = auth();
+  await auth().signOut();
+  await currentUser?.delete().catch((error) => {
+    console.log(error);
+  });
+};
