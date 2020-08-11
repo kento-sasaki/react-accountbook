@@ -41,7 +41,7 @@ export const AppBar: FC<AppBarProps> = ({
       <Dropdown item text="User Menu">
         <Dropdown.Menu>
           <Dropdown.Item onClick={handleLogoutClick}>Log out</Dropdown.Item>
-          <Dropdown.Item onClick={deleteUser}>Close Account</Dropdown.Item>
+          <Dropdown.Item onClick={deleteUser}>Delete Account</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     );
