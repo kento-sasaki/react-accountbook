@@ -40,12 +40,14 @@ interface LayoutProps {
 export const Layout: FC<LayoutProps> = ({ currentUser, children }) => {
   const [visible, setVisible] = useState<boolean>(false);
   const [activeItem, setActiveItem] = useState<Page>('home');
-  const [isOpen, setIsOpen] = useState(false);
+  const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
+  const [isConfirmOpen, setIsConfirmOpen] = useState<boolean>(false);
+
   const history = useHistory();
   const isLoading = useSelector((store: Store) => store.isLoading.isLoading);
 
   useEffect(() => {
-    setIsOpen(false);
+    setIsLoginFormOpen(false);
     setVisible(false);
   }, [currentUser]);
 
@@ -65,8 +67,21 @@ export const Layout: FC<LayoutProps> = ({ currentUser, children }) => {
   };
 
   const handleLoginClick = () => {
-    setIsOpen(!isOpen);
+    setIsLoginFormOpen(!isLoginFormOpen);
     setVisible(false);
+  };
+
+  const handleConfirmClick = () => {
+    deleteUser();
+    setIsConfirmOpen(false);
+  };
+
+  const openConfirm = () => {
+    setIsConfirmOpen(true);
+  };
+
+  const closeConfirm = () => {
+    setIsConfirmOpen(false);
   };
 
   return (
@@ -74,11 +89,14 @@ export const Layout: FC<LayoutProps> = ({ currentUser, children }) => {
       <AppBar
         currentUser={currentUser}
         activeItem={activeItem}
+        isConfirmOpen={isConfirmOpen}
         handleItemClick={handleItemClick}
         handleSidebarClick={() => setVisible(!visible)}
         handleLogoutClick={handleLogoutClick}
         handleLoginClick={handleLoginClick}
-        deleteUser={deleteUser}
+        openConfirm={openConfirm}
+        closeConfirm={closeConfirm}
+        handleConfirmClick={handleConfirmClick}
       />
       <Sidebar.Pushable as={Segment} basic css={wrapper}>
         <Sidebar
@@ -110,9 +128,9 @@ export const Layout: FC<LayoutProps> = ({ currentUser, children }) => {
         </Sidebar>
         <TransitionablePortal
           onClose={() => {
-            setIsOpen(false);
+            setIsLoginFormOpen(false);
           }}
-          open={isOpen}
+          open={isLoginFormOpen}
         >
           <Segment compact css={modalPosition}>
             <LoginForm />
