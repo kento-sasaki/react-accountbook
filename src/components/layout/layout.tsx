@@ -9,6 +9,8 @@ import {
   Segment,
   TransitionablePortal,
   MenuItemProps,
+  Message,
+  Transition,
 } from 'semantic-ui-react';
 import { useHistory } from 'react-router-dom';
 import { AppBar } from './appBar';
@@ -17,6 +19,7 @@ import { User, Store } from '../../interfaces';
 import { pages, Page } from '../../pages';
 import { LoginForm } from '../../containers/loginForm';
 import { logout, deleteUser } from '../../firebase/auth';
+import { auth } from '../../firebase/index';
 
 const wrapper = css`
   margin-top: 2rem !important;
@@ -28,9 +31,14 @@ const paddingTop = css`
 
 const modalPosition = css`
   position: absolute !important;
-  right: 0%;
-  top: 5%;
-  z-index: 1000;
+  right: 0.5rem;
+  top: 2.5rem;
+  z-index: 1000 !important;
+`;
+
+const messagePosition = css`
+  ${modalPosition};
+  top: 1rem;
 `;
 
 interface LayoutProps {
@@ -42,6 +50,7 @@ export const Layout: FC<LayoutProps> = ({ currentUser, children }) => {
   const [activeItem, setActiveItem] = useState<Page>('home');
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
   const [isConfirmOpen, setIsConfirmOpen] = useState<boolean>(false);
+  const [messageVisible, setMessageVisible] = useState<boolean>(false);
 
   const history = useHistory();
   const isLoading = useSelector((store: Store) => store.isLoading.isLoading);
@@ -49,6 +58,17 @@ export const Layout: FC<LayoutProps> = ({ currentUser, children }) => {
   useEffect(() => {
     setIsLoginFormOpen(false);
     setVisible(false);
+    auth().onAuthStateChanged((user) => {
+      console.log('Layout');
+      if (user) {
+        setTimeout(() => {
+          setMessageVisible(true);
+        }, 500);
+        setTimeout(() => {
+          setMessageVisible(false);
+        }, 5000);
+      }
+    });
   }, [currentUser]);
 
   const handleItemClick = (e: SyntheticEvent, { name }: MenuItemProps) => {
@@ -147,6 +167,14 @@ export const Layout: FC<LayoutProps> = ({ currentUser, children }) => {
           `}
         >
           <Segment basic vertical loading={isLoading}>
+            <Transition visible={messageVisible} animation="scale" duration={500}>
+              <Message
+                css={messagePosition}
+                info
+                header="Welcome!"
+                content="You've logged in successfully."
+              />
+            </Transition>
             {children}
           </Segment>
           <Footer />

@@ -25,6 +25,7 @@ describe('the home page', () => {
     cy.get('input').get('[placeholder="Expense"]');
     cy.get('table.ui.very.basic.table');
 
+    cy.pause();
     cy.get('div.ui.top.fixed.menu > a.item').contains('User Menu').click();
     cy.get('div.ui.active.visible.item.dropdown').contains('Log out').click();
     cy.url().should('eq', 'http://localhost:3000/');
