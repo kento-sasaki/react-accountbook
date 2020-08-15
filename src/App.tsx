@@ -26,6 +26,7 @@ const App: FC = () => {
       dispatch(loaded());
     });
     console.log('USE EFFECT');
+
     if (currentUser) {
       firestore()
         .collection('users')

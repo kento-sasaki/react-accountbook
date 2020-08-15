@@ -71,6 +71,7 @@ export const MyTableUnitComponent: FC<MyTableUnitProps> = ({
       <ActionsCellComponent
         isEditable={isEditable}
         isOpen={isOpen}
+        amount={amount}
         handleEditClick={handleEditClick}
         handleEditCancelClick={handleEditCancelClick}
         openConfirm={openConfirm}

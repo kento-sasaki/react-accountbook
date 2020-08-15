@@ -60,7 +60,7 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
     setIsOpen(false);
   };
 
-  const dateOptions = [...Array(30).keys()].map((n) => {
+  const dateOptions = [...Array(31).keys()].map((n) => {
     return {
       key: n,
       text: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,

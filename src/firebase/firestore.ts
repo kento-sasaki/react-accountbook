@@ -19,7 +19,11 @@ export const addExpense = async (amount: number, date: Date) => {
 
 export const getExpenses = async (limit = 30): Promise<StoreExpense[]> => {
   const { currentUser } = auth();
-  const limitDate = firestore.Timestamp.fromDate(dayjs().subtract(limit, 'day').toDate());
+  const limitDate = firestore.Timestamp.fromDate(
+    dayjs(new Date().setHours(0, 0, 0, 0)).subtract(limit, 'day').toDate(),
+  );
+
+  console.log('limitDate: ', dayjs(limitDate.toDate()));
 
   const querySnapshot = await firestore()
     .collection('users')
@@ -58,6 +62,8 @@ export const getExpenses = async (limit = 30): Promise<StoreExpense[]> => {
         tagIcon: tagOptions.filter((obj) => obj.text === doc.data().tag)[0].icon,
       };
     });
+
+  console.log(expenses);
 
   return expenses;
 };

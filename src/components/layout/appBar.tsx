@@ -9,6 +9,7 @@ import {
   Responsive,
   Icon,
   Dropdown,
+  Confirm,
 } from 'semantic-ui-react';
 import { Page } from '../../pages';
 import { User } from '../../interfaces';
@@ -16,11 +17,14 @@ import { User } from '../../interfaces';
 interface AppBarProps {
   currentUser?: User | null;
   activeItem?: Page;
+  isConfirmOpen?: boolean;
   handleItemClick?: (e: SyntheticEvent, { name }: MenuItemProps) => void;
   handleSidebarClick?: () => void;
   handleLogoutClick?: () => void;
   handleLoginClick?: () => void;
-  deleteUser?: () => void;
+  handleConfirmClick?: () => void;
+  openConfirm?: () => void;
+  closeConfirm?: () => void;
 }
 
 const padding = (x: number, y: number) =>
@@ -30,20 +34,34 @@ const padding = (x: number, y: number) =>
 export const AppBar: FC<AppBarProps> = ({
   currentUser = null,
   activeItem = 'home',
+  isConfirmOpen = false,
   handleItemClick = () => {},
   handleSidebarClick = () => {},
   handleLogoutClick = () => {},
   handleLoginClick = () => {},
-  deleteUser = () => {},
+  handleConfirmClick = () => {},
+  openConfirm = () => {},
+  closeConfirm = () => {},
 }) => {
   const UserDropdownMenu: FC = () => {
     return (
-      <Dropdown item text="User Menu">
-        <Dropdown.Menu>
-          <Dropdown.Item onClick={handleLogoutClick}>Log out</Dropdown.Item>
-          <Dropdown.Item onClick={deleteUser}>Delete Account</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+      <div>
+        <Dropdown item text="User Menu">
+          <Dropdown.Menu>
+            <Dropdown.Item onClick={handleLogoutClick}>Log out</Dropdown.Item>
+            <Dropdown.Item onClick={openConfirm}>Delete Account</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+        <Confirm
+          open={isConfirmOpen}
+          onCancel={closeConfirm}
+          onConfirm={handleConfirmClick}
+          content="アカウントを削除してよろしいですか？"
+          cancelButton="Cancel"
+          confirmButton="Delete"
+          size="mini"
+        />
+      </div>
     );
   };
 

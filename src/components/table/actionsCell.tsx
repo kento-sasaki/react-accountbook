@@ -6,6 +6,7 @@ import { Table, Button, Confirm } from 'semantic-ui-react';
 interface ActionsCellProps {
   isEditable?: boolean;
   isOpen?: boolean;
+  amount?: string;
   handleEditClick?: () => void;
   handleEditCancelClick?: () => void;
   openConfirm?: () => void;
@@ -17,6 +18,7 @@ interface ActionsCellProps {
 export const ActionsCellComponent: FC<ActionsCellProps> = ({
   isEditable = false,
   isOpen = false,
+  amount = '',
   handleEditClick = () => {},
   handleEditCancelClick = () => {},
   openConfirm = () => {},
@@ -27,7 +29,14 @@ export const ActionsCellComponent: FC<ActionsCellProps> = ({
   if (isEditable) {
     return (
       <Table.Cell>
-        <Button circular content="Save" icon="save" color="teal" onClick={handleSaveClick} />
+        <Button
+          circular
+          content="Save"
+          icon="save"
+          color="teal"
+          onClick={handleSaveClick}
+          disabled={!(/\d+/giu.test(amount) && !/[a-z]+/giu.test(amount))}
+        />
         <Button
           circular
           basic

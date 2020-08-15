@@ -1,5 +1,5 @@
 describe('add expense', () => {
-  beforeEach(() => {
+  before(() => {
     cy.visit('/');
     cy.get('div.ui.top.fixed.menu > a.item').contains('Log in').click();
     cy.get('input').get('[placeholder="E-mail address"]').type(Cypress.env('email'));
@@ -7,17 +7,30 @@ describe('add expense', () => {
     cy.get('button.ui.teal.circular.fluid.button').click();
   });
 
-  afterEach(() => {
-    cy.get('div.ui.top.fixed.menu > a.item').contains('Log out').click();
+  after(() => {
+    cy.get('div.ui.top.fixed.menu > a.item').contains('User Menu').click();
+    cy.get('.ui.active.visible.item.dropdown').contains('Log out').click();
+    cy.url().should('eq', 'http://localhost:3000/');
+    cy.title().should('eq', 'Home | VisiBO');
   });
 
-  it('add expense', () => {
+  it('支出の登録成功', () => {
     const amount = Math.floor(Math.random() * 1000);
+    cy.pause();
     cy.get('input').get('[placeholder="Expense"]').type(`${amount}`);
-    cy.get('i.dropdown.icon').click();
+    cy.get('div.ui.action.input .dropdown.icon').click();
     cy.get('div.selected.item').click();
     cy.get('div.ui.action.input > button.ui.teal.button').contains('Submit').click();
     cy.pause();
-    cy.get('table.ui.very.basic.table > tbody > tr:first').contains(`${amount}`);
+    cy.get('[data-test-id="expense-table"] > tbody > tr:first').contains(`${amount}`);
+  });
+
+  it('支出の登録失敗', () => {
+    const amount = '千五百';
+    cy.pause();
+    cy.get('input').get('[placeholder="Expense"]').type(`${amount}`);
+    cy.get('div.ui.action.input .dropdown.icon').click();
+    cy.get('div.selected.item').click();
+    cy.get('div.ui.action.input > button.ui.teal.button').contains('Submit').should('be.disabled');
   });
 });

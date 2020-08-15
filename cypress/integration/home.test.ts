@@ -3,7 +3,7 @@ describe('the home page', () => {
     cy.visit('/');
   });
 
-  it('successfuly loads', () => {
+  it('Homeのロード成功', () => {
     cy.get('div.ui.top.fixed.menu > a.item').contains('Home').should('have.class', 'active');
     cy.title().should('eq', 'Home | VisiBO');
   });
@@ -15,7 +15,7 @@ describe('the home page', () => {
     cy.url().should('include', '/contact');
   });
 
-  it('ログイン', () => {
+  it('ログインとログアウト', () => {
     cy.get('div.ui.top.fixed.menu > a.item').contains('Log in').click();
     cy.get('input').get('[placeholder="E-mail address"]').type(Cypress.env('email'));
     cy.get('input').get('[placeholder="Password"]').type(Cypress.env('password'));
@@ -25,6 +25,9 @@ describe('the home page', () => {
     cy.get('input').get('[placeholder="Expense"]');
     cy.get('table.ui.very.basic.table');
 
-    cy.get('div.ui.top.fixed.menu > a.item').contains('Log out').click();
+    cy.get('div.ui.top.fixed.menu > a.item').contains('User Menu').click();
+    cy.get('div.ui.active.visible.item.dropdown').contains('Log out').click();
+    cy.url().should('eq', 'http://localhost:3000/');
+    cy.title().should('eq', 'Home | VisiBO');
   });
 });

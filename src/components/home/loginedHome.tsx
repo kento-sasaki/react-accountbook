@@ -43,7 +43,6 @@ export const LoginedHome: FC = () => {
         </Segment>
       </Grid.Column>
       <Grid.Column mobile={9} tablet={10} computer={9} largeScreen={10} widescreen={5}>
-        {console.log(tagExpenses)}
         {tagExpenses.length >= 1 ? (
           <Segment>
             <Header>More Information</Header>
