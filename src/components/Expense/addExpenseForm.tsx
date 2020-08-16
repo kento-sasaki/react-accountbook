@@ -2,15 +2,18 @@
 import React, { FC, FormEvent } from 'react';
 import { jsx, css } from '@emotion/core';
 import dayjs from 'dayjs';
-import { Input, Button, Dropdown, DropdownProps, InputOnChangeData } from 'semantic-ui-react';
+import { Input, Button, Dropdown, Grid, DropdownProps, InputOnChangeData } from 'semantic-ui-react';
 
-const wrapper = css`
-  margin: 0.5rem;
+const displayFlex = css`
   display: flex;
 `;
 
-const margin = css`
-  margin: 0.5rem !important;
+const padding = (x: number, y: number) => css`
+  padding: ${y}rem ${x}rem !important;
+`;
+
+const margin = (top: number, right: number, bottom: number, left: number) => css`
+  margin: ${top}rem ${right}rem ${bottom}rem ${left}rem !important;
 `;
 
 interface AddExpenseFormProps {
@@ -46,50 +49,71 @@ export const AddExpenseFormComponent: FC<AddExpenseFormProps> = ({
   ],
 }) => {
   return (
-    <div css={wrapper}>
-      <Input
-        css={margin}
-        icon="jpy"
-        iconPosition="left"
-        onChange={handleChangeAmount}
-        placeholder="Expense"
-        value={amount}
-      />
-      <Dropdown
-        css={css`
-          ${margin}
-          min-width: 11rem !important;
-        `}
-        button
-        selection
-        className="icon"
-        labeled
-        icon="calendar alternate outline"
-        text={dayjs(date).format('YYYY/MM/DD')}
-        options={dateOptions}
-        onChange={handleChangeDate}
-      />
-      <Dropdown
-        css={css`
-          ${margin}
-          min-width: 9rem !important;
-        `}
-        button
-        selection
-        className="icon"
-        labeled
-        icon="tag"
-        text={tag}
-        options={tagOptions}
-        onChange={handleChangeTag}
-      />
-      <Button
-        css={margin}
-        color="teal"
-        onClick={handleClick}
-        content="Submit"
-        disabled={!(/\d+/giu.test(amount) && !/[a-z]+/giu.test(amount))}
-      />
-    </div>
+    <Grid columns="equal">
+      <Grid.Row stretched>
+        <Grid.Column
+          width={11}
+          css={css`
+            ${padding(0, 0)}
+            ${margin(0, 0.2, 0, 1)}
+          `}
+        >
+          <Input
+            css={margin(0.1, 0.1, 0.1, 0.1)}
+            icon="jpy"
+            iconPosition="left"
+            onChange={handleChangeAmount}
+            placeholder="Expense"
+            value={amount}
+          />
+          <div css={displayFlex}>
+            <Dropdown
+              css={css`
+                ${margin(0.1, 0.1, 0.1, 0.1)}
+                min-width: 11rem !important;
+              `}
+              button
+              selection
+              className="icon"
+              labeled
+              fluid
+              icon="calendar alternate outline"
+              text={dayjs(date).format('YYYY/MM/DD')}
+              options={dateOptions}
+              onChange={handleChangeDate}
+            />
+            <Dropdown
+              css={css`
+                ${margin(0.1, 0.1, 0.1, 0.1)}
+                min-width: 9rem !important;
+              `}
+              button
+              selection
+              fluid
+              className="icon"
+              labeled
+              icon="tag"
+              text={tag}
+              options={tagOptions}
+              onChange={handleChangeTag}
+            />
+          </div>
+        </Grid.Column>
+
+        <Grid.Column
+          css={css`
+            ${padding(0, 0)}
+            ${margin(0, 1, 0, 0.2)}
+          `}
+        >
+          <Button
+            color="teal"
+            onClick={handleClick}
+            content="Submit"
+            disabled={!(/\d+/giu.test(amount) && !/[a-z]+/giu.test(amount))}
+          />
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
   );
 };
