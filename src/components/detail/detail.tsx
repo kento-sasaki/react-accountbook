@@ -11,7 +11,7 @@ import {
   SemanticICONS,
   SemanticCOLORS,
 } from 'semantic-ui-react';
-import { tagOptions } from '../table/tagCell';
+import { tagOptions } from '../../utils/utils';
 
 interface DetailProps {
   tagExpenses: {

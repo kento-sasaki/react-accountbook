@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import { firestore, auth } from './index';
 import { StoreExpense } from '../interfaces';
-import { tagOptions } from '../components/table/tagCell';
+import { tagOptions } from '../utils/utils';
 
 export const addExpense = async (amount: number, date: Date) => {
   const { currentUser } = auth();

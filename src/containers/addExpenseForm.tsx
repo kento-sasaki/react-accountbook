@@ -5,6 +5,7 @@ import dayjs from 'dayjs';
 import { InputOnChangeData, DropdownProps } from 'semantic-ui-react';
 import { AddExpenseFormComponent } from '../components/Expense/addExpenseForm';
 import { addExpense } from '../firebase/firestore';
+import { createDateOptions } from '../utils/utils';
 
 export const AddExpenseForm: FC = () => {
   const [amount, setAmount] = useState<string>('');
@@ -26,13 +27,7 @@ export const AddExpenseForm: FC = () => {
     setAmount('');
   };
 
-  const dateOptions = [...Array(31).keys()].map((n) => {
-    return {
-      key: n,
-      text: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,
-      value: n,
-    };
-  });
+  const dateOptions = createDateOptions(31);
 
   return (
     <AddExpenseFormComponent

@@ -2,7 +2,7 @@
 import React, { FC } from 'react';
 import { jsx } from '@emotion/core';
 import { PieChart, Pie, ResponsiveContainer, Cell, Tooltip } from 'recharts';
-import { tagOptions } from '../table/tagCell';
+import { tagOptions } from '../../utils/utils';
 
 interface ExpensePieChartProps {
   tagExpenses: {

@@ -6,6 +6,7 @@ import dayjs from 'dayjs';
 import { StoreExpense } from '../../interfaces';
 import { updateExpense, deleteExpense } from '../../firebase/firestore';
 import { MyTableUnitComponent } from '../../components/table/myTableUnit';
+import { createDateOptions } from '../../utils/utils';
 
 interface MyTableUnitProps {
   expense: StoreExpense;
@@ -60,13 +61,7 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
     setIsOpen(false);
   };
 
-  const dateOptions = [...Array(31).keys()].map((n) => {
-    return {
-      key: n,
-      text: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,
-      value: n,
-    };
-  });
+  const dateOptions = createDateOptions(31);
 
   return (
     <MyTableUnitComponent
