@@ -2,7 +2,7 @@
 import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { jsx, css } from '@emotion/core';
-import { Segment, Grid, Header } from 'semantic-ui-react';
+import { Segment, Grid, Header, Divider } from 'semantic-ui-react';
 import { ExpenseBarChart } from '../charts/expenseBarChart';
 import { ExpensePieChart } from '../charts/expensePieChart';
 import { AddExpenseForm } from '../../containers/addExpenseForm';
@@ -32,20 +32,20 @@ export const LoginedHome: FC = () => {
     <Grid centered css={margin(0, 0.5, 0, 0.5)}>
       <Grid.Column mobile={16} tablet={16} computer={12} largeScreen={12} widescreen={15}>
         <Segment>
-          <Header content="Latest Expenses" />
+          <Header content="Latest expenses" />
           <ExpenseBarChart expense={expense} />
         </Segment>
       </Grid.Column>
       <Grid.Column mobile={7} tablet={6} computer={4} largeScreen={4} widescreen={3}>
         <Segment>
-          <Header content="Breakdown of Expenses" textAlign="center" />
+          <Header content="Breakdown of expenses" textAlign="center" />
           <ExpensePieChart tagExpenses={tagExpenses} />
         </Segment>
       </Grid.Column>
       <Grid.Column mobile={9} tablet={10} computer={9} largeScreen={10} widescreen={5}>
         {tagExpenses.length >= 1 ? (
           <Segment>
-            <Header>More Information</Header>
+            <Header>More information</Header>
             <Detail tagExpenses={tagExpenses} />
           </Segment>
         ) : (
@@ -56,11 +56,11 @@ export const LoginedHome: FC = () => {
       </Grid.Column>
       <Grid.Column mobile={16} tablet={10} computer={7} largeScreen={6} widescreen={4}>
         <Segment>
-          <Header content="Register Your Expenses" />
-          <Segment basic vertical>
-            <AddExpenseForm />
-            <InputFile />
-          </Segment>
+          <Header content="Register your expenses" />
+          <AddExpenseForm />
+          <Divider />
+          <Header size="medium" content="Register your expenses from the receipts" />
+          <InputFile />
         </Segment>
       </Grid.Column>
 

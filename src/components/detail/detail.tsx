@@ -40,7 +40,7 @@ export const Detail: FC<DetailProps> = ({ tagExpenses }) => {
       <Grid.Column width={11}>
         <Table basic="very">
           <Table.Body>
-            {_.chunk(tagExpensesDetails, 4).map((details, i1, self1) => (
+            {_.chunk(tagExpensesDetails, 3).map((details, i1, self1) => (
               <Table.Row key={self1.indexOf(details)}>
                 {details.map((detail, i2, self2) => (
                   <Table.Cell key={self2.indexOf(detail)}>

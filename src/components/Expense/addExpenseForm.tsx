@@ -52,7 +52,7 @@ export const AddExpenseFormComponent: FC<AddExpenseFormProps> = ({
     <Grid columns="equal">
       <Grid.Row stretched>
         <Grid.Column
-          width={11}
+          width={12}
           css={css`
             ${padding(0, 0)}
             ${margin(0, 0.2, 0, 1)}
