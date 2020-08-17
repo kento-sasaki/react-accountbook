@@ -17,7 +17,7 @@ export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [date, setDate] = useState<Date>(expense.date);
   const [amount, setAmount] = useState<string>(`${expense.amount}`);
-  const [tag, setTag] = useState<string>('その他');
+  const [tag, setTag] = useState<string>(expense.tagLabel);
 
   const handleChangeDate = (e: FormEvent, { value }: DropdownProps) => {
     if (typeof value === 'number') {
