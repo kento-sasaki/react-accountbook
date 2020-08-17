@@ -1,9 +1,9 @@
 import dayjs from 'dayjs';
 import { firestore, auth } from './index';
 import { StoreExpense } from '../interfaces';
-import { tagOptions } from '../components/table/tagCell';
+import { tagOptions } from '../utils/utils';
 
-export const addExpense = async (amount: number, date: Date) => {
+export const addExpense = async (amount: number, date: Date, tag: string) => {
   const { currentUser } = auth();
   await firestore()
     .collection('users')
@@ -13,7 +13,7 @@ export const addExpense = async (amount: number, date: Date) => {
       createdAt: firestore.FieldValue.serverTimestamp(),
       date: firestore.Timestamp.fromDate(date),
       amount,
-      tag: 'その他',
+      tag,
     });
 };
 

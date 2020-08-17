@@ -18,9 +18,9 @@ describe('add expense', () => {
     const amount = Math.floor(Math.random() * 1000);
     cy.pause();
     cy.get('input').get('[placeholder="Expense"]').type(`${amount}`);
-    cy.get('div.ui.action.input .dropdown.icon').click();
-    cy.get('div.selected.item').click();
-    cy.get('div.ui.action.input > button.ui.teal.button').contains('Submit').click();
+    cy.get('div.ui.dropdown.icon > i.calendar.alternate.outline.icon').click();
+    cy.get('div.visible.menu.transition div.selected.item').click();
+    cy.get('[data-test-id="add-expense"]').click();
     cy.pause();
     cy.get('[data-test-id="expense-table"] > tbody > tr:first').contains(`${amount}`);
   });
@@ -29,8 +29,8 @@ describe('add expense', () => {
     const amount = '千五百';
     cy.pause();
     cy.get('input').get('[placeholder="Expense"]').type(`${amount}`);
-    cy.get('div.ui.action.input .dropdown.icon').click();
-    cy.get('div.selected.item').click();
-    cy.get('div.ui.action.input > button.ui.teal.button').contains('Submit').should('be.disabled');
+    cy.get('div.ui.dropdown.icon > i.calendar.alternate.outline.icon').click();
+    cy.get('div.visible.menu.transition div.selected.item').click();
+    cy.get('[data-test-id="add-expense"]').should('be.disabled');
   });
 });

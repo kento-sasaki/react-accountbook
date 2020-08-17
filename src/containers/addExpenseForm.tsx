@@ -5,10 +5,12 @@ import dayjs from 'dayjs';
 import { InputOnChangeData, DropdownProps } from 'semantic-ui-react';
 import { AddExpenseFormComponent } from '../components/Expense/addExpenseForm';
 import { addExpense } from '../firebase/firestore';
+import { createDateOptions, tagOptions } from '../utils/utils';
 
 export const AddExpenseForm: FC = () => {
   const [amount, setAmount] = useState<string>('');
   const [date, setDate] = useState<Date>(new Date());
+  const [tag, setTag] = useState<string>('その他');
 
   const handleChangeAmount = (e: FormEvent, { value }: InputOnChangeData) => {
     setAmount(value);
@@ -20,27 +22,33 @@ export const AddExpenseForm: FC = () => {
     }
   };
 
-  const handleClick = async () => {
-    console.log('start');
-    await addExpense(Number(amount), date);
-    setAmount('');
+  const handleChangeTag = (e: FormEvent, { value }: DropdownProps) => {
+    if (typeof value === 'string') {
+      setTag(value);
+      console.log(value);
+    }
   };
 
-  const dateOptions = [...Array(31).keys()].map((n) => {
-    return {
-      key: n,
-      text: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,
-      value: n,
-    };
-  });
+  const handleClick = async () => {
+    console.log('start');
+    await addExpense(Number(amount), date, tag);
+    setAmount('');
+    setTag('その他');
+  };
+
+  const dateOptions = createDateOptions(31);
 
   return (
     <AddExpenseFormComponent
       handleChangeAmount={handleChangeAmount}
       handleChangeDate={handleChangeDate}
+      handleChangeTag={handleChangeTag}
       handleClick={handleClick}
       amount={amount}
+      date={date}
+      tag={tag}
       dateOptions={dateOptions}
+      tagOptions={tagOptions}
     />
   );
 };

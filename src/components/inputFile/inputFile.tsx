@@ -1,15 +1,30 @@
 /** @jsx jsx */
-import React, { FC } from 'react';
+import React, { FC, FormEvent } from 'react';
 import { jsx, css } from '@emotion/core';
-import { Button, Label } from 'semantic-ui-react';
+import { Button, Input, Grid } from 'semantic-ui-react';
 
-const margin = css`
-  margin: 0.5rem;
+const label = css`
+  display: flex;
+  padding: 0.9rem 1rem;
+  :hover {
+    cursor: pointer;
+  }
+`;
+
+const displayFlex = css`
   display: flex;
 `;
 
+const padding = (x: number, y: number) => css`
+  padding: ${y}rem ${x}rem !important;
+`;
+
+const margin = (top: number, right: number, bottom: number, left: number) => css`
+  margin: ${top}rem ${right}rem ${bottom}rem ${left}rem !important;
+`;
+
 interface InputFileProps {
-  selectFile?: (e: any) => void;
+  selectFile?: (e: FormEvent) => void;
   handleUploadClick?: () => void;
   id?: string;
   file?: {
@@ -26,18 +41,9 @@ export const InputFileComponent: FC<InputFileProps> = ({
   file = undefined,
   isDisabled = true,
 }) => {
-  const Input = () => (
-    <label
-      css={css`
-        display: flex;
-        padding: 0.9rem 1rem;
-        :hover {
-          cursor: pointer;
-        }
-      `}
-      htmlFor={id}
-    >
-      Select File
+  const MyInput = () => (
+    <label css={label} htmlFor={id}>
+      Select
       <input
         id={id}
         type="file"
@@ -51,38 +57,48 @@ export const InputFileComponent: FC<InputFileProps> = ({
   );
 
   return (
-    <div css={margin}>
-      <Button.Group>
-        <Button
-          as="div"
-          labelPosition="left"
+    <Grid columns="equal">
+      <Grid.Row stretched>
+        <Grid.Column
+          width={12}
           css={css`
-            :hover {
-              cursor: text;
-            }
+            ${padding(0, 0)}
+            ${margin(0, 0.2, 0, 1)}
           `}
         >
-          <Label
-            as="p"
-            basic
-            css={css`
-              min-width: 15rem;
-            `}
-          >
-            {file?.data ? file.displayName : 'File name'}
-          </Label>
-        </Button>
-        <Button
+          <div css={displayFlex}>
+            <Input
+              css={css`
+                ${margin(0.1, 0.1, 0.1, 0.1)}
+                min-width: 19rem;
+              `}
+              icon="file image outline"
+              iconPosition="left"
+              value={file?.data ? file.displayName : 'File name'}
+            />
+            <Button
+              css={css`
+                ${padding(0, 0)}
+                ${margin(0.1, 0.1, 0.1, 0.1)}
+              `}
+              icon="file image outline"
+              basic
+              color="teal"
+              fluid
+            >
+              <MyInput />
+            </Button>
+          </div>
+        </Grid.Column>
+        <Grid.Column
           css={css`
-            padding: 0 !important;
+            ${padding(0, 0)}
+            ${margin(0, 1, 0, 0.2)}
           `}
-          basic
-          color="teal"
         >
-          <Input />
-        </Button>
-        <Button onClick={handleUploadClick} content="Submit" color="teal" disabled={isDisabled} />
-      </Button.Group>
-    </div>
+          <Button onClick={handleUploadClick} content="Submit" color="teal" disabled={isDisabled} />
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
   );
 };
