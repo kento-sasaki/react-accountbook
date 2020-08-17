@@ -74,7 +74,6 @@ export const InputFileComponent: FC<InputFileProps> = ({
               `}
               icon="file image outline"
               iconPosition="left"
-              placeholder="Expense"
               value={file?.data ? file.displayName : 'File name'}
             />
             <Button
