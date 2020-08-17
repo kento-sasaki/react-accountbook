@@ -59,7 +59,7 @@ export const Detail: FC<DetailProps> = ({ tagExpenses }) => {
         </Grid.Column>
         <Grid.Column verticalAlign="middle" width="5">
           <Segment inverted color="teal" textAlign="center">
-            <Header content="Total Expenses" />
+            <Header content="Total expenses" />
             <Header size="huge">
               ¥
               {tagExpenses
