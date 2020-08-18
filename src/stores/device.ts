@@ -6,14 +6,13 @@ const deviceSlice = createSlice({
     device: 'largeScreen',
   },
   reducers: {
-    widescreen: () => ({ device: 'widescreen' }),
-    largeScreen: () => ({ device: 'largeScreen' }),
-    computer: () => ({ device: 'computer' }),
-    tablet: () => ({ device: 'tablet' }),
-    mobile: () => ({ device: 'mobile' }),
+    whichDevice: (prevState, action) => {
+      console.log(action.payload);
+
+      return { device: action.payload };
+    },
   },
 });
 
-// export const { widescreen, largeScreen, computer, tablet, mobile } = deviceSlice.actions;
-export const deviceActions = deviceSlice.actions;
+export const { whichDevice } = deviceSlice.actions;
 export const deviceReducer = deviceSlice.reducer;

@@ -14,7 +14,7 @@ import { pages } from './pages';
 import { Layout } from './components/layout/layout';
 import { fetchExpense, resetExpense } from './stores/expense';
 import { loading, loaded } from './stores/loading';
-import { deviceActions } from './stores/device';
+import { whichDevice } from './stores/device';
 
 const App: FC = () => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
@@ -24,7 +24,7 @@ const App: FC = () => {
   useEffect(() => {
     dispatch(loading());
     console.log(device);
-    dispatch(deviceActions[device]);
+    dispatch(whichDevice(device));
     auth().onAuthStateChanged((user) => {
       setCurrentUser(user);
       dispatch(loaded());

@@ -22,7 +22,7 @@ import { logout, deleteUser } from '../../firebase/auth';
 import { auth } from '../../firebase/index';
 
 const wrapper = css`
-  margin-top: 2rem !important;
+  margin-top: 3rem !important;
 `;
 
 const paddingTop = css`
