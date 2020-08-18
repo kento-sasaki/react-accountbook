@@ -52,11 +52,12 @@ export const LogoutedHome: FC = () => {
 
   const columns = device === 'mobile' || device === 'tablet' ? 1 : 'equal';
   const columnwidth = device === 'mobile' ? 16 : 10;
+  const buttonSize = device === 'mobile' || device === 'tablet' ? 'small' : 'medium';
+
   const headerSize = (
     mobileSize: 'small' | 'large' | 'medium' | 'tiny' | 'huge',
     computerSize: 'small' | 'large' | 'medium' | 'tiny' | 'huge',
   ) => (device === 'mobile' || device === 'tablet' ? mobileSize : computerSize);
-  const buttonSize = device === 'mobile' || device === 'tablet' ? 'small' : 'medium';
 
   return (
     <div>
