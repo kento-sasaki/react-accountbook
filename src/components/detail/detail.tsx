@@ -1,11 +1,9 @@
 /** @jsx jsx */
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { jsx, css } from '@emotion/core';
-// import { useSelector } from 'react-redux';
 import _ from 'lodash';
 import { Segment, Grid, Header, Button, SemanticICONS, SemanticCOLORS } from 'semantic-ui-react';
 import { tagOptions } from '../../utils/utils';
-// import { Store } from '../../interfaces';
 
 const displayFlex = css`
   display: flex;
@@ -13,7 +11,6 @@ const displayFlex = css`
 
 const label = css`
   margin: 0.2rem 0.2rem !important;
-  /* min-width: 8rem !important; */
 `;
 
 interface DetailProps {
@@ -24,7 +21,6 @@ interface DetailProps {
 }
 
 export const Detail: FC<DetailProps> = ({ tagExpenses }) => {
-  // const device = useSelector((store: Store) => store.device.device);
   const tagExpensesDetails = tagExpenses.map((exp) => {
     return {
       label: exp.tagLabel,
@@ -39,6 +35,35 @@ export const Detail: FC<DetailProps> = ({ tagExpenses }) => {
     color: SemanticCOLORS;
   }[];
 
+  interface MyButtonProps {
+    detail: {
+      label: string;
+      amount: number;
+      icon: SemanticICONS;
+      color: SemanticCOLORS;
+    };
+  }
+
+  const MyButton: FC<MyButtonProps> = ({ detail }) => {
+    const [basic, setBasic] = useState<boolean>(true);
+
+    return (
+      <Button
+        css={label}
+        size="large"
+        color={detail.color}
+        icon={detail.icon}
+        content={`¥ ${detail.amount}`}
+        basic={basic}
+        fluid
+        onClick={() => {
+          setBasic(!basic);
+          console.log(detail.label);
+        }}
+      />
+    );
+  };
+
   return (
     <Grid columns="equal">
       <Grid.Row stretched>
@@ -46,16 +71,7 @@ export const Detail: FC<DetailProps> = ({ tagExpenses }) => {
           {_.chunk(tagExpensesDetails, 2).map((details, i1, self1) => (
             <div css={displayFlex} key={self1.indexOf(details)}>
               {details.map((detail, i2, self2) => (
-                <Button
-                  css={label}
-                  key={self2.indexOf(detail)}
-                  size="large"
-                  color={detail.color}
-                  icon={detail.icon}
-                  content={`¥ ${detail.amount}`}
-                  basic
-                  fluid
-                />
+                <MyButton detail={detail} key={self2.indexOf(detail)} />
               ))}
             </div>
           ))}
