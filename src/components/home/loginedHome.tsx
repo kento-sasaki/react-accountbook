@@ -30,19 +30,19 @@ export const LoginedHome: FC = () => {
 
   return (
     <Grid centered css={margin(0, 0.5, 0, 0.5)}>
-      <Grid.Column mobile={16} tablet={16} computer={12} largeScreen={12} widescreen={15}>
+      <Grid.Column mobile={16} tablet={16} computer={16} largeScreen={12} widescreen={12}>
         <Segment>
           <Header content="Latest expenses" />
           <ExpenseBarChart expense={expense} />
         </Segment>
       </Grid.Column>
-      <Grid.Column mobile={7} tablet={6} computer={4} largeScreen={4} widescreen={3}>
+      <Grid.Column mobile={16} tablet={5} computer={4} largeScreen={4} widescreen={4}>
         <Segment>
           <Header content="Breakdown of expenses" textAlign="center" />
           <ExpensePieChart tagExpenses={tagExpenses} />
         </Segment>
       </Grid.Column>
-      <Grid.Column mobile={9} tablet={10} computer={9} largeScreen={10} widescreen={5}>
+      <Grid.Column mobile={16} tablet={11} computer={12} largeScreen={9} widescreen={6}>
         {tagExpenses.length >= 1 ? (
           <Segment>
             <Header>More information</Header>
@@ -54,7 +54,7 @@ export const LoginedHome: FC = () => {
           </Segment>
         )}
       </Grid.Column>
-      <Grid.Column mobile={16} tablet={10} computer={7} largeScreen={6} widescreen={4}>
+      <Grid.Column mobile={16} tablet={14} computer={13} largeScreen={7} widescreen={6}>
         <Segment>
           <Header content="Register your expenses" />
           <AddExpenseForm />

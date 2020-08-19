@@ -1,10 +1,12 @@
 /** @jsx jsx */
 import React, { FC, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { jsx, css } from '@emotion/core';
 import { Segment, Grid, Image, Button, TransitionablePortal, Header } from 'semantic-ui-react';
 import { useHistory } from 'react-router-dom';
 import { LoginForm } from '../../containers/loginForm';
 import { loginAnonymously } from '../../firebase/auth';
+import { Store } from '../../interfaces';
 import topImage from '../../images/top.svg';
 
 const fontColor = css`
@@ -16,13 +18,31 @@ const fontFamily = css`
 `;
 
 const margin = (top = 0, bottom = 0) => css`
-  margin-top: ${top}rem;
-  margin-bottom: ${bottom}rem;
+  margin-top: ${top}rem !important;
+  margin-bottom: ${bottom}rem !important;
+`;
+
+const loginForm = css`
+  position: absolute !important;
+  right: 0%;
+  top: 5%;
+  z-index: 1000;
+`;
+
+const background = css`
+  background: #00b5ad;
+  padding: 2rem;
+`;
+
+const displayNone = css`
+  display: none !important;
 `;
 
 export const LogoutedHome: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const history = useHistory();
+  const device = useSelector((store: Store) => store.device.device);
+
   const handleGuestClick = async () => {
     await loginAnonymously();
     history.push('/');
@@ -30,21 +50,32 @@ export const LogoutedHome: FC = () => {
 
   const visiboLogo = <span css={fontFamily}>VisiBO</span>;
 
+  const columns = device === 'mobile' || device === 'tablet' ? 1 : 'equal';
+  const columnwidth = device === 'mobile' ? 16 : 10;
+  const buttonSize = device === 'mobile' || device === 'tablet' ? 'small' : 'medium';
+
+  const headerSize = (
+    mobileSize: 'small' | 'large' | 'medium' | 'tiny' | 'huge',
+    computerSize: 'small' | 'large' | 'medium' | 'tiny' | 'huge',
+  ) => (device === 'mobile' || device === 'tablet' ? mobileSize : computerSize);
+
   return (
     <div>
       <Grid centered columns="equal" container>
-        <Grid.Row css={margin(3, 5)}>
-          <Grid.Column width={9} verticalAlign="middle">
+        <Grid.Row css={margin(0, 5)}>
+          <Grid.Column width={columnwidth} verticalAlign="middle">
             <Segment basic textAlign="left" vertical>
-              <Header as="h2" css={fontColor}>
+              <Header size={headerSize('medium', 'large')} css={fontColor}>
                 {visiboLogo}が<p>あなたの支出を見やすくします。</p>
               </Header>
-              <Header css={fontColor}>
+              <Header size={headerSize('small', 'medium')} css={fontColor}>
                 {visiboLogo}は支出を登録して見やすく整理する家計簿アプリです
               </Header>
               <Grid.Row columns="equal">
                 <Button
+                  css={margin(0.2, 0.2)}
                   circular
+                  size={buttonSize}
                   onClick={() => {
                     setIsOpen(!isOpen);
                   }}
@@ -57,20 +88,14 @@ export const LogoutedHome: FC = () => {
                   }}
                   open={isOpen}
                 >
-                  <Segment
-                    compact
-                    css={css`
-                      position: absolute !important;
-                      right: 0%;
-                      top: 5%;
-                      z-index: 1000;
-                    `}
-                  >
+                  <Segment compact css={loginForm}>
                     <LoginForm />
                   </Segment>
                 </TransitionablePortal>
                 <Button
+                  css={margin(0.2, 0.2)}
                   circular
+                  size={buttonSize}
                   onClick={handleGuestClick}
                   content="ゲストとして使ってみる"
                   color="teal"
@@ -79,24 +104,18 @@ export const LogoutedHome: FC = () => {
               </Grid.Row>
             </Segment>
           </Grid.Column>
-          <Grid.Column width={6}>
-            <Image src={topImage} fluid />
+          <Grid.Column css={device === 'mobile' && displayNone} width={5}>
+            <Image src={topImage} />
           </Grid.Column>
         </Grid.Row>
       </Grid>
 
-      <div
-        // #00b5ad teal #95e5cd
-        css={css`
-          background: #00b5ad;
-          padding: 2rem;
-        `}
-      >
+      <div css={background}>
         <Header as="h1" inverted textAlign="center">
           {visiboLogo}
           の特徴
         </Header>
-        <Grid centered columns="equal">
+        <Grid centered columns={columns}>
           <Grid.Column css={margin(1, 1)}>
             <Segment>
               <Header css={fontColor} textAlign="center" content="様々なチャートで整理" />

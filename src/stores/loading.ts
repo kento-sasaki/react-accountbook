@@ -6,16 +6,8 @@ const isLoadingSlice = createSlice({
     isLoading: true,
   },
   reducers: {
-    loading: () => {
-      console.log('action: loading');
-
-      return { isLoading: true };
-    },
-    loaded: () => {
-      console.log('action: loaded');
-
-      return { isLoading: false };
-    },
+    loading: () => ({ isLoading: true }),
+    loaded: () => ({ isLoading: false }),
   },
 });
 

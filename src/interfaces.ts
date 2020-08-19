@@ -21,6 +21,9 @@ export interface Store {
   isLoading: {
     isLoading: boolean;
   };
+  device: {
+    device: 'widescreen' | 'largeScreen' | 'computer' | 'tablet' | 'mobile';
+  };
 }
 
 export interface StoreExpense {
@@ -31,6 +34,8 @@ export interface StoreExpense {
   tagLabel: string;
   tagIcon: string;
 }
+
+export type StoreDevice = 'widescreen' | 'largeScreen' | 'computer' | 'tablet' | 'mobile';
 
 export interface Expense {
   id: string;

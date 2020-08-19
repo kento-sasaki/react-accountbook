@@ -76,7 +76,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
             className="text"
             role="alert"
           >
-            2020/08/17
+            2020/08/19
           </div>
           <i
             aria-hidden="true"
@@ -222,7 +222,7 @@ exports[`Storyshots Contact Contact 1`] = `
 `;
 
 exports[`Storyshots Detail Detail 1`] = `
-.emotion-3 {
+.emotion-2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -243,7 +243,7 @@ exports[`Storyshots Detail Detail 1`] = `
       className="eleven wide column"
     >
       <div
-        className="emotion-3"
+        className="emotion-2"
       >
         <button
           className="ui grey large basic fluid button emotion-0"
@@ -267,6 +267,10 @@ exports[`Storyshots Detail Detail 1`] = `
           />
           ¥ 2000
         </button>
+      </div>
+      <div
+        className="emotion-2"
+      >
         <button
           className="ui violet large basic fluid button emotion-0"
           onClick={[Function]}
@@ -278,10 +282,6 @@ exports[`Storyshots Detail Detail 1`] = `
           />
           ¥ 3000
         </button>
-      </div>
-      <div
-        className="emotion-3"
-      >
         <button
           className="ui yellow large basic fluid button emotion-0"
           onClick={[Function]}
@@ -293,6 +293,10 @@ exports[`Storyshots Detail Detail 1`] = `
           />
           ¥ 1000
         </button>
+      </div>
+      <div
+        className="emotion-2"
+      >
         <button
           className="ui blue large basic fluid button emotion-0"
           onClick={[Function]}
@@ -317,7 +321,7 @@ exports[`Storyshots Detail Detail 1`] = `
         </button>
       </div>
       <div
-        className="emotion-3"
+        className="emotion-2"
       >
         <button
           className="ui orange large basic fluid button emotion-0"
@@ -352,7 +356,7 @@ exports[`Storyshots Detail Detail 1`] = `
         <div
           className="ui header"
         >
-          Total Expenses
+          Total expenses
         </div>
         <div
           className="ui huge header"
@@ -367,60 +371,56 @@ exports[`Storyshots Detail Detail 1`] = `
 `;
 
 exports[`Storyshots ExpenseBarChart Expense Bar Chart 1`] = `
-<div>
+<div
+  className="recharts-responsive-container"
+  style={
+    Object {
+      "height": 300,
+      "maxHeight": undefined,
+      "minHeight": undefined,
+      "minWidth": undefined,
+      "width": "100%",
+    }
+  }
+>
   <div
-    className="recharts-responsive-container"
     style={
       Object {
-        "height": 300,
-        "maxHeight": undefined,
-        "minHeight": undefined,
-        "minWidth": undefined,
-        "width": "100%",
+        "display": "none",
+        "height": 0,
+        "position": "absolute",
+        "visibility": "hidden",
+        "width": 0,
       }
     }
-  >
-    <div
-      style={
-        Object {
-          "display": "none",
-          "height": 0,
-          "position": "absolute",
-          "visibility": "hidden",
-          "width": 0,
-        }
-      }
-    />
-  </div>
+  />
 </div>
 `;
 
 exports[`Storyshots ExpensePieChart Expense Pie Chart 1`] = `
-<div>
+<div
+  className="recharts-responsive-container"
+  style={
+    Object {
+      "height": 300,
+      "maxHeight": undefined,
+      "minHeight": undefined,
+      "minWidth": undefined,
+      "width": "100%",
+    }
+  }
+>
   <div
-    className="recharts-responsive-container"
     style={
       Object {
-        "height": 300,
-        "maxHeight": undefined,
-        "minHeight": undefined,
-        "minWidth": undefined,
-        "width": "100%",
+        "display": "none",
+        "height": 0,
+        "position": "absolute",
+        "visibility": "hidden",
+        "width": 0,
       }
     }
-  >
-    <div
-      style={
-        Object {
-          "display": "none",
-          "height": 0,
-          "position": "absolute",
-          "visibility": "hidden",
-          "width": 0,
-        }
-      }
-    />
-  </div>
+  />
 </div>
 `;
 
@@ -548,7 +548,7 @@ exports[`Storyshots Layout Layout 1`] = `
 }
 
 .emotion-5 {
-  margin-top: 2rem !important;
+  margin-top: 3rem !important;
 }
 
 .emotion-4 {

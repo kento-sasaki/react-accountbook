@@ -1,9 +1,11 @@
 /** @jsx jsx */
 import React, { FC } from 'react';
 import { jsx, css } from '@emotion/core';
+// import { useSelector } from 'react-redux';
 import _ from 'lodash';
 import { Segment, Grid, Header, Button, SemanticICONS, SemanticCOLORS } from 'semantic-ui-react';
 import { tagOptions } from '../../utils/utils';
+// import { Store } from '../../interfaces';
 
 const displayFlex = css`
   display: flex;
@@ -22,6 +24,7 @@ interface DetailProps {
 }
 
 export const Detail: FC<DetailProps> = ({ tagExpenses }) => {
+  // const device = useSelector((store: Store) => store.device.device);
   const tagExpensesDetails = tagExpenses.map((exp) => {
     return {
       label: exp.tagLabel,
@@ -40,7 +43,7 @@ export const Detail: FC<DetailProps> = ({ tagExpenses }) => {
     <Grid columns="equal">
       <Grid.Row stretched>
         <Grid.Column width="11">
-          {_.chunk(tagExpensesDetails, 3).map((details, i1, self1) => (
+          {_.chunk(tagExpensesDetails, 2).map((details, i1, self1) => (
             <div css={displayFlex} key={self1.indexOf(details)}>
               {details.map((detail, i2, self2) => (
                 <Button
