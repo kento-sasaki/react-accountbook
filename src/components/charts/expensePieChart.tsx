@@ -3,17 +3,23 @@ import React, { FC } from 'react';
 import { jsx } from '@emotion/core';
 import { useSelector } from 'react-redux';
 import { PieChart, Pie, ResponsiveContainer, Cell, Tooltip } from 'recharts';
-import { Store } from '../../interfaces';
-import { tagOptions } from '../../utils/utils';
+import { Store, StoreExpense } from '../../interfaces';
+import { tagOptions, createTagExpense } from '../../utils/utils';
 
 interface ExpensePieChartProps {
-  tagExpenses: {
-    tagLabel: string;
-    amount: number;
-  }[];
+  expense: StoreExpense[];
 }
 
-export const ExpensePieChart: FC<ExpensePieChartProps> = ({ tagExpenses }) => {
+export const ExpensePieChart: FC<ExpensePieChartProps> = ({ expense }) => {
+  const tagExpenses = createTagExpense(expense).map((exp) => {
+    return {
+      tagLabel: exp.tagLabel,
+      amount: exp.amounts.reduce((previous, current) => {
+        return previous + current;
+      }),
+    };
+  });
+
   const device = useSelector((store: Store) => store.device.device);
 
   const height = device === 'widescreen' || device === 'largeScreen' ? 300 : 187;

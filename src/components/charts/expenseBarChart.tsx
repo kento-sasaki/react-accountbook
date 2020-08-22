@@ -12,7 +12,6 @@ interface ExpenseBarChartProps {
 
 export const ExpenseBarChart: FC<ExpenseBarChartProps> = ({ expense }) => {
   const device = useSelector((store: Store) => store.device.device);
-
   const height = device === 'widescreen' || device === 'largeScreen' ? 300 : 187;
 
   const data = createDatilyExpense(expense).map((exp) => {

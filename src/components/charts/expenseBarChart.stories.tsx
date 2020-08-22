@@ -3,13 +3,14 @@ import 'semantic-ui-css/semantic.min.css';
 import { Provider } from 'react-redux';
 import { store } from '../../stores/index';
 import { ExpenseBarChart } from './expenseBarChart';
+import { StoreExpense } from '../../interfaces';
 
 export default {
   component: ExpenseBarChart,
   title: 'ExpenseBarChart',
 };
 
-const expense = [
+const expense: StoreExpense[] = [
   {
     id: '1',
     date: new Date(2020, 0, 5),

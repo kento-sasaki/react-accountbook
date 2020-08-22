@@ -4,13 +4,14 @@ import { Provider } from 'react-redux';
 import { Table } from 'semantic-ui-react';
 import { store } from '../../stores/index';
 import { MyTable } from './myTable';
+import { StoreExpense } from '../../interfaces';
 
 export default {
   component: MyTable,
   title: 'MyTable',
 };
 
-const expense = [
+const expense: StoreExpense[] = [
   {
     id: '1',
     date: new Date(2020, 0, 1),
