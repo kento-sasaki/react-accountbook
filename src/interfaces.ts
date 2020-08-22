@@ -7,6 +7,16 @@ export type Provider =
   | firebase.auth.GoogleAuthProvider
   | firebase.auth.TwitterAuthProvider;
 
+export type TagLabel =
+  | 'その他'
+  | '食費'
+  | '家賃'
+  | '電気代'
+  | '水道代'
+  | 'ガス代'
+  | '電話'
+  | '交通費';
+
 export interface Store {
   expense: {
     expense: {
@@ -14,7 +24,7 @@ export interface Store {
       date: Date;
       formatedDate: string;
       amount: number;
-      tagLabel: string;
+      tagLabel: TagLabel;
       tagIcon: string;
     }[];
   };
@@ -31,7 +41,7 @@ export interface StoreExpense {
   date: Date;
   formatedDate: string;
   amount: number;
-  tagLabel: string;
+  tagLabel: TagLabel;
   tagIcon: string;
 }
 

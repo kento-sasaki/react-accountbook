@@ -4,7 +4,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { Visibility, VisibilityEventData } from 'semantic-ui-react';
 import { auth, firestore } from './firebase/index';
-import { LoginedHome } from './components/home/loginedHome';
+import { LoginedHome } from './containers/loginedHome';
 import { LogoutedHome } from './components/home/logoutedHome';
 import { Contact } from './containers/contact';
 import { Terms } from './terms';
@@ -23,7 +23,6 @@ const App: FC = () => {
 
   useEffect(() => {
     dispatch(loading());
-    console.log(device);
     dispatch(whichDevice(device));
     auth().onAuthStateChanged((user) => {
       setCurrentUser(user);
