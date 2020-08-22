@@ -76,7 +76,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
             className="text"
             role="alert"
           >
-            2020/08/19
+            2020/08/22
           </div>
           <i
             aria-hidden="true"
@@ -235,6 +235,7 @@ exports[`Storyshots Detail Detail 1`] = `
 
 <div
   className="ui equal width grid"
+  data-test-id="detail-table"
 >
   <div
     className="stretched row"
@@ -246,38 +247,38 @@ exports[`Storyshots Detail Detail 1`] = `
         className="emotion-2"
       >
         <button
-          className="ui grey large basic fluid button emotion-0"
-          onClick={[Function]}
-        >
-          <i
-            aria-hidden="true"
-            className="tag icon"
-            onClick={[Function]}
-          />
-          ¥ 1000
-        </button>
-        <button
-          className="ui teal large basic fluid button emotion-0"
-          onClick={[Function]}
-        >
-          <i
-            aria-hidden="true"
-            className="food icon"
-            onClick={[Function]}
-          />
-          ¥ 2000
-        </button>
-      </div>
-      <div
-        className="emotion-2"
-      >
-        <button
           className="ui violet large basic fluid button emotion-0"
           onClick={[Function]}
         >
           <i
             aria-hidden="true"
             className="home icon"
+            onClick={[Function]}
+          />
+          ¥ 5000
+        </button>
+        <button
+          className="ui blue large basic fluid button emotion-0"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="bath icon"
+            onClick={[Function]}
+          />
+          ¥ 4000
+        </button>
+      </div>
+      <div
+        className="emotion-2"
+      >
+        <button
+          className="ui red large basic fluid button emotion-0"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="fire icon"
             onClick={[Function]}
           />
           ¥ 3000
@@ -291,59 +292,22 @@ exports[`Storyshots Detail Detail 1`] = `
             className="power cord icon"
             onClick={[Function]}
           />
-          ¥ 1000
+          ¥ 2000
         </button>
       </div>
       <div
         className="emotion-2"
       >
         <button
-          className="ui blue large basic fluid button emotion-0"
+          className="ui teal large basic fluid button emotion-0"
           onClick={[Function]}
         >
           <i
             aria-hidden="true"
-            className="bath icon"
-            onClick={[Function]}
-          />
-          ¥ 2000
-        </button>
-        <button
-          className="ui red large basic fluid button emotion-0"
-          onClick={[Function]}
-        >
-          <i
-            aria-hidden="true"
-            className="fire icon"
-            onClick={[Function]}
-          />
-          ¥ 3000
-        </button>
-      </div>
-      <div
-        className="emotion-2"
-      >
-        <button
-          className="ui orange large basic fluid button emotion-0"
-          onClick={[Function]}
-        >
-          <i
-            aria-hidden="true"
-            className="phone icon"
+            className="food icon"
             onClick={[Function]}
           />
           ¥ 1000
-        </button>
-        <button
-          className="ui green large basic fluid button emotion-0"
-          onClick={[Function]}
-        >
-          <i
-            aria-hidden="true"
-            className="subway icon"
-            onClick={[Function]}
-          />
-          ¥ 2000
         </button>
       </div>
     </div>

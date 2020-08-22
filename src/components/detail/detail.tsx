@@ -43,7 +43,7 @@ export const Detail: FC<DetailProps> = ({ expense, handleRequireClick = () => {}
     }[];
 
     return (
-      <Grid columns="equal">
+      <Grid columns="equal" data-test-id="detail-table">
         <Grid.Row stretched>
           <Grid.Column width="11">
             {_.chunk(tagExpensesDetails, 2).map((details, i1, self1) => (
