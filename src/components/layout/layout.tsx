@@ -59,7 +59,6 @@ export const Layout: FC<LayoutProps> = ({ currentUser, children }) => {
     setIsLoginFormOpen(false);
     setVisible(false);
     auth().onAuthStateChanged((user) => {
-      console.log('Layout');
       if (user) {
         setTimeout(() => {
           setMessageVisible(true);

@@ -39,7 +39,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "firebase emulators:exec --only firestore 'react-scripts test'",
-    "test:coverage": "npm run test -- --coverage",
     "emu:firebase": "firebase emulators:start",
     "emu:firestore": "firebase emulators:start --only firestore",
     "emu:functions": "firebase emulators:start --only functions",
