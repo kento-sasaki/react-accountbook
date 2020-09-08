@@ -25,12 +25,10 @@ export const AddExpenseForm: FC = () => {
   const handleChangeTag = (e: FormEvent, { value }: DropdownProps) => {
     if (typeof value === 'string') {
       setTag(value);
-      console.log(value);
     }
   };
 
   const handleClick = async () => {
-    console.log('start');
     await addExpense(Number(amount), date, tag);
     setAmount('');
     setTag('その他');

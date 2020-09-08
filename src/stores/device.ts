@@ -7,8 +7,6 @@ const deviceSlice = createSlice({
   },
   reducers: {
     whichDevice: (prevState, action) => {
-      console.log(action.payload);
-
       return { device: action.payload };
     },
   },

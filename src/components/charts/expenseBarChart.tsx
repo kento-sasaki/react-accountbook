@@ -19,8 +19,6 @@ interface MemoChartProps {
 }
 
 const MemoChart: FC<MemoChartProps> = React.memo(({ data, height }) => {
-  console.log('Render MemoChart');
-
   return (
     <ResponsiveContainer width="100%" height={height}>
       <BarChart data={data} margin={{ top: 20, right: 20, bottom: 5, left: 0 }}>
@@ -33,7 +31,7 @@ const MemoChart: FC<MemoChartProps> = React.memo(({ data, height }) => {
   );
 });
 
-export const ExpenseBarChart: FC<ExpenseBarChartProps> = ({ expense }) => {
+export const ExpenseBarChart: FC<ExpenseBarChartProps> = React.memo(({ expense }) => {
   const device = useSelector((store: Store) => store.device.device);
   const height = device === 'widescreen' || device === 'largeScreen' ? 300 : 187;
 
@@ -46,18 +44,5 @@ export const ExpenseBarChart: FC<ExpenseBarChartProps> = ({ expense }) => {
     };
   });
 
-  console.log('Render BarChart');
-
-  return (
-    // <ResponsiveContainer width="100%" height={height}>
-    //   <BarChart data={data} margin={{ top: 20, right: 20, bottom: 5, left: 0 }}>
-    //     {console.log('BarChart')}
-    //     <Bar dataKey="amount" fill="#00b5ad" />
-    //     <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-    //     <XAxis dataKey="formatedDate" />
-    //     <YAxis />
-    //   </BarChart>
-    // </ResponsiveContainer>
-    <MemoChart data={data} height={height} />
-  );
-};
+  return <MemoChart data={data} height={height} />;
+});

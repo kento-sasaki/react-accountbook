@@ -26,8 +26,6 @@ export const ExpensePieChart: FC<ExpensePieChartProps> = ({ expense }) => {
   const innerRadius = device === 'widescreen' || device === 'largeScreen' ? 60 : 30;
   const outerRadius = device === 'widescreen' || device === 'largeScreen' ? 120 : 75;
 
-  console.log('Render PieChart');
-
   return (
     <ResponsiveContainer width="100%" height={height}>
       <PieChart>
