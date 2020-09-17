@@ -11,7 +11,7 @@ import { Terms } from './terms';
 import { Policy } from './policy';
 import { User, StoreDevice } from './interfaces';
 import { pages } from './pages';
-import { Layout } from './components/layout/layout';
+import { Layout } from './containers/layout';
 import { fetchExpense, resetExpense } from './stores/expense';
 import { loading, loaded } from './stores/loading';
 import { whichDevice } from './stores/device';
