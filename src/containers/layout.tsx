@@ -55,7 +55,6 @@ export const Layout: FC<LayoutProps> = ({ currentUser, children }) => {
   };
 
   const handleLoginClick = () => {
-    console.log('handleLoginClick', isLoginFormOpen);
     setIsLoginFormOpen(!isLoginFormOpen);
     setSidebarVisible(false);
   };

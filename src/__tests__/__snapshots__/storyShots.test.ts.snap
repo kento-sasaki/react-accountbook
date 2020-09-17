@@ -76,7 +76,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
             className="text"
             role="alert"
           >
-            2020/09/17
+            2020/09/18
           </div>
           <i
             aria-hidden="true"
