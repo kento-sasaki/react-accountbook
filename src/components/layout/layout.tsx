@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import React, { FC, useState, useEffect, SyntheticEvent } from 'react';
-import { useSelector } from 'react-redux';
+import React, { FC, SyntheticEvent } from 'react';
 import { jsx, css } from '@emotion/core';
 import {
   Sidebar,
@@ -12,14 +11,11 @@ import {
   Message,
   Transition,
 } from 'semantic-ui-react';
-import { useHistory } from 'react-router-dom';
 import { AppBar } from './appBar';
 import { Footer } from './footer';
-import { User, Store } from '../../interfaces';
-import { pages, Page } from '../../pages';
+import { User } from '../../interfaces';
 import { LoginForm } from '../../containers/loginForm';
-import { logout, deleteUser } from '../../firebase/auth';
-import { auth } from '../../firebase/index';
+import { Page } from '../../pages';
 
 const wrapper = css`
   margin-top: 3rem !important;
@@ -43,66 +39,40 @@ const messagePosition = css`
 
 interface LayoutProps {
   currentUser?: User | null;
+  sidebarVisible?: boolean;
+  activeItem?: Page;
+  isConfirmOpen?: boolean;
+  messageVisible?: boolean;
+  isLoginFormOpen?: boolean;
+  isLoading?: boolean;
+  handleItemClick?: (e: SyntheticEvent, { name }: MenuItemProps) => void;
+  handleLogoutClick?: () => void;
+  handleLoginClick?: () => void;
+  handleConfirmClick?: () => void;
+  handleSidebarClick?: () => void;
+  openConfirm?: () => void;
+  closeConfirm?: () => void;
+  closeLoginForm?: () => void;
 }
 
-export const Layout: FC<LayoutProps> = ({ currentUser, children }) => {
-  const [visible, setVisible] = useState<boolean>(false);
-  const [activeItem, setActiveItem] = useState<Page>('home');
-  const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
-  const [isConfirmOpen, setIsConfirmOpen] = useState<boolean>(false);
-  const [messageVisible, setMessageVisible] = useState<boolean>(false);
-
-  const history = useHistory();
-  const isLoading = useSelector((store: Store) => store.isLoading.isLoading);
-
-  useEffect(() => {
-    setIsLoginFormOpen(false);
-    setVisible(false);
-    auth().onAuthStateChanged((user) => {
-      if (user) {
-        setTimeout(() => {
-          setMessageVisible(true);
-        }, 500);
-        setTimeout(() => {
-          setMessageVisible(false);
-        }, 5000);
-      }
-    });
-  }, [currentUser]);
-
-  const handleItemClick = (e: SyntheticEvent, { name }: MenuItemProps) => {
-    if (name) {
-      const pageName = name as Page;
-      setActiveItem(pageName);
-      history.push(pages[pageName].path);
-      setVisible(false);
-    }
-  };
-
-  const handleLogoutClick = async () => {
-    await logout();
-    setVisible(false);
-    history.push('/');
-  };
-
-  const handleLoginClick = () => {
-    setIsLoginFormOpen(!isLoginFormOpen);
-    setVisible(false);
-  };
-
-  const handleConfirmClick = () => {
-    deleteUser();
-    setIsConfirmOpen(false);
-  };
-
-  const openConfirm = () => {
-    setIsConfirmOpen(true);
-  };
-
-  const closeConfirm = () => {
-    setIsConfirmOpen(false);
-  };
-
+export const LayoutComponent: FC<LayoutProps> = ({
+  children,
+  currentUser,
+  sidebarVisible,
+  activeItem,
+  isConfirmOpen,
+  messageVisible,
+  isLoginFormOpen,
+  isLoading,
+  handleItemClick = () => {},
+  handleLogoutClick = () => {},
+  handleLoginClick = () => {},
+  handleConfirmClick = () => {},
+  handleSidebarClick = () => {},
+  openConfirm = () => {},
+  closeConfirm = () => {},
+  closeLoginForm = () => {},
+}) => {
   return (
     <div>
       <AppBar
@@ -110,7 +80,7 @@ export const Layout: FC<LayoutProps> = ({ currentUser, children }) => {
         activeItem={activeItem}
         isConfirmOpen={isConfirmOpen}
         handleItemClick={handleItemClick}
-        handleSidebarClick={() => setVisible(!visible)}
+        handleSidebarClick={handleSidebarClick}
         handleLogoutClick={handleLogoutClick}
         handleLoginClick={handleLoginClick}
         openConfirm={openConfirm}
@@ -121,9 +91,9 @@ export const Layout: FC<LayoutProps> = ({ currentUser, children }) => {
         <Sidebar
           as={Menu}
           animation="overlay"
-          onHide={() => setVisible(false)}
+          onHide={handleSidebarClick}
           vertical
-          visible={visible}
+          visible={sidebarVisible}
           width="thin"
           direction="right"
         >
@@ -145,19 +115,14 @@ export const Layout: FC<LayoutProps> = ({ currentUser, children }) => {
             <Icon name="user" />
           </Menu.Item>
         </Sidebar>
-        <TransitionablePortal
-          onClose={() => {
-            setIsLoginFormOpen(false);
-          }}
-          open={isLoginFormOpen}
-        >
+        <TransitionablePortal onClose={closeLoginForm} open={isLoginFormOpen}>
           <Segment compact css={modalPosition}>
             <LoginForm />
           </Segment>
         </TransitionablePortal>
 
         <Sidebar.Pusher
-          dimmed={visible}
+          dimmed={sidebarVisible}
           css={css`
             ${paddingTop};
             display: flex !important;

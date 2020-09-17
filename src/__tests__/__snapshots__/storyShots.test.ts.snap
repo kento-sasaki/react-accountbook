@@ -76,7 +76,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
             className="text"
             role="alert"
           >
-            2020/08/28
+            2020/09/18
           </div>
           <i
             aria-hidden="true"
@@ -511,11 +511,11 @@ exports[`Storyshots Layout Layout 1`] = `
   padding: 0rem 0rem !important;
 }
 
-.emotion-5 {
+.emotion-6 {
   margin-top: 3rem !important;
 }
 
-.emotion-4 {
+.emotion-5 {
   padding-top: 0.5rem;
   display: -webkit-box !important;
   display: -webkit-flex !important;
@@ -528,6 +528,14 @@ exports[`Storyshots Layout Layout 1`] = `
 }
 
 .emotion-3 {
+  position: absolute !important;
+  right: 0.5rem;
+  top: 2.5rem;
+  z-index: 1000 !important;
+  top: 1rem;
+}
+
+.emotion-4 {
   margin-top: auto;
   text-align: center;
   padding: 1.5rem 0;
@@ -575,13 +583,13 @@ exports[`Storyshots Layout Layout 1`] = `
     </div>
   </div>
   <div
-    className="ui basic segment pushable emotion-5"
+    className="ui basic segment pushable emotion-6"
   >
     <div
       className="ui vertical ui overlay right thin sidebar menu"
     >
       <a
-        className="active item"
+        className="item"
         onClick={[Function]}
       >
         Home
@@ -615,13 +623,35 @@ exports[`Storyshots Layout Layout 1`] = `
       </a>
     </div>
     <div
-      className="pusher emotion-4"
+      className="pusher emotion-5"
     >
       <div
-        className="ui basic loading vertical segment"
-      />
+        className="ui basic vertical segment"
+      >
+        <div
+          className="ui info message scale visible transition emotion-3"
+          style={
+            Object {
+              "animationDuration": undefined,
+            }
+          }
+        >
+          <div
+            className="content"
+          >
+            <div
+              className="header"
+            >
+              Welcome!
+            </div>
+            <p>
+              You've logged in successfully.
+            </p>
+          </div>
+        </div>
+      </div>
       <div
-        className="emotion-3"
+        className="emotion-4"
       >
         <div
           className="ui divider"
