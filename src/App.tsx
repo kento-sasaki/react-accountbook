@@ -1,43 +1,18 @@
-import React, { FC, useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { FC } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { auth, firestore } from './firebase/index';
 import { LoginedHome } from './containers/loginedHome';
 import { LogoutedHome } from './components/home/logoutedHome';
 import { Contact } from './containers/contact';
 import { VisibilityContainer } from './containers/visibilityContainer';
 import { Terms } from './terms';
 import { Policy } from './policy';
-import { User } from './interfaces';
 import { pages } from './pages';
 import { Layout } from './containers/layout';
-import { fetchExpense, resetExpense } from './stores/expense';
-import { loading, loaded } from './stores/loading';
+import { useAuth } from './customHooks/useAuth';
 
 const App: FC = () => {
-  const [currentUser, setCurrentUser] = useState<User | null>(null);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(loading());
-    auth().onAuthStateChanged((user) => {
-      setCurrentUser(user);
-      dispatch(loaded());
-    });
-
-    if (currentUser) {
-      firestore()
-        .collection('users')
-        .doc(currentUser.uid)
-        .collection('expense')
-        .onSnapshot(() => {
-          dispatch(fetchExpense());
-        });
-    } else {
-      dispatch(resetExpense());
-    }
-  }, [currentUser, dispatch]);
+  const { currentUser } = useAuth();
 
   return (
     <VisibilityContainer>
