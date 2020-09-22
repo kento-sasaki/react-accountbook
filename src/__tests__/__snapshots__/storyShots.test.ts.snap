@@ -76,7 +76,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
             className="text"
             role="alert"
           >
-            2020/09/18
+            2020/09/22
           </div>
           <i
             aria-hidden="true"
@@ -136,7 +136,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
               aria-selected={true}
               className="selected item"
               color="#838383"
-              colorLabel="grey"
+              colorlabel="grey"
               onClick={[Function]}
               role="option"
               style={

@@ -39,6 +39,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "firebase emulators:exec --only firestore 'react-scripts test'",
+    "test:c": "firebase emulators:exec --only firestore 'react-scripts test --coverage --watchAll=false'",
     "emu:firebase": "firebase emulators:start",
     "emu:firestore": "firebase emulators:start --only firestore",
     "emu:functions": "firebase emulators:start --only functions",
@@ -112,5 +113,13 @@
     "react-docgen-typescript-loader": "^3.7.2",
     "react-test-renderer": "^16.13.1",
     "uuid": "^8.1.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/components/**/*.{js,jsx,ts,tsx}",
+      "src/**/container/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!src/**/*.stories.{js,jsx,ts,tsx}"
+    ]
   }
 }

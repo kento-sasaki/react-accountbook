@@ -33,7 +33,7 @@ export const Detail: FC<DetailProps> = ({ expense, handleRequireClick = () => {}
         amount: exp.amount,
         icon: tagOptions[tagOptions.map((element) => element.text).indexOf(exp.tagLabel)].icon,
         color:
-          tagOptions[tagOptions.map((element) => element.text).indexOf(exp.tagLabel)].colorLabel,
+          tagOptions[tagOptions.map((element) => element.text).indexOf(exp.tagLabel)].colorlabel,
       };
     }) as {
       label: TagLabel;

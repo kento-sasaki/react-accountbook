@@ -31,7 +31,7 @@ interface AddExpenseFormProps {
     value: string;
     icon: string;
     color: string;
-    colorLabel: string;
+    colorlabel: string;
   }[];
 }
 
@@ -45,7 +45,7 @@ export const AddExpenseFormComponent: FC<AddExpenseFormProps> = ({
   tag = '',
   dateOptions = [{ key: 0, text: 'Date', value: 'Date' }],
   tagOptions = [
-    { key: 0, text: 'その他', value: 'その他', icon: 'tag', color: '#838383', colorLabel: 'grey' },
+    { key: 0, text: 'その他', value: 'その他', icon: 'tag', color: '#838383', colorlabel: 'grey' },
   ],
 }) => {
   return (
