@@ -6,10 +6,10 @@ import { store } from '../../stores/index';
 
 export default {
   component: LogoutedHome,
-  title: 'InputFile',
+  title: 'Home',
 };
 
-export const inputFile = () => {
+export const logoutedHome = () => {
   return (
     <Provider store={store}>
       <LogoutedHome />

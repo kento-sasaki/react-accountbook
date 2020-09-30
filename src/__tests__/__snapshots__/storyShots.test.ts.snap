@@ -76,7 +76,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
             className="text"
             role="alert"
           >
-            2020/09/22
+            2020/10/01
           </div>
           <i
             aria-hidden="true"
@@ -385,6 +385,1726 @@ exports[`Storyshots ExpensePieChart Expense Pie Chart 1`] = `
       }
     }
   />
+</div>
+`;
+
+exports[`Storyshots Home Logined Home 1`] = `
+.emotion-12 {
+  padding: 0rem 0rem !important;
+  margin: 0rem 0.2rem 0rem 1rem !important;
+}
+
+.emotion-8 {
+  margin: 0.1rem 0.1rem 0.1rem 0.1rem !important;
+}
+
+.emotion-11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-9 {
+  margin: 0.1rem 0.1rem 0.1rem 0.1rem !important;
+  min-width: 11rem !important;
+}
+
+.emotion-10 {
+  margin: 0.1rem 0.1rem 0.1rem 0.1rem !important;
+  min-width: 9rem !important;
+}
+
+.emotion-13 {
+  padding: 0rem 0rem !important;
+  margin: 0rem 1rem 0rem 0.2rem !important;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0 {
+  margin: 0.2rem 0.2rem !important;
+}
+
+.emotion-21 {
+  margin: 0rem 0.5rem 0 0.5rem !important;
+}
+
+.emotion-19 {
+  padding: 0rem 0rem !important;
+  margin: 0rem 0.2rem 0rem 1rem !important;
+}
+
+.emotion-18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-14 {
+  margin: 0.1rem 0.1rem 0.1rem 0.1rem !important;
+  min-width: 19rem;
+}
+
+.emotion-17 {
+  padding: 0rem 0rem !important;
+  margin: 0.1rem 0.1rem 0.1rem 0.1rem !important;
+}
+
+.emotion-16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.9rem 1rem;
+}
+
+.emotion-16:hover {
+  cursor: pointer;
+}
+
+.emotion-15 {
+  display: none;
+}
+
+.emotion-20 {
+  padding: 0rem 0rem !important;
+  margin: 0rem 1rem 0rem 0.2rem !important;
+}
+
+<div
+  className="ui centered grid emotion-21"
+>
+  <div
+    className="sixteen wide computer twelve wide large screen sixteen wide mobile sixteen wide tablet twelve wide widescreen column"
+  >
+    <div
+      className="ui segment"
+    >
+      <div
+        className="ui header"
+      >
+        Latest expenses
+      </div>
+      <div
+        className="recharts-responsive-container"
+        style={
+          Object {
+            "height": 300,
+            "maxHeight": undefined,
+            "minHeight": undefined,
+            "minWidth": undefined,
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "display": "none",
+              "height": 0,
+              "position": "absolute",
+              "visibility": "hidden",
+              "width": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="four wide computer four wide large screen sixteen wide mobile five wide tablet four wide widescreen column"
+  >
+    <div
+      className="ui segment"
+    >
+      <div
+        className="ui center aligned header"
+      >
+        Breakdown of expenses
+      </div>
+      <div
+        className="recharts-responsive-container"
+        style={
+          Object {
+            "height": 300,
+            "maxHeight": undefined,
+            "minHeight": undefined,
+            "minWidth": undefined,
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "display": "none",
+              "height": 0,
+              "position": "absolute",
+              "visibility": "hidden",
+              "width": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="twelve wide computer nine wide large screen sixteen wide mobile eleven wide tablet six wide widescreen column"
+  >
+    <div
+      className="ui attached segment"
+    >
+      <div
+        className="ui header"
+      >
+        More information
+      </div>
+      <div
+        className="ui equal width grid"
+        data-test-id="detail-table"
+      >
+        <div
+          className="stretched row"
+        >
+          <div
+            className="eleven wide column"
+          >
+            <div
+              className="emotion-2"
+            >
+              <button
+                className="ui violet large basic fluid button emotion-0"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="home icon"
+                  onClick={[Function]}
+                />
+                ¥ 5000
+              </button>
+              <button
+                className="ui blue large basic fluid button emotion-0"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="bath icon"
+                  onClick={[Function]}
+                />
+                ¥ 4000
+              </button>
+            </div>
+            <div
+              className="emotion-2"
+            >
+              <button
+                className="ui red large basic fluid button emotion-0"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="fire icon"
+                  onClick={[Function]}
+                />
+                ¥ 3000
+              </button>
+              <button
+                className="ui yellow large basic fluid button emotion-0"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="power cord icon"
+                  onClick={[Function]}
+                />
+                ¥ 2000
+              </button>
+            </div>
+            <div
+              className="emotion-2"
+            >
+              <button
+                className="ui teal large basic fluid button emotion-0"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="food icon"
+                  onClick={[Function]}
+                />
+                ¥ 1000
+              </button>
+            </div>
+          </div>
+          <div
+            className="middle aligned five wide column"
+          >
+            <div
+              className="ui teal inverted center aligned segment"
+            >
+              <div
+                className="ui header"
+              >
+                Total expenses
+              </div>
+              <div
+                className="ui huge header"
+              >
+                ¥
+                15000
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="ui bottom attached message"
+    >
+      <h5
+        className="ui header"
+      >
+        タグをクリックすると、そのタグごとの表示に切り替えます。
+      </h5>
+    </div>
+  </div>
+  <div
+    className="thirteen wide computer seven wide large screen sixteen wide mobile fourteen wide tablet six wide widescreen column"
+  >
+    <div
+      className="ui segment"
+    >
+      <div
+        className="ui header"
+      >
+        Register your expenses
+      </div>
+      <div
+        className="ui equal width grid"
+      >
+        <div
+          className="stretched row"
+        >
+          <div
+            className="twelve wide column emotion-12"
+          >
+            <div
+              className="ui left icon input emotion-8"
+            >
+              <input
+                onChange={[Function]}
+                placeholder="Expense"
+                type="text"
+                value=""
+              />
+              <i
+                aria-hidden="true"
+                className="jpy icon"
+                onClick={[Function]}
+              />
+            </div>
+            <div
+              className="emotion-11"
+            >
+              <div
+                aria-expanded={false}
+                className="ui button fluid labeled selection dropdown icon emotion-9"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                role="listbox"
+                tabIndex={0}
+              >
+                <div
+                  aria-atomic={true}
+                  aria-live="polite"
+                  className="text"
+                  role="alert"
+                >
+                  2020/10/01
+                </div>
+                <i
+                  aria-hidden="true"
+                  className="calendar alternate outline icon"
+                  onClick={[Function]}
+                />
+                <div
+                  className="menu transition"
+                >
+                  <div
+                    aria-checked={false}
+                    aria-selected={true}
+                    className="selected item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/1
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/30
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/29
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/28
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/27
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/26
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/25
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/24
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/23
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/22
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/21
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/20
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/19
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/18
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/17
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/16
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/15
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/14
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/13
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/12
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/11
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/10
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/9
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/8
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/7
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/6
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/5
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/4
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/3
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/2
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/9/1
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-expanded={false}
+                className="ui button fluid labeled selection dropdown icon emotion-10"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                role="listbox"
+                tabIndex={0}
+              >
+                <div
+                  aria-atomic={true}
+                  aria-live="polite"
+                  className="text"
+                  role="alert"
+                >
+                  その他
+                </div>
+                <i
+                  aria-hidden="true"
+                  className="tag icon"
+                  onClick={[Function]}
+                />
+                <div
+                  className="menu transition"
+                >
+                  <div
+                    aria-checked={false}
+                    aria-selected={true}
+                    className="selected item"
+                    color="#838383"
+                    colorlabel="grey"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="tag icon"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="text"
+                    >
+                      その他
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    color="#049C94"
+                    colorlabel="teal"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="food icon"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="text"
+                    >
+                      食費
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    color="#5929BB"
+                    colorlabel="violet"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="home icon"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="text"
+                    >
+                      家賃
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    color="#EBAE00"
+                    colorlabel="yellow"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="power cord icon"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="text"
+                    >
+                      電気代
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    color="#1778C1"
+                    colorlabel="blue"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="bath icon"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="text"
+                    >
+                      水道代
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    color="#D11A1A"
+                    colorlabel="red"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="fire icon"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="text"
+                    >
+                      ガス代
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    color="#F36203"
+                    colorlabel="orange"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="phone icon"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="text"
+                    >
+                      電話
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    color="#13AB38"
+                    colorlabel="green"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="subway icon"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="text"
+                    >
+                      交通費
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="column emotion-13"
+          >
+            <button
+              className="ui teal disabled button"
+              data-test-id="add-expense"
+              disabled={true}
+              onClick={[Function]}
+              tabIndex={-1}
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="ui divider"
+      />
+      <div
+        className="ui medium header"
+      >
+        Register your expenses from the receipts
+      </div>
+      <div
+        className="ui equal width grid"
+      >
+        <div
+          className="stretched row"
+        >
+          <div
+            className="twelve wide column emotion-19"
+          >
+            <div
+              className="emotion-18"
+            >
+              <div
+                className="ui left icon input emotion-14"
+              >
+                <input
+                  onChange={[Function]}
+                  type="text"
+                  value="File name"
+                />
+                <i
+                  aria-hidden="true"
+                  className="file image outline icon"
+                  onClick={[Function]}
+                />
+              </div>
+              <button
+                className="ui teal basic fluid button emotion-17"
+                onClick={[Function]}
+              >
+                <label
+                  className="emotion-16"
+                  htmlFor="selectFile"
+                >
+                  Select
+                  <input
+                    accept="image/*"
+                    className="emotion-15"
+                    id="selectFile"
+                    onChange={[Function]}
+                    type="file"
+                  />
+                </label>
+              </button>
+            </div>
+          </div>
+          <div
+            className="column emotion-20"
+          >
+            <button
+              className="ui teal disabled button"
+              disabled={true}
+              onClick={[Function]}
+              tabIndex={-1}
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="thirteen wide computer twelve wide large screen sixteen wide mobile fourteen wide tablet twelve wide widescreen column"
+  >
+    <div
+      className="ui segment"
+    >
+      <table
+        className="ui very basic table"
+        data-test-id="expense-table"
+      >
+        <thead
+          className=""
+        >
+          <tr
+            className=""
+          >
+            <th
+              className="three wide"
+            >
+              Date
+            </th>
+            <th
+              className="three wide"
+            >
+              Amount
+            </th>
+            <th
+              className="four wide"
+            >
+              Tag
+            </th>
+            <th
+              className="six wide"
+            >
+              Action
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          className=""
+        >
+          <tr
+            className=""
+          >
+            <td
+              className=""
+            >
+              2020/1/5
+            </td>
+            <td
+              className=""
+            >
+              5000
+            </td>
+            <td
+              className=""
+            >
+              <div
+                className="ui violet large basic label"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="home icon"
+                  onClick={[Function]}
+                />
+                家賃
+              </div>
+            </td>
+            <td
+              className=""
+            >
+              <button
+                className="ui teal basic circular button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="edit icon"
+                  onClick={[Function]}
+                />
+                Edit
+              </button>
+              <button
+                className="ui red basic circular button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="trash icon"
+                  onClick={[Function]}
+                />
+                Delete
+              </button>
+            </td>
+          </tr>
+          <tr
+            className=""
+          >
+            <td
+              className=""
+            >
+              2020/1/4
+            </td>
+            <td
+              className=""
+            >
+              4000
+            </td>
+            <td
+              className=""
+            >
+              <div
+                className="ui blue large basic label"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="bath icon"
+                  onClick={[Function]}
+                />
+                水道代
+              </div>
+            </td>
+            <td
+              className=""
+            >
+              <button
+                className="ui teal basic circular button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="edit icon"
+                  onClick={[Function]}
+                />
+                Edit
+              </button>
+              <button
+                className="ui red basic circular button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="trash icon"
+                  onClick={[Function]}
+                />
+                Delete
+              </button>
+            </td>
+          </tr>
+          <tr
+            className=""
+          >
+            <td
+              className=""
+            >
+              2020/1/3
+            </td>
+            <td
+              className=""
+            >
+              3000
+            </td>
+            <td
+              className=""
+            >
+              <div
+                className="ui red large basic label"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="fire icon"
+                  onClick={[Function]}
+                />
+                ガス代
+              </div>
+            </td>
+            <td
+              className=""
+            >
+              <button
+                className="ui teal basic circular button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="edit icon"
+                  onClick={[Function]}
+                />
+                Edit
+              </button>
+              <button
+                className="ui red basic circular button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="trash icon"
+                  onClick={[Function]}
+                />
+                Delete
+              </button>
+            </td>
+          </tr>
+          <tr
+            className=""
+          >
+            <td
+              className=""
+            >
+              2020/1/2
+            </td>
+            <td
+              className=""
+            >
+              2000
+            </td>
+            <td
+              className=""
+            >
+              <div
+                className="ui yellow large basic label"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="power cord icon"
+                  onClick={[Function]}
+                />
+                電気代
+              </div>
+            </td>
+            <td
+              className=""
+            >
+              <button
+                className="ui teal basic circular button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="edit icon"
+                  onClick={[Function]}
+                />
+                Edit
+              </button>
+              <button
+                className="ui red basic circular button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="trash icon"
+                  onClick={[Function]}
+                />
+                Delete
+              </button>
+            </td>
+          </tr>
+          <tr
+            className=""
+          >
+            <td
+              className=""
+            >
+              2020/1/1
+            </td>
+            <td
+              className=""
+            >
+              1000
+            </td>
+            <td
+              className=""
+            >
+              <div
+                className="ui teal large basic label"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="food icon"
+                  onClick={[Function]}
+                />
+                食費
+              </div>
+            </td>
+            <td
+              className=""
+            >
+              <button
+                className="ui teal basic circular button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="edit icon"
+                  onClick={[Function]}
+                />
+                Edit
+              </button>
+              <button
+                className="ui red basic circular button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="trash icon"
+                  onClick={[Function]}
+                />
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Home Logouted Home 1`] = `
+.emotion-7 {
+  margin-top: 0rem !important;
+  margin-bottom: 5rem !important;
+}
+
+.emotion-1 {
+  color: #2f2e41 !important;
+}
+
+.emotion-0 {
+  font-family: 'Lexend Peta',sans-serif;
+}
+
+.emotion-4 {
+  margin-top: 0.2rem !important;
+  margin-bottom: 0.2rem !important;
+}
+
+.emotion-15 {
+  background: #00b5ad;
+  padding: 2rem;
+}
+
+.emotion-10 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+<div>
+  <div
+    className="ui centered container equal width grid"
+  >
+    <div
+      className="row emotion-7"
+    >
+      <div
+        className="middle aligned ten wide column"
+      >
+        <div
+          className="ui basic vertical left aligned segment"
+        >
+          <div
+            className="ui large header emotion-1"
+          >
+            <span
+              className="emotion-0"
+            >
+              VisiBO
+            </span>
+            が
+            <p>
+              あなたの支出を見やすくします。
+            </p>
+          </div>
+          <div
+            className="ui medium header emotion-1"
+          >
+            <span
+              className="emotion-0"
+            >
+              VisiBO
+            </span>
+            は支出を登録して見やすく整理する家計簿アプリです
+          </div>
+          <div
+            className="equal width row"
+          >
+            <button
+              className="ui teal medium circular button emotion-4"
+              onClick={[Function]}
+            >
+              アカウント登録して使ってみる
+            </button>
+            <button
+              className="ui teal medium basic circular button emotion-4"
+              onClick={[Function]}
+            >
+              ゲストとして使ってみる
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="five wide column emotion-6"
+      >
+        <img
+          className="ui image"
+          src="top.svg"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="emotion-15"
+  >
+    <h1
+      className="ui inverted center aligned header"
+    >
+      <span
+        className="emotion-0"
+      >
+        VisiBO
+      </span>
+      の特徴
+    </h1>
+    <div
+      className="ui centered equal width grid"
+    >
+      <div
+        className="column emotion-10"
+      >
+        <div
+          className="ui segment"
+        >
+          <h2
+            className="ui center aligned header emotion-1"
+          >
+            様々なチャートで整理
+          </h2>
+          <h4
+            className="ui center aligned header"
+          >
+            棒グラフ、円グラフであなたの支出を見やすく描きます。
+          </h4>
+        </div>
+      </div>
+      <div
+        className="column emotion-10"
+      >
+        <div
+          className="ui segment"
+        >
+          <h2
+            className="ui center aligned header emotion-1"
+          >
+            レシートから支出を登録
+          </h2>
+          <h4
+            className="ui center aligned header"
+          >
+            レシートの画像から、支出額を抽出して記録します。
+          </h4>
+        </div>
+      </div>
+      <div
+        className="column emotion-10"
+      >
+        <div
+          className="ui segment"
+        >
+          <h2
+            className="ui center aligned header emotion-1"
+          >
+            タグで支出を分類
+          </h2>
+          <h4
+            className="ui center aligned header"
+          >
+            支出ごとにタグをつけ、整理することができます。
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 

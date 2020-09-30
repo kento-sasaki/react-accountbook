@@ -13,13 +13,13 @@ import { StoreExpense, TagLabel } from '../../interfaces';
 interface LoginedHomeProps {
   expense: StoreExpense[];
   displayExpense: StoreExpense[];
-  handleRequireClick: (repquirement: { tagLabel: TagLabel; require: boolean }) => void;
+  handleRequireClick?: (repquirement: { tagLabel: TagLabel; require: boolean }) => void;
 }
 
 export const LoginedHomeComponent: FC<LoginedHomeProps> = ({
   expense,
   displayExpense,
-  handleRequireClick,
+  handleRequireClick = () => {},
 }) => {
   const margin = (top: number, right: number, bottom: number, left: number) =>
     css`
