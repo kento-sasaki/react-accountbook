@@ -111,7 +111,7 @@ export const AddExpenseFormComponent: FC<AddExpenseFormProps> = ({
             onClick={handleClick}
             content="Submit"
             disabled={!(/\d+/giu.test(amount) && !/[a-z]+/giu.test(amount))}
-            data-test-id="add-expense"
+            data-testid="add-expense"
           />
         </Grid.Column>
       </Grid.Row>

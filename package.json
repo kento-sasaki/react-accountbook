@@ -119,7 +119,8 @@
       "src/**/components/**/*.{js,jsx,ts,tsx}",
       "src/**/container/**/*.{js,jsx,ts,tsx}",
       "!<rootDir>/node_modules/",
-      "!src/**/*.stories.{js,jsx,ts,tsx}"
+      "!src/**/*.stories.{js,jsx,ts,tsx}",
+      "!src/**/{policy,terms}.tsx"
     ]
   }
 }

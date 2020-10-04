@@ -20,9 +20,9 @@ describe('add expense', () => {
     cy.get('input').get('[placeholder="Expense"]').type(`${amount}`);
     cy.get('div.ui.dropdown.icon > i.calendar.alternate.outline.icon').click();
     cy.get('div.visible.menu.transition div.selected.item').click();
-    cy.get('[data-test-id="add-expense"]').click();
+    cy.get('[data-testid="add-expense"]').click();
     cy.pause();
-    cy.get('[data-test-id="expense-table"] > tbody > tr:first').contains(`${amount}`);
+    cy.get('[data-testid="expense-table"] > tbody > tr:first').contains(`${amount}`);
   });
 
   it('支出の登録失敗', () => {
@@ -31,6 +31,6 @@ describe('add expense', () => {
     cy.get('input').get('[placeholder="Expense"]').type(`${amount}`);
     cy.get('div.ui.dropdown.icon > i.calendar.alternate.outline.icon').click();
     cy.get('div.visible.menu.transition div.selected.item').click();
-    cy.get('[data-test-id="add-expense"]').should('be.disabled');
+    cy.get('[data-testid="add-expense"]').should('be.disabled');
   });
 });

@@ -51,7 +51,15 @@ export const ActionsCellComponent: FC<ActionsCellProps> = ({
 
   return (
     <Table.Cell>
-      <Button circular basic content="Edit" icon="edit" color="teal" onClick={handleEditClick} />
+      <Button
+        circular
+        basic
+        content="Edit"
+        icon="edit"
+        color="teal"
+        onClick={handleEditClick}
+        data-testid="edit-button"
+      />
       <Button circular basic content="Delete" icon="trash" color="red" onClick={openConfirm} />
       <Confirm
         open={isOpen}

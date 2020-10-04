@@ -50,7 +50,7 @@ export const MyTableUnitComponent: FC<MyTableUnitProps> = ({
   dateOptions = [{ key: 0, text: 'Date', value: 0 }],
 }) => {
   return (
-    <Table.Row>
+    <Table.Row data-testid="table-unit">
       <DateCellComponent
         expense={expense}
         isEditable={isEditable}
