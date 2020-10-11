@@ -40,10 +40,9 @@ export const DateCellComponent: FC<DateCellProps> = ({
             onChange={handleChangeDate}
           />
         }
-        data-testid="editable-DateCell"
       />
     );
   }
 
-  return <Table.Cell content={expense.formatedDate} data-testid="not-editable-DateCell" />;
+  return <Table.Cell content={expense.formatedDate} />;
 };

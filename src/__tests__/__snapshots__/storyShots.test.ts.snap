@@ -76,7 +76,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
             className="text"
             role="alert"
           >
-            2020/10/04
+            2020/10/11
           </div>
           <i
             aria-hidden="true"
@@ -559,7 +559,7 @@ exports[`Storyshots Home Logined Home 1`] = `
     className="twelve wide computer nine wide large screen sixteen wide mobile eleven wide tablet six wide widescreen column"
   >
     <div
-      className="ui attached segment"
+      className="ui top attached segment"
     >
       <div
         className="ui header"
@@ -731,7 +731,7 @@ exports[`Storyshots Home Logined Home 1`] = `
                   className="text"
                   role="alert"
                 >
-                  2020/10/04
+                  2020/10/11
                 </div>
                 <i
                   aria-hidden="true"
@@ -745,6 +745,132 @@ exports[`Storyshots Home Logined Home 1`] = `
                     aria-checked={false}
                     aria-selected={true}
                     className="selected item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/11
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/10
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/9
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/8
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/7
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/6
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/5
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
                     onClick={[Function]}
                     role="option"
                     style={
@@ -1173,132 +1299,6 @@ exports[`Storyshots Home Logined Home 1`] = `
                       2020/9/11
                     </span>
                   </div>
-                  <div
-                    aria-checked={false}
-                    aria-selected={false}
-                    className="item"
-                    onClick={[Function]}
-                    role="option"
-                    style={
-                      Object {
-                        "pointerEvents": "all",
-                      }
-                    }
-                  >
-                    <span
-                      className="text"
-                    >
-                      2020/9/10
-                    </span>
-                  </div>
-                  <div
-                    aria-checked={false}
-                    aria-selected={false}
-                    className="item"
-                    onClick={[Function]}
-                    role="option"
-                    style={
-                      Object {
-                        "pointerEvents": "all",
-                      }
-                    }
-                  >
-                    <span
-                      className="text"
-                    >
-                      2020/9/9
-                    </span>
-                  </div>
-                  <div
-                    aria-checked={false}
-                    aria-selected={false}
-                    className="item"
-                    onClick={[Function]}
-                    role="option"
-                    style={
-                      Object {
-                        "pointerEvents": "all",
-                      }
-                    }
-                  >
-                    <span
-                      className="text"
-                    >
-                      2020/9/8
-                    </span>
-                  </div>
-                  <div
-                    aria-checked={false}
-                    aria-selected={false}
-                    className="item"
-                    onClick={[Function]}
-                    role="option"
-                    style={
-                      Object {
-                        "pointerEvents": "all",
-                      }
-                    }
-                  >
-                    <span
-                      className="text"
-                    >
-                      2020/9/7
-                    </span>
-                  </div>
-                  <div
-                    aria-checked={false}
-                    aria-selected={false}
-                    className="item"
-                    onClick={[Function]}
-                    role="option"
-                    style={
-                      Object {
-                        "pointerEvents": "all",
-                      }
-                    }
-                  >
-                    <span
-                      className="text"
-                    >
-                      2020/9/6
-                    </span>
-                  </div>
-                  <div
-                    aria-checked={false}
-                    aria-selected={false}
-                    className="item"
-                    onClick={[Function]}
-                    role="option"
-                    style={
-                      Object {
-                        "pointerEvents": "all",
-                      }
-                    }
-                  >
-                    <span
-                      className="text"
-                    >
-                      2020/9/5
-                    </span>
-                  </div>
-                  <div
-                    aria-checked={false}
-                    aria-selected={false}
-                    className="item"
-                    onClick={[Function]}
-                    role="option"
-                    style={
-                      Object {
-                        "pointerEvents": "all",
-                      }
-                    }
-                  >
-                    <span
-                      className="text"
-                    >
-                      2020/9/4
-                    </span>
-                  </div>
                 </div>
               </div>
               <div
@@ -1664,7 +1664,6 @@ exports[`Storyshots Home Logined Home 1`] = `
           >
             <td
               className=""
-              data-testid="not-editable-DateCell"
             >
               2020/1/5
             </td>
@@ -1722,7 +1721,6 @@ exports[`Storyshots Home Logined Home 1`] = `
           >
             <td
               className=""
-              data-testid="not-editable-DateCell"
             >
               2020/1/4
             </td>
@@ -1780,7 +1778,6 @@ exports[`Storyshots Home Logined Home 1`] = `
           >
             <td
               className=""
-              data-testid="not-editable-DateCell"
             >
               2020/1/3
             </td>
@@ -1838,7 +1835,6 @@ exports[`Storyshots Home Logined Home 1`] = `
           >
             <td
               className=""
-              data-testid="not-editable-DateCell"
             >
               2020/1/2
             </td>
@@ -1896,7 +1892,6 @@ exports[`Storyshots Home Logined Home 1`] = `
           >
             <td
               className=""
-              data-testid="not-editable-DateCell"
             >
               2020/1/1
             </td>
@@ -2577,7 +2572,6 @@ exports[`Storyshots MyTable My Table 1`] = `
         >
           <td
             className=""
-            data-testid="not-editable-DateCell"
           >
             2020/1/1
           </td>
@@ -2635,7 +2629,6 @@ exports[`Storyshots MyTable My Table 1`] = `
         >
           <td
             className=""
-            data-testid="not-editable-DateCell"
           >
             2020/1/2
           </td>
@@ -2693,7 +2686,6 @@ exports[`Storyshots MyTable My Table 1`] = `
         >
           <td
             className=""
-            data-testid="not-editable-DateCell"
           >
             2020/1/3
           </td>
@@ -2751,7 +2743,6 @@ exports[`Storyshots MyTable My Table 1`] = `
         >
           <td
             className=""
-            data-testid="not-editable-DateCell"
           >
             2020/1/4
           </td>
@@ -2809,7 +2800,6 @@ exports[`Storyshots MyTable My Table 1`] = `
         >
           <td
             className=""
-            data-testid="not-editable-DateCell"
           >
             2020/1/5
           </td>
