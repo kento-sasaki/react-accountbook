@@ -45,26 +45,26 @@ export const createDateOptions = (limit: number) => {
 };
 
 export const tagOptions = [
-  { key: 0, text: 'その他', value: 'その他', icon: 'tag', color: '#838383', colorLabel: 'grey' },
-  { key: 1, text: '食費', value: '食費', icon: 'food', color: '#049C94', colorLabel: 'teal' },
-  { key: 2, text: '家賃', value: '家賃', icon: 'home', color: '#5929BB', colorLabel: 'violet' },
+  { key: 0, text: 'その他', value: 'その他', icon: 'tag', color: '#838383', colorlabel: 'grey' },
+  { key: 1, text: '食費', value: '食費', icon: 'food', color: '#049C94', colorlabel: 'teal' },
+  { key: 2, text: '家賃', value: '家賃', icon: 'home', color: '#5929BB', colorlabel: 'violet' },
   {
     key: 3,
     text: '電気代',
     value: '電気代',
     icon: 'power cord',
     color: '#EBAE00',
-    colorLabel: 'yellow',
+    colorlabel: 'yellow',
   },
-  { key: 4, text: '水道代', value: '水道代', icon: 'bath', color: '#1778C1', colorLabel: 'blue' },
-  { key: 5, text: 'ガス代', value: 'ガス代', icon: 'fire', color: '#D11A1A', colorLabel: 'red' },
-  { key: 6, text: '電話', value: '電話', icon: 'phone', color: '#F36203', colorLabel: 'orange' },
+  { key: 4, text: '水道代', value: '水道代', icon: 'bath', color: '#1778C1', colorlabel: 'blue' },
+  { key: 5, text: 'ガス代', value: 'ガス代', icon: 'fire', color: '#D11A1A', colorlabel: 'red' },
+  { key: 6, text: '電話', value: '電話', icon: 'phone', color: '#F36203', colorlabel: 'orange' },
   {
     key: 7,
     text: '交通費',
     value: '交通費',
     icon: 'subway',
     color: '#13AB38',
-    colorLabel: 'green',
+    colorlabel: 'green',
   },
 ];

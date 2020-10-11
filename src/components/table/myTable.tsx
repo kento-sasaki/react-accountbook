@@ -11,7 +11,7 @@ interface MyTableProps {
 
 export const MyTable: FC<MyTableProps> = ({ expense }) => {
   return (
-    <Table basic="very" data-test-id="expense-table">
+    <Table basic="very" data-testid="expense-table">
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell width={3} content="Date" />

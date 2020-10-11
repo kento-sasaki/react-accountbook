@@ -119,19 +119,31 @@ export const LogoutedHome: FC = () => {
           <Grid.Column css={margin(1, 1)}>
             <Segment>
               <Header as="h2" css={fontColor} textAlign="center" content="様々なチャートで整理" />
-              <Header as="h4" content="棒グラフ、円グラフであなたの支出を見やすく描きます。" />
+              <Header
+                as="h4"
+                textAlign="center"
+                content="棒グラフ、円グラフであなたの支出を見やすく描きます。"
+              />
             </Segment>
           </Grid.Column>
           <Grid.Column css={margin(1, 1)}>
             <Segment>
               <Header as="h2" css={fontColor} textAlign="center" content="レシートから支出を登録" />
-              <Header as="h4" content="レシートの画像から、支出額を抽出して記録します。" />
+              <Header
+                as="h4"
+                textAlign="center"
+                content="レシートの画像から、支出額を抽出して記録します。"
+              />
             </Segment>
           </Grid.Column>
           <Grid.Column css={margin(1, 1)}>
             <Segment>
               <Header as="h2" css={fontColor} textAlign="center" content="タグで支出を分類" />
-              <Header as="h4" content="支出ごとにタグをつけ、整理することができます。" />
+              <Header
+                as="h4"
+                textAlign="center"
+                content="支出ごとにタグをつけ、整理することができます。"
+              />
             </Segment>
           </Grid.Column>
         </Grid>

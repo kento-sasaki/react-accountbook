@@ -28,7 +28,7 @@ describe('filter expense', () => {
     const tag = tags[Math.floor(Math.random() * 1000) % 8];
 
     cy.pause();
-    cy.get(`[data-test-id="detail-table"]  i.${tag.icon}.icon`).click();
-    cy.get('[data-test-id="expense-table"] > tbody > tr:first').contains(`${tag.text}`);
+    cy.get(`[data-testid="detail-table"]  i.${tag.icon}.icon`).click();
+    cy.get('[data-testid="expense-table"] > tbody > tr:first').contains(`${tag.text}`);
   });
 });

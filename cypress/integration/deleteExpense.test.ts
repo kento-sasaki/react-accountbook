@@ -20,13 +20,13 @@ describe('delete expnese', () => {
     cy.get('input').get('[placeholder="Expense"]').type(`${amount}`);
     cy.get('div.ui.dropdown.icon > i.calendar.alternate.outline.icon').click();
     cy.get('div.visible.menu.transition div.selected.item').click();
-    cy.get('[data-test-id="add-expense"]').click();
+    cy.get('[data-testid="add-expense"]').click();
     cy.pause();
-    cy.get('[data-test-id="expense-table"] > tbody > tr:first').contains(`${amount}`);
+    cy.get('[data-testid="expense-table"] > tbody > tr:first').contains(`${amount}`);
 
-    cy.get('[data-test-id="expense-table"] > tbody > tr:first').contains('Delete').click();
+    cy.get('[data-testid="expense-table"] > tbody > tr:first').contains('Delete').click();
     cy.get('div.ui.modals.visible.active div.actions button.ui').contains('OK').click();
-    cy.get('[data-test-id="expense-table"] > tbody > tr:first').should('not.contain', amount);
+    cy.get('[data-testid="expense-table"] > tbody > tr:first').should('not.contain', amount);
   });
 
   it('支出の削除をキャンセル', () => {
@@ -35,12 +35,12 @@ describe('delete expnese', () => {
     cy.get('input').get('[placeholder="Expense"]').type(`${amount}`);
     cy.get('div.ui.dropdown.icon > i.calendar.alternate.outline.icon').click();
     cy.get('div.visible.menu.transition div.selected.item').click();
-    cy.get('[data-test-id="add-expense"]').click();
+    cy.get('[data-testid="add-expense"]').click();
     cy.pause();
-    cy.get('[data-test-id="expense-table"] > tbody > tr:first').contains(`${amount}`);
+    cy.get('[data-testid="expense-table"] > tbody > tr:first').contains(`${amount}`);
 
-    cy.get('[data-test-id="expense-table"] > tbody > tr:first').contains('Delete').click();
+    cy.get('[data-testid="expense-table"] > tbody > tr:first').contains('Delete').click();
     cy.get('div.ui.modals.visible.active div.actions button.ui').contains('Cancel').click();
-    cy.get('[data-test-id="expense-table"] > tbody > tr:first').contains(`${amount}`);
+    cy.get('[data-testid="expense-table"] > tbody > tr:first').contains(`${amount}`);
   });
 });

@@ -24,8 +24,8 @@ export const TagCellComponent: FC<TagCellProps> = ({
   isEditable = false,
   handleChangeTag = () => {},
 }) => {
-  const tagColorLabel = tagOptions[tagOptions.map((tag) => tag.icon).indexOf(expense.tagIcon)]
-    .colorLabel as
+  const tagColorlabel = tagOptions[tagOptions.map((tag) => tag.icon).indexOf(expense.tagIcon)]
+    .colorlabel as
     | 'green'
     | 'grey'
     | 'teal'
@@ -62,7 +62,7 @@ export const TagCellComponent: FC<TagCellProps> = ({
       content={
         <Label
           icon={expense.tagIcon}
-          color={tagColorLabel}
+          color={tagColorlabel}
           content={expense.tagLabel}
           size="large"
           basic
