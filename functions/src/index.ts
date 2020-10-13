@@ -5,7 +5,6 @@ admin.initializeApp();
 
 export { onCreateUser, onDeleteUser } from './auth.functions';
 export { onCreate } from './firestore.functions';
-export { onUploadImage } from './storage.functions';
 
 export const helloWorld = functions
   .region('asia-northeast1')

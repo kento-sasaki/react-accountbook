@@ -24,6 +24,7 @@ jobs:
           REACT_APP_FIREBASE_CONTINUE_URL: ${{ secrets.REACT_APP_FIREBASE_CONTINUE_URL }}
           REACT_APP_FIREBASE_STORAGE_BUCKET: ${{ secrets.REACT_APP_FIREBASE_STORAGE_BUCKET }}
           REACT_APP_SLACK_WEBHOOK: ${{ secrets.REACT_APP_SLACK_WEBHOOK }}
+          REACT_APP_VISION_API_KEY: ${{ secrets.REACT_APP_VISION_API_KEY }}
           SKIP_PREFLIGHT_CHECK: true
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
