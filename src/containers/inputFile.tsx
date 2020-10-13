@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import React, { FC, useState, useEffect } from 'react';
 import { jsx } from '@emotion/core';
-// import { uploadFile } from '../firebase/storage';
 import { analyze } from '../api/vision';
 import { InputFileComponent } from '../components/inputFile/inputFile';
 
@@ -27,7 +26,6 @@ export const InputFile: FC = () => {
 
   const handleUploadClick = async () => {
     if (fileData) {
-      // uploadFile(fileData);
       await analyze(fileData);
       setFileData(undefined);
     }
