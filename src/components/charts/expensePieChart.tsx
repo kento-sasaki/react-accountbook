@@ -6,11 +6,11 @@ import { PieChart, Pie, ResponsiveContainer, Cell, Tooltip } from 'recharts';
 import { Store, StoreExpense } from '../../interfaces';
 import { tagOptions, createTagExpense } from '../../utils/utils';
 
-interface ExpensePieChartProps {
+interface Props {
   expense: StoreExpense[];
 }
 
-export const ExpensePieChart: FC<ExpensePieChartProps> = ({ expense }) => {
+export const ExpensePieChart: FC<Props> = ({ expense }) => {
   const tagExpenses = createTagExpense(expense).map((exp) => {
     return {
       tagLabel: exp.tagLabel,

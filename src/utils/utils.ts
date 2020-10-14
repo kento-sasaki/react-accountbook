@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import { StoreExpense } from '../interfaces';
 
-export const createDatilyExpense = (allExpense: StoreExpense[]) => {
+export const createDailyExpense = (allExpense: StoreExpense[]) => {
   const formatedDateArray = [...allExpense]
     .reverse()
     .map((exp) => exp.formatedDate)
@@ -12,7 +12,7 @@ export const createDatilyExpense = (allExpense: StoreExpense[]) => {
       .filter((exp1) => exp1.formatedDate === formatedDate)
       .map((exp2) => exp2.amount);
 
-    return { formatedDate, amounts };
+    return { formatedDate, amounts, mmdd: dayjs(formatedDate).format('M/D') };
   });
 
   return dailyExpense;
