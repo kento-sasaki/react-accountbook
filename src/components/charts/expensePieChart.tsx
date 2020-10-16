@@ -1,52 +1,79 @@
 /** @jsx jsx */
 import React, { FC } from 'react';
-import { jsx } from '@emotion/core';
+import { jsx, css } from '@emotion/core';
 import { useSelector } from 'react-redux';
-import { PieChart, Pie, ResponsiveContainer, Cell, Tooltip } from 'recharts';
+import { ResponsivePie } from '@nivo/pie';
 import { Store, StoreExpense } from '../../interfaces';
-import { tagOptions, createTagExpense } from '../../utils/utils';
+import { createPieData } from '../../utils/utils';
 
-interface ExpensePieChartProps {
+interface Props {
   expense: StoreExpense[];
 }
 
-export const ExpensePieChart: FC<ExpensePieChartProps> = ({ expense }) => {
-  const tagExpenses = createTagExpense(expense).map((exp) => {
-    return {
-      tagLabel: exp.tagLabel,
-      amount: exp.amounts.reduce((previous, current) => {
-        return previous + current;
-      }),
-    };
-  });
-
+export const ExpensePieChart: FC<Props> = ({ expense }) => {
   const device = useSelector((store: Store) => store.device.device);
-
-  const height = device === 'widescreen' || device === 'largeScreen' ? 300 : 187;
-  const innerRadius = device === 'widescreen' || device === 'largeScreen' ? 60 : 30;
-  const outerRadius = device === 'widescreen' || device === 'largeScreen' ? 120 : 75;
+  const height = device === 'widescreen' || device === 'largeScreen' ? 300 : 230;
+  const margin =
+    device === 'widescreen' || device === 'largeScreen'
+      ? { top: 50, right: 50, bottom: 35, left: 50 }
+      : { top: 10, right: 5, bottom: 15, left: 5 };
+  const sliceLabel = device === 'widescreen' || device === 'largeScreen' ? 'value' : 'id';
+  const enableRadialLabels = !!(device === 'widescreen' || device === 'largeScreen');
+  const data = createPieData(expense);
+  const colors = data.map((element) => element.color);
 
   return (
-    <ResponsiveContainer width="100%" height={height}>
-      <PieChart>
-        <Pie
-          data={tagExpenses}
-          dataKey="amount"
-          nameKey="tagLabel"
-          fill="#00b5ad"
-          paddingAngle={1}
-          innerRadius={innerRadius}
-          outerRadius={outerRadius}
-        >
-          {tagExpenses.map((elemnt, i, self) => (
-            <Cell
-              key={self.indexOf(elemnt)}
-              fill={tagOptions[tagOptions.map((tag) => tag.text).indexOf(elemnt.tagLabel)].color}
-            />
-          ))}
-        </Pie>
-        <Tooltip />
-      </PieChart>
-    </ResponsiveContainer>
+    <div
+      css={css`
+        height: ${height}px;
+      `}
+    >
+      <ResponsivePie
+        data={data}
+        margin={margin}
+        innerRadius={0.5}
+        padAngle={1}
+        cornerRadius={3}
+        sortByValue
+        colors={colors}
+        borderWidth={1}
+        borderColor={{ from: 'color', modifiers: [['darker', 0.2]] }}
+        enableRadialLabels={enableRadialLabels}
+        sliceLabel={sliceLabel}
+        radialLabelsSkipAngle={10}
+        radialLabelsTextXOffset={2}
+        radialLabelsTextColor="#333333"
+        radialLabelsLinkOffset={0}
+        radialLabelsLinkDiagonalLength={10}
+        radialLabelsLinkHorizontalLength={10}
+        radialLabelsLinkStrokeWidth={1}
+        radialLabelsLinkColor={{ from: 'color' }}
+        slicesLabelsSkipAngle={10}
+        slicesLabelsTextColor="white"
+        animate
+        motionStiffness={90}
+        motionDamping={15}
+        legends={[
+          {
+            anchor: 'bottom',
+            direction: 'row',
+            translateY: 56,
+            itemWidth: 100,
+            itemHeight: 18,
+            itemTextColor: '#999',
+            symbolSize: 18,
+            symbolShape: 'circle',
+            effects: [
+              {
+                on: 'hover',
+                style: {
+                  itemTextColor: '#000',
+                },
+              },
+            ],
+          },
+        ]}
+      />
+    </div>
   );
 };

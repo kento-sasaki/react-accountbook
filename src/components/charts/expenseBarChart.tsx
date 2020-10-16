@@ -1,48 +1,92 @@
 /** @jsx jsx */
 import React, { FC } from 'react';
-import { jsx } from '@emotion/core';
+import { jsx, css } from '@emotion/core';
+import { ResponsiveBar } from '@nivo/bar';
 import { useSelector } from 'react-redux';
-import { BarChart, Bar, CartesianGrid, XAxis, YAxis, ResponsiveContainer } from 'recharts';
-import { createDatilyExpense } from '../../utils/utils';
 import { StoreExpense, Store } from '../../interfaces';
+import { createDailyExpense } from '../../utils/utils';
 
-interface ExpenseBarChartProps {
+interface Props {
   expense: StoreExpense[];
 }
 
-interface MemoChartProps {
-  data: {
-    formatedDate: string;
-    amount: number;
-  }[];
-  height: 300 | 187;
-}
-
-const MemoChart: FC<MemoChartProps> = React.memo(({ data, height }) => {
-  return (
-    <ResponsiveContainer width="100%" height={height}>
-      <BarChart data={data} margin={{ top: 20, right: 20, bottom: 5, left: 0 }}>
-        <Bar dataKey="amount" fill="#00b5ad" />
-        <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-        <XAxis dataKey="formatedDate" />
-        <YAxis />
-      </BarChart>
-    </ResponsiveContainer>
-  );
-});
-
-export const ExpenseBarChart: FC<ExpenseBarChartProps> = React.memo(({ expense }) => {
-  const device = useSelector((store: Store) => store.device.device);
-  const height = device === 'widescreen' || device === 'largeScreen' ? 300 : 187;
-
-  const data = createDatilyExpense(expense).map((exp) => {
+export const ExpenseBarChart: FC<Props> = ({ expense }) => {
+  const data = createDailyExpense(expense).map((exp) => {
     return {
       formatedDate: exp.formatedDate,
       amount: exp.amounts.reduce((previous, current) => {
         return previous + current;
       }),
+      mmdd: exp.mmdd,
     };
   });
 
-  return <MemoChart data={data} height={height} />;
-});
+  const device = useSelector((store: Store) => store.device.device);
+  const height = device === 'widescreen' || device === 'largeScreen' ? 300 : 230;
+
+  return (
+    <div
+      css={css`
+        height: ${height}px;
+      `}
+    >
+      <ResponsiveBar
+        data={data}
+        keys={['amount']}
+        indexBy="mmdd"
+        margin={{ top: 20, right: 100, bottom: 50, left: 60 }}
+        colors="#00b5ad"
+        borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
+        axisTop={null}
+        axisRight={null}
+        axisBottom={{
+          tickSize: 5,
+          tickPadding: 5,
+          tickRotation: 0,
+          legend: 'Date',
+          legendPosition: 'middle',
+          legendOffset: 32,
+        }}
+        axisLeft={{
+          tickSize: 5,
+          tickPadding: 5,
+          tickRotation: 0,
+          legend: 'Expense',
+          legendPosition: 'middle',
+          legendOffset: -40,
+        }}
+        labelSkipWidth={12}
+        labelSkipHeight={12}
+        labelTextColor="white"
+        legends={[
+          {
+            dataFrom: 'keys',
+            anchor: 'bottom-right',
+            direction: 'column',
+            justify: false,
+            translateX: 120,
+            translateY: 0,
+            itemsSpacing: 2,
+            itemWidth: 100,
+            itemHeight: 20,
+            itemDirection: 'left-to-right',
+            itemOpacity: 0.85,
+            symbolSize: 20,
+            effects: [
+              {
+                on: 'hover',
+                style: {
+                  itemOpacity: 1,
+                },
+              },
+            ],
+          },
+        ]}
+        borderRadius={7}
+        animate
+        motionStiffness={90}
+        motionDamping={15}
+      />
+    </div>
+  );
+};

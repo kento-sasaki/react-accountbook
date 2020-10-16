@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import { StoreExpense } from '../interfaces';
 
-export const createDatilyExpense = (allExpense: StoreExpense[]) => {
+export const createDailyExpense = (allExpense: StoreExpense[]) => {
   const formatedDateArray = [...allExpense]
     .reverse()
     .map((exp) => exp.formatedDate)
@@ -12,36 +12,10 @@ export const createDatilyExpense = (allExpense: StoreExpense[]) => {
       .filter((exp1) => exp1.formatedDate === formatedDate)
       .map((exp2) => exp2.amount);
 
-    return { formatedDate, amounts };
+    return { formatedDate, amounts, mmdd: dayjs(formatedDate).format('M/D') };
   });
 
   return dailyExpense;
-};
-
-export const createTagExpense = (allExpense: StoreExpense[]) => {
-  const tagLabelArray = [...allExpense]
-    .map((exp) => exp.tagLabel)
-    .filter((tagLabel, i, self) => self.indexOf(tagLabel) === i);
-
-  const tagExpense = tagLabelArray.map((tagLabel) => {
-    const amounts = allExpense
-      .filter((exp1) => exp1.tagLabel === tagLabel)
-      .map((exp2) => exp2.amount);
-
-    return { tagLabel, amounts };
-  });
-
-  return tagExpense;
-};
-
-export const createDateOptions = (limit: number) => {
-  return [...Array(limit).keys()].map((n) => {
-    return {
-      key: n,
-      text: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,
-      value: n,
-    };
-  });
 };
 
 export const tagOptions = [
@@ -68,3 +42,57 @@ export const tagOptions = [
     colorlabel: 'green',
   },
 ];
+
+export const getTagColor = (tagLabel: string): string => {
+  return tagOptions[tagOptions.map(({ text }) => text).indexOf(tagLabel)].color;
+};
+
+export const createPieData = (allExpense: StoreExpense[]) => {
+  const tagArray = allExpense
+    .map(({ tagLabel }) => tagLabel)
+    .filter((tagLabel, i, self) => self.indexOf(tagLabel) === i);
+
+  const pieData = tagArray.map((tagLabel) => {
+    const amounts = allExpense
+      .filter((exp) => {
+        return exp.tagLabel === tagLabel;
+      })
+      .map(({ amount }) => amount);
+
+    return {
+      id: tagLabel,
+      value: amounts.reduce((previous, current) => {
+        return previous + current;
+      }),
+      color: getTagColor(tagLabel),
+    };
+  });
+
+  return pieData;
+};
+
+export const createDateOptions = (limit: number) => {
+  return [...Array(limit).keys()].map((n) => {
+    return {
+      key: n,
+      text: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,
+      value: n,
+    };
+  });
+};
+
+export const createTagExpense = (allExpense: StoreExpense[]) => {
+  const tagLabelArray = [...allExpense]
+    .map((exp) => exp.tagLabel)
+    .filter((tagLabel, i, self) => self.indexOf(tagLabel) === i);
+
+  const tagExpense = tagLabelArray.map((tagLabel) => {
+    const amounts = allExpense
+      .filter((exp1) => exp1.tagLabel === tagLabel)
+      .map((exp2) => exp2.amount);
+
+    return { tagLabel, amounts };
+  });
+
+  return tagExpense;
+};
