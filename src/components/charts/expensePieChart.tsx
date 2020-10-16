@@ -4,7 +4,7 @@ import { jsx } from '@emotion/core';
 import { useSelector } from 'react-redux';
 import { PieChart, Pie, ResponsiveContainer, Cell, Tooltip } from 'recharts';
 import { Store, StoreExpense } from '../../interfaces';
-import { tagOptions, createTagExpense } from '../../utils/utils';
+import { getTagColor, createTagExpense } from '../../utils/utils';
 
 interface Props {
   expense: StoreExpense[];
@@ -39,10 +39,7 @@ export const ExpensePieChart: FC<Props> = ({ expense }) => {
           outerRadius={outerRadius}
         >
           {tagExpenses.map((elemnt, i, self) => (
-            <Cell
-              key={self.indexOf(elemnt)}
-              fill={tagOptions[tagOptions.map((tag) => tag.text).indexOf(elemnt.tagLabel)].color}
-            />
+            <Cell key={self.indexOf(elemnt)} fill={getTagColor(elemnt.tagLabel)} />
           ))}
         </Pie>
         <Tooltip />

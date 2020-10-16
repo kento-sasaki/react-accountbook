@@ -18,32 +18,6 @@ export const createDailyExpense = (allExpense: StoreExpense[]) => {
   return dailyExpense;
 };
 
-export const createTagExpense = (allExpense: StoreExpense[]) => {
-  const tagLabelArray = [...allExpense]
-    .map((exp) => exp.tagLabel)
-    .filter((tagLabel, i, self) => self.indexOf(tagLabel) === i);
-
-  const tagExpense = tagLabelArray.map((tagLabel) => {
-    const amounts = allExpense
-      .filter((exp1) => exp1.tagLabel === tagLabel)
-      .map((exp2) => exp2.amount);
-
-    return { tagLabel, amounts };
-  });
-
-  return tagExpense;
-};
-
-export const createDateOptions = (limit: number) => {
-  return [...Array(limit).keys()].map((n) => {
-    return {
-      key: n,
-      text: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,
-      value: n,
-    };
-  });
-};
-
 export const tagOptions = [
   { key: 0, text: 'その他', value: 'その他', icon: 'tag', color: '#838383', colorlabel: 'grey' },
   { key: 1, text: '食費', value: '食費', icon: 'food', color: '#049C94', colorlabel: 'teal' },
@@ -68,3 +42,78 @@ export const tagOptions = [
     colorlabel: 'green',
   },
 ];
+
+export const getTagColor = (tagLabel: string): string => {
+  return tagOptions[tagOptions.map(({ text }) => text).indexOf(tagLabel)].color;
+};
+
+const getTagIcon = (tagLabel: string) => {
+  return tagOptions[tagOptions.map(({ text }) => text).indexOf(tagLabel)].icon;
+};
+
+export const createPieData = (allExpense: StoreExpense[]) => {
+  const tagArray = tagOptions
+    .map(({ text }) => text)
+    .filter((tagLabel, i, self) => self.indexOf(tagLabel) === i)
+    .map((tagLabel) => {
+      return { tagLabel, tagIcon: getTagIcon(tagLabel) };
+    });
+
+  const pieData = tagArray
+    .map(({ tagLabel, tagIcon }) => {
+      const filteredExpense = allExpense.filter((exp) => {
+        return exp.tagLabel === tagLabel;
+      });
+
+      const amounts =
+        filteredExpense.length === 0
+          ? [0]
+          : filteredExpense.map((exp2, i, self) => {
+              if (self.length === 0) {
+                return 0;
+              }
+
+              return exp2.amount;
+            });
+
+      return { tagLabel, amounts, tagIcon };
+    })
+    .map(({ tagLabel, amounts, tagIcon }) => {
+      return {
+        id: tagIcon,
+        label: tagLabel,
+        value: amounts.reduce((previous, current) => {
+          return previous + current;
+        }),
+        color: getTagColor(tagLabel),
+      };
+    });
+
+  return pieData;
+};
+
+export const createDateOptions = (limit: number) => {
+  return [...Array(limit).keys()].map((n) => {
+    return {
+      key: n,
+      text: `${dayjs().subtract(n, 'day').format('YYYY/M/D')}`,
+      value: n,
+    };
+  });
+};
+
+export const createTagExpense = (allExpense: StoreExpense[]) => {
+  const tagLabelArray = [...allExpense]
+    .map((exp) => exp.tagLabel)
+    .filter((tagLabel, i, self) => self.indexOf(tagLabel) === i);
+
+  const tagExpense = tagLabelArray.map((tagLabel) => {
+    const amounts = allExpense
+      .filter((exp1) => exp1.tagLabel === tagLabel)
+      .map((exp2) => exp2.amount);
+
+    return { tagLabel, amounts };
+  });
+
+  return tagExpense;
+};

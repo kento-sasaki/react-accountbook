@@ -57,7 +57,7 @@ export const ExpenseBarChart: FC<Props> = ({ expense }) => {
         }}
         labelSkipWidth={12}
         labelSkipHeight={12}
-        labelTextColor={{ from: 'color', modifiers: [['darker', 20.6]] }}
+        labelTextColor="white"
         legends={[
           {
             dataFrom: 'keys',
