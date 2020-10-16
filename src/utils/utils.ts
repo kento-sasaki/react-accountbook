@@ -47,47 +47,26 @@ export const getTagColor = (tagLabel: string): string => {
   return tagOptions[tagOptions.map(({ text }) => text).indexOf(tagLabel)].color;
 };
 
-const getTagIcon = (tagLabel: string) => {
-  return tagOptions[tagOptions.map(({ text }) => text).indexOf(tagLabel)].icon;
-};
-
 export const createPieData = (allExpense: StoreExpense[]) => {
-  const tagArray = tagOptions
-    .map(({ text }) => text)
-    .filter((tagLabel, i, self) => self.indexOf(tagLabel) === i)
-    .map((tagLabel) => {
-      return { tagLabel, tagIcon: getTagIcon(tagLabel) };
-    });
+  const tagArray = allExpense
+    .map(({ tagLabel }) => tagLabel)
+    .filter((tagLabel, i, self) => self.indexOf(tagLabel) === i);
 
-  const pieData = tagArray
-    .map(({ tagLabel, tagIcon }) => {
-      const filteredExpense = allExpense.filter((exp) => {
+  const pieData = tagArray.map((tagLabel) => {
+    const amounts = allExpense
+      .filter((exp) => {
         return exp.tagLabel === tagLabel;
-      });
+      })
+      .map(({ amount }) => amount);
 
-      const amounts =
-        filteredExpense.length === 0
-          ? [0]
-          : filteredExpense.map((exp2, i, self) => {
-              if (self.length === 0) {
-                return 0;
-              }
-
-              return exp2.amount;
-            });
-
-      return { tagLabel, amounts, tagIcon };
-    })
-    .map(({ tagLabel, amounts, tagIcon }) => {
-      return {
-        id: tagIcon,
-        label: tagLabel,
-        value: amounts.reduce((previous, current) => {
-          return previous + current;
-        }),
-        color: getTagColor(tagLabel),
-      };
-    });
+    return {
+      id: tagLabel,
+      value: amounts.reduce((previous, current) => {
+        return previous + current;
+      }),
+      color: getTagColor(tagLabel),
+    };
+  });
 
   return pieData;
 };

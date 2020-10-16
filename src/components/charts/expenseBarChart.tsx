@@ -22,7 +22,7 @@ export const ExpenseBarChart: FC<Props> = ({ expense }) => {
   });
 
   const device = useSelector((store: Store) => store.device.device);
-  const height = device === 'widescreen' || device === 'largeScreen' ? 300 : 187;
+  const height = device === 'widescreen' || device === 'largeScreen' ? 300 : 230;
 
   return (
     <div
