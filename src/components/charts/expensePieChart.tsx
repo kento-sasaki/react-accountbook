@@ -15,7 +15,7 @@ export const ExpensePieChart: FC<Props> = ({ expense }) => {
   const height = device === 'widescreen' || device === 'largeScreen' ? 300 : 230;
   const margin =
     device === 'widescreen' || device === 'largeScreen'
-      ? { top: 50, right: 50, bottom: 35, left: 50 }
+      ? { top: 50, right: 55, bottom: 35, left: 55 }
       : { top: 10, right: 5, bottom: 15, left: 5 };
   const sliceLabel = device === 'widescreen' || device === 'largeScreen' ? 'value' : 'id';
   const enableRadialLabels = !!(device === 'widescreen' || device === 'largeScreen');

@@ -37,7 +37,7 @@ const messagePosition = css`
   top: 1rem;
 `;
 
-interface LayoutProps {
+interface Props {
   currentUser?: User | null;
   sidebarVisible?: boolean;
   activeItem?: Page;
@@ -55,7 +55,7 @@ interface LayoutProps {
   closeLoginForm?: () => void;
 }
 
-export const LayoutComponent: FC<LayoutProps> = ({
+export const LayoutComponent: FC<Props> = ({
   children,
   currentUser,
   sidebarVisible,

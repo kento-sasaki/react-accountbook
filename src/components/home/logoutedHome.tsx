@@ -43,8 +43,8 @@ export const LogoutedHome: FC = () => {
   const history = useHistory();
   const device = useSelector((store: Store) => store.device.device);
 
-  const handleGuestClick = async () => {
-    await loginAnonymously();
+  const handleGuestClick = () => {
+    loginAnonymously();
     history.push('/');
   };
 

@@ -3,12 +3,17 @@ import React, { FC, useState, FormEvent } from 'react';
 import { jsx } from '@emotion/core';
 import dayjs from 'dayjs';
 import { InputOnChangeData, DropdownProps } from 'semantic-ui-react';
-import { AddExpenseFormComponent } from '../components/expense/addExpenseForm'; // ?
+import { AddExpenseFormComponent } from '../components/expense/addExpenseForm';
 import { addExpense } from '../firebase/firestore';
 import { createDateOptions, tagOptions } from '../utils/utils';
 
-export const AddExpenseForm: FC = () => {
-  const [amount, setAmount] = useState<string>('');
+interface Props {
+  initialAmount?: number;
+  optionFunction?: () => void;
+}
+
+export const AddExpenseForm: FC<Props> = ({ initialAmount, optionFunction }) => {
+  const [amount, setAmount] = useState<string>(initialAmount ? `${initialAmount}` : '');
   const [date, setDate] = useState<Date>(new Date());
   const [tag, setTag] = useState<string>('その他');
 
@@ -28,11 +33,18 @@ export const AddExpenseForm: FC = () => {
     }
   };
 
-  const handleClick = async () => {
-    await addExpense(Number(amount), date, tag);
-    setAmount('');
-    setTag('その他');
-  };
+  const handleClick = optionFunction
+    ? async () => {
+        await addExpense(Number(amount), date, tag);
+        setAmount('');
+        setTag('その他');
+        optionFunction();
+      }
+    : async () => {
+        await addExpense(Number(amount), date, tag);
+        setAmount('');
+        setTag('その他');
+      };
 
   const dateOptions = createDateOptions(31);
 
