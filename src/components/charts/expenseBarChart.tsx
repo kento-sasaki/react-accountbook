@@ -34,7 +34,7 @@ export const ExpenseBarChart: FC<Props> = ({ expense }) => {
         data={data}
         keys={['amount']}
         indexBy="mmdd"
-        margin={{ top: 20, right: 100, bottom: 50, left: 60 }}
+        margin={{ top: 20, right: 20, bottom: 50, left: 60 }}
         colors="#00b5ad"
         borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
         axisTop={null}

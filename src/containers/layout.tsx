@@ -20,9 +20,9 @@ export const Layout: FC<LayoutProps> = ({ currentUser, children }) => {
   const [messageVisible, setMessageVisible] = useState<boolean>(false);
   const [sidebarVisible, setSidebarVisible] = useState<boolean>(false);
   const [isLoginFormOpen, setIsLoginFormOpen] = useState<boolean>(false);
+  const isLoading = useSelector((store: Store) => store.isLoading.isLoading);
 
   const history = useHistory();
-  const isLoading = useSelector((store: Store) => store.isLoading.isLoading);
 
   useEffect(() => {
     setIsLoginFormOpen(false);
@@ -87,8 +87,8 @@ export const Layout: FC<LayoutProps> = ({ currentUser, children }) => {
       activeItem={activeItem}
       isConfirmOpen={isConfirmOpen}
       messageVisible={messageVisible}
-      isLoading={isLoading}
       isLoginFormOpen={isLoginFormOpen}
+      isLoading={isLoading}
       handleItemClick={handleItemClick}
       handleLogoutClick={handleLogoutClick}
       handleLoginClick={handleLoginClick}

@@ -1,11 +1,19 @@
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import axios from 'axios';
-import { addExpense } from '../firebase/firestore';
+import { loading, loaded } from '../stores/loading';
 
-export const analyze = async (fileData: File) => {
-  console.log('Start!');
+export const useVision = (fileData: File | undefined) => {
+  const [amount, setAmount] = useState<number | undefined>(undefined);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setAmount(undefined);
+  }, []);
 
   const reader = new FileReader();
   const listener = async () => {
+    dispatch(loading());
     if (typeof reader.result === 'string') {
       const url = `https://vision.googleapis.com/v1/images:annotate?key=${process.env.REACT_APP_VISION_API_KEY}`;
       const body = {
@@ -27,16 +35,16 @@ export const analyze = async (fileData: File) => {
       const res: any = await axios.post(url, body).catch((error) => {
         console.log(error);
       });
-      const amount = Number(
-        res.data.responses[0].fullTextAnnotation.text
-          .match(/\n合計\n[¥\d,]+\n/gu)[0]
-          .match(/\d+/g)
-          ?.join(''),
+      setAmount(
+        Number(
+          res.data.responses[0].fullTextAnnotation.text
+            .match(/\n合計\n[¥\d,]+\n/gu)[0]
+            .match(/\d+/g)
+            ?.join(''),
+        ),
       );
-
-      console.log(amount);
-      addExpense(amount, new Date(), 'その他');
     }
+    dispatch(loaded());
   };
 
   reader.addEventListener('load', listener, false);
@@ -44,5 +52,11 @@ export const analyze = async (fileData: File) => {
   if (fileData) {
     reader.readAsDataURL(fileData);
   }
-  console.log('Finish');
+
+  return {
+    amountByVision: amount,
+    resetAmountByVision: () => {
+      setAmount(undefined);
+    },
+  };
 };

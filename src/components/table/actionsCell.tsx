@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import { jsx } from '@emotion/core';
 import { Table, Button, Confirm } from 'semantic-ui-react';
 
-interface ActionsCellProps {
+interface Props {
   isEditable?: boolean;
   isOpen?: boolean;
   amount?: string;
@@ -15,7 +15,7 @@ interface ActionsCellProps {
   handleDeleteClick?: () => void;
 }
 
-export const ActionsCellComponent: FC<ActionsCellProps> = ({
+export const ActionsCellComponent: FC<Props> = ({
   isEditable = false,
   isOpen = false,
   amount = '',
