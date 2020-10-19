@@ -19,7 +19,7 @@ export const InputFile: FC = () => {
     if (fileData && amountByVision) {
       setIsOpen(true);
     }
-  }, [amountByVision, displayName, fileData, resetAmountByVision]);
+  }, [amountByVision, fileData, resetAmountByVision]);
 
   const selectFile = async (e: any) => {
     const tempFileData = e.target.files[0];
