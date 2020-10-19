@@ -5,7 +5,6 @@ import { InputFileComponent } from '../components/inputFile/inputFile';
 import { useVision } from '../customHooks/useVision';
 
 export const InputFile: FC = () => {
-  console.log('Hello');
   const [fileData, setFileData] = useState<File | undefined>(undefined);
   const [selectedFileData, setSelectedFileData] = useState<File | undefined>(undefined);
   const [displayName, setDisplayName] = useState<string>('File name');
@@ -14,14 +13,13 @@ export const InputFile: FC = () => {
   const { amountByVision, resetAmountByVision } = useVision(fileData);
 
   useEffect(() => {
-    console.log('fileData: ', fileData);
     if (!fileData) {
       resetAmountByVision();
     }
     if (fileData && amountByVision) {
       setIsOpen(true);
     }
-  }, [amountByVision, displayName, fileData, resetAmountByVision, selectedFileData]);
+  }, [amountByVision, displayName, fileData, resetAmountByVision]);
 
   const selectFile = async (e: any) => {
     const tempFileData = e.target.files[0];
@@ -34,7 +32,7 @@ export const InputFile: FC = () => {
     setIsDisabled(false);
   };
 
-  const handleAnalyzeClick = async () => {
+  const handleAnalyzeClick = () => {
     setFileData(selectedFileData);
   };
 
@@ -42,9 +40,7 @@ export const InputFile: FC = () => {
     setIsOpen(true);
   };
   const closeModal = () => {
-    console.log('closeModal');
     setFileData(undefined);
-    resetAmountByVision();
     setIsOpen(false);
   };
 

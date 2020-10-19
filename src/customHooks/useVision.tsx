@@ -57,7 +57,6 @@ export const useVision = (fileData: File | undefined) => {
     amountByVision: amount,
     resetAmountByVision: () => {
       setAmount(undefined);
-      console.log('resetAmountByVision', amount);
     },
   };
 };
