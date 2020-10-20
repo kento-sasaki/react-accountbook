@@ -1,37 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots AddExpenseForm Add Expense 1`] = `
-.emotion-4 {
-  padding: 0rem 0rem !important;
-  margin: 0rem 0.2rem 0rem 1rem !important;
-}
-
-.emotion-0 {
-  margin: 0.1rem 0.1rem 0.1rem 0.1rem !important;
-}
-
-.emotion-3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.emotion-1 {
-  margin: 0.1rem 0.1rem 0.1rem 0.1rem !important;
-  min-width: 11rem !important;
-}
-
-.emotion-2 {
-  margin: 0.1rem 0.1rem 0.1rem 0.1rem !important;
-  min-width: 9rem !important;
-}
-
-.emotion-5 {
-  padding: 0rem 0rem !important;
-  margin: 0rem 1rem 0rem 0.2rem !important;
-}
-
 <div
   className="ui equal width grid"
 >
@@ -39,10 +8,10 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
     className="stretched row"
   >
     <div
-      className="twelve wide column emotion-4"
+      className="twelve wide column css-qgf78i-AddExpenseFormComponent"
     >
       <div
-        className="ui left icon input emotion-0"
+        className="ui left icon input css-1njot19-AddExpenseFormComponent"
       >
         <input
           onChange={[Function]}
@@ -57,11 +26,11 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
         />
       </div>
       <div
-        className="emotion-3"
+        className="css-19cdt2s-AddExpenseFormComponent"
       >
         <div
           aria-expanded={false}
-          className="ui button fluid labeled selection dropdown icon emotion-1"
+          className="ui button fluid labeled selection dropdown icon css-loyvww-AddExpenseFormComponent"
           onBlur={[Function]}
           onChange={[Function]}
           onClick={[Function]}
@@ -76,7 +45,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
             className="text"
             role="alert"
           >
-            2020/10/13
+            2020/10/20
           </div>
           <i
             aria-hidden="true"
@@ -108,7 +77,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
         </div>
         <div
           aria-expanded={false}
-          className="ui button fluid labeled selection dropdown icon emotion-2"
+          className="ui button fluid labeled selection dropdown icon css-3npr72-AddExpenseFormComponent"
           onBlur={[Function]}
           onChange={[Function]}
           onClick={[Function]}
@@ -161,7 +130,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
       </div>
     </div>
     <div
-      className="column emotion-5"
+      className="column css-e437w8-AddExpenseFormComponent"
     >
       <button
         className="ui teal disabled button"
@@ -222,17 +191,6 @@ exports[`Storyshots Contact Contact 1`] = `
 `;
 
 exports[`Storyshots Detail Detail 1`] = `
-.emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.emotion-0 {
-  margin: 0.2rem 0.2rem !important;
-}
-
 <div
   className="ui equal width grid"
   data-testid="detail-table"
@@ -244,10 +202,10 @@ exports[`Storyshots Detail Detail 1`] = `
       className="eleven wide column"
     >
       <div
-        className="emotion-2"
+        className="css-ov1ktg"
       >
         <button
-          className="ui violet large basic fluid button emotion-0"
+          className="ui violet large basic fluid button css-gl25xf-MyButton"
           onClick={[Function]}
         >
           <i
@@ -258,7 +216,7 @@ exports[`Storyshots Detail Detail 1`] = `
           ¥ 5000
         </button>
         <button
-          className="ui blue large basic fluid button emotion-0"
+          className="ui blue large basic fluid button css-gl25xf-MyButton"
           onClick={[Function]}
         >
           <i
@@ -270,10 +228,10 @@ exports[`Storyshots Detail Detail 1`] = `
         </button>
       </div>
       <div
-        className="emotion-2"
+        className="css-ov1ktg"
       >
         <button
-          className="ui red large basic fluid button emotion-0"
+          className="ui red large basic fluid button css-gl25xf-MyButton"
           onClick={[Function]}
         >
           <i
@@ -284,7 +242,7 @@ exports[`Storyshots Detail Detail 1`] = `
           ¥ 3000
         </button>
         <button
-          className="ui yellow large basic fluid button emotion-0"
+          className="ui yellow large basic fluid button css-gl25xf-MyButton"
           onClick={[Function]}
         >
           <i
@@ -296,10 +254,10 @@ exports[`Storyshots Detail Detail 1`] = `
         </button>
       </div>
       <div
-        className="emotion-2"
+        className="css-ov1ktg"
       >
         <button
-          className="ui teal large basic fluid button emotion-0"
+          className="ui teal large basic fluid button css-gl25xf-MyButton"
           onClick={[Function]}
         >
           <i
@@ -336,25 +294,13 @@ exports[`Storyshots Detail Detail 1`] = `
 
 exports[`Storyshots ExpenseBarChart Expense Bar Chart 1`] = `
 <div
-  className="recharts-responsive-container"
-  style={
-    Object {
-      "height": 300,
-      "maxHeight": undefined,
-      "minHeight": undefined,
-      "minWidth": undefined,
-      "width": "100%",
-    }
-  }
+  className="css-pfiut8-ExpenseBarChart"
 >
   <div
     style={
       Object {
-        "display": "none",
-        "height": 0,
-        "position": "absolute",
-        "visibility": "hidden",
-        "width": 0,
+        "height": "100%",
+        "width": "100%",
       }
     }
   />
@@ -363,25 +309,13 @@ exports[`Storyshots ExpenseBarChart Expense Bar Chart 1`] = `
 
 exports[`Storyshots ExpensePieChart Expense Pie Chart 1`] = `
 <div
-  className="recharts-responsive-container"
-  style={
-    Object {
-      "height": 300,
-      "maxHeight": undefined,
-      "minHeight": undefined,
-      "minWidth": undefined,
-      "width": "100%",
-    }
-  }
+  className="css-16xhmz8-ExpensePieChart"
 >
   <div
     style={
       Object {
-        "display": "none",
-        "height": 0,
-        "position": "absolute",
-        "visibility": "hidden",
-        "width": 0,
+        "height": "100%",
+        "width": "100%",
       }
     }
   />
@@ -389,97 +323,8 @@ exports[`Storyshots ExpensePieChart Expense Pie Chart 1`] = `
 `;
 
 exports[`Storyshots Home Logined Home 1`] = `
-.emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.emotion-0 {
-  margin: 0.2rem 0.2rem !important;
-}
-
-.emotion-12 {
-  padding: 0rem 0rem !important;
-  margin: 0rem 0.2rem 0rem 1rem !important;
-}
-
-.emotion-8 {
-  margin: 0.1rem 0.1rem 0.1rem 0.1rem !important;
-}
-
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.emotion-9 {
-  margin: 0.1rem 0.1rem 0.1rem 0.1rem !important;
-  min-width: 11rem !important;
-}
-
-.emotion-10 {
-  margin: 0.1rem 0.1rem 0.1rem 0.1rem !important;
-  min-width: 9rem !important;
-}
-
-.emotion-13 {
-  padding: 0rem 0rem !important;
-  margin: 0rem 1rem 0rem 0.2rem !important;
-}
-
-.emotion-21 {
-  margin: 0rem 0.5rem 0 0.5rem !important;
-}
-
-.emotion-19 {
-  padding: 0rem 0rem !important;
-  margin: 0rem 0.2rem 0rem 1rem !important;
-}
-
-.emotion-18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.emotion-14 {
-  margin: 0.1rem 0.1rem 0.1rem 0.1rem !important;
-  min-width: 19rem;
-}
-
-.emotion-17 {
-  padding: 0rem 0rem !important;
-  margin: 0.1rem 0.1rem 0.1rem 0.1rem !important;
-}
-
-.emotion-16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0.9rem 1rem;
-}
-
-.emotion-16:hover {
-  cursor: pointer;
-}
-
-.emotion-15 {
-  display: none;
-}
-
-.emotion-20 {
-  padding: 0rem 0rem !important;
-  margin: 0rem 1rem 0rem 0.2rem !important;
-}
-
 <div
-  className="ui centered grid emotion-21"
+  className="ui centered grid css-qwb21-LoginedHomeComponent"
 >
   <div
     className="sixteen wide computer twelve wide large screen sixteen wide mobile sixteen wide tablet twelve wide widescreen column"
@@ -493,25 +338,13 @@ exports[`Storyshots Home Logined Home 1`] = `
         Latest expenses
       </div>
       <div
-        className="recharts-responsive-container"
-        style={
-          Object {
-            "height": 300,
-            "maxHeight": undefined,
-            "minHeight": undefined,
-            "minWidth": undefined,
-            "width": "100%",
-          }
-        }
+        className="css-pfiut8-ExpenseBarChart"
       >
         <div
           style={
             Object {
-              "display": "none",
-              "height": 0,
-              "position": "absolute",
-              "visibility": "hidden",
-              "width": 0,
+              "height": "100%",
+              "width": "100%",
             }
           }
         />
@@ -530,25 +363,13 @@ exports[`Storyshots Home Logined Home 1`] = `
         Breakdown of expenses
       </div>
       <div
-        className="recharts-responsive-container"
-        style={
-          Object {
-            "height": 300,
-            "maxHeight": undefined,
-            "minHeight": undefined,
-            "minWidth": undefined,
-            "width": "100%",
-          }
-        }
+        className="css-16xhmz8-ExpensePieChart"
       >
         <div
           style={
             Object {
-              "display": "none",
-              "height": 0,
-              "position": "absolute",
-              "visibility": "hidden",
-              "width": 0,
+              "height": "100%",
+              "width": "100%",
             }
           }
         />
@@ -577,10 +398,10 @@ exports[`Storyshots Home Logined Home 1`] = `
             className="eleven wide column"
           >
             <div
-              className="emotion-2"
+              className="css-ov1ktg"
             >
               <button
-                className="ui violet large basic fluid button emotion-0"
+                className="ui violet large basic fluid button css-gl25xf-MyButton"
                 onClick={[Function]}
               >
                 <i
@@ -591,7 +412,7 @@ exports[`Storyshots Home Logined Home 1`] = `
                 ¥ 5000
               </button>
               <button
-                className="ui blue large basic fluid button emotion-0"
+                className="ui blue large basic fluid button css-gl25xf-MyButton"
                 onClick={[Function]}
               >
                 <i
@@ -603,10 +424,10 @@ exports[`Storyshots Home Logined Home 1`] = `
               </button>
             </div>
             <div
-              className="emotion-2"
+              className="css-ov1ktg"
             >
               <button
-                className="ui red large basic fluid button emotion-0"
+                className="ui red large basic fluid button css-gl25xf-MyButton"
                 onClick={[Function]}
               >
                 <i
@@ -617,7 +438,7 @@ exports[`Storyshots Home Logined Home 1`] = `
                 ¥ 3000
               </button>
               <button
-                className="ui yellow large basic fluid button emotion-0"
+                className="ui yellow large basic fluid button css-gl25xf-MyButton"
                 onClick={[Function]}
               >
                 <i
@@ -629,10 +450,10 @@ exports[`Storyshots Home Logined Home 1`] = `
               </button>
             </div>
             <div
-              className="emotion-2"
+              className="css-ov1ktg"
             >
               <button
-                className="ui teal large basic fluid button emotion-0"
+                className="ui teal large basic fluid button css-gl25xf-MyButton"
                 onClick={[Function]}
               >
                 <i
@@ -694,10 +515,10 @@ exports[`Storyshots Home Logined Home 1`] = `
           className="stretched row"
         >
           <div
-            className="twelve wide column emotion-12"
+            className="twelve wide column css-qgf78i-AddExpenseFormComponent"
           >
             <div
-              className="ui left icon input emotion-8"
+              className="ui left icon input css-1njot19-AddExpenseFormComponent"
             >
               <input
                 onChange={[Function]}
@@ -712,11 +533,11 @@ exports[`Storyshots Home Logined Home 1`] = `
               />
             </div>
             <div
-              className="emotion-11"
+              className="css-19cdt2s-AddExpenseFormComponent"
             >
               <div
                 aria-expanded={false}
-                className="ui button fluid labeled selection dropdown icon emotion-9"
+                className="ui button fluid labeled selection dropdown icon css-loyvww-AddExpenseFormComponent"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onClick={[Function]}
@@ -731,7 +552,7 @@ exports[`Storyshots Home Logined Home 1`] = `
                   className="text"
                   role="alert"
                 >
-                  2020/10/13
+                  2020/10/20
                 </div>
                 <i
                   aria-hidden="true"
@@ -745,6 +566,132 @@ exports[`Storyshots Home Logined Home 1`] = `
                     aria-checked={false}
                     aria-selected={true}
                     className="selected item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/20
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/19
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/18
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/17
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/16
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/15
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/14
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
                     onClick={[Function]}
                     role="option"
                     style={
@@ -1173,137 +1120,11 @@ exports[`Storyshots Home Logined Home 1`] = `
                       2020/9/20
                     </span>
                   </div>
-                  <div
-                    aria-checked={false}
-                    aria-selected={false}
-                    className="item"
-                    onClick={[Function]}
-                    role="option"
-                    style={
-                      Object {
-                        "pointerEvents": "all",
-                      }
-                    }
-                  >
-                    <span
-                      className="text"
-                    >
-                      2020/9/19
-                    </span>
-                  </div>
-                  <div
-                    aria-checked={false}
-                    aria-selected={false}
-                    className="item"
-                    onClick={[Function]}
-                    role="option"
-                    style={
-                      Object {
-                        "pointerEvents": "all",
-                      }
-                    }
-                  >
-                    <span
-                      className="text"
-                    >
-                      2020/9/18
-                    </span>
-                  </div>
-                  <div
-                    aria-checked={false}
-                    aria-selected={false}
-                    className="item"
-                    onClick={[Function]}
-                    role="option"
-                    style={
-                      Object {
-                        "pointerEvents": "all",
-                      }
-                    }
-                  >
-                    <span
-                      className="text"
-                    >
-                      2020/9/17
-                    </span>
-                  </div>
-                  <div
-                    aria-checked={false}
-                    aria-selected={false}
-                    className="item"
-                    onClick={[Function]}
-                    role="option"
-                    style={
-                      Object {
-                        "pointerEvents": "all",
-                      }
-                    }
-                  >
-                    <span
-                      className="text"
-                    >
-                      2020/9/16
-                    </span>
-                  </div>
-                  <div
-                    aria-checked={false}
-                    aria-selected={false}
-                    className="item"
-                    onClick={[Function]}
-                    role="option"
-                    style={
-                      Object {
-                        "pointerEvents": "all",
-                      }
-                    }
-                  >
-                    <span
-                      className="text"
-                    >
-                      2020/9/15
-                    </span>
-                  </div>
-                  <div
-                    aria-checked={false}
-                    aria-selected={false}
-                    className="item"
-                    onClick={[Function]}
-                    role="option"
-                    style={
-                      Object {
-                        "pointerEvents": "all",
-                      }
-                    }
-                  >
-                    <span
-                      className="text"
-                    >
-                      2020/9/14
-                    </span>
-                  </div>
-                  <div
-                    aria-checked={false}
-                    aria-selected={false}
-                    className="item"
-                    onClick={[Function]}
-                    role="option"
-                    style={
-                      Object {
-                        "pointerEvents": "all",
-                      }
-                    }
-                  >
-                    <span
-                      className="text"
-                    >
-                      2020/9/13
-                    </span>
-                  </div>
                 </div>
               </div>
               <div
                 aria-expanded={false}
-                className="ui button fluid labeled selection dropdown icon emotion-10"
+                className="ui button fluid labeled selection dropdown icon css-3npr72-AddExpenseFormComponent"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onClick={[Function]}
@@ -1533,7 +1354,7 @@ exports[`Storyshots Home Logined Home 1`] = `
             </div>
           </div>
           <div
-            className="column emotion-13"
+            className="column css-e437w8-AddExpenseFormComponent"
           >
             <button
               className="ui teal disabled button"
@@ -1562,13 +1383,13 @@ exports[`Storyshots Home Logined Home 1`] = `
           className="stretched row"
         >
           <div
-            className="twelve wide column emotion-19"
+            className="twelve wide column css-1hou2l"
           >
             <div
-              className="emotion-18"
+              className="css-ov1ktg"
             >
               <div
-                className="ui left icon input emotion-14"
+                className="ui left icon input css-106q0li"
               >
                 <input
                   onChange={[Function]}
@@ -1582,17 +1403,17 @@ exports[`Storyshots Home Logined Home 1`] = `
                 />
               </div>
               <button
-                className="ui teal basic fluid button emotion-17"
+                className="ui teal basic fluid button css-1v2598d"
                 onClick={[Function]}
               >
                 <label
-                  className="emotion-16"
+                  className="css-loex5j-MyInput"
                   htmlFor="selectFile"
                 >
                   Select
                   <input
                     accept="image/*"
-                    className="emotion-15"
+                    className="css-1pqrjel-MyInput"
                     id="selectFile"
                     onChange={[Function]}
                     type="file"
@@ -1602,7 +1423,7 @@ exports[`Storyshots Home Logined Home 1`] = `
             </div>
           </div>
           <div
-            className="column emotion-20"
+            className="column css-1olrttr"
           >
             <button
               className="ui teal disabled button"
@@ -1610,7 +1431,7 @@ exports[`Storyshots Home Logined Home 1`] = `
               onClick={[Function]}
               tabIndex={-1}
             >
-              Submit
+              Analyze
             </button>
           </div>
         </div>
@@ -1951,40 +1772,12 @@ exports[`Storyshots Home Logined Home 1`] = `
 `;
 
 exports[`Storyshots Home Logouted Home 1`] = `
-.emotion-7 {
-  margin-top: 0rem !important;
-  margin-bottom: 5rem !important;
-}
-
-.emotion-1 {
-  color: #2f2e41 !important;
-}
-
-.emotion-0 {
-  font-family: 'Lexend Peta',sans-serif;
-}
-
-.emotion-4 {
-  margin-top: 0.2rem !important;
-  margin-bottom: 0.2rem !important;
-}
-
-.emotion-15 {
-  background: #00b5ad;
-  padding: 2rem;
-}
-
-.emotion-10 {
-  margin-top: 1rem !important;
-  margin-bottom: 1rem !important;
-}
-
 <div>
   <div
     className="ui centered container equal width grid"
   >
     <div
-      className="row emotion-7"
+      className="row css-1e4k5ql-LogoutedHome"
     >
       <div
         className="middle aligned ten wide column"
@@ -1993,10 +1786,10 @@ exports[`Storyshots Home Logouted Home 1`] = `
           className="ui basic vertical left aligned segment"
         >
           <div
-            className="ui large header emotion-1"
+            className="ui large header css-1qr6ibh-LogoutedHome"
           >
             <span
-              className="emotion-0"
+              className="css-kmat2u-LogoutedHome"
             >
               VisiBO
             </span>
@@ -2006,10 +1799,10 @@ exports[`Storyshots Home Logouted Home 1`] = `
             </p>
           </div>
           <div
-            className="ui medium header emotion-1"
+            className="ui medium header css-1qr6ibh-LogoutedHome"
           >
             <span
-              className="emotion-0"
+              className="css-kmat2u-LogoutedHome"
             >
               VisiBO
             </span>
@@ -2019,13 +1812,13 @@ exports[`Storyshots Home Logouted Home 1`] = `
             className="equal width row"
           >
             <button
-              className="ui teal medium circular button emotion-4"
+              className="ui teal medium circular button css-tulwei-LogoutedHome"
               onClick={[Function]}
             >
               アカウント登録して使ってみる
             </button>
             <button
-              className="ui teal medium basic circular button emotion-4"
+              className="ui teal medium basic circular button css-tulwei-LogoutedHome"
               onClick={[Function]}
             >
               ゲストとして使ってみる
@@ -2034,7 +1827,7 @@ exports[`Storyshots Home Logouted Home 1`] = `
         </div>
       </div>
       <div
-        className="five wide column emotion-6"
+        className="five wide column css-n539b7-LogoutedHome"
       >
         <img
           className="ui image"
@@ -2044,13 +1837,13 @@ exports[`Storyshots Home Logouted Home 1`] = `
     </div>
   </div>
   <div
-    className="emotion-15"
+    className="css-1ww925z-LogoutedHome"
   >
     <h1
       className="ui inverted center aligned header"
     >
       <span
-        className="emotion-0"
+        className="css-kmat2u-LogoutedHome"
       >
         VisiBO
       </span>
@@ -2060,13 +1853,13 @@ exports[`Storyshots Home Logouted Home 1`] = `
       className="ui centered equal width grid"
     >
       <div
-        className="column emotion-10"
+        className="column css-q30sxx-LogoutedHome"
       >
         <div
           className="ui segment"
         >
           <h2
-            className="ui center aligned header emotion-1"
+            className="ui center aligned header css-1qr6ibh-LogoutedHome"
           >
             様々なチャートで整理
           </h2>
@@ -2078,13 +1871,13 @@ exports[`Storyshots Home Logouted Home 1`] = `
         </div>
       </div>
       <div
-        className="column emotion-10"
+        className="column css-q30sxx-LogoutedHome"
       >
         <div
           className="ui segment"
         >
           <h2
-            className="ui center aligned header emotion-1"
+            className="ui center aligned header css-1qr6ibh-LogoutedHome"
           >
             レシートから支出を登録
           </h2>
@@ -2096,13 +1889,13 @@ exports[`Storyshots Home Logouted Home 1`] = `
         </div>
       </div>
       <div
-        className="column emotion-10"
+        className="column css-q30sxx-LogoutedHome"
       >
         <div
           className="ui segment"
         >
           <h2
-            className="ui center aligned header emotion-1"
+            className="ui center aligned header css-1qr6ibh-LogoutedHome"
           >
             タグで支出を分類
           </h2>
@@ -2119,49 +1912,6 @@ exports[`Storyshots Home Logouted Home 1`] = `
 `;
 
 exports[`Storyshots InputFile Input File 1`] = `
-.emotion-5 {
-  padding: 0rem 0rem !important;
-  margin: 0rem 0.2rem 0rem 1rem !important;
-}
-
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.emotion-0 {
-  margin: 0.1rem 0.1rem 0.1rem 0.1rem !important;
-  min-width: 19rem;
-}
-
-.emotion-3 {
-  padding: 0rem 0rem !important;
-  margin: 0.1rem 0.1rem 0.1rem 0.1rem !important;
-}
-
-.emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0.9rem 1rem;
-}
-
-.emotion-2:hover {
-  cursor: pointer;
-}
-
-.emotion-1 {
-  display: none;
-}
-
-.emotion-6 {
-  padding: 0rem 0rem !important;
-  margin: 0rem 1rem 0rem 0.2rem !important;
-}
-
 <div
   className="ui equal width grid"
 >
@@ -2169,13 +1919,13 @@ exports[`Storyshots InputFile Input File 1`] = `
     className="stretched row"
   >
     <div
-      className="twelve wide column emotion-5"
+      className="twelve wide column css-1hou2l"
     >
       <div
-        className="emotion-4"
+        className="css-ov1ktg"
       >
         <div
-          className="ui left icon input emotion-0"
+          className="ui left icon input css-106q0li"
         >
           <input
             onChange={[Function]}
@@ -2189,17 +1939,17 @@ exports[`Storyshots InputFile Input File 1`] = `
           />
         </div>
         <button
-          className="ui teal basic fluid button emotion-3"
+          className="ui teal basic fluid button css-1v2598d"
           onClick={[Function]}
         >
           <label
-            className="emotion-2"
+            className="css-loex5j-MyInput"
             htmlFor="selectFile"
           >
             Select
             <input
               accept="image/*"
-              className="emotion-1"
+              className="css-1pqrjel-MyInput"
               id="selectFile"
               onChange={[Function]}
               type="file"
@@ -2209,7 +1959,7 @@ exports[`Storyshots InputFile Input File 1`] = `
       </div>
     </div>
     <div
-      className="column emotion-6"
+      className="column css-1olrttr"
     >
       <button
         className="ui teal disabled button"
@@ -2217,7 +1967,7 @@ exports[`Storyshots InputFile Input File 1`] = `
         onClick={[Function]}
         tabIndex={-1}
       >
-        Submit
+        Analyze
       </button>
     </div>
   </div>
@@ -2225,52 +1975,6 @@ exports[`Storyshots InputFile Input File 1`] = `
 `;
 
 exports[`Storyshots Layout Layout 1`] = `
-.emotion-1 {
-  padding: 0.1rem !important;
-}
-
-.emotion-0 {
-  font-family: 'Lexend Peta',sans-serif;
-  font-size: 2rem !important;
-  color: #fff;
-  padding: 0 !important;
-  margin: 0.5rem 1.5rem !important;
-}
-
-.emotion-2 {
-  padding: 0rem 0rem !important;
-}
-
-.emotion-6 {
-  margin-top: 3rem !important;
-}
-
-.emotion-5 {
-  padding-top: 0.5rem;
-  display: -webkit-box !important;
-  display: -webkit-flex !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
-  -webkit-flex-direction: column !important;
-  -ms-flex-direction: column !important;
-  flex-direction: column !important;
-  min-height: 100vh !important;
-}
-
-.emotion-3 {
-  position: absolute !important;
-  right: 0.5rem;
-  top: 2.5rem;
-  z-index: 1000 !important;
-  top: 1rem;
-}
-
-.emotion-4 {
-  margin-top: auto;
-  text-align: center;
-  padding: 1.5rem 0;
-}
-
 <div>
   <div
     className="ui container"
@@ -2279,11 +1983,11 @@ exports[`Storyshots Layout Layout 1`] = `
       className="ui teal inverted secondary top fixed menu"
     >
       <a
-        className="item emotion-1"
+        className="item css-166pk73-AppBar"
         onClick={[Function]}
       >
         <div
-          className="ui basic segment emotion-0"
+          className="ui basic segment css-rj8u68-AppBar"
         >
           VisiBO
         </div>
@@ -2301,7 +2005,7 @@ exports[`Storyshots Layout Layout 1`] = `
         Contact
       </a>
       <a
-        className="right item emotion-2"
+        className="right item css-1qbahax-AppBar"
         onClick={[Function]}
       >
         <div
@@ -2313,7 +2017,7 @@ exports[`Storyshots Layout Layout 1`] = `
     </div>
   </div>
   <div
-    className="ui basic segment pushable emotion-6"
+    className="ui basic segment pushable css-8cp2yq-LayoutComponent"
   >
     <div
       className="ui vertical ui overlay right thin sidebar menu"
@@ -2353,13 +2057,13 @@ exports[`Storyshots Layout Layout 1`] = `
       </a>
     </div>
     <div
-      className="pusher emotion-5"
+      className="pusher css-156eqkf-LayoutComponent"
     >
       <div
         className="ui basic vertical segment"
       >
         <div
-          className="ui info message scale visible transition emotion-3"
+          className="ui info message scale visible transition css-1lm94hq-LayoutComponent"
           style={
             Object {
               "animationDuration": undefined,
@@ -2381,7 +2085,7 @@ exports[`Storyshots Layout Layout 1`] = `
         </div>
       </div>
       <div
-        className="emotion-4"
+        className="css-wr3gd4-Footer"
       >
         <div
           className="ui divider"
@@ -2409,10 +2113,6 @@ exports[`Storyshots Layout Layout 1`] = `
 `;
 
 exports[`Storyshots LoginForm Login Form 1`] = `
-.emotion-0 {
-  margin-bottom: 1rem !important;
-}
-
 <div
   className="ui center aligned middle aligned grid"
 >
@@ -2488,7 +2188,7 @@ exports[`Storyshots LoginForm Login Form 1`] = `
       or
     </div>
     <button
-      className="ui google plus circular fluid button emotion-0"
+      className="ui google plus circular fluid button css-tycz0v-LoginFormComponent"
       onClick={[Function]}
     >
       <i
@@ -2499,7 +2199,7 @@ exports[`Storyshots LoginForm Login Form 1`] = `
       Google でログイン
     </button>
     <button
-      className="ui twitter circular fluid button emotion-0"
+      className="ui twitter circular fluid button css-tycz0v-LoginFormComponent"
       onClick={[Function]}
     >
       <i
@@ -2510,7 +2210,7 @@ exports[`Storyshots LoginForm Login Form 1`] = `
       Twitter でログイン
     </button>
     <button
-      className="ui grey circular fluid button emotion-0"
+      className="ui grey circular fluid button css-tycz0v-LoginFormComponent"
       onClick={[Function]}
     >
       <i
