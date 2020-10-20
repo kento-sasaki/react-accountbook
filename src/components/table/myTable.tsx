@@ -5,11 +5,11 @@ import { Table } from 'semantic-ui-react';
 import { MyTableUnit } from '../../containers/table/myTableUnit';
 import { StoreExpense } from '../../interfaces';
 
-interface MyTableProps {
+interface Props {
   expense: StoreExpense[];
 }
 
-export const MyTable: FC<MyTableProps> = ({ expense }) => {
+export const MyTable: FC<Props> = ({ expense }) => {
   return (
     <Table basic="very" data-testid="expense-table">
       <Table.Header>

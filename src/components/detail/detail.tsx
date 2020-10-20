@@ -11,12 +11,12 @@ const displayFlex = css`
   display: flex;
 `;
 
-interface DetailProps {
+interface Props {
   expense: StoreExpense[];
   handleRequireClick?: (requirement: { tagLabel: TagLabel; require: boolean }) => void;
 }
 
-export const Detail: FC<DetailProps> = ({ expense, handleRequireClick = () => {} }) => {
+export const Detail: FC<Props> = ({ expense, handleRequireClick = () => {} }) => {
   const tagExpenses = createTagExpense(expense).map((exp) => {
     return {
       tagLabel: exp.tagLabel,

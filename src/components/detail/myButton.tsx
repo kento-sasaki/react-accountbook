@@ -8,7 +8,7 @@ const label = css`
   margin: 0.2rem 0.2rem !important;
 `;
 
-interface MyButtonProps {
+interface Props {
   detail: {
     label: TagLabel;
     amount: number;
@@ -18,7 +18,7 @@ interface MyButtonProps {
   handleRequireClick: (requirement: { tagLabel: TagLabel; require: boolean }) => void;
 }
 
-export const MyButton: FC<MyButtonProps> = ({ detail, handleRequireClick }) => {
+export const MyButton: FC<Props> = ({ detail, handleRequireClick }) => {
   const [basic, setBasic] = useState<boolean>(true);
 
   const handleClick = () => {

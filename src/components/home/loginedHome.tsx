@@ -10,13 +10,13 @@ import { InputFile } from '../../containers/inputFile';
 import { Detail } from '../detail/detail';
 import { StoreExpense, TagLabel } from '../../interfaces';
 
-interface LoginedHomeProps {
+interface Props {
   expense: StoreExpense[];
   displayExpense: StoreExpense[];
   handleRequireClick?: (repquirement: { tagLabel: TagLabel; require: boolean }) => void;
 }
 
-export const LoginedHomeComponent: FC<LoginedHomeProps> = ({
+export const LoginedHomeComponent: FC<Props> = ({
   expense,
   displayExpense,
   handleRequireClick = () => {},

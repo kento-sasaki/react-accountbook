@@ -14,7 +14,7 @@ import {
 import { Page } from '../../pages';
 import { User } from '../../interfaces';
 
-interface AppBarProps {
+interface Props {
   currentUser?: User | null;
   activeItem?: Page;
   isConfirmOpen?: boolean;
@@ -31,7 +31,7 @@ const padding = (x: number, y: number) =>
   css`
     padding: ${y}rem ${x}rem !important;
   `;
-export const AppBar: FC<AppBarProps> = ({
+export const AppBar: FC<Props> = ({
   currentUser = null,
   activeItem = 'home',
   isConfirmOpen = false,

@@ -3,7 +3,7 @@ import React, { FC, FormEvent } from 'react';
 import { jsx } from '@emotion/core';
 import { Container, Header, Form, Confirm, Segment, TextAreaProps } from 'semantic-ui-react';
 
-interface ContactProps {
+interface Props {
   isOpen?: boolean;
   text?: string;
   openConfirm?: () => void;
@@ -12,7 +12,7 @@ interface ContactProps {
   handleConfirmClick?: () => Promise<void>;
 }
 
-export const ContactComponent: FC<ContactProps> = ({
+export const ContactComponent: FC<Props> = ({
   isOpen = false,
   text = '',
   openConfirm = () => {},
