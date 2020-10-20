@@ -6,13 +6,13 @@ import dayjs from 'dayjs';
 import { StoreExpense } from '../../interfaces';
 import { tagOptions } from '../../utils/utils';
 
-interface TagCellProps {
+interface Props {
   expense?: StoreExpense;
   isEditable?: boolean;
   handleChangeTag?: (e: FormEvent, { key }: DropdownProps) => void;
 }
 
-export const TagCellComponent: FC<TagCellProps> = ({
+export const TagCellComponent: FC<Props> = ({
   expense = {
     id: '0',
     date: new Date(),

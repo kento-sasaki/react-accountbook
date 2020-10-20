@@ -9,7 +9,7 @@ import { TagCellComponent } from './tagCell';
 import { ActionsCellComponent } from './actionsCell';
 import { StoreExpense } from '../../interfaces';
 
-interface MyTableUnitProps {
+interface Props {
   expense?: StoreExpense;
   isEditable?: boolean;
   isOpen?: boolean;
@@ -26,7 +26,7 @@ interface MyTableUnitProps {
   dateOptions?: { key: number; text: string; value: number }[];
 }
 
-export const MyTableUnitComponent: FC<MyTableUnitProps> = ({
+export const MyTableUnitComponent: FC<Props> = ({
   expense = {
     id: '0',
     date: new Date(),

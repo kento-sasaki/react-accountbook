@@ -8,11 +8,11 @@ import { updateExpense, deleteExpense } from '../../firebase/firestore';
 import { MyTableUnitComponent } from '../../components/table/myTableUnit';
 import { createDateOptions } from '../../utils/utils';
 
-interface MyTableUnitProps {
+interface Props {
   expense: StoreExpense;
 }
 
-export const MyTableUnit: FC<MyTableUnitProps> = ({ expense }) => {
+export const MyTableUnit: FC<Props> = ({ expense }) => {
   const [isEditable, setIsEditable] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [date, setDate] = useState<Date>(expense.date);

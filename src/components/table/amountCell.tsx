@@ -5,14 +5,14 @@ import { Table, Input, InputOnChangeData } from 'semantic-ui-react';
 import dayjs from 'dayjs';
 import { StoreExpense } from '../../interfaces';
 
-interface AmountCellProps {
+interface Props {
   expense?: StoreExpense;
   isEditable?: boolean;
   handleChangeAmount?: (e: FormEvent, { key }: InputOnChangeData) => void;
   amount?: string;
 }
 
-export const AmountCellComponent: FC<AmountCellProps> = ({
+export const AmountCellComponent: FC<Props> = ({
   expense = {
     id: '0',
     date: new Date(),

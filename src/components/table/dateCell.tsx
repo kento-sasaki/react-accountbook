@@ -5,14 +5,14 @@ import { Table, Dropdown, DropdownProps } from 'semantic-ui-react';
 import dayjs from 'dayjs';
 import { StoreExpense } from '../../interfaces';
 
-interface DateCellProps {
+interface Props {
   expense?: StoreExpense;
   isEditable?: boolean;
   handleChangeDate?: (e: FormEvent, { key }: DropdownProps) => void;
   dateOptions?: { key: number; text: string; value: number }[];
 }
 
-export const DateCellComponent: FC<DateCellProps> = ({
+export const DateCellComponent: FC<Props> = ({
   expense = {
     id: '0',
     date: new Date(),

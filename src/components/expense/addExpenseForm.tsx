@@ -16,7 +16,7 @@ const margin = (top: number, right: number, bottom: number, left: number) => css
   margin: ${top}rem ${right}rem ${bottom}rem ${left}rem !important;
 `;
 
-interface AddExpenseFormProps {
+interface Props {
   handleChangeAmount?: (e: FormEvent, { key }: InputOnChangeData) => void;
   handleChangeDate?: (e: FormEvent, { key }: DropdownProps) => void;
   handleChangeTag?: (e: FormEvent, { key }: DropdownProps) => void;
@@ -35,7 +35,7 @@ interface AddExpenseFormProps {
   }[];
 }
 
-export const AddExpenseFormComponent: FC<AddExpenseFormProps> = ({
+export const AddExpenseFormComponent: FC<Props> = ({
   handleClick = () => {},
   handleChangeAmount = () => {},
   handleChangeDate = () => {},

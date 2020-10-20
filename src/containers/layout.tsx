@@ -10,11 +10,11 @@ import { logout, deleteUser } from '../firebase/auth';
 import { auth } from '../firebase/index';
 import { LayoutComponent } from '../components/layout/layout';
 
-interface LayoutProps {
+interface Props {
   currentUser?: User | null;
 }
 
-export const Layout: FC<LayoutProps> = ({ currentUser, children }) => {
+export const Layout: FC<Props> = ({ currentUser, children }) => {
   const [activeItem, setActiveItem] = useState<Page>('home');
   const [isConfirmOpen, setIsConfirmOpen] = useState<boolean>(false);
   const [messageVisible, setMessageVisible] = useState<boolean>(false);

@@ -10,7 +10,7 @@ export interface InputData {
   value: string | null;
 }
 
-export interface LoginFormProps {
+interface Props {
   handleClick?: () => Promise<void>;
   handleChangeEmail?: (event: FormEvent, { value }: InputData) => void;
   handleChangePassword?: (event: FormEvent, { value }: InputData) => void;
@@ -19,7 +19,7 @@ export interface LoginFormProps {
   loginAnonymously?: () => void;
 }
 
-export const LoginFormComponent: FC<LoginFormProps> = ({
+export const LoginFormComponent: FC<Props> = ({
   handleClick = () => {},
   handleChangeEmail = () => {},
   handleChangePassword = () => {},
