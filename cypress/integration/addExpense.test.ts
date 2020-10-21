@@ -20,7 +20,7 @@ describe('add expense', () => {
     cy.findByPlaceholderText('Expense').type(`${amount}`);
     cy.findByRole('button', { name: 'Submit' }).click();
     cy.wait(3000);
-    cy.findByTestId('expense-table').contains(`${amount}`);
+    cy.findAllByTestId('table-unit').first().contains(`${amount}`).should('exist');
   });
 
   it('支出の登録失敗', () => {
