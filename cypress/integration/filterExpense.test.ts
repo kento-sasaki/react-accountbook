@@ -29,6 +29,8 @@ describe('filter expense', () => {
 
     cy.wait(3000);
     cy.findByTestId('detail-table').findByTestId(tag.icon).click();
-    cy.findAllByTestId('table-unit').first().contains(`${tag.text}`).should('exist');
+    cy.findAllByTestId('table-unit').each((element) => {
+      cy.wrap(element).contains(`${tag.text}`).should('exist');
+    });
   });
 });
