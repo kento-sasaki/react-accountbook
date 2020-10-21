@@ -45,7 +45,7 @@ export const AppBar: FC<Props> = ({
 }) => {
   const UserDropdownMenu: FC = () => {
     return (
-      <div>
+      <div data-testid="logined-user-menu">
         <Dropdown item text="User Menu">
           <Dropdown.Menu>
             <Dropdown.Item onClick={handleLogoutClick}>Log out</Dropdown.Item>
@@ -98,6 +98,7 @@ export const AppBar: FC<Props> = ({
           onClick={handleItemClick}
           name="home"
           active={activeItem === 'home'}
+          data-testid="home-menu"
         >
           Home
         </Responsive>
@@ -107,6 +108,7 @@ export const AppBar: FC<Props> = ({
           onClick={handleItemClick}
           name="contact"
           active={activeItem === 'contact'}
+          data-testid="contact-menu"
         >
           Contact
         </Responsive>
@@ -118,6 +120,7 @@ export const AppBar: FC<Props> = ({
           active={activeItem === 'login' || activeItem === 'logout'}
           position="right"
           css={padding(0, 0)}
+          data-testid="login-logout-menu"
         >
           {currentUser ? <UserDropdownMenu /> : <Segment basic>Log in</Segment>}
         </Responsive>

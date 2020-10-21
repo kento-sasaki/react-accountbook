@@ -29,6 +29,7 @@ export const ExpenseBarChart: FC<Props> = ({ expense }) => {
       css={css`
         height: ${height}px;
       `}
+      data-testid="expense-bar-chart"
     >
       <ResponsiveBar
         data={data}
