@@ -72,16 +72,7 @@ describe('edit expense', () => {
   });
 
   it('タグを編集', () => {
-    const tags = [
-      { text: 'その他', icon: 'tag' },
-      { text: '食費', icon: 'food' },
-      { text: '家賃', icon: 'home' },
-      { text: '電気代', icon: 'power.cord' },
-      { text: '水道代', icon: 'bath' },
-      { text: 'ガス代', icon: 'fire' },
-      { text: '電話', icon: 'phone' },
-      { text: '交通費', icon: 'subway' },
-    ];
+    const tags = ['その他', '食費', '家賃', '電気代', '水道代', 'ガス代', '電話', '交通費'];
     const newTag = tags[Math.floor(Math.random() * 1000) % 8];
 
     cy.wait(3000);
@@ -89,10 +80,10 @@ describe('edit expense', () => {
     cy.findAllByTestId('table-unit').first().findByTestId('tag-text').click();
     cy.findAllByTestId('table-unit')
       .first()
-      .findByRole('option', { name: `${newTag.text}` })
+      .findByRole('option', { name: `${newTag}` })
       .click();
     cy.findAllByTestId('table-unit').first().contains('Save').click();
     cy.wait(3000);
-    cy.findAllByTestId('table-unit').first().contains(`${newTag.text}`).should('exist');
+    cy.findAllByTestId('table-unit').first().contains(`${newTag}`).should('exist');
   });
 });

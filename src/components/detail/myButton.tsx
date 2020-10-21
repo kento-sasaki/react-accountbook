@@ -36,6 +36,7 @@ export const MyButton: FC<Props> = ({ detail, handleRequireClick }) => {
       basic={basic}
       fluid
       onClick={handleClick}
+      data-testid={detail.icon}
     />
   );
 };
