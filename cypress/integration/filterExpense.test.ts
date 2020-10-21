@@ -1,15 +1,15 @@
 describe('filter expense', () => {
   before(() => {
     cy.visit('/');
-    cy.get('div.ui.top.fixed.menu > a.item').contains('Log in').click();
-    cy.get('input').get('[placeholder="E-mail address"]').type(Cypress.env('email'));
-    cy.get('input').get('[placeholder="Password"]').type(Cypress.env('password'));
-    cy.get('button.ui.teal.circular.fluid.button').click();
+    cy.findByTestId('login-logout-menu').click();
+    cy.findByPlaceholderText('E-mail address').type(Cypress.env('email'));
+    cy.findByPlaceholderText('Password').type(Cypress.env('password'));
+    cy.findByRole('button', { name: 'Log in' }).click();
   });
 
   after(() => {
-    cy.get('div.ui.top.fixed.menu > a.item').contains('User Menu').click();
-    cy.get('.ui.active.visible.item.dropdown').contains('Log out').click();
+    cy.findByTestId('logined-user-menu').click();
+    cy.findByRole('option', { name: 'Log out' }).click();
     cy.url().should('eq', 'http://localhost:3000/');
     cy.title().should('eq', 'Home | VisiBO');
   });
@@ -19,7 +19,7 @@ describe('filter expense', () => {
       { text: 'その他', icon: 'tag' },
       { text: '食費', icon: 'food' },
       { text: '家賃', icon: 'home' },
-      { text: '電気代', icon: 'power.cord' },
+      { text: '電気代', icon: 'power cord' },
       { text: '水道代', icon: 'bath' },
       { text: 'ガス代', icon: 'fire' },
       { text: '電話', icon: 'phone' },
@@ -27,8 +27,10 @@ describe('filter expense', () => {
     ];
     const tag = tags[Math.floor(Math.random() * 1000) % 8];
 
-    cy.pause();
-    cy.get(`[data-testid="detail-table"]  i.${tag.icon}.icon`).click();
-    cy.get('[data-testid="expense-table"] > tbody > tr:first').contains(`${tag.text}`);
+    cy.wait(3000);
+    cy.findByTestId('detail-table').findByTestId(tag.icon).click();
+    cy.findAllByTestId('table-unit').each((element) => {
+      cy.wrap(element).contains(`${tag.text}`).should('exist');
+    });
   });
 });

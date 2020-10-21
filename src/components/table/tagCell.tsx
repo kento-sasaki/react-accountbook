@@ -51,6 +51,7 @@ export const TagCellComponent: FC<Props> = ({
             options={tagOptions}
             onChange={handleChangeTag}
             defaultValue={expense.tagLabel}
+            data-testid="tag-text"
           />
         }
       />

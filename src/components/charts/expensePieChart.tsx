@@ -27,6 +27,7 @@ export const ExpensePieChart: FC<Props> = ({ expense }) => {
       css={css`
         height: ${height}px;
       `}
+      data-testid="expense-pie-chart"
     >
       <ResponsivePie
         data={data}
