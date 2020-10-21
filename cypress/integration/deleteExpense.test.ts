@@ -42,7 +42,7 @@ describe('delete expnese', () => {
         cy.findAllByTestId('table-unit').first().contains('Delete').click();
         cy.findByRole('button', { name: 'Cancel' }).click();
         cy.wait(3000);
-        cy.findAllByTestId('table-unit').first().contains(`${amount}`);
+        cy.findAllByTestId('table-unit').first().contains(`${amount}`).should('exist');
       });
   });
 });
