@@ -49,7 +49,7 @@ export const AddExpenseFormComponent: FC<Props> = ({
   ],
 }) => {
   return (
-    <Grid columns="equal">
+    <Grid columns="equal" data-testid="add-expense-form">
       <Grid.Row stretched>
         <Grid.Column
           width={12}
@@ -96,6 +96,7 @@ export const AddExpenseFormComponent: FC<Props> = ({
               text={tag}
               options={tagOptions}
               onChange={handleChangeTag}
+              data-testid="tag-text"
             />
           </div>
         </Grid.Column>
