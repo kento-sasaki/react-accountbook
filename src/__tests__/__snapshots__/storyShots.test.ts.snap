@@ -46,7 +46,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
             className="text"
             role="alert"
           >
-            2020/10/23
+            2020/10/24
           </div>
           <i
             aria-hidden="true"
@@ -568,7 +568,7 @@ exports[`Storyshots Home Logined Home 1`] = `
                   className="text"
                   role="alert"
                 >
-                  2020/10/23
+                  2020/10/24
                 </div>
                 <i
                   aria-hidden="true"
@@ -582,6 +582,24 @@ exports[`Storyshots Home Logined Home 1`] = `
                     aria-checked={false}
                     aria-selected={true}
                     className="selected item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/24
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
                     onClick={[Function]}
                     role="option"
                     style={
@@ -1116,24 +1134,6 @@ exports[`Storyshots Home Logined Home 1`] = `
                       className="text"
                     >
                       2020/9/24
-                    </span>
-                  </div>
-                  <div
-                    aria-checked={false}
-                    aria-selected={false}
-                    className="item"
-                    onClick={[Function]}
-                    role="option"
-                    style={
-                      Object {
-                        "pointerEvents": "all",
-                      }
-                    }
-                  >
-                    <span
-                      className="text"
-                    >
-                      2020/9/23
                     </span>
                   </div>
                 </div>

@@ -4,11 +4,14 @@ import axios from 'axios';
 import { loading, loaded } from '../stores/loading';
 
 export const useVision = (fileData: File | undefined) => {
+  console.log('useVision'); // conosole.log
   const [amount, setAmount] = useState<number | undefined>(undefined);
+  const [error, setError] = useState<string | undefined>(undefined);
   const dispatch = useDispatch();
 
   useEffect(() => {
     setAmount(undefined);
+    setError(undefined);
   }, []);
 
   const reader = new FileReader();
@@ -32,17 +35,30 @@ export const useVision = (fileData: File | undefined) => {
         ],
       };
 
-      const res: any = await axios.post(url, body).catch((error) => {
-        console.log(error);
+      const res: any = await axios.post(url, body).catch((err) => {
+        console.log(err);
+        setError('Vision APIでエラーが発生しました');
+        dispatch(loaded());
       });
-      setAmount(
-        Number(
-          res.data.responses[0].fullTextAnnotation.text
-            .match(/\n合計\n[¥\d,]+\n/gu)[0]
-            .match(/\d+/g)
-            ?.join(''),
-        ),
-      );
+
+      if (res.data.responses[0].fullTextAnnotation) {
+        const result = res.data.responses[0].fullTextAnnotation.text
+          .match(/\n合計\n[¥\d,]+\n/gu)[0]
+          .match(/\d+/g);
+
+        if (result) {
+          setAmount(Number(result.join('')));
+          dispatch(loaded());
+
+          return;
+        }
+        setError('支出額を抽出できません');
+        dispatch(loaded());
+
+        return;
+      }
+      setError('支出額を抽出できません');
+      dispatch(loaded());
     }
     dispatch(loaded());
   };
@@ -57,6 +73,10 @@ export const useVision = (fileData: File | undefined) => {
     amountByVision: amount,
     resetAmountByVision: () => {
       setAmount(undefined);
+    },
+    error,
+    resetError: () => {
+      setError(undefined);
     },
   };
 };
