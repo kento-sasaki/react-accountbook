@@ -59,7 +59,7 @@ export const InputFileComponent: FC<Props> = React.memo(
         <input
           id={id}
           type="file"
-          accept="image/*"
+          accept="image/png, image/jpeg"
           onChange={selectFile}
           css={css`
             display: none;

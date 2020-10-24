@@ -4,7 +4,6 @@ import axios from 'axios';
 import { loading, loaded } from '../stores/loading';
 
 export const useVision = (fileData: File | undefined) => {
-  console.log('useVision'); // conosole.log
   const [amount, setAmount] = useState<number | undefined>(undefined);
   const [error, setError] = useState<string | undefined>(undefined);
   const dispatch = useDispatch();

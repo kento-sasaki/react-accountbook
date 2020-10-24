@@ -13,10 +13,6 @@ export const InputFile: FC = () => {
   const { amountByVision, resetAmountByVision, error, resetError } = useVision(fileData);
 
   useEffect(() => {
-    console.log('Error: ', error);
-    if (error) {
-      // setIsOpen()
-    }
     if (!fileData) {
       resetAmountByVision();
       resetError();
@@ -35,8 +31,6 @@ export const InputFile: FC = () => {
         : tempFileData.name;
     setDisplayName(tempDisplayName);
     setIsDisabled(false);
-
-    console.log('fileData', fileData);
   };
 
   const handleAnalyzeClick = () => {

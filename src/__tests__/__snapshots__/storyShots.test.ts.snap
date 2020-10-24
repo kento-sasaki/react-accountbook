@@ -1428,7 +1428,7 @@ exports[`Storyshots Home Logined Home 1`] = `
                 >
                   Select
                   <input
-                    accept="image/*"
+                    accept="image/png, image/jpeg"
                     className="css-1pqrjel-MyInput"
                     id="selectFile"
                     onChange={[Function]}
@@ -1964,7 +1964,7 @@ exports[`Storyshots InputFile Input File 1`] = `
           >
             Select
             <input
-              accept="image/*"
+              accept="image/png, image/jpeg"
               className="css-1pqrjel-MyInput"
               id="selectFile"
               onChange={[Function]}
