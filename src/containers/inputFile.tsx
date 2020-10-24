@@ -10,16 +10,17 @@ export const InputFile: FC = () => {
   const [displayName, setDisplayName] = useState<string>('File name');
   const [isDisabled, setIsDisabled] = useState<boolean>(true);
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const { amountByVision, resetAmountByVision } = useVision(fileData);
+  const { amountByVision, resetAmountByVision, error, resetError } = useVision(fileData);
 
   useEffect(() => {
     if (!fileData) {
       resetAmountByVision();
+      resetError();
     }
     if (fileData && amountByVision) {
       setIsOpen(true);
     }
-  }, [amountByVision, fileData, resetAmountByVision]);
+  }, [amountByVision, error, fileData, resetAmountByVision, resetError]);
 
   const selectFile = async (e: any) => {
     const tempFileData = e.target.files[0];
@@ -42,6 +43,7 @@ export const InputFile: FC = () => {
   const closeModal = () => {
     setFileData(undefined);
     setIsOpen(false);
+    resetError();
   };
 
   return (
@@ -54,6 +56,7 @@ export const InputFile: FC = () => {
       file={{ data: selectedFileData, displayName }}
       isDisabled={isDisabled}
       isOpen={isOpen}
+      error={error}
     />
   );
 };

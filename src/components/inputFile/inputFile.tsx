@@ -37,6 +37,7 @@ interface Props {
   };
   isDisabled?: boolean;
   isOpen?: boolean;
+  error?: string;
 }
 
 export const InputFileComponent: FC<Props> = React.memo(
@@ -50,6 +51,7 @@ export const InputFileComponent: FC<Props> = React.memo(
     file = undefined,
     isDisabled = true,
     isOpen = false,
+    error = false,
   }) => {
     const MyInput = () => (
       <label css={label} htmlFor={id}>
@@ -57,7 +59,7 @@ export const InputFileComponent: FC<Props> = React.memo(
         <input
           id={id}
           type="file"
-          accept="image/*"
+          accept="image/png, image/jpeg"
           onChange={selectFile}
           css={css`
             display: none;
@@ -121,6 +123,14 @@ export const InputFileComponent: FC<Props> = React.memo(
           </Modal.Content>
           <Modal.Actions>
             <Button basic color="grey" content="Cancel" onClick={closeModal} />
+          </Modal.Actions>
+        </Modal>
+        <Modal size="mini" onClose={closeModal} open={!!error}>
+          <Modal.Content>
+            <Header as="h5" content={error} />
+          </Modal.Content>
+          <Modal.Actions>
+            <Button icon="close" basic color="grey" content="Close" onClick={closeModal} />
           </Modal.Actions>
         </Modal>
       </Grid>
