@@ -30,19 +30,18 @@ export const LoginedHomeComponent: FC<Props> = ({
     <Grid centered css={margin(0, 0.5, 0, 0.5)}>
       <Grid.Column mobile={16} tablet={16} computer={16} largeScreen={12} widescreen={12}>
         <Segment>
-          <Header content="Latest expenses" />
+          <Header as="h4" content="最近の支出" />
           <ExpenseBarChart expense={displayExpense} />
         </Segment>
       </Grid.Column>
       <Grid.Column mobile={16} tablet={5} computer={4} largeScreen={4} widescreen={4}>
         <Segment>
-          <Header content="Breakdown of expenses" textAlign="center" />
+          <Header as="h4" content="支出の内訳" />
           <ExpensePieChart expense={displayExpense} />
         </Segment>
       </Grid.Column>
       <Grid.Column mobile={16} tablet={11} computer={12} largeScreen={9} widescreen={6}>
         <Segment attached="top">
-          <Header>More information</Header>
           <Detail expense={expense} handleRequireClick={handleRequireClick} />
         </Segment>
         <Message attached="bottom">
@@ -51,10 +50,10 @@ export const LoginedHomeComponent: FC<Props> = ({
       </Grid.Column>
       <Grid.Column mobile={16} tablet={14} computer={13} largeScreen={7} widescreen={6}>
         <Segment>
-          <Header content="Register your expenses" />
+          <Header as="h4" content="支出を登録" />
           <AddExpenseForm />
           <Divider />
-          <Header size="medium" content="Register your expenses from the receipts" />
+          <Header as="h4" content="レシートの画像から支出を登録" />
           <InputFile />
         </Segment>
       </Grid.Column>

@@ -44,7 +44,7 @@ export const ExpenseBarChart: FC<Props> = ({ expense }) => {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: 'Date',
+          legend: '日付',
           legendPosition: 'middle',
           legendOffset: 40,
         }}
@@ -52,7 +52,7 @@ export const ExpenseBarChart: FC<Props> = ({ expense }) => {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: 'Expense',
+          legend: '支出額',
           legendPosition: 'middle',
           legendOffset: -65,
         }}

@@ -117,7 +117,7 @@ export const InputFileComponent: FC<Props> = React.memo(
           </Grid.Column>
         </Grid.Row>
         <Modal onClose={closeModal} onOpen={openModal} open={isOpen}>
-          <Header>Register your expenses from the receipts</Header>
+          <Header as="h4" content="レシートの画像から支出を登録" />
           <Modal.Content>
             <AddExpenseForm initialAmount={amountByVision} optionFunction={closeModal} />
           </Modal.Content>
