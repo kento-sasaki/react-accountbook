@@ -60,7 +60,7 @@ export const Detail: FC<Props> = ({ expense, handleRequireClick = () => {} }) =>
           </Grid.Column>
           <Grid.Column verticalAlign="middle" width="5">
             <Segment inverted color="teal" textAlign="center">
-              <Header content="Total expenses" />
+              <Header content="支出総額" />
               <Header size="huge">
                 ¥
                 {tagExpenses

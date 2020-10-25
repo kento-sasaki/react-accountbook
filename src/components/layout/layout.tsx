@@ -91,7 +91,6 @@ export const LayoutComponent: FC<Props> = ({
         <Sidebar
           as={Menu}
           animation="overlay"
-          onHide={handleSidebarClick}
           vertical
           visible={sidebarVisible}
           width="thin"

@@ -46,7 +46,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
             className="text"
             role="alert"
           >
-            2020/10/24
+            2020/10/25
           </div>
           <i
             aria-hidden="true"
@@ -284,7 +284,7 @@ exports[`Storyshots Detail Detail 1`] = `
         <div
           className="ui header"
         >
-          Total expenses
+          支出総額
         </div>
         <div
           className="ui huge header"
@@ -340,11 +340,11 @@ exports[`Storyshots Home Logined Home 1`] = `
     <div
       className="ui segment"
     >
-      <div
+      <h4
         className="ui header"
       >
-        Latest expenses
-      </div>
+        最近の支出
+      </h4>
       <div
         className="css-pfiut8-ExpenseBarChart"
         data-testid="expense-bar-chart"
@@ -366,11 +366,11 @@ exports[`Storyshots Home Logined Home 1`] = `
     <div
       className="ui segment"
     >
-      <div
-        className="ui center aligned header"
+      <h4
+        className="ui header"
       >
-        Breakdown of expenses
-      </div>
+        支出の内訳
+      </h4>
       <div
         className="css-16xhmz8-ExpensePieChart"
         data-testid="expense-pie-chart"
@@ -392,11 +392,6 @@ exports[`Storyshots Home Logined Home 1`] = `
     <div
       className="ui top attached segment"
     >
-      <div
-        className="ui header"
-      >
-        More information
-      </div>
       <div
         className="ui equal width grid"
         data-testid="detail-table"
@@ -489,7 +484,7 @@ exports[`Storyshots Home Logined Home 1`] = `
               <div
                 className="ui header"
               >
-                Total expenses
+                支出総額
               </div>
               <div
                 className="ui huge header"
@@ -518,11 +513,11 @@ exports[`Storyshots Home Logined Home 1`] = `
     <div
       className="ui segment"
     >
-      <div
+      <h4
         className="ui header"
       >
-        Register your expenses
-      </div>
+        支出を登録
+      </h4>
       <div
         className="ui equal width grid"
         data-testid="add-expense-form"
@@ -568,7 +563,7 @@ exports[`Storyshots Home Logined Home 1`] = `
                   className="text"
                   role="alert"
                 >
-                  2020/10/24
+                  2020/10/25
                 </div>
                 <i
                   aria-hidden="true"
@@ -582,6 +577,24 @@ exports[`Storyshots Home Logined Home 1`] = `
                     aria-checked={false}
                     aria-selected={true}
                     className="selected item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/25
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
                     onClick={[Function]}
                     role="option"
                     style={
@@ -1118,24 +1131,6 @@ exports[`Storyshots Home Logined Home 1`] = `
                       2020/9/25
                     </span>
                   </div>
-                  <div
-                    aria-checked={false}
-                    aria-selected={false}
-                    className="item"
-                    onClick={[Function]}
-                    role="option"
-                    style={
-                      Object {
-                        "pointerEvents": "all",
-                      }
-                    }
-                  >
-                    <span
-                      className="text"
-                    >
-                      2020/9/24
-                    </span>
-                  </div>
                 </div>
               </div>
               <div
@@ -1387,11 +1382,11 @@ exports[`Storyshots Home Logined Home 1`] = `
       <div
         className="ui divider"
       />
-      <div
-        className="ui medium header"
+      <h4
+        className="ui header"
       >
-        Register your expenses from the receipts
-      </div>
+        レシートの画像から支出を登録
+      </h4>
       <div
         className="ui equal width grid"
       >

@@ -44,8 +44,8 @@ export const Layout: FC<Props> = ({ currentUser, children }) => {
       const pageName = name as Page;
       setActiveItem(pageName);
       history.push(pages[pageName].path);
-      setSidebarVisible(false);
     }
+    setSidebarVisible(false);
   };
 
   const handleLogoutClick = async () => {

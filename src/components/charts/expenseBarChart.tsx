@@ -35,7 +35,7 @@ export const ExpenseBarChart: FC<Props> = ({ expense }) => {
         data={data}
         keys={['amount']}
         indexBy="mmdd"
-        margin={{ top: 20, right: 20, bottom: 50, left: 60 }}
+        margin={{ top: 20, right: 0, bottom: 45, left: 70 }}
         colors="#00b5ad"
         borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
         axisTop={null}
@@ -44,19 +44,19 @@ export const ExpenseBarChart: FC<Props> = ({ expense }) => {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: 'Date',
+          legend: '日付',
           legendPosition: 'middle',
-          legendOffset: 32,
+          legendOffset: 40,
         }}
         axisLeft={{
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: 'Expense',
+          legend: '支出額',
           legendPosition: 'middle',
-          legendOffset: -40,
+          legendOffset: -65,
         }}
-        labelSkipWidth={12}
+        labelSkipWidth={30}
         labelSkipHeight={12}
         labelTextColor="white"
         legends={[
