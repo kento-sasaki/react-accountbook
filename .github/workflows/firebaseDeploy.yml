@@ -44,7 +44,7 @@ jobs:
           name: build
           path: build
       - name: Unit test
-        run: npm run test:c
+        run: npx firebase emulators:exec --only firestore 'react-scripts test --coverage --watchAll=false'
   deploy:
     name: Deploy
     needs: [build, test]
