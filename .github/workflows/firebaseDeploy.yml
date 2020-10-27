@@ -43,14 +43,15 @@ jobs:
         with:
           name: build
           path: build
-      - name: Execute firebase emulators
-        uses: w9jds/firebase-action@master
+      - name: Setup Node
+        uses: actions/setup-node@v1
         with:
-          args: firebase emulators:start
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-      - name: Unit test
-        run: react-scripts test --coverage --watchAll=false
+          node-version: '12.x'
+      - name: npm install and unit test
+        run: |
+          npm install
+          npm i -g firebase-tools
+          firebase emulators:exec --only firestore 'react-scripts test --coverage --watchAll=false'
   deploy:
     name: Deploy
     needs: [build, test]
