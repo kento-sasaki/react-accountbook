@@ -16,10 +16,7 @@ jobs:
         with:
           node-version: '12.x'
       - name: Unit test
-        run: |
-          npm i
-          npm i -g firebase-tools react-scripts
-          firebase emulators:exec --only firestore 'react-scripts test --watchAll=false'
+        run: npm run react-scripts test --watchAll=false
   build:
     name: Build
     needs: test
