@@ -5,23 +5,24 @@ on:
       - master
 
 jobs:
-  test:
-    name: Test
+  cypress-run:
+    name: E2E Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
-      - name: Setup Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-      - name: npm install
+      - name: Install Dependencies
         run: npm i
-      - name: Unit test
-        run: npm run react-scripts test --watchAll=false
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          headless: true
+          start: npm run start # github actionsのVM内でlocalhostを立ち上げ
+          wait-on: 'http://localhost:3000' # localhostが立ち上がるまでwaitさせる
   build:
     name: Build
-    needs: test
+    needs: cypress-run
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -48,7 +49,7 @@ jobs:
           path: build
   deploy:
     name: Deploy
-    needs: [test, build]
+    needs: [cypress-run, build]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
