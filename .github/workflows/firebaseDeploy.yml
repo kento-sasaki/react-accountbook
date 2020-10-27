@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
-      - name: Install Dependencies
-        run: npm i
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
@@ -20,6 +18,8 @@ jobs:
           headless: true
           start: npm run start # github actionsのVM内でlocalhostを立ち上げ
           wait-on: 'http://localhost:3000' # localhostが立ち上がるまでwaitさせる
+        env:
+          SKIP_PREFLIGHT_CHECK: true
   build:
     name: Build
     needs: cypress-run
