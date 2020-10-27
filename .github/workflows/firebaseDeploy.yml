@@ -46,7 +46,8 @@ jobs:
         run: |
           npm i
           npm i -g firebase-tools
-          firebase emulators:exec --only firestore 'npm run react-scripts test --coverage --watchAll=false'
+          npm i -g react-scripts
+          firebase emulators:exec --only firestore 'react-scripts test --coverage --watchAll=false'
   deploy:
     name: Deploy
     needs: [build, test]
