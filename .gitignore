@@ -9,7 +9,7 @@
 /coverage
 /cypress/videos
 /cypress/screenshots
-cypress.json
+# cypress.json
 
 # production
 /build
