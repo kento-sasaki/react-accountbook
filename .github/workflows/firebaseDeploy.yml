@@ -47,11 +47,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - name: npm install and unit test
+      - name: Unit test
         run: |
-          npm install
           npm i -g firebase-tools
-          firebase emulators:exec --only firestore 'react-scripts test --coverage --watchAll=false'
+          firebase emulators:exec --only firestore 'npm run react-scripts test --coverage --watchAll=false'
   deploy:
     name: Deploy
     needs: [build, test]
