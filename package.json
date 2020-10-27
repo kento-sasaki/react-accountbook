@@ -53,6 +53,11 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
+    "@firebase/testing": "^0.20.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^10.0.4",
+    "@testing-library/user-event": "^10.1.0",
+    "@testing-library/cypress": "^7.0.1",
     "@google-cloud/vision": "^2.1.2",
     "@nivo/bar": "^0.62.0",
     "@nivo/pie": "^0.62.0",
@@ -85,7 +90,6 @@
     "typescript": "^3.8.3"
   },
   "devDependencies": {
-    "@firebase/testing": "^0.20.0",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-console": "^1.2.1",
     "@storybook/addon-info": "^5.3.18",
@@ -97,10 +101,6 @@
     "@storybook/addons": "^5.3.18",
     "@storybook/preset-create-react-app": "^2.1.1",
     "@storybook/react": "^5.3.18",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^10.0.4",
-    "@testing-library/user-event": "^10.1.0",
-    "@testing-library/cypress": "^7.0.1",
     "@types/storybook__addon-actions": "^5.2.1",
     "@types/storybook__addon-info": "^5.2.1",
     "@types/storybook__addon-knobs": "^5.2.1",
