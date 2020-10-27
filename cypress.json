@@ -1,0 +1,9 @@
+{
+  "baseUrl": "http://localhost:3000/:",
+  "env": {
+    "email": "kozukata1993@gmail.com",
+    "password": "kozukatadmin"
+  },
+  "viewportWidth": 1600,
+  "viewportHeight": 1200
+}
