@@ -15,7 +15,6 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           browser: chrome
-          headless: true
           start: npm run start # github actionsのVM内でlocalhostを立ち上げ
           wait-on: 'http://localhost:3000' # localhostが立ち上がるまでwaitさせる
         env:
