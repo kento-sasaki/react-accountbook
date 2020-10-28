@@ -15,8 +15,8 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           browser: chrome
-          start: npm run start # github actionsのVM内でlocalhostを立ち上げ
-          wait-on: 'http://localhost:3000' # localhostが立ち上がるまでwaitさせる
+          start: npm run start
+          wait-on: 'http://localhost:3000'
         env:
           REACT_APP_FIREBASE_API_KEY: ${{ secrets.REACT_APP_FIREBASE_API_KEY }}
           REACT_APP_FIREBASE_AUTH_DOMAIN: ${{ secrets.REACT_APP_FIREBASE_AUTH_DOMAIN }}
@@ -26,6 +26,8 @@ jobs:
           REACT_APP_FIREBASE_STORAGE_BUCKET: ${{ secrets.REACT_APP_FIREBASE_STORAGE_BUCKET }}
           REACT_APP_SLACK_WEBHOOK: ${{ secrets.REACT_APP_SLACK_WEBHOOK }}
           REACT_APP_VISION_API_KEY: ${{ secrets.REACT_APP_VISION_API_KEY }}
+          cypress_admin_email: ${{secrets.cypress_admin_email}}
+          cypress_admin_password: ${{secrets.cypress_admin_password}}
           SKIP_PREFLIGHT_CHECK: true
   build:
     name: Build
