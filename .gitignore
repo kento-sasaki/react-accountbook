@@ -30,6 +30,7 @@ yarn-error.log*
 .env.development
 .env.production
 /.firebase
+cypress.env.json
 
 /**/firebase.service-account.json
 /**/vision.service-account.json

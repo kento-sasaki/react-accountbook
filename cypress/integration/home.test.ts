@@ -17,8 +17,8 @@ describe('the home page', () => {
 
   it('ログインとログアウト', () => {
     cy.findByTestId('login-logout-menu').click();
-    cy.findByPlaceholderText('E-mail address').type(Cypress.env('email'));
-    cy.findByPlaceholderText('Password').type(Cypress.env('password'));
+    cy.findByPlaceholderText('E-mail address').type(Cypress.env('admin_email'));
+    cy.findByPlaceholderText('Password').type(Cypress.env('admin_password'));
     cy.findByRole('button', { name: 'Log in' }).click();
 
     cy.findAllByTestId('expense-bar-chart').should('exist');
