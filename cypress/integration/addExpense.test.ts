@@ -16,16 +16,16 @@ describe('add expense', () => {
 
   it('支出の登録成功', () => {
     const amount = Math.floor(Math.random() * 1000);
-    cy.wait(3000);
+    cy.wait(2000);
     cy.findByPlaceholderText('Expense').type(`${amount}`);
     cy.findByRole('button', { name: 'Submit' }).click();
-    cy.wait(3000);
+    cy.wait(2000);
     cy.findAllByTestId('table-unit').first().contains(`${amount}`).should('exist');
   });
 
   it('支出の登録失敗', () => {
     const amount = '千五百';
-    cy.wait(3000);
+    cy.wait(2000);
     cy.findByPlaceholderText('Expense').type(`${amount}`);
     cy.findByRole('button', { name: 'Submit' }).should('be.disabled');
   });

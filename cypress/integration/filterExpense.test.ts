@@ -27,7 +27,7 @@ describe('filter expense', () => {
     ];
     const tag = tags[Math.floor(Math.random() * 1000) % 8];
 
-    cy.wait(3000);
+    cy.wait(2000);
 
     tags.forEach(({ text }) => {
       const amount = Math.floor(Math.random() * 1000);
@@ -37,7 +37,7 @@ describe('filter expense', () => {
         .findByRole('option', { name: `${text}` })
         .click();
       cy.findByRole('button', { name: 'Submit' }).click();
-      cy.wait(3000);
+      cy.wait(2000);
       cy.findAllByTestId('table-unit').first().contains(`${amount}`).should('exist');
       cy.findAllByTestId('table-unit').first().contains(`${text}`).should('exist');
     });
@@ -45,6 +45,14 @@ describe('filter expense', () => {
     cy.findByTestId('detail-table').findByTestId(tag.icon).click();
     cy.findAllByTestId('table-unit').each((element) => {
       cy.wrap(element).contains(`${tag.text}`).should('exist');
+    });
+    cy.wait(2000);
+    cy.findByTestId('detail-table').findByTestId(tag.icon).click();
+
+    tags.forEach(() => {
+      cy.findAllByTestId('table-unit').first().contains('Delete').click();
+      cy.findByRole('button', { name: 'OK' }).click();
+      cy.wait(2000);
     });
   });
 });

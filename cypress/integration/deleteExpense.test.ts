@@ -15,7 +15,7 @@ describe('delete expnese', () => {
   });
 
   it('支出の削除', () => {
-    cy.wait(3000);
+    cy.wait(2000);
 
     return cy
       .findAllByTestId('table-unit')
@@ -25,13 +25,13 @@ describe('delete expnese', () => {
 
         cy.findAllByTestId('table-unit').first().contains('Delete').click();
         cy.findByRole('button', { name: 'OK' }).click();
-        cy.wait(3000);
+        cy.wait(2000);
         cy.findAllByTestId('table-unit').first().should('not.contain', amount);
       });
   });
 
   it('支出の削除をキャンセル', () => {
-    cy.wait(3000);
+    cy.wait(2000);
 
     return cy
       .findAllByTestId('table-unit')
@@ -41,7 +41,7 @@ describe('delete expnese', () => {
 
         cy.findAllByTestId('table-unit').first().contains('Delete').click();
         cy.findByRole('button', { name: 'Cancel' }).click();
-        cy.wait(3000);
+        cy.wait(2000);
         cy.findAllByTestId('table-unit').first().contains(`${amount}`).should('exist');
       });
   });

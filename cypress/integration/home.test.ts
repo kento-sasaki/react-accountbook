@@ -27,7 +27,7 @@ describe('the home page', () => {
     cy.findByPlaceholderText('Expense').should('exist');
     cy.findByTestId('detail-table').should('exist');
 
-    cy.wait(3000);
+    cy.wait(2000);
     cy.findByTestId('logined-user-menu').click();
     cy.findByRole('option', { name: 'Log out' }).click();
     cy.url().should('eq', 'http://localhost:3000/');

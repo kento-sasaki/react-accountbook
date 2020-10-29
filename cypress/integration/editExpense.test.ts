@@ -17,7 +17,7 @@ describe('edit expense', () => {
   it('金額を編集', () => {
     const newAmount = Math.floor(Math.random() * 1000);
 
-    cy.wait(3000);
+    cy.wait(2000);
 
     return cy
       .findAllByTestId('table-unit')
@@ -32,7 +32,7 @@ describe('edit expense', () => {
           .clear()
           .type(`${newAmount}`);
         cy.findAllByTestId('table-unit').first().contains('Save').click();
-        cy.wait(3000);
+        cy.wait(2000);
         cy.findAllByTestId('table-unit').first().contains(`${newAmount}`).should('exist');
       });
   });
@@ -40,7 +40,7 @@ describe('edit expense', () => {
   it('支出の修正失敗', () => {
     const newAmount = '千五百';
 
-    cy.wait(3000);
+    cy.wait(2000);
 
     return cy
       .findAllByTestId('table-unit')
@@ -56,7 +56,7 @@ describe('edit expense', () => {
           .type(`${newAmount}`);
         cy.findAllByTestId('table-unit').first().contains('Save').should('be.disabled');
         cy.findAllByTestId('table-unit').first().contains('Cancel').click();
-        cy.wait(3000);
+        cy.wait(2000);
         cy.findAllByTestId('table-unit').first().contains(`${currentAmount}`).should('exist');
 
         cy.findAllByTestId('table-unit').first().contains('Edit').click();
@@ -66,7 +66,7 @@ describe('edit expense', () => {
           .clear()
           .type('1500');
         cy.findAllByTestId('table-unit').first().contains('Save').click();
-        cy.wait(3000);
+        cy.wait(2000);
         cy.findAllByTestId('table-unit').first().contains('1500').should('exist');
       });
   });
@@ -75,7 +75,7 @@ describe('edit expense', () => {
     const tags = ['その他', '食費', '家賃', '電気代', '水道代', 'ガス代', '電話', '交通費'];
     const newTag = tags[Math.floor(Math.random() * 1000) % 8];
 
-    cy.wait(3000);
+    cy.wait(2000);
     cy.findAllByTestId('table-unit').first().contains('Edit').click();
     cy.findAllByTestId('table-unit').first().findByTestId('tag-text').click();
     cy.findAllByTestId('table-unit')
@@ -83,7 +83,7 @@ describe('edit expense', () => {
       .findByRole('option', { name: `${newTag}` })
       .click();
     cy.findAllByTestId('table-unit').first().contains('Save').click();
-    cy.wait(3000);
+    cy.wait(2000);
     cy.findAllByTestId('table-unit').first().contains(`${newTag}`).should('exist');
   });
 });
