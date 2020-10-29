@@ -46,5 +46,13 @@ describe('filter expense', () => {
     cy.findAllByTestId('table-unit').each((element) => {
       cy.wrap(element).contains(`${tag.text}`).should('exist');
     });
+    cy.wait(2000);
+    cy.findByTestId('detail-table').findByTestId(tag.icon).click();
+
+    tags.forEach(() => {
+      cy.findAllByTestId('table-unit').first().contains('Delete').click();
+      cy.findByRole('button', { name: 'OK' }).click();
+      cy.wait(3000);
+    });
   });
 });
