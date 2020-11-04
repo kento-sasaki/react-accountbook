@@ -4,35 +4,31 @@ import { getExpenses } from '../firebase/firestore';
 
 const expenseSlice = createSlice({
   name: 'expense',
-  initialState: {
-    expense: [
-      {
-        id: '0',
-        date: new Date(),
-        formatedDate: dayjs().format('YYYY/M/D'),
-        amount: 0,
-        tagLabel: 'その他',
-        tagIcon: 'tag',
-      },
-    ],
-  },
+  initialState: [
+    {
+      id: '0',
+      date: new Date(),
+      formatedDate: dayjs().format('YYYY/M/D'),
+      amount: 0,
+      tagLabel: 'その他',
+      tagIcon: 'tag',
+    },
+  ],
   reducers: {
     setExpense: (prevState, action) => {
-      return { expense: action.payload };
+      return action.payload;
     },
     resetExpense: () => {
-      return {
-        expense: [
-          {
-            id: '0',
-            date: new Date(),
-            formatedDate: dayjs().format('YYYY/M/D'),
-            amount: 0,
-            tagLabel: 'その他',
-            tagIcon: 'tag',
-          },
-        ],
-      };
+      return [
+        {
+          id: '0',
+          date: new Date(),
+          formatedDate: dayjs().format('YYYY/M/D'),
+          amount: 0,
+          tagLabel: 'その他',
+          tagIcon: 'tag',
+        },
+      ];
     },
   },
 });

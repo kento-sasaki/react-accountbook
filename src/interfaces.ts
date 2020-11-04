@@ -18,22 +18,9 @@ export type TagLabel =
   | '交通費';
 
 export interface Store {
-  expense: {
-    expense: {
-      id: string;
-      date: Date;
-      formatedDate: string;
-      amount: number;
-      tagLabel: TagLabel;
-      tagIcon: string;
-    }[];
-  };
-  isLoading: {
-    isLoading: boolean;
-  };
-  device: {
-    device: 'widescreen' | 'largeScreen' | 'computer' | 'tablet' | 'mobile';
-  };
+  expense: StoreExpense[];
+  isLoading: boolean;
+  device: StoreDevice;
 }
 
 export interface StoreExpense {

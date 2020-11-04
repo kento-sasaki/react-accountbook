@@ -20,7 +20,7 @@ export const Layout: FC<Props> = ({ currentUser, children }) => {
   const [messageVisible, setMessageVisible] = useState<boolean>(false);
   const [sidebarVisible, setSidebarVisible] = useState<boolean>(false);
   const [isLoginFormOpen, setIsLoginFormOpen] = useState<boolean>(false);
-  const isLoading = useSelector((store: Store) => store.isLoading.isLoading);
+  const isLoading = useSelector((store: Store) => store.isLoading);
 
   const history = useHistory();
 
