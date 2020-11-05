@@ -41,7 +41,7 @@ const displayNone = css`
 export const LogoutedHome: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const history = useHistory();
-  const device = useSelector((store: Store) => store.device.device);
+  const device = useSelector((store: Store) => store.device);
 
   const handleGuestClick = () => {
     loginAnonymously();

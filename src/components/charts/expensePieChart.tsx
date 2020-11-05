@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const ExpensePieChart: FC<Props> = ({ expense }) => {
-  const device = useSelector((store: Store) => store.device.device);
+  const device = useSelector((store: Store) => store.device);
   const height = device === 'widescreen' || device === 'largeScreen' ? 300 : 230;
   const margin =
     device === 'widescreen' || device === 'largeScreen'

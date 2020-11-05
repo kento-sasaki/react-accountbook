@@ -6,7 +6,7 @@ import { LoginedHomeComponent } from '../components/home/loginedHome';
 import { Store, TagLabel } from '../interfaces';
 
 export const LoginedHome: FC = () => {
-  const expense = useSelector((store: Store) => store.expense.expense);
+  const expense = useSelector((store: Store) => store.expense);
   const [requireTags, setRequireTags] = useState<TagLabel[]>([]);
 
   const handleRequireClick = ({ tagLabel, require }: { tagLabel: TagLabel; require: boolean }) => {
