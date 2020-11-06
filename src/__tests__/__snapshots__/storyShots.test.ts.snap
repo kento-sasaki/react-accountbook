@@ -46,7 +46,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
             className="text"
             role="alert"
           >
-            2020/11/05
+            2020/11/06
           </div>
           <i
             aria-hidden="true"
@@ -563,7 +563,7 @@ exports[`Storyshots Home Logined Home 1`] = `
                   className="text"
                   role="alert"
                 >
-                  2020/11/05
+                  2020/11/06
                 </div>
                 <i
                   aria-hidden="true"
@@ -577,6 +577,24 @@ exports[`Storyshots Home Logined Home 1`] = `
                     aria-checked={false}
                     aria-selected={true}
                     className="selected item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/11/6
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
                     onClick={[Function]}
                     role="option"
                     style={
@@ -1111,24 +1129,6 @@ exports[`Storyshots Home Logined Home 1`] = `
                       className="text"
                     >
                       2020/10/7
-                    </span>
-                  </div>
-                  <div
-                    aria-checked={false}
-                    aria-selected={false}
-                    className="item"
-                    onClick={[Function]}
-                    role="option"
-                    style={
-                      Object {
-                        "pointerEvents": "all",
-                      }
-                    }
-                  >
-                    <span
-                      className="text"
-                    >
-                      2020/10/6
                     </span>
                   </div>
                 </div>
@@ -1794,7 +1794,7 @@ exports[`Storyshots Home Logouted Home 1`] = `
         className="middle aligned ten wide column"
       >
         <div
-          className="ui basic vertical left aligned segment"
+          className="ui vertical left aligned segment"
         >
           <div
             className="ui large header css-1qr6ibh-LogoutedHome"

@@ -18,7 +18,10 @@ export type TagLabel =
   | '交通費';
 
 export interface Store {
-  expense: StoreExpense[];
+  expense: {
+    ids: string[];
+    entities: any;
+  };
   isLoading: boolean;
   device: StoreDevice;
 }
