@@ -1,11 +1,15 @@
 import { createSlice, Dispatch } from '@reduxjs/toolkit';
 import dayjs from 'dayjs';
+import { normalize, schema } from 'normalizr';
 import { getExpenses } from '../firebase/firestore';
 
-const expenseSlice = createSlice({
-  name: 'expense',
-  initialState: [
-    {
+const initialState: {
+  ids: string[];
+  entities: any;
+} = {
+  ids: ['0'],
+  entities: {
+    '0': {
       id: '0',
       date: new Date(),
       formatedDate: dayjs().format('YYYY/M/D'),
@@ -13,22 +17,25 @@ const expenseSlice = createSlice({
       tagLabel: 'その他',
       tagIcon: 'tag',
     },
-  ],
+  },
+};
+
+const expenseSlice = createSlice({
+  name: 'expense',
+  initialState,
   reducers: {
     setExpense: (prevState, action) => {
-      return action.payload;
+      const myData = { expenses: action.payload };
+      const mySchema = { expenses: [new schema.Entity('expenses')] };
+      const normalizedData = normalize(myData, mySchema);
+
+      return {
+        ids: normalizedData.result.expenses,
+        entities: normalizedData.entities.expenses,
+      };
     },
     resetExpense: () => {
-      return [
-        {
-          id: '0',
-          date: new Date(),
-          formatedDate: dayjs().format('YYYY/M/D'),
-          amount: 0,
-          tagLabel: 'その他',
-          tagIcon: 'tag',
-        },
-      ];
+      return initialState;
     },
   },
 });

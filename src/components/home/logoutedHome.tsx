@@ -64,7 +64,7 @@ export const LogoutedHome: FC = () => {
       <Grid centered columns="equal" container>
         <Grid.Row css={margin(0, 5)}>
           <Grid.Column width={columnwidth} verticalAlign="middle">
-            <Segment basic textAlign="left" vertical>
+            <Segment textAlign="left" vertical>
               <Header size={headerSize('medium', 'large')} css={fontColor}>
                 {visiboLogo}が<p>あなたの支出を見やすくします。</p>
               </Header>
