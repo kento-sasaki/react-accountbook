@@ -20,7 +20,7 @@ export type TagLabel =
 export interface Store {
   expense: {
     ids: string[];
-    entities: any;
+    entities: Record<string, StoreExpense>;
   };
   isLoading: boolean;
   device: StoreDevice;
