@@ -4,15 +4,15 @@ import { useSelector } from 'react-redux';
 import { jsx } from '@emotion/core';
 import { denormalize, schema } from 'normalizr';
 import { LoginedHomeComponent } from '../components/home/loginedHome';
-import { Store, TagLabel } from '../interfaces';
+import { Store, TagLabel, StoreExpense } from '../interfaces';
 
 export const LoginedHome: FC = () => {
-  const normalizedExpense = useSelector((store: Store) => store.expense);
+  const { ids, entities } = useSelector((store: Store) => store.expense);
   const expense = denormalize(
-    { expenses: normalizedExpense.ids },
+    { expenses: ids },
     { expenses: [new schema.Entity('expenses')] },
-    { expenses: normalizedExpense.entities },
-  ).expenses;
+    { expenses: entities },
+  ).expenses as StoreExpense[];
 
   const [requireTags, setRequireTags] = useState<TagLabel[]>([]);
 
@@ -28,7 +28,7 @@ export const LoginedHome: FC = () => {
   const displayExpense =
     requireTags.length === 0
       ? expense
-      : expense.filter((exp: any) => requireTags.includes(exp.tagLabel));
+      : expense.filter((exp) => requireTags.includes(exp.tagLabel));
 
   return (
     <LoginedHomeComponent
