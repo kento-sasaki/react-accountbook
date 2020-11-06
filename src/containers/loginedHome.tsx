@@ -7,11 +7,11 @@ import { LoginedHomeComponent } from '../components/home/loginedHome';
 import { Store, TagLabel, StoreExpense } from '../interfaces';
 
 export const LoginedHome: FC = () => {
-  const normalizedExpense = useSelector((store: Store) => store.expense);
+  const { ids, entities } = useSelector((store: Store) => store.expense);
   const expense = denormalize(
-    { expenses: normalizedExpense.ids },
+    { expenses: ids },
     { expenses: [new schema.Entity('expenses')] },
-    { expenses: normalizedExpense.entities },
+    { expenses: entities },
   ).expenses as StoreExpense[];
 
   const [requireTags, setRequireTags] = useState<TagLabel[]>([]);
