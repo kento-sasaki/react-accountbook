@@ -13,6 +13,7 @@ import {
 } from 'semantic-ui-react';
 import { Page } from '../../pages';
 import { User } from '../../interfaces';
+import { LogoIcon } from '../../images/logo';
 
 interface Props {
   currentUser?: User | null;
@@ -72,11 +73,14 @@ export const AppBar: FC<Props> = ({
         font-family: 'Lexend Peta', sans-serif;
         font-size: 2rem !important;
         color: #fff;
-        padding: 0 !important;
+        padding: 0 1rem !important;
         margin: 0.5rem 1.5rem !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       `}
     >
-      VisiBO
+      <LogoIcon /> VisiBO
     </Segment>
   );
 
