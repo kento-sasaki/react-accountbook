@@ -1,0 +1,2624 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots AddExpenseForm Add Expense 1`] = `
+<div
+  className="ui equal width grid"
+  data-testid="add-expense-form"
+>
+  <div
+    className="stretched row"
+  >
+    <div
+      className="twelve wide column css-qgf78i-AddExpenseFormComponent"
+    >
+      <div
+        className="ui left icon input css-1njot19-AddExpenseFormComponent"
+      >
+        <input
+          onChange={[Function]}
+          placeholder="Expense"
+          type="text"
+          value=""
+        />
+        <i
+          aria-hidden="true"
+          className="jpy icon"
+          onClick={[Function]}
+        />
+      </div>
+      <div
+        className="css-19cdt2s-AddExpenseFormComponent"
+      >
+        <div
+          aria-expanded={false}
+          className="ui button fluid labeled selection dropdown icon css-loyvww-AddExpenseFormComponent"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseDown={[Function]}
+          role="listbox"
+          tabIndex={0}
+        >
+          <div
+            aria-atomic={true}
+            aria-live="polite"
+            className="text"
+            role="alert"
+          >
+            2020/11/16
+          </div>
+          <i
+            aria-hidden="true"
+            className="calendar alternate outline icon"
+            onClick={[Function]}
+          />
+          <div
+            className="menu transition"
+          >
+            <div
+              aria-checked={false}
+              aria-selected={true}
+              className="selected item"
+              onClick={[Function]}
+              role="option"
+              style={
+                Object {
+                  "pointerEvents": "all",
+                }
+              }
+            >
+              <span
+                className="text"
+              >
+                Date
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-expanded={false}
+          className="ui button fluid labeled selection dropdown icon css-3npr72-AddExpenseFormComponent"
+          data-testid="tag-text"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseDown={[Function]}
+          role="listbox"
+          tabIndex={0}
+        >
+          <div
+            aria-atomic={true}
+            aria-live="polite"
+            className="text"
+            role="alert"
+          />
+          <i
+            aria-hidden="true"
+            className="tag icon"
+            onClick={[Function]}
+          />
+          <div
+            className="menu transition"
+          >
+            <div
+              aria-checked={false}
+              aria-selected={true}
+              className="selected item"
+              color="#838383"
+              colorlabel="grey"
+              onClick={[Function]}
+              role="option"
+              style={
+                Object {
+                  "pointerEvents": "all",
+                }
+              }
+            >
+              <i
+                aria-hidden="true"
+                className="tag icon"
+                onClick={[Function]}
+              />
+              <span
+                className="text"
+              >
+                その他
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="column css-e437w8-AddExpenseFormComponent"
+    >
+      <button
+        className="ui teal disabled button"
+        disabled={true}
+        onClick={[Function]}
+        tabIndex={-1}
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Contact Contact 1`] = `
+<div
+  className="ui container"
+>
+  <div
+    className="ui basic segment"
+  >
+    <div
+      className="ui header"
+    >
+      ぜひご意見をお寄せください。
+    </div>
+    <form
+      className="ui form"
+      onSubmit={[Function]}
+    >
+      <div
+        className="field"
+      >
+        <textarea
+          aria-describedby={null}
+          onChange={[Function]}
+          onInput={[Function]}
+          placeholder="Please give me your feedback."
+          rows={9}
+          value=""
+        />
+      </div>
+      <div
+        className="field"
+      >
+        <button
+          aria-describedby={null}
+          className="ui teal circular button"
+          onClick={[Function]}
+        >
+          送信
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Detail Detail 1`] = `
+<div
+  className="ui equal width grid"
+  data-testid="detail-table"
+>
+  <div
+    className="stretched row"
+  >
+    <div
+      className="eleven wide column"
+    >
+      <div
+        className="css-ov1ktg"
+      >
+        <button
+          className="ui violet large basic fluid button css-gl25xf-MyButton"
+          data-testid="home"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="home icon"
+            onClick={[Function]}
+          />
+          ¥ 5000
+        </button>
+        <button
+          className="ui blue large basic fluid button css-gl25xf-MyButton"
+          data-testid="bath"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="bath icon"
+            onClick={[Function]}
+          />
+          ¥ 4000
+        </button>
+      </div>
+      <div
+        className="css-ov1ktg"
+      >
+        <button
+          className="ui red large basic fluid button css-gl25xf-MyButton"
+          data-testid="fire"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="fire icon"
+            onClick={[Function]}
+          />
+          ¥ 3000
+        </button>
+        <button
+          className="ui yellow large basic fluid button css-gl25xf-MyButton"
+          data-testid="power cord"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="power cord icon"
+            onClick={[Function]}
+          />
+          ¥ 2000
+        </button>
+      </div>
+      <div
+        className="css-ov1ktg"
+      >
+        <button
+          className="ui teal large basic fluid button css-gl25xf-MyButton"
+          data-testid="food"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="food icon"
+            onClick={[Function]}
+          />
+          ¥ 1000
+        </button>
+      </div>
+    </div>
+    <div
+      className="middle aligned five wide column"
+    >
+      <div
+        className="ui teal inverted center aligned segment"
+      >
+        <div
+          className="ui header"
+        >
+          支出総額
+        </div>
+        <div
+          className="ui huge header"
+        >
+          ¥
+          15000
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ExpenseBarChart Expense Bar Chart 1`] = `
+<div
+  className="css-pfiut8-ExpenseBarChart"
+  data-testid="expense-bar-chart"
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "width": "100%",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots ExpensePieChart Expense Pie Chart 1`] = `
+<div
+  className="css-16xhmz8-ExpensePieChart"
+  data-testid="expense-pie-chart"
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "width": "100%",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Home Computer Home 1`] = `
+<div
+  className="ui centered grid css-1i08tjs-ComputerHomeComponent"
+>
+  <div
+    className="sixteen wide computer twelve wide large screen sixteen wide tablet twelve wide widescreen column"
+  >
+    <div
+      className="ui segment"
+    >
+      <h4
+        className="ui header"
+      >
+        最近の支出
+      </h4>
+      <div
+        className="css-pfiut8-ExpenseBarChart"
+        data-testid="expense-bar-chart"
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="four wide computer four wide large screen five wide tablet four wide widescreen column"
+  >
+    <div
+      className="ui segment"
+    >
+      <h4
+        className="ui header"
+      >
+        支出の内訳
+      </h4>
+      <div
+        className="css-16xhmz8-ExpensePieChart"
+        data-testid="expense-pie-chart"
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="twelve wide computer nine wide large screen eleven wide tablet six wide widescreen column"
+  >
+    <div
+      className="ui top attached segment"
+    >
+      <div
+        className="ui equal width grid"
+        data-testid="detail-table"
+      >
+        <div
+          className="stretched row"
+        >
+          <div
+            className="eleven wide column"
+          >
+            <div
+              className="css-ov1ktg"
+            >
+              <button
+                className="ui violet large basic fluid button css-gl25xf-MyButton"
+                data-testid="home"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="home icon"
+                  onClick={[Function]}
+                />
+                ¥ 5000
+              </button>
+              <button
+                className="ui blue large basic fluid button css-gl25xf-MyButton"
+                data-testid="bath"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="bath icon"
+                  onClick={[Function]}
+                />
+                ¥ 4000
+              </button>
+            </div>
+            <div
+              className="css-ov1ktg"
+            >
+              <button
+                className="ui red large basic fluid button css-gl25xf-MyButton"
+                data-testid="fire"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="fire icon"
+                  onClick={[Function]}
+                />
+                ¥ 3000
+              </button>
+              <button
+                className="ui yellow large basic fluid button css-gl25xf-MyButton"
+                data-testid="power cord"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="power cord icon"
+                  onClick={[Function]}
+                />
+                ¥ 2000
+              </button>
+            </div>
+            <div
+              className="css-ov1ktg"
+            >
+              <button
+                className="ui teal large basic fluid button css-gl25xf-MyButton"
+                data-testid="food"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="food icon"
+                  onClick={[Function]}
+                />
+                ¥ 1000
+              </button>
+            </div>
+          </div>
+          <div
+            className="middle aligned five wide column"
+          >
+            <div
+              className="ui teal inverted center aligned segment"
+            >
+              <div
+                className="ui header"
+              >
+                支出総額
+              </div>
+              <div
+                className="ui huge header"
+              >
+                ¥
+                15000
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="ui bottom attached message"
+    >
+      <h5
+        className="ui header"
+      >
+        タグをクリックすると、そのタグごとの表示に切り替えます。
+      </h5>
+    </div>
+  </div>
+  <div
+    className="thirteen wide computer seven wide large screen fourteen wide tablet six wide widescreen column"
+  >
+    <div
+      className="ui segment"
+    >
+      <h4
+        className="ui header"
+      >
+        支出を登録
+      </h4>
+      <div
+        className="ui equal width grid"
+        data-testid="add-expense-form"
+      >
+        <div
+          className="stretched row"
+        >
+          <div
+            className="twelve wide column css-qgf78i-AddExpenseFormComponent"
+          >
+            <div
+              className="ui left icon input css-1njot19-AddExpenseFormComponent"
+            >
+              <input
+                onChange={[Function]}
+                placeholder="Expense"
+                type="text"
+                value=""
+              />
+              <i
+                aria-hidden="true"
+                className="jpy icon"
+                onClick={[Function]}
+              />
+            </div>
+            <div
+              className="css-19cdt2s-AddExpenseFormComponent"
+            >
+              <div
+                aria-expanded={false}
+                className="ui button fluid labeled selection dropdown icon css-loyvww-AddExpenseFormComponent"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                role="listbox"
+                tabIndex={0}
+              >
+                <div
+                  aria-atomic={true}
+                  aria-live="polite"
+                  className="text"
+                  role="alert"
+                >
+                  2020/11/16
+                </div>
+                <i
+                  aria-hidden="true"
+                  className="calendar alternate outline icon"
+                  onClick={[Function]}
+                />
+                <div
+                  className="menu transition"
+                >
+                  <div
+                    aria-checked={false}
+                    aria-selected={true}
+                    className="selected item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/11/16
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/11/15
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/11/14
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/11/13
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/11/12
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/11/11
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/11/10
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/11/9
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/11/8
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/11/7
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/11/6
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/11/5
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/11/4
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/11/3
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/11/2
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/11/1
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/31
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/30
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/29
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/28
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/27
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/26
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/25
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/24
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/23
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/22
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/21
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/20
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/19
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/18
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/10/17
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-expanded={false}
+                className="ui button fluid labeled selection dropdown icon css-3npr72-AddExpenseFormComponent"
+                data-testid="tag-text"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                role="listbox"
+                tabIndex={0}
+              >
+                <div
+                  aria-atomic={true}
+                  aria-live="polite"
+                  className="text"
+                  role="alert"
+                >
+                  その他
+                </div>
+                <i
+                  aria-hidden="true"
+                  className="tag icon"
+                  onClick={[Function]}
+                />
+                <div
+                  className="menu transition"
+                >
+                  <div
+                    aria-checked={false}
+                    aria-selected={true}
+                    className="selected item"
+                    color="#838383"
+                    colorlabel="grey"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="tag icon"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="text"
+                    >
+                      その他
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    color="#049C94"
+                    colorlabel="teal"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="food icon"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="text"
+                    >
+                      食費
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    color="#5929BB"
+                    colorlabel="violet"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="home icon"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="text"
+                    >
+                      家賃
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    color="#EBAE00"
+                    colorlabel="yellow"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="power cord icon"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="text"
+                    >
+                      電気代
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    color="#1778C1"
+                    colorlabel="blue"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="bath icon"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="text"
+                    >
+                      水道代
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    color="#D11A1A"
+                    colorlabel="red"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="fire icon"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="text"
+                    >
+                      ガス代
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    color="#F36203"
+                    colorlabel="orange"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="phone icon"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="text"
+                    >
+                      電話
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
+                    color="#13AB38"
+                    colorlabel="green"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="subway icon"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="text"
+                    >
+                      交通費
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="column css-e437w8-AddExpenseFormComponent"
+          >
+            <button
+              className="ui teal disabled button"
+              disabled={true}
+              onClick={[Function]}
+              tabIndex={-1}
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="ui divider"
+      />
+      <h4
+        className="ui header"
+      >
+        レシートの画像から支出を登録
+      </h4>
+      <div
+        className="ui equal width grid"
+      >
+        <div
+          className="stretched row"
+        >
+          <div
+            className="twelve wide column css-1hou2l"
+          >
+            <div
+              className="css-ov1ktg"
+            >
+              <div
+                className="ui left icon input css-xcdh1p"
+              >
+                <input
+                  onChange={[Function]}
+                  type="text"
+                  value="File name"
+                />
+                <i
+                  aria-hidden="true"
+                  className="file image outline icon"
+                  onClick={[Function]}
+                />
+              </div>
+              <button
+                className="ui teal basic fluid button css-1v2598d"
+                onClick={[Function]}
+              >
+                <label
+                  className="css-loex5j-MyInput"
+                  htmlFor="selectFile"
+                >
+                  Select
+                  <input
+                    accept="image/png, image/jpeg"
+                    className="css-1pqrjel-MyInput"
+                    id="selectFile"
+                    onChange={[Function]}
+                    type="file"
+                  />
+                </label>
+              </button>
+            </div>
+          </div>
+          <div
+            className="column css-1olrttr"
+          >
+            <button
+              className="ui teal disabled button"
+              disabled={true}
+              onClick={[Function]}
+              tabIndex={-1}
+            >
+              Analyze
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="thirteen wide computer twelve wide large screen fourteen wide tablet twelve wide widescreen column"
+  >
+    <div
+      className="ui segment"
+    >
+      <table
+        className="ui very basic table"
+        data-testid="expense-table"
+      >
+        <thead
+          className=""
+        >
+          <tr
+            className=""
+          >
+            <th
+              className="three wide"
+            >
+              Date
+            </th>
+            <th
+              className="three wide"
+            >
+              Amount
+            </th>
+            <th
+              className="four wide"
+            >
+              Tag
+            </th>
+            <th
+              className="six wide"
+            >
+              Action
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          className=""
+        >
+          <tr
+            className=""
+            data-testid="table-unit"
+          >
+            <td
+              className=""
+            >
+              2020/1/5
+            </td>
+            <td
+              className=""
+            >
+              5000
+            </td>
+            <td
+              className=""
+            >
+              <div
+                className="ui violet large basic label"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="home icon"
+                  onClick={[Function]}
+                />
+                家賃
+              </div>
+            </td>
+            <td
+              className=""
+            >
+              <button
+                className="ui teal basic circular button"
+                data-testid="edit-button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="edit icon"
+                  onClick={[Function]}
+                />
+                Edit
+              </button>
+              <button
+                className="ui red basic circular button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="trash icon"
+                  onClick={[Function]}
+                />
+                Delete
+              </button>
+            </td>
+          </tr>
+          <tr
+            className=""
+            data-testid="table-unit"
+          >
+            <td
+              className=""
+            >
+              2020/1/4
+            </td>
+            <td
+              className=""
+            >
+              4000
+            </td>
+            <td
+              className=""
+            >
+              <div
+                className="ui blue large basic label"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="bath icon"
+                  onClick={[Function]}
+                />
+                水道代
+              </div>
+            </td>
+            <td
+              className=""
+            >
+              <button
+                className="ui teal basic circular button"
+                data-testid="edit-button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="edit icon"
+                  onClick={[Function]}
+                />
+                Edit
+              </button>
+              <button
+                className="ui red basic circular button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="trash icon"
+                  onClick={[Function]}
+                />
+                Delete
+              </button>
+            </td>
+          </tr>
+          <tr
+            className=""
+            data-testid="table-unit"
+          >
+            <td
+              className=""
+            >
+              2020/1/3
+            </td>
+            <td
+              className=""
+            >
+              3000
+            </td>
+            <td
+              className=""
+            >
+              <div
+                className="ui red large basic label"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="fire icon"
+                  onClick={[Function]}
+                />
+                ガス代
+              </div>
+            </td>
+            <td
+              className=""
+            >
+              <button
+                className="ui teal basic circular button"
+                data-testid="edit-button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="edit icon"
+                  onClick={[Function]}
+                />
+                Edit
+              </button>
+              <button
+                className="ui red basic circular button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="trash icon"
+                  onClick={[Function]}
+                />
+                Delete
+              </button>
+            </td>
+          </tr>
+          <tr
+            className=""
+            data-testid="table-unit"
+          >
+            <td
+              className=""
+            >
+              2020/1/2
+            </td>
+            <td
+              className=""
+            >
+              2000
+            </td>
+            <td
+              className=""
+            >
+              <div
+                className="ui yellow large basic label"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="power cord icon"
+                  onClick={[Function]}
+                />
+                電気代
+              </div>
+            </td>
+            <td
+              className=""
+            >
+              <button
+                className="ui teal basic circular button"
+                data-testid="edit-button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="edit icon"
+                  onClick={[Function]}
+                />
+                Edit
+              </button>
+              <button
+                className="ui red basic circular button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="trash icon"
+                  onClick={[Function]}
+                />
+                Delete
+              </button>
+            </td>
+          </tr>
+          <tr
+            className=""
+            data-testid="table-unit"
+          >
+            <td
+              className=""
+            >
+              2020/1/1
+            </td>
+            <td
+              className=""
+            >
+              1000
+            </td>
+            <td
+              className=""
+            >
+              <div
+                className="ui teal large basic label"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="food icon"
+                  onClick={[Function]}
+                />
+                食費
+              </div>
+            </td>
+            <td
+              className=""
+            >
+              <button
+                className="ui teal basic circular button"
+                data-testid="edit-button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="edit icon"
+                  onClick={[Function]}
+                />
+                Edit
+              </button>
+              <button
+                className="ui red basic circular button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="trash icon"
+                  onClick={[Function]}
+                />
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Home Logouted Home 1`] = `
+<div>
+  <div
+    className="ui centered container equal width grid"
+  >
+    <div
+      className="row css-1e4k5ql-LogoutedHome"
+    >
+      <div
+        className="middle aligned ten wide column"
+      >
+        <div
+          className="ui vertical left aligned segment"
+        >
+          <div
+            className="ui large header css-1qr6ibh-LogoutedHome"
+          >
+            <span
+              className="css-kmat2u-LogoutedHome"
+            >
+              VisiBO
+            </span>
+            が
+            <p>
+              あなたの支出を見やすくします。
+            </p>
+          </div>
+          <div
+            className="ui medium header css-1qr6ibh-LogoutedHome"
+          >
+            <span
+              className="css-kmat2u-LogoutedHome"
+            >
+              VisiBO
+            </span>
+            は支出を登録して見やすく整理する家計簿アプリです
+          </div>
+          <div
+            className="equal width row"
+          >
+            <button
+              className="ui teal medium circular button css-tulwei-LogoutedHome"
+              onClick={[Function]}
+            >
+              アカウント登録して使ってみる
+            </button>
+            <button
+              className="ui teal medium basic circular button css-tulwei-LogoutedHome"
+              onClick={[Function]}
+            >
+              ゲストとして使ってみる
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="five wide column css-n539b7-LogoutedHome"
+      >
+        <img
+          className="ui image"
+          src="top.svg"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-1ww925z-LogoutedHome"
+  >
+    <h1
+      className="ui inverted center aligned header"
+    >
+      <span
+        className="css-kmat2u-LogoutedHome"
+      >
+        VisiBO
+      </span>
+      の特徴
+    </h1>
+    <div
+      className="ui centered equal width grid"
+    >
+      <div
+        className="column css-q30sxx-LogoutedHome"
+      >
+        <div
+          className="ui segment"
+        >
+          <h2
+            className="ui center aligned header css-1qr6ibh-LogoutedHome"
+          >
+            様々なチャートで整理
+          </h2>
+          <h4
+            className="ui center aligned header"
+          >
+            棒グラフ、円グラフであなたの支出を見やすく描きます。
+          </h4>
+        </div>
+      </div>
+      <div
+        className="column css-q30sxx-LogoutedHome"
+      >
+        <div
+          className="ui segment"
+        >
+          <h2
+            className="ui center aligned header css-1qr6ibh-LogoutedHome"
+          >
+            レシートから支出を登録
+          </h2>
+          <h4
+            className="ui center aligned header"
+          >
+            レシートの画像から、支出額を抽出して記録します。
+          </h4>
+        </div>
+      </div>
+      <div
+        className="column css-q30sxx-LogoutedHome"
+      >
+        <div
+          className="ui segment"
+        >
+          <h2
+            className="ui center aligned header css-1qr6ibh-LogoutedHome"
+          >
+            タグで支出を分類
+          </h2>
+          <h4
+            className="ui center aligned header"
+          >
+            支出ごとにタグをつけ、整理することができます。
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputFile Input File 1`] = `
+<div
+  className="ui equal width grid"
+>
+  <div
+    className="stretched row"
+  >
+    <div
+      className="twelve wide column css-1hou2l"
+    >
+      <div
+        className="css-ov1ktg"
+      >
+        <div
+          className="ui left icon input css-xcdh1p"
+        >
+          <input
+            onChange={[Function]}
+            type="text"
+            value="File name"
+          />
+          <i
+            aria-hidden="true"
+            className="file image outline icon"
+            onClick={[Function]}
+          />
+        </div>
+        <button
+          className="ui teal basic fluid button css-1v2598d"
+          onClick={[Function]}
+        >
+          <label
+            className="css-loex5j-MyInput"
+            htmlFor="selectFile"
+          >
+            Select
+            <input
+              accept="image/png, image/jpeg"
+              className="css-1pqrjel-MyInput"
+              id="selectFile"
+              onChange={[Function]}
+              type="file"
+            />
+          </label>
+        </button>
+      </div>
+    </div>
+    <div
+      className="column css-1olrttr"
+    >
+      <button
+        className="ui teal disabled button"
+        disabled={true}
+        onClick={[Function]}
+        tabIndex={-1}
+      >
+        Analyze
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Layout Layout 1`] = `
+<div>
+  <div
+    className="ui container"
+  >
+    <div
+      className="ui teal inverted secondary top fixed menu"
+    >
+      <a
+        className="item css-166pk73-AppBar"
+        onClick={[Function]}
+      >
+        <div
+          className="ui basic segment css-1ybupyg-AppBar"
+        >
+          <svg
+            height={33}
+            viewBox="0 0 33 33"
+            width={66}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx={16.5}
+              cy={16.5}
+              fill="white"
+              r={16.5}
+            />
+            <polygon
+              fill="#e9f9f6"
+              points="
+            16.5 1.6500000000000004,
+            28.110197514650242 7.241176442397807,
+            30.97767949590008 19.804435869251268,
+            22.943173525895737 29.879387688350924,
+            10.056826474104263 29.879387688350924,
+            2.0223205040999197 19.80443586925127,
+            4.889802485349756 7.24117644239781,
+          "
+              stroke="#00b5ad"
+              strokeLinejoin="round"
+              strokeWidth={2.5384615384615383}
+            />
+            <polyline
+              fill="#e9f9f6"
+              points="
+            16.5 1.6500000000000004,
+            10.056826474104263 29.879387688350924,
+            4.889802485349756 7.24117644239781,
+            16.5 1.6500000000000004,
+          "
+              stroke="#00b5ad"
+              strokeLinejoin="round"
+              strokeWidth={2.5384615384615383}
+            />
+            <polyline
+              fill="#e9f9f6"
+              points="
+            28.110197514650242 7.241176442397807,
+            13.863787870793768 13.2
+            30.97767949590008 19.804435869251268,
+            28.110197514650242 7.241176442397807,
+          "
+              stroke="#00b5ad"
+              strokeLinejoin="round"
+              strokeWidth={2.5384615384615383}
+            />
+          </svg>
+           VisiBO
+        </div>
+      </a>
+      <a
+        className="active item"
+        data-testid="home-menu"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+      <a
+        className="item"
+        data-testid="contact-menu"
+        onClick={[Function]}
+      >
+        Contact
+      </a>
+      <a
+        className="right item css-1qbahax-AppBar"
+        data-testid="login-logout-menu"
+        onClick={[Function]}
+      >
+        <div
+          className="ui basic segment"
+        >
+          Log in
+        </div>
+      </a>
+    </div>
+  </div>
+  <div
+    className="ui basic segment pushable css-8cp2yq-LayoutComponent"
+  >
+    <div
+      className="ui vertical ui overlay right thin sidebar menu"
+    >
+      <a
+        className="item"
+        onClick={[Function]}
+      >
+        Home
+        <i
+          aria-hidden="true"
+          className="home icon"
+          onClick={[Function]}
+        />
+      </a>
+      <a
+        className="item"
+        onClick={[Function]}
+      >
+        Contact
+        <i
+          aria-hidden="true"
+          className="gamepad icon"
+          onClick={[Function]}
+        />
+      </a>
+      <a
+        className="right item"
+        onClick={[Function]}
+      >
+        Log in
+        <i
+          aria-hidden="true"
+          className="user icon"
+          onClick={[Function]}
+        />
+      </a>
+    </div>
+    <div
+      className="pusher css-156eqkf-LayoutComponent"
+    >
+      <div
+        className="ui basic vertical segment"
+      >
+        <div
+          className="ui info message scale visible transition css-1lm94hq-LayoutComponent"
+          style={
+            Object {
+              "animationDuration": undefined,
+            }
+          }
+        >
+          <div
+            className="content"
+          >
+            <div
+              className="header"
+            >
+              Welcome!
+            </div>
+            <p>
+              You've logged in successfully.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-wr3gd4-Footer"
+      >
+        <div
+          className="ui divider"
+        />
+        <h4>
+          Copyright © 2020 kozukata1993 All Rights Reserved.
+        </h4>
+        <a
+          href="/terms"
+          onClick={[Function]}
+        >
+          利用規約
+        </a>
+         / 
+        <a
+          href="/policy"
+          onClick={[Function]}
+        >
+          プライバシーポリシー
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots LoginForm Login Form 1`] = `
+<div
+  className="ui center aligned middle aligned grid"
+>
+  <div
+    className="four wide column"
+    style={
+      Object {
+        "minWidth": 350,
+      }
+    }
+  >
+    <h2
+      className="ui teal center aligned header"
+    >
+      Log in
+    </h2>
+    <form
+      className="ui form"
+      onSubmit={[Function]}
+    >
+      <div
+        className="required field"
+      >
+        <div
+          className="field"
+        >
+          <div
+            className="ui fluid left icon input"
+          >
+            <input
+              aria-describedby={null}
+              onChange={[Function]}
+              placeholder="E-mail address"
+              type="text"
+            />
+            <i
+              aria-hidden="true"
+              className="at icon"
+              onClick={[Function]}
+            />
+          </div>
+        </div>
+        <div
+          className="field"
+        >
+          <div
+            className="ui fluid left icon input"
+          >
+            <input
+              aria-describedby={null}
+              onChange={[Function]}
+              placeholder="Password"
+              type="password"
+            />
+            <i
+              aria-hidden="true"
+              className="lock icon"
+              onClick={[Function]}
+            />
+          </div>
+        </div>
+        <button
+          className="ui teal circular fluid button"
+          onClick={[Function]}
+        >
+          Log in
+        </button>
+      </div>
+    </form>
+    <div
+      className="ui horizontal section divider"
+    >
+      or
+    </div>
+    <button
+      className="ui google plus circular fluid button css-tycz0v-LoginFormComponent"
+      onClick={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="google icon"
+        onClick={[Function]}
+      />
+      Google でログイン
+    </button>
+    <button
+      className="ui twitter circular fluid button css-tycz0v-LoginFormComponent"
+      onClick={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="twitter icon"
+        onClick={[Function]}
+      />
+      Twitter でログイン
+    </button>
+    <button
+      className="ui grey circular fluid button css-tycz0v-LoginFormComponent"
+      onClick={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="user icon"
+        onClick={[Function]}
+      />
+      ゲスト でログイン
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots MyTable My Table 1`] = `
+<table
+  className="ui table"
+>
+  <tbody
+    className=""
+  >
+    <table
+      className="ui very basic table"
+      data-testid="expense-table"
+    >
+      <thead
+        className=""
+      >
+        <tr
+          className=""
+        >
+          <th
+            className="three wide"
+          >
+            Date
+          </th>
+          <th
+            className="three wide"
+          >
+            Amount
+          </th>
+          <th
+            className="four wide"
+          >
+            Tag
+          </th>
+          <th
+            className="six wide"
+          >
+            Action
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        className=""
+      >
+        <tr
+          className=""
+          data-testid="table-unit"
+        >
+          <td
+            className=""
+          >
+            2020/1/1
+          </td>
+          <td
+            className=""
+          >
+            1000
+          </td>
+          <td
+            className=""
+          >
+            <div
+              className="ui teal large basic label"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="food icon"
+                onClick={[Function]}
+              />
+              食費
+            </div>
+          </td>
+          <td
+            className=""
+          >
+            <button
+              className="ui teal basic circular button"
+              data-testid="edit-button"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="edit icon"
+                onClick={[Function]}
+              />
+              Edit
+            </button>
+            <button
+              className="ui red basic circular button"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="trash icon"
+                onClick={[Function]}
+              />
+              Delete
+            </button>
+          </td>
+        </tr>
+        <tr
+          className=""
+          data-testid="table-unit"
+        >
+          <td
+            className=""
+          >
+            2020/1/2
+          </td>
+          <td
+            className=""
+          >
+            2000
+          </td>
+          <td
+            className=""
+          >
+            <div
+              className="ui yellow large basic label"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="power cord icon"
+                onClick={[Function]}
+              />
+              電気代
+            </div>
+          </td>
+          <td
+            className=""
+          >
+            <button
+              className="ui teal basic circular button"
+              data-testid="edit-button"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="edit icon"
+                onClick={[Function]}
+              />
+              Edit
+            </button>
+            <button
+              className="ui red basic circular button"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="trash icon"
+                onClick={[Function]}
+              />
+              Delete
+            </button>
+          </td>
+        </tr>
+        <tr
+          className=""
+          data-testid="table-unit"
+        >
+          <td
+            className=""
+          >
+            2020/1/3
+          </td>
+          <td
+            className=""
+          >
+            3000
+          </td>
+          <td
+            className=""
+          >
+            <div
+              className="ui red large basic label"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="fire icon"
+                onClick={[Function]}
+              />
+              ガス代
+            </div>
+          </td>
+          <td
+            className=""
+          >
+            <button
+              className="ui teal basic circular button"
+              data-testid="edit-button"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="edit icon"
+                onClick={[Function]}
+              />
+              Edit
+            </button>
+            <button
+              className="ui red basic circular button"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="trash icon"
+                onClick={[Function]}
+              />
+              Delete
+            </button>
+          </td>
+        </tr>
+        <tr
+          className=""
+          data-testid="table-unit"
+        >
+          <td
+            className=""
+          >
+            2020/1/4
+          </td>
+          <td
+            className=""
+          >
+            4000
+          </td>
+          <td
+            className=""
+          >
+            <div
+              className="ui blue large basic label"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="bath icon"
+                onClick={[Function]}
+              />
+              水道代
+            </div>
+          </td>
+          <td
+            className=""
+          >
+            <button
+              className="ui teal basic circular button"
+              data-testid="edit-button"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="edit icon"
+                onClick={[Function]}
+              />
+              Edit
+            </button>
+            <button
+              className="ui red basic circular button"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="trash icon"
+                onClick={[Function]}
+              />
+              Delete
+            </button>
+          </td>
+        </tr>
+        <tr
+          className=""
+          data-testid="table-unit"
+        >
+          <td
+            className=""
+          >
+            2020/1/5
+          </td>
+          <td
+            className=""
+          >
+            5000
+          </td>
+          <td
+            className=""
+          >
+            <div
+              className="ui violet large basic label"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="home icon"
+                onClick={[Function]}
+              />
+              家賃
+            </div>
+          </td>
+          <td
+            className=""
+          >
+            <button
+              className="ui teal basic circular button"
+              data-testid="edit-button"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="edit icon"
+                onClick={[Function]}
+              />
+              Edit
+            </button>
+            <button
+              className="ui red basic circular button"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="trash icon"
+                onClick={[Function]}
+              />
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </tbody>
+</table>
+`;
