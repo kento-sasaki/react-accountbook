@@ -21,7 +21,7 @@ export const MobileHomeComponent: FC<Props> = ({
   handleRequireClick = () => {},
 }) => {
   return (
-    <Segment basic as="div">
+    <Segment basic>
       <Segment>
         <Grid centered>
           <Grid.Column width="10">
@@ -31,13 +31,17 @@ export const MobileHomeComponent: FC<Props> = ({
           <Grid.Column width="6" verticalAlign="middle">
             <Segment basic textAlign="center">
               <Header as="h4" content="支出総額" />
-              <Header
-                content={`¥
+              {expense.length >= 1 ? (
+                <Header
+                  content={`¥
                 ${expense
                   .map((exp) => exp.amount)
                   .reduce((previous, current) => previous + current)}
               `}
-              />
+                />
+              ) : (
+                <Header as="h5" content="¥0" />
+              )}
             </Segment>
           </Grid.Column>
           <Grid.Column width="16">

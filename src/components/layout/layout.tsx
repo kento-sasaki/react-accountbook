@@ -10,7 +10,7 @@ import {
   MenuItemProps,
   Message,
   Transition,
-  Dropdown,
+  Button,
 } from 'semantic-ui-react';
 import { AppBar } from './appBar';
 import { Footer } from './footer';
@@ -146,24 +146,20 @@ export const LayoutComponent: FC<Props> = ({
           <Footer />
         </Sidebar.Pusher>
       </Sidebar.Pushable>
-      {device === 'mobile' && (
-        <Menu fixed="bottom" secondary>
-          <Menu.Item
-            position="right"
-            onClick={() => {
-              console.log('Hello');
-            }}
-          >
-            <Dropdown icon="plus circle" button className="icon">
-              <Dropdown.Menu>
-                <Dropdown.Header icon="tags" content="Filter by tag" />
-                <Dropdown.Item>Important</Dropdown.Item>
-                <Dropdown.Item>Announcement</Dropdown.Item>
-                <Dropdown.Item>Discussion</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </Menu.Item>
-        </Menu>
+      {device === 'mobile' && currentUser && (
+        <Button
+          css={css`
+            position: fixed !important;
+            bottom: 1rem;
+            right: 1rem;
+          `}
+          size="big"
+          circular
+          color="teal"
+          // content="支出を登録する"
+          icon="plus"
+          // labelPosition="right"
+        />
       )}
     </div>
   );
