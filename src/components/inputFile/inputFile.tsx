@@ -71,23 +71,22 @@ export const InputFileComponent: FC<Props> = React.memo(
     );
 
     const device = useSelector((store: Store) => store.device);
-    console.log(device);
 
     return (
       <Grid columns="equal">
         <Grid.Row stretched>
           <Grid.Column
-            width={12}
+            width={device !== 'mobile' ? 12 : 16}
             css={css`
               ${padding(0, 0)}
-              ${margin(0, 0.2, 0, 1)}
+              ${device !== 'mobile' ? margin(0, 0.2, 0, 1) : margin(0, 0.5, 0, 0.5)}
             `}
           >
             <div css={displayFlex}>
               <Input
                 css={css`
                   ${margin(0.1, 0.1, 0.1, 0.1)}
-                  min-width: 19rem;
+                  min-width: ${device !== 'mobile' ? 20 : 15}rem;
                 `}
                 icon="file image outline"
                 iconPosition="left"
@@ -98,7 +97,6 @@ export const InputFileComponent: FC<Props> = React.memo(
                   ${padding(0, 0)}
                   ${margin(0.1, 0.1, 0.1, 0.1)}
                 `}
-                icon="file image outline"
                 basic
                 color="teal"
                 fluid
@@ -110,7 +108,7 @@ export const InputFileComponent: FC<Props> = React.memo(
           <Grid.Column
             css={css`
               ${padding(0, 0)}
-              ${margin(0, 1, 0, 0.2)}
+              ${device !== 'mobile' ? margin(0, 1, 0, 0.2) : margin(0.2, 0.2, 0, 0.4)}
             `}
           >
             <Button
