@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { FC, SyntheticEvent } from 'react';
+import React, { FC, useState, SyntheticEvent } from 'react';
 import { jsx, css } from '@emotion/core';
 import {
   Sidebar,
@@ -11,11 +11,13 @@ import {
   Message,
   Transition,
   Button,
+  Header,
 } from 'semantic-ui-react';
 import { AppBar } from './appBar';
 import { Footer } from './footer';
 import { User, StoreDevice } from '../../interfaces';
 import { LoginForm } from '../../containers/loginForm';
+import { AddExpenseForm } from '../../containers/addExpenseForm';
 import { Page } from '../../pages';
 
 const wrapper = css`
@@ -76,6 +78,8 @@ export const LayoutComponent: FC<Props> = ({
   closeConfirm = () => {},
   closeLoginForm = () => {},
 }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   return (
     <div>
       <AppBar
@@ -156,11 +160,30 @@ export const LayoutComponent: FC<Props> = ({
           size="big"
           circular
           color="teal"
-          // content="支出を登録する"
           icon="plus"
-          // labelPosition="right"
+          onClick={() => {
+            setIsOpen(true);
+          }}
         />
       )}
+      <TransitionablePortal
+        onClose={() => {
+          setIsOpen(false);
+        }}
+        open={isOpen}
+      >
+        <Segment
+          compact
+          css={css`
+            position: fixed !important;
+            bottom: 5rem;
+            right: 1rem;
+          `}
+        >
+          <Header as="h4" content="支出を登録" />
+          <AddExpenseForm />
+        </Segment>
+      </TransitionablePortal>
     </div>
   );
 };

@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import React, { FC } from 'react';
 import { jsx } from '@emotion/core';
-import { Segment, Grid, Header, Divider } from 'semantic-ui-react';
+import { Segment, Grid, Header } from 'semantic-ui-react';
 import { ExpensePieChart } from '../charts/expensePieChart';
-import { MyList } from '../list/myList';
-import { AddExpenseForm } from '../../containers/addExpenseForm';
+// import { MyList } from '../list/myList';
+import { MyTable } from '../table/myTable';
 import { InputFile } from '../../containers/inputFile';
 import { Detail } from '../detail/detail';
 import { StoreExpense, TagLabel } from '../../interfaces';
@@ -50,14 +50,12 @@ export const MobileHomeComponent: FC<Props> = ({
         </Grid>
       </Segment>
       <Segment>
-        <Header as="h4" content="支出を登録" />
-        <AddExpenseForm />
-        <Divider />
         <Header as="h4" content="レシートの画像から支出を登録" />
         <InputFile />
       </Segment>
       <Segment>
-        <MyList expense={displayExpense} />
+        {/* <MyList expense={displayExpense} /> */}
+        <MyTable expense={displayExpense} />
       </Segment>
     </Segment>
   );
