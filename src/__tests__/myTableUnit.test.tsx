@@ -2,7 +2,7 @@ import React from 'react';
 import userEvent from '@testing-library/user-event';
 import dayjs from 'dayjs';
 import { render, cleanup, screen } from '../utils/test-utils';
-import { MyTableUnit } from '../containers/table/myTableUnit';
+import { MyTableUnit } from '../containers/myTableUnit';
 import { StoreExpense } from '../interfaces';
 import '@testing-library/jest-dom';
 

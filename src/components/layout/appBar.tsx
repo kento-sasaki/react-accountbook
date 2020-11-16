@@ -73,8 +73,8 @@ export const AppBar: FC<Props> = ({
         font-family: 'Lexend Peta', sans-serif;
         font-size: 2rem !important;
         color: #fff;
-        padding: 0 1rem !important;
-        margin: 0.5rem 1.5rem !important;
+        padding: 0 !important;
+        margin: 0.5rem 1rem 0.5rem 0rem !important;
         display: flex;
         justify-content: center;
         align-items: center;

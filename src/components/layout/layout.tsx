@@ -10,10 +10,11 @@ import {
   MenuItemProps,
   Message,
   Transition,
+  Dropdown,
 } from 'semantic-ui-react';
 import { AppBar } from './appBar';
 import { Footer } from './footer';
-import { User } from '../../interfaces';
+import { User, StoreDevice } from '../../interfaces';
 import { LoginForm } from '../../containers/loginForm';
 import { Page } from '../../pages';
 
@@ -45,6 +46,7 @@ interface Props {
   messageVisible?: boolean;
   isLoginFormOpen?: boolean;
   isLoading?: boolean;
+  device?: StoreDevice;
   handleItemClick?: (e: SyntheticEvent, { name }: MenuItemProps) => void;
   handleLogoutClick?: () => void;
   handleLoginClick?: () => void;
@@ -64,6 +66,7 @@ export const LayoutComponent: FC<Props> = ({
   messageVisible,
   isLoginFormOpen,
   isLoading,
+  device,
   handleItemClick = () => {},
   handleLogoutClick = () => {},
   handleLoginClick = () => {},
@@ -143,6 +146,25 @@ export const LayoutComponent: FC<Props> = ({
           <Footer />
         </Sidebar.Pusher>
       </Sidebar.Pushable>
+      {device === 'mobile' && (
+        <Menu fixed="bottom" secondary>
+          <Menu.Item
+            position="right"
+            onClick={() => {
+              console.log('Hello');
+            }}
+          >
+            <Dropdown icon="plus circle" button className="icon">
+              <Dropdown.Menu>
+                <Dropdown.Header icon="tags" content="Filter by tag" />
+                <Dropdown.Item>Important</Dropdown.Item>
+                <Dropdown.Item>Announcement</Dropdown.Item>
+                <Dropdown.Item>Discussion</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Menu.Item>
+        </Menu>
+      )}
     </div>
   );
 };

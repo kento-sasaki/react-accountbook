@@ -1,4 +1,5 @@
 import * as firebase from 'firebase/app';
+import { SemanticICONS } from 'semantic-ui-react';
 
 export type User = firebase.User;
 
@@ -17,6 +18,21 @@ export type TagLabel =
   | '電話'
   | '交通費';
 
+export type ColorLabel =
+  | 'green'
+  | 'grey'
+  | 'teal'
+  | 'violet'
+  | 'yellow'
+  | 'blue'
+  | 'red'
+  | 'orange'
+  | 'olive'
+  | 'purple'
+  | 'pink'
+  | 'brown'
+  | 'black';
+
 export interface Store {
   expense: {
     ids: string[];
@@ -32,7 +48,7 @@ export interface StoreExpense {
   formatedDate: string;
   amount: number;
   tagLabel: TagLabel;
-  tagIcon: string;
+  tagIcon: SemanticICONS;
 }
 
 export type StoreDevice = 'widescreen' | 'largeScreen' | 'computer' | 'tablet' | 'mobile';

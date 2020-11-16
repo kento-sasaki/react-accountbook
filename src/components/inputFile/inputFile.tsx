@@ -1,8 +1,10 @@
 /** @jsx jsx */
 import React, { FC, FormEvent } from 'react';
 import { jsx, css } from '@emotion/core';
+import { useSelector } from 'react-redux';
 import { Button, Input, Grid, Modal, Header } from 'semantic-ui-react';
 import { AddExpenseForm } from '../../containers/addExpenseForm';
+import { Store } from '../../interfaces';
 
 const label = css`
   display: flex;
@@ -67,6 +69,9 @@ export const InputFileComponent: FC<Props> = React.memo(
         />
       </label>
     );
+
+    const device = useSelector((store: Store) => store.device);
+    console.log(device);
 
     return (
       <Grid columns="equal">

@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
-import { StoreExpense } from '../interfaces';
+import { SemanticICONS } from 'semantic-ui-react';
+import { StoreExpense, ColorLabel } from '../interfaces';
 
 export const createDailyExpense = (allExpense: StoreExpense[]) => {
   const formatedDateArray = [...allExpense]
@@ -18,7 +19,14 @@ export const createDailyExpense = (allExpense: StoreExpense[]) => {
   return dailyExpense;
 };
 
-export const tagOptions = [
+export const tagOptions: {
+  key: number;
+  text: string;
+  value: string;
+  icon: SemanticICONS;
+  color: string;
+  colorlabel: ColorLabel;
+}[] = [
   { key: 0, text: 'その他', value: 'その他', icon: 'tag', color: '#838383', colorlabel: 'grey' },
   { key: 1, text: '食費', value: '食費', icon: 'food', color: '#049C94', colorlabel: 'teal' },
   { key: 2, text: '家賃', value: '家賃', icon: 'home', color: '#5929BB', colorlabel: 'violet' },
@@ -45,6 +53,10 @@ export const tagOptions = [
 
 export const getTagColor = (tagLabel: string): string => {
   return tagOptions[tagOptions.map(({ text }) => text).indexOf(tagLabel)].color;
+};
+
+export const getColorLabel = (expenseIcon: SemanticICONS): ColorLabel => {
+  return tagOptions[tagOptions.map(({ icon }) => icon).indexOf(expenseIcon)].colorlabel;
 };
 
 export const createPieData = (allExpense: StoreExpense[]) => {

@@ -1,11 +1,12 @@
 /** @jsx jsx */
 import React, { FC } from 'react';
 import { jsx, css } from '@emotion/core';
+import { useSelector } from 'react-redux';
 import _ from 'lodash';
 import { Segment, Grid, Header, SemanticICONS, SemanticCOLORS } from 'semantic-ui-react';
 import { MyButton } from './myButton';
 import { tagOptions, createTagExpense } from '../../utils/utils';
-import { StoreExpense, TagLabel } from '../../interfaces';
+import { StoreExpense, TagLabel, Store } from '../../interfaces';
 
 const displayFlex = css`
   display: flex;
@@ -17,6 +18,7 @@ interface Props {
 }
 
 export const Detail: FC<Props> = ({ expense, handleRequireClick = () => {} }) => {
+  const device = useSelector((store: Store) => store.device);
   const tagExpenses = createTagExpense(expense).map((exp) => {
     return {
       tagLabel: exp.tagLabel,
@@ -42,37 +44,58 @@ export const Detail: FC<Props> = ({ expense, handleRequireClick = () => {} }) =>
       color: SemanticCOLORS;
     }[];
 
-    return (
-      <Grid columns="equal" data-testid="detail-table">
-        <Grid.Row stretched>
-          <Grid.Column width="11">
-            {_.chunk(tagExpensesDetails, 2).map((details, i1, self1) => (
-              <div css={displayFlex} key={self1.indexOf(details)}>
-                {details.map((detail, i2, self2) => (
-                  <MyButton
-                    detail={detail}
-                    key={self2.indexOf(detail)}
-                    handleRequireClick={handleRequireClick}
-                  />
-                ))}
-              </div>
-            ))}
-          </Grid.Column>
-          <Grid.Column verticalAlign="middle" width="5">
-            <Segment inverted color="teal" textAlign="center">
-              <Header content="支出総額" />
-              <Header size="huge">
-                ¥
-                {tagExpenses
-                  .map((exp) => exp.amount)
-                  .reduce((previous, current) => previous + current)}
-              </Header>
-            </Segment>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    );
+    if (device !== 'mobile') {
+      return (
+        <Grid columns="equal" data-testid="detail-table">
+          <Grid.Row stretched>
+            <Grid.Column width="11">
+              {_.chunk(tagExpensesDetails, 2).map((details, i1, self1) => (
+                <div css={displayFlex} key={self1.indexOf(details)}>
+                  {details.map((detail, i2, self2) => (
+                    <MyButton
+                      detail={detail}
+                      key={self2.indexOf(detail)}
+                      handleRequireClick={handleRequireClick}
+                    />
+                  ))}
+                </div>
+              ))}
+            </Grid.Column>
+            <Grid.Column verticalAlign="middle" width="5">
+              <Segment inverted color="teal" textAlign="center">
+                <Header content="支出総額" />
+                <Header size="huge">
+                  ¥
+                  {tagExpenses
+                    .map((exp) => exp.amount)
+                    .reduce((previous, current) => previous + current)}
+                </Header>
+              </Segment>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      );
+    }
+
+    if (device === 'mobile') {
+      return (
+        <div>
+          {_.chunk(tagExpensesDetails, 3).map((details, i1, self1) => (
+            <div css={displayFlex} key={self1.indexOf(details)}>
+              {details.map((detail, i2, self2) => (
+                <MyButton
+                  detail={detail}
+                  key={self2.indexOf(detail)}
+                  handleRequireClick={handleRequireClick}
+                  size="mini"
+                />
+              ))}
+            </div>
+          ))}
+        </div>
+      );
+    }
   }
 
-  return <Header>No expense</Header>;
+  return <Header content="支出がありません" />;
 };
