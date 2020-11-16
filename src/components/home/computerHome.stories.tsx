@@ -1,12 +1,12 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import { Provider } from 'react-redux';
-import { LoginedHomeComponent } from './loginedHome';
+import { ComputerHomeComponent } from './computerHome';
 import { store } from '../../stores/index';
 import { StoreExpense } from '../../interfaces';
 
 export default {
-  component: LoginedHomeComponent,
+  component: ComputerHomeComponent,
   title: 'Home',
 };
 
@@ -53,10 +53,10 @@ const expense: StoreExpense[] = [
   },
 ];
 
-export const loginedHome = () => {
+export const computerHome = () => {
   return (
     <Provider store={store}>
-      <LoginedHomeComponent expense={expense} displayExpense={expense} />
+      <ComputerHomeComponent expense={expense} displayExpense={expense} />
     </Provider>
   );
 };

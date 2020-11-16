@@ -46,7 +46,7 @@ exports[`Storyshots AddExpenseForm Add Expense 1`] = `
             className="text"
             role="alert"
           >
-            2020/11/15
+            2020/11/16
           </div>
           <i
             aria-hidden="true"
@@ -330,12 +330,12 @@ exports[`Storyshots ExpensePieChart Expense Pie Chart 1`] = `
 </div>
 `;
 
-exports[`Storyshots Home Logined Home 1`] = `
+exports[`Storyshots Home Computer Home 1`] = `
 <div
-  className="ui centered grid css-qwb21-LoginedHomeComponent"
+  className="ui centered grid css-1i08tjs-ComputerHomeComponent"
 >
   <div
-    className="sixteen wide computer twelve wide large screen sixteen wide mobile sixteen wide tablet twelve wide widescreen column"
+    className="sixteen wide computer twelve wide large screen sixteen wide tablet twelve wide widescreen column"
   >
     <div
       className="ui segment"
@@ -361,7 +361,7 @@ exports[`Storyshots Home Logined Home 1`] = `
     </div>
   </div>
   <div
-    className="four wide computer four wide large screen sixteen wide mobile five wide tablet four wide widescreen column"
+    className="four wide computer four wide large screen five wide tablet four wide widescreen column"
   >
     <div
       className="ui segment"
@@ -387,7 +387,7 @@ exports[`Storyshots Home Logined Home 1`] = `
     </div>
   </div>
   <div
-    className="twelve wide computer nine wide large screen sixteen wide mobile eleven wide tablet six wide widescreen column"
+    className="twelve wide computer nine wide large screen eleven wide tablet six wide widescreen column"
   >
     <div
       className="ui top attached segment"
@@ -508,7 +508,7 @@ exports[`Storyshots Home Logined Home 1`] = `
     </div>
   </div>
   <div
-    className="thirteen wide computer seven wide large screen sixteen wide mobile fourteen wide tablet six wide widescreen column"
+    className="thirteen wide computer seven wide large screen fourteen wide tablet six wide widescreen column"
   >
     <div
       className="ui segment"
@@ -563,7 +563,7 @@ exports[`Storyshots Home Logined Home 1`] = `
                   className="text"
                   role="alert"
                 >
-                  2020/11/15
+                  2020/11/16
                 </div>
                 <i
                   aria-hidden="true"
@@ -577,6 +577,24 @@ exports[`Storyshots Home Logined Home 1`] = `
                     aria-checked={false}
                     aria-selected={true}
                     className="selected item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      2020/11/16
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-selected={false}
+                    className="item"
                     onClick={[Function]}
                     role="option"
                     style={
@@ -1113,24 +1131,6 @@ exports[`Storyshots Home Logined Home 1`] = `
                       2020/10/17
                     </span>
                   </div>
-                  <div
-                    aria-checked={false}
-                    aria-selected={false}
-                    className="item"
-                    onClick={[Function]}
-                    role="option"
-                    style={
-                      Object {
-                        "pointerEvents": "all",
-                      }
-                    }
-                  >
-                    <span
-                      className="text"
-                    >
-                      2020/10/16
-                    </span>
-                  </div>
                 </div>
               </div>
               <div
@@ -1400,7 +1400,7 @@ exports[`Storyshots Home Logined Home 1`] = `
               className="css-ov1ktg"
             >
               <div
-                className="ui left icon input css-106q0li"
+                className="ui left icon input css-xcdh1p"
               >
                 <input
                   onChange={[Function]}
@@ -1450,7 +1450,7 @@ exports[`Storyshots Home Logined Home 1`] = `
     </div>
   </div>
   <div
-    className="thirteen wide computer twelve wide large screen sixteen wide mobile fourteen wide tablet twelve wide widescreen column"
+    className="thirteen wide computer twelve wide large screen fourteen wide tablet twelve wide widescreen column"
   >
     <div
       className="ui segment"
@@ -1936,7 +1936,7 @@ exports[`Storyshots InputFile Input File 1`] = `
         className="css-ov1ktg"
       >
         <div
-          className="ui left icon input css-106q0li"
+          className="ui left icon input css-xcdh1p"
         >
           <input
             onChange={[Function]}
@@ -1998,7 +1998,7 @@ exports[`Storyshots Layout Layout 1`] = `
         onClick={[Function]}
       >
         <div
-          className="ui basic segment css-5tgj7j-AppBar"
+          className="ui basic segment css-1ybupyg-AppBar"
         >
           <svg
             height={33}

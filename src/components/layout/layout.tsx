@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { FC, SyntheticEvent } from 'react';
+import React, { FC, useState, SyntheticEvent } from 'react';
 import { jsx, css } from '@emotion/core';
 import {
   Sidebar,
@@ -10,11 +10,14 @@ import {
   MenuItemProps,
   Message,
   Transition,
+  Button,
+  Header,
 } from 'semantic-ui-react';
 import { AppBar } from './appBar';
 import { Footer } from './footer';
-import { User } from '../../interfaces';
+import { User, StoreDevice } from '../../interfaces';
 import { LoginForm } from '../../containers/loginForm';
+import { AddExpenseForm } from '../../containers/addExpenseForm';
 import { Page } from '../../pages';
 
 const wrapper = css`
@@ -45,6 +48,7 @@ interface Props {
   messageVisible?: boolean;
   isLoginFormOpen?: boolean;
   isLoading?: boolean;
+  device?: StoreDevice;
   handleItemClick?: (e: SyntheticEvent, { name }: MenuItemProps) => void;
   handleLogoutClick?: () => void;
   handleLoginClick?: () => void;
@@ -64,6 +68,7 @@ export const LayoutComponent: FC<Props> = ({
   messageVisible,
   isLoginFormOpen,
   isLoading,
+  device,
   handleItemClick = () => {},
   handleLogoutClick = () => {},
   handleLoginClick = () => {},
@@ -73,6 +78,8 @@ export const LayoutComponent: FC<Props> = ({
   closeConfirm = () => {},
   closeLoginForm = () => {},
 }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   return (
     <div>
       <AppBar
@@ -143,6 +150,40 @@ export const LayoutComponent: FC<Props> = ({
           <Footer />
         </Sidebar.Pusher>
       </Sidebar.Pushable>
+      {device === 'mobile' && currentUser && (
+        <Button
+          css={css`
+            position: fixed !important;
+            bottom: 1rem;
+            right: 1rem;
+          `}
+          size="big"
+          circular
+          color="teal"
+          icon="plus"
+          onClick={() => {
+            setIsOpen(true);
+          }}
+        />
+      )}
+      <TransitionablePortal
+        onClose={() => {
+          setIsOpen(false);
+        }}
+        open={isOpen}
+      >
+        <Segment
+          compact
+          css={css`
+            position: fixed !important;
+            bottom: 5rem;
+            right: 1rem;
+          `}
+        >
+          <Header as="h4" content="支出を登録" />
+          <AddExpenseForm />
+        </Segment>
+      </TransitionablePortal>
     </div>
   );
 };

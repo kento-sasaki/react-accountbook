@@ -2,7 +2,7 @@
 import React, { FC } from 'react';
 import { jsx } from '@emotion/core';
 import { Table } from 'semantic-ui-react';
-import { MyTableUnit } from '../../containers/table/myTableUnit';
+import { MyTableUnit } from '../../containers/myTableUnit';
 import { StoreExpense } from '../../interfaces';
 
 interface Props {

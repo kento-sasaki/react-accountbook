@@ -1,8 +1,10 @@
 /** @jsx jsx */
 import React, { FC, FormEvent } from 'react';
 import { jsx, css } from '@emotion/core';
+import { useSelector } from 'react-redux';
 import dayjs from 'dayjs';
 import { Input, Button, Dropdown, Grid, DropdownProps, InputOnChangeData } from 'semantic-ui-react';
+import { Store } from '../../interfaces';
 
 const displayFlex = css`
   display: flex;
@@ -48,14 +50,16 @@ export const AddExpenseFormComponent: FC<Props> = ({
     { key: 0, text: 'その他', value: 'その他', icon: 'tag', color: '#838383', colorlabel: 'grey' },
   ],
 }) => {
+  const device = useSelector((store: Store) => store.device);
+
   return (
     <Grid columns="equal" data-testid="add-expense-form">
       <Grid.Row stretched>
         <Grid.Column
-          width={12}
+          width={device !== 'mobile' ? 12 : 16}
           css={css`
             ${padding(0, 0)}
-            ${margin(0, 0.2, 0, 1)}
+            ${device !== 'mobile' ? margin(0, 0.2, 0, 1) : margin(0, 0.5, 0, 0.5)}
           `}
         >
           <Input
@@ -104,7 +108,7 @@ export const AddExpenseFormComponent: FC<Props> = ({
         <Grid.Column
           css={css`
             ${padding(0, 0)}
-            ${margin(0, 1, 0, 0.2)}
+            ${device !== 'mobile' ? margin(0, 1, 0, 0.2) : margin(0.2, 0.2, 0, 0.4)}
           `}
         >
           <Button

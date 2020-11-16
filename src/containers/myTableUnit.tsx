@@ -3,10 +3,10 @@ import React, { FC, useState, FormEvent } from 'react';
 import { jsx } from '@emotion/core';
 import { InputOnChangeData, DropdownProps } from 'semantic-ui-react';
 import dayjs from 'dayjs';
-import { StoreExpense } from '../../interfaces';
-import { updateExpense, deleteExpense } from '../../firebase/firestore';
-import { MyTableUnitComponent } from '../../components/table/myTableUnit';
-import { createDateOptions } from '../../utils/utils';
+import { StoreExpense } from '../interfaces';
+import { updateExpense, deleteExpense } from '../firebase/firestore';
+import { MyTableUnitComponent } from '../components/table/myTableUnit';
+import { createDateOptions } from '../utils/utils';
 
 interface Props {
   expense: StoreExpense;

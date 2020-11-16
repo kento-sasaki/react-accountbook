@@ -4,7 +4,7 @@ import { jsx } from '@emotion/core';
 import { Table, Label, Dropdown, DropdownProps } from 'semantic-ui-react';
 import dayjs from 'dayjs';
 import { StoreExpense } from '../../interfaces';
-import { tagOptions } from '../../utils/utils';
+import { tagOptions, getColorLabel } from '../../utils/utils';
 
 interface Props {
   expense?: StoreExpense;
@@ -24,21 +24,7 @@ export const TagCellComponent: FC<Props> = ({
   isEditable = false,
   handleChangeTag = () => {},
 }) => {
-  const tagColorlabel = tagOptions[tagOptions.map((tag) => tag.icon).indexOf(expense.tagIcon)]
-    .colorlabel as
-    | 'green'
-    | 'grey'
-    | 'teal'
-    | 'violet'
-    | 'yellow'
-    | 'blue'
-    | 'red'
-    | 'orange'
-    | 'olive'
-    | 'purple'
-    | 'pink'
-    | 'brown'
-    | 'black';
+  const tagColorlabel = getColorLabel(expense.tagIcon);
 
   if (isEditable) {
     return (

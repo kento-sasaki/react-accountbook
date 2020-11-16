@@ -16,9 +16,10 @@ interface Props {
     color: SemanticCOLORS;
   };
   handleRequireClick: (requirement: { tagLabel: TagLabel; require: boolean }) => void;
+  size?: 'medium' | 'big' | 'small' | 'large' | 'mini' | 'tiny' | 'huge' | 'massive' | undefined;
 }
 
-export const MyButton: FC<Props> = ({ detail, handleRequireClick }) => {
+export const MyButton: FC<Props> = ({ detail, handleRequireClick, size = 'large' }) => {
   const [basic, setBasic] = useState<boolean>(true);
 
   const handleClick = () => {
@@ -29,7 +30,7 @@ export const MyButton: FC<Props> = ({ detail, handleRequireClick }) => {
   return (
     <Button
       css={label}
-      size="large"
+      size={size}
       color={detail.color}
       icon={detail.icon}
       content={`¥ ${detail.amount}`}
